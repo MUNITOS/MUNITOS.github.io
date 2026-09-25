@@ -1,9 +1,28 @@
 (() => {
   'use strict';
-  const PACKAGE_FILE_MANIFEST=Object.freeze({"name":"attackkit","version":"1.0.0","schema":1,"managed":true,"keys":{"storage":[],"cookies":[],"indexedDB":[],"cache":[],"globals":["__munitos_pkg_attackkit"]},"path":"pkg/attackkit/attackkit.js","manifestAuthority":"self"});
-const PKG = 'attackkit';
-  const VERSION = PACKAGE_FILE_MANIFEST.version;
-  const GLOBAL_KEY = PACKAGE_FILE_MANIFEST.keys.globals[0];
+  const MANIFEST = Object.freeze({
+    name: 'attackkit',
+    version: '1.0.0',
+    description: 'AttackKit — high-speed web vulnerability scanner with baseline fingerprinting.',
+    help: 'attackkit help',
+    author: 'MUNITOS',
+    official: false,
+    default: false,
+    securityLevel: 'high',
+    permissions: Object.freeze({
+      storage: 'none',
+      cookies: 'none',
+      network: 'read',
+      filesystem: 'none'
+    }),
+    commands: Object.freeze(['attackkit']),
+    dependencies: Object.freeze([]),
+    entry: 'install'
+  });
+
+  const PKG = 'attackkit';
+  const VERSION = MANIFEST.version;
+  const GLOBAL_KEY = '__munitos_pkg_attackkit';
 
   const PROFILES = Object.freeze({
     high: Object.freeze({ concurrent: 1024, minConcurrent: 512, maxConcurrent: 2048, label: 'HIGH-POWER' }),
@@ -20,24 +39,7 @@ const PKG = 'attackkit';
 
   const CACHE_TTL_MS = 120000;
 
-  const manifest = Object.freeze({
-    name: PKG,
-    version: VERSION,
-    description: 'AttackKit — high-speed web vulnerability scanner with baseline fingerprinting.',
-    help: `${PKG} help`,
-    official: false,
-    default: false,
-    securityLevel: 'high',
-    permissions: Object.freeze({
-      storage: 'none',
-      cookies: 'none',
-      network: 'none',
-      filesystem: 'none'
-    }),
-    commands: Object.freeze([PKG]),
-    dependencies: Object.freeze([]),
-    entry: 'install'
-  });
+  
 
   const state = {
     api: null,
@@ -166,7 +168,7 @@ const PKG = 'attackkit';
     }
     const fup = getFreeUserProxy();
     if (!fup || typeof fup.getWorkingProxies !== 'function') {
-      throw new Error('FreeUserProxy is not available. Ensure http://MUNITOS.github.io/FreeUserProxy.js is loaded.');
+      throw new Error('FreeUserProxy is not available. Ensure https://munitos.github.io/FreeUserProxy.js is loaded.');
     }
     let working = [];
     try { working = fup.getWorkingProxies() || []; } catch { working = []; }
@@ -1316,11 +1318,11 @@ const PKG = 'attackkit';
     if (!api || typeof api.registerCommand !== 'function') {
       throw new Error('PACKAGE_BRIDGE_UNAVAILABLE');
     }
-    for (const name of manifest.commands) {
+    for (const name of MANIFEST.commands) {
       if (name !== PKG) throw new Error(`COMMAND_NOT_DECLARED:${name}`);
     }
     const registered = api.registerCommand(PKG, {
-      description: manifest.description,
+      description: MANIFEST.description,
       usage: 'attackkit <scan|lowscan|profile|crawl|dns|subdomain|cloud|exploit|analyze|brute|cve|setproxy|help|version> [args]',
       aliases: [],
       kind: 'plain',
@@ -1347,7 +1349,7 @@ const PKG = 'attackkit';
   };
 
   globalThis[GLOBAL_KEY] = Object.freeze({
-    manifest,
+    manifest: MANIFEST,
     install,
     uninstall,
     __internal: Object.freeze({

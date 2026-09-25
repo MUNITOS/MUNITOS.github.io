@@ -1,10 +1,29 @@
 (() => {
   'use strict';
-  const PACKAGE_FILE_MANIFEST=Object.freeze({"name":"monitor","version":"1.0.0","schema":1,"managed":true,"keys":{"storage":[],"cookies":["munitos-monitor:v1"],"indexedDB":[],"cache":[],"globals":["__munitos_pkg_monitor"]},"path":"pkg/monitor/monitor.js","manifestAuthority":"self"});
-const PKG = 'monitor';
-  const VERSION = PACKAGE_FILE_MANIFEST.version;
-  const GLOBAL_KEY = PACKAGE_FILE_MANIFEST.keys.globals[0];
-  const COOKIE_KEY = PACKAGE_FILE_MANIFEST.keys.cookies[0];
+  const MANIFEST = Object.freeze({
+    name: 'monitor',
+    version: '1.0.0',
+    description: 'Advanced floating browser/runtime monitor with layered system metrics, live telemetry, network probes, charts and persistent settings.',
+    help: 'monitor help',
+    author: 'MUNITOS',
+    official: false,
+    default: false,
+    securityLevel: 'low',
+    permissions: Object.freeze({
+      storage: 'none',
+      cookies: 'write',
+      network: 'read',
+      filesystem: 'none'
+    }),
+    commands: Object.freeze(['monitor']),
+    dependencies: Object.freeze([]),
+    entry: 'install'
+  });
+
+  const PKG = 'monitor';
+  const VERSION = MANIFEST.version;
+  const GLOBAL_KEY = '__munitos_pkg_monitor';
+  const COOKIE_KEY = 'munitos-monitor:v1';
   const HISTORY_MAX = 48;
   const RESIZE_DEBOUNCE = 150;
   const STORAGE_REFRESH_INTERVAL = 8000;
@@ -466,7 +485,7 @@ const PKG = 'monitor';
   };
   const getServiceWorkerInfo = async () => {
     try {
-      if (!('serviceWorker' in navigator)) return { supported: false, controller: false, state: 'unavailable' };
+      if (!navigator?.serviceWorker) return { supported: false, controller: false, state: 'unavailable' };
       const reg = await navigator.serviceWorker.getRegistration();
       return { supported: true, controller: Boolean(navigator.serviceWorker.controller), state: reg?.active?.state || reg?.installing?.state || reg?.waiting?.state || 'none' };
     } catch { return { supported: false, controller: false, state: 'unavailable' }; }
@@ -1511,7 +1530,7 @@ const PKG = 'monitor';
   };
 
   const helpLines = () => [
-    line(`${manifest.name} ${VERSION}`, 'accent'),
+    line(`${MANIFEST.name} ${VERSION}`, 'accent'),
     line(`${PKG} on | off | toggle`, 'output'),
     line(`${PKG} panel | settings`, 'output'),
     line(`${PKG} status | sample | reset`, 'output'),
@@ -1559,7 +1578,7 @@ const PKG = 'monitor';
         return [line('Sample captured.', 'accent')];
       case 'reset': resetSettings(); return [line('Settings reset.', 'accent')];
       default:
-        return [line(`${PKG}: unknown command "${sub}"`, 'danger'), line(`Use "${manifest.help}" for available commands.`, 'muted')];
+        return [line(`${PKG}: unknown command "${sub}"`, 'danger'), line(`Use "${MANIFEST.help}" for available commands.`, 'muted')];
     }
   };
 
@@ -2325,25 +2344,6 @@ const PKG = 'monitor';
     }
   });
 
-  const manifest = Object.freeze({
-    name: PKG,
-    version: VERSION,
-    description: 'Advanced floating browser/runtime monitor with layered system metrics, live telemetry, network probes, charts and persistent settings.',
-    help: `${PKG} help`,
-    official: false,
-    default: false,
-    securityLevel: 'low',
-    permissions: Object.freeze({
-      storage: 'none',
-      cookies: 'none',
-      network: 'none',
-      filesystem: 'none'
-    }),
-    commands: Object.freeze(Object.keys(COMMANDS)),
-    dependencies: Object.freeze([]),
-    entry: 'install'
-  });
-
   const install = async api => {
     validateApi(api);
     state.api = api;
@@ -2355,7 +2355,7 @@ const PKG = 'monitor';
     startFrameMonitor();
 
     for (const [name, definition] of Object.entries(COMMANDS)) {
-      if (!manifest.commands.includes(name)) {
+      if (!MANIFEST.commands.includes(name)) {
         throw new Error(`COMMAND_NOT_DECLARED:${name}`);
       }
       const registered = api.registerCommand(name, definition);
@@ -2377,7 +2377,7 @@ const PKG = 'monitor';
 
   const uninstall = async api => {
     const hostApi = api || state.api;
-    for (const name of manifest.commands) {
+    for (const name of MANIFEST.commands) {
       try { if (hostApi?.unregisterCommand) hostApi.unregisterCommand(name); } catch {}
     }
     clearTimers();
@@ -2408,10 +2408,10 @@ const PKG = 'monitor';
   };
 
   const packageModule = Object.freeze({
-    manifest,
+    manifest: MANIFEST,
     install,
     uninstall,
-    getManifest: () => manifest,
+    getManifest: () => MANIFEST,
     getState
   });
 

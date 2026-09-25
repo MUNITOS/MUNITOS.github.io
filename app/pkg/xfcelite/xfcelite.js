@@ -1,9 +1,28 @@
 (() => {
   'use strict';
-  const PACKAGE_FILE_MANIFEST=Object.freeze({"name":"xfcelite","version":"1.0.0","schema":1,"managed":true,"keys":{"storage":["munitos-pkg-xfcelite-settings:v1"],"cookies":[],"indexedDB":[],"cache":[],"globals":["__munitos_pkg_xfcelite"]},"path":"pkg/xfcelite/xfcelite.js","manifestAuthority":"self"});
-const PKG = 'xfcelite';
-  const KEY = PACKAGE_FILE_MANIFEST.keys.globals[0];
-  const STORAGE_KEY = PACKAGE_FILE_MANIFEST.keys.storage[0];
+  const MANIFEST = Object.freeze({
+    name: 'xfcelite',
+    version: '1.0.0',
+    description: 'MUNITOS XFCE Lite background and terminal theme manager with persistent runtime state.',
+    help: 'xfcelite help',
+    author: 'MUNITOS',
+    official: false,
+    default: false,
+    securityLevel: 'low',
+    permissions: Object.freeze({
+      storage: 'write',
+      cookies: 'none',
+      network: 'none',
+      filesystem: 'none'
+    }),
+    commands: Object.freeze(['xfcelite']),
+    dependencies: Object.freeze([]),
+    entry: 'install'
+  });
+
+  const PKG = 'xfcelite';
+  const KEY = '__munitos_pkg_xfcelite';
+  const STORAGE_KEY = 'munitos-pkg-xfcelite-settings:v1';
   const VALID_BACKGROUNDS = Object.freeze([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]);
   const MAX_HISTORY = 24;
 
@@ -90,43 +109,7 @@ const PKG = 'xfcelite';
     lastResult: 'never'
   });
 
-  const manifest = Object.freeze({
-    name: PKG,
-    version: PACKAGE_FILE_MANIFEST.version,
-    description: 'MUNITOS XFCE Lite background and terminal theme manager with persistent runtime state.',
-    entry: 'install',
-    dependencies: Object.freeze([]),
-    permissions: Object.freeze({
-      storage: 'write',
-      cookies: 'none',
-      network: 'none',
-      filesystem: 'none'
-    }),
-    commands: Object.freeze([
-      Object.freeze({ name: 'help', kind: 'plain', usage: 'xfcelite help', description: 'Show package documentation.', group: 'docs' }),
-      Object.freeze({ name: 'info', kind: 'plain', usage: 'xfcelite info', description: 'Show package and runtime information.', group: 'runtime' }),
-      Object.freeze({ name: 'manifest', kind: 'plain', usage: 'xfcelite manifest', description: 'Print the internal package manifest.', group: 'docs' }),
-      Object.freeze({ name: 'policy', kind: 'plain', usage: 'xfcelite policy', description: 'Show permissions and runtime policy.', group: 'docs' }),
-      Object.freeze({ name: 'state', kind: 'plain', usage: 'xfcelite state', description: 'Show current package state and settings.', group: 'runtime' }),
-      Object.freeze({ name: 'commands', kind: 'plain', usage: 'xfcelite commands', description: 'List available package tags.', group: 'docs' }),
-      Object.freeze({ name: 'mode', kind: 'plain', usage: 'xfcelite mode', description: 'Show current terminal mode.', group: 'runtime' }),
-      Object.freeze({ name: 'version', kind: 'plain', usage: 'xfcelite version', description: 'Show package version.', group: 'runtime' }),
-      Object.freeze({ name: 'set', kind: 'plain', usage: 'xfcelite set <1-25>', description: 'Set a background image.', group: 'wallpaper' }),
-      Object.freeze({ name: 'blur', kind: 'plain', usage: 'xfcelite blur <0-100>', description: 'Set background blur intensity.', group: 'wallpaper' }),
-      Object.freeze({ name: 'reset', kind: 'plain', usage: 'xfcelite reset', description: 'Reset background and blur.', group: 'wallpaper' }),
-      Object.freeze({ name: 'preview', kind: 'plain', usage: 'xfcelite preview <1-25|off>', description: 'Preview a background without saving it.', group: 'wallpaper' }),
-      Object.freeze({ name: 'next', kind: 'plain', usage: 'xfcelite next', description: 'Select the next background.', group: 'wallpaper' }),
-      Object.freeze({ name: 'prev', kind: 'plain', usage: 'xfcelite prev', description: 'Select the previous background.', group: 'wallpaper' }),
-      Object.freeze({ name: 'random', kind: 'plain', usage: 'xfcelite random', description: 'Select a random background.', group: 'wallpaper' }),
-      Object.freeze({ name: 'list', kind: 'plain', usage: 'xfcelite list', description: 'List available backgrounds.', group: 'wallpaper' }),
-      Object.freeze({ name: 'theme', kind: 'plain', usage: 'xfcelite theme <dark|light>', description: 'Switch terminal interface between dark and light mode. Root required.', group: 'appearance' }),
-      Object.freeze({ name: 'save', kind: 'plain', usage: 'xfcelite save', description: 'Persist current package state.', group: 'storage' }),
-      Object.freeze({ name: 'load', kind: 'plain', usage: 'xfcelite load', description: 'Load saved package state.', group: 'storage' }),
-      Object.freeze({ name: 'history', kind: 'plain', usage: 'xfcelite history', description: 'Show recent package actions.', group: 'runtime' }),
-      Object.freeze({ name: 'config', kind: 'plain', usage: 'xfcelite config <show|set|reset|help> [key] [value]', description: 'Inspect or change package configuration.', group: 'utility' }),
-      Object.freeze({ name: 'clearcache', kind: 'plain', usage: 'xfcelite clearcache', description: 'Clear persistent package state.', group: 'utility' })
-    ])
-  });
+  
 
   const state = {
     api: null,
@@ -450,25 +433,25 @@ const PKG = 'xfcelite';
 
   const renderManifest = () => [
     line('Internal manifest', 'accent'),
-    kv('name', manifest.name),
-    kv('version', manifest.version),
-    kv('entry', manifest.entry),
-    kv('author', manifest.author),
-    kv('description', manifest.description),
-    kv('dependencies', manifest.dependencies.length ? manifest.dependencies.join(', ') : '(none)'),
-    kv('permissions.storage', manifest.permissions.storage),
-    kv('permissions.cookies', manifest.permissions.cookies),
-    kv('permissions.network', manifest.permissions.network),
-    kv('permissions.filesystem', manifest.permissions.filesystem),
-    kv('command count', String(manifest.commands.length))
+    kv('name', MANIFEST.name),
+    kv('version', MANIFEST.version),
+    kv('entry', MANIFEST.entry),
+    kv('author', MANIFEST.author),
+    kv('description', MANIFEST.description),
+    kv('dependencies', MANIFEST.dependencies.length ? MANIFEST.dependencies.join(', ') : '(none)'),
+    kv('permissions.storage', MANIFEST.permissions.storage),
+    kv('permissions.cookies', MANIFEST.permissions.cookies),
+    kv('permissions.network', MANIFEST.permissions.network),
+    kv('permissions.filesystem', MANIFEST.permissions.filesystem),
+    kv('command count', String(MANIFEST.commands.length))
   ];
 
   const renderPolicy = () => [
     line('Runtime policy', 'accent'),
-    kv('storage', manifest.permissions.storage),
-    kv('cookies', manifest.permissions.cookies),
-    kv('network', manifest.permissions.network),
-    kv('filesystem', manifest.permissions.filesystem),
+    kv('storage', MANIFEST.permissions.storage),
+    kv('cookies', MANIFEST.permissions.cookies),
+    kv('network', MANIFEST.permissions.network),
+    kv('filesystem', MANIFEST.permissions.filesystem),
     kv('root required for changes', boolText(state.settings.requireRootForChange)),
     kv('theme changes require root', 'true'),
     kv('info allowed for all', boolText(state.settings.allowInfoForAll)),
@@ -484,7 +467,7 @@ const PKG = 'xfcelite';
 
   const renderCommands = () => {
     const output = [line('Command catalog', 'accent')];
-    for (const cmd of manifest.commands) {
+    for (const cmd of MANIFEST.commands) {
       output.push(kv(cmd.name, describeCommand(cmd)));
     }
     return output;
@@ -492,7 +475,7 @@ const PKG = 'xfcelite';
 
   const renderTags = () => {
     const groups = new Map();
-    for (const cmd of manifest.commands) {
+    for (const cmd of MANIFEST.commands) {
       const group = cmd.group || 'utility';
       if (!groups.has(group)) groups.set(group, []);
       groups.get(group).push(cmd.name);
@@ -565,8 +548,8 @@ const PKG = 'xfcelite';
   const cmdRoot = () => {
     state.settings.lastAction = PKG;
     return [
-      line(`Package ${manifest.name} ${manifest.version}`, 'accent'),
-      line(manifest.description, 'muted'),
+      line(`Package ${MANIFEST.name} ${MANIFEST.version}`, 'accent'),
+      line(MANIFEST.description, 'muted'),
       spacer(),
       kv('saved background', backgroundName(state.settings.background)),
       kv('visible background', backgroundName(getVisibleBackground())),
@@ -598,8 +581,8 @@ const PKG = 'xfcelite';
 
     return [
       line('Runtime information', 'accent'),
-      kv('package', manifest.name),
-      kv('version', manifest.version),
+      kv('package', MANIFEST.name),
+      kv('version', MANIFEST.version),
       kv('mode', getMode()),
       kv('theme', state.settings.theme),
       kv('cwd', snap.cwd || '/'),
@@ -620,7 +603,7 @@ const PKG = 'xfcelite';
 
   const cmdManifest = () => {
     state.settings.lastAction = `${PKG} manifest`;
-    return [...renderManifest(), spacer(), block(JSON.stringify(manifest, null, 2))];
+    return [...renderManifest(), spacer(), block(JSON.stringify(MANIFEST, null, 2))];
   };
 
   const cmdPolicy = () => {
@@ -675,10 +658,10 @@ const PKG = 'xfcelite';
     state.settings.lastAction = `${PKG} version`;
     return [
       line('Package version', 'accent'),
-      kv('name', manifest.name),
-      kv('version', manifest.version),
-      kv('entry', manifest.entry),
-      kv('author', manifest.author)
+      kv('name', MANIFEST.name),
+      kv('version', MANIFEST.version),
+      kv('entry', MANIFEST.entry),
+      kv('author', MANIFEST.author)
     ];
   };
 
@@ -1169,7 +1152,7 @@ const PKG = 'xfcelite';
 
     if (typeof state.api.append === 'function') {
       state.api.append([
-        line(`Package ${manifest.name} ${manifest.version} installed.`, 'accent'),
+        line(`Package ${MANIFEST.name} ${MANIFEST.version} installed.`, 'accent'),
         line('Type "xfcelite" to inspect the current state.', 'output'),
         line('Type "xfcelite help" for package documentation.', 'muted'),
         kv('theme', `${state.settings.theme}`),
@@ -1204,7 +1187,7 @@ const PKG = 'xfcelite';
 
     if (hostApi && typeof hostApi.append === 'function') {
       hostApi.append([
-        line(`Package ${manifest.name} removed.`, 'muted')
+        line(`Package ${MANIFEST.name} removed.`, 'muted')
       ]);
     }
 
@@ -1213,13 +1196,13 @@ const PKG = 'xfcelite';
   }
 
   const exported = Object.freeze({
-    manifest,
-    name: manifest.name,
-    version: manifest.version,
-    description: manifest.description,
+    manifest: MANIFEST,
+    name: MANIFEST.name,
+    version: MANIFEST.version,
+    description: MANIFEST.description,
         install,
     uninstall,
-    getManifest: () => manifest,
+    getManifest: () => MANIFEST,
     getState: () => ({
       settings: { ...state.settings },
       background: state.settings.background,

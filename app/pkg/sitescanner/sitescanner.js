@@ -1,9 +1,28 @@
 (() => {
   'use strict';
-  const PACKAGE_FILE_MANIFEST=Object.freeze({"name":"sitescanner","version":"1.0.0","schema":1,"managed":true,"keys":{"storage":[],"cookies":[],"indexedDB":[],"cache":[],"globals":["__munitos_pkg_sitescanner"]},"path":"pkg/sitescanner/sitescanner.js","manifestAuthority":"self"});
-const PKG = 'sitescanner';
-  const VERSION = PACKAGE_FILE_MANIFEST.version;
-  const GLOBAL_KEY = PACKAGE_FILE_MANIFEST.keys.globals[0];
+  const MANIFEST = Object.freeze({
+    name: 'sitescanner',
+    version: '1.0.0',
+    description: 'High-speed passive OSINT web scanner with baseline fingerprinting and adaptive worker pool.',
+    help: 'sitescanner help',
+    author: 'MUNITOS',
+    official: false,
+    default: false,
+    securityLevel: 'medium',
+    permissions: Object.freeze({
+      storage: 'none',
+      cookies: 'none',
+      network: 'read',
+      filesystem: 'none'
+    }),
+    commands: Object.freeze(['sitescanner']),
+    dependencies: Object.freeze([]),
+    entry: 'install'
+  });
+
+  const PKG = 'sitescanner';
+  const VERSION = MANIFEST.version;
+  const GLOBAL_KEY = '__munitos_pkg_sitescanner';
 
   const PROFILES = Object.freeze({
     high: Object.freeze({ concurrent: 384, minConcurrent: 192, maxConcurrent: 768, timeout: 8000, probeTimeout: 5000, label: 'HIGH-POWER' }),
@@ -12,7 +31,7 @@ const PKG = 'sitescanner';
 
   const DEFAULTS = Object.freeze({
     dnsApi: 'https://dns.google/resolve?name=',
-    ipApi: 'http://ip-api.com/json/',
+    ipApi: 'https://ipwho.is/',
     ipinfoApi: 'https://ipinfo.io/{ip}/json',
     crtshApi: 'https://crt.sh/?q=%25.{domain}&output=json',
     waybackApi: 'https://web.archive.org/cdx/search/cdx?url={domain}&output=json&limit=10&filter=statuscode:200',
@@ -455,7 +474,7 @@ const PKG = 'sitescanner';
     const robots = once('robots', () => fetchText(new URL('/robots.txt', normalized).href).catch(() => null));
     const sitemap = once('sitemap', () => fetchText(new URL('/sitemap.xml', normalized).href).catch(() => null));
     const securityTxt = once('sec-txt', () => fetchText(new URL('/.well-known/security.txt', normalized).href).catch(() => null));
-    const manifestJson = once('manifest', () => fetchJSON(new URL('/manifest.json', normalized).href).catch(() => null));
+    const manifestJson = once('manifest', () => fetchJSON(new URL('/MANIFEST.json', normalized).href).catch(() => null));
 
     const [
       mp, ips4, ips6, ptrs, ipP, ipS, aRec, aaaaRec, mxRec, nsRec, cnameRec, txtRec, soaRec, srvRec, caaRec, naptrRec,
@@ -565,7 +584,7 @@ const PKG = 'sitescanner';
     out.push(L(`│   ├── robots.txt: ${robotsR ? 'found' : 'not found'}`, robotsR ? 'success' : 'muted'));
     out.push(L(`│   ├── sitemap.xml: ${sitemapR ? 'found' : 'not found'}`, sitemapR ? 'success' : 'muted'));
     out.push(L(`│   ├── security.txt: ${secTxtR ? 'found' : 'not found'}`, secTxtR ? 'success' : 'muted'));
-    out.push(L(`│   └── manifest.json: ${manifestR ? 'found' : 'not found'}`, manifestR ? 'success' : 'muted'));
+    out.push(L(`│   └── MANIFEST.json: ${manifestR ? 'found' : 'not found'}`, manifestR ? 'success' : 'muted'));
 
     // Tech
     out.push(SP());
@@ -699,24 +718,7 @@ const PKG = 'sitescanner';
   });
 
   // ==================== Manifest ====================
-  const manifest = Object.freeze({
-    name: PKG,
-    version: VERSION,
-    description: 'High-speed passive OSINT web scanner with baseline fingerprinting and adaptive worker pool.',
-    help: `${PKG} help`,
-    official: false,
-    default: false,
-    securityLevel: 'medium',
-    permissions: Object.freeze({
-      storage: 'none',
-      cookies: 'none',
-      network: 'none',
-      filesystem: 'none'
-    }),
-    commands: Object.freeze(Object.keys(COMMANDS)),
-    dependencies: Object.freeze([]),
-    entry: 'install'
-  });
+  
 
   // ==================== Lifecycle ====================
   async function install(api) {
@@ -725,7 +727,7 @@ const PKG = 'sitescanner';
     for (const m of required) if (typeof api[m] !== 'function') throw new Error(`PACKAGE_BRIDGE_${m.toUpperCase()}_UNAVAILABLE`);
     state.api = api;
     for (const [name, definition] of Object.entries(COMMANDS)) {
-      if (!manifest.commands.includes(name)) throw new Error(`COMMAND_NOT_DECLARED:${name}`);
+      if (!MANIFEST.commands.includes(name)) throw new Error(`COMMAND_NOT_DECLARED:${name}`);
       const registered = api.registerCommand(name, definition);
       if (registered === false) throw new Error(`PACKAGE_COMMAND_REGISTRATION_FAILED:${name}`);
     }
@@ -734,7 +736,7 @@ const PKG = 'sitescanner';
 
   async function uninstall(api) {
     const bridge = api || state.api;
-    for (const name of manifest.commands) {
+    for (const name of MANIFEST.commands) {
       try { if (bridge && typeof bridge.unregisterCommand === 'function') bridge.unregisterCommand(name); } catch {}
     }
     state.proxyList = []; state.proxyReady = false; state.customProxy = null;
@@ -742,5 +744,5 @@ const PKG = 'sitescanner';
     return [];
   }
 
-  globalThis[GLOBAL_KEY] = Object.freeze({ manifest, install, uninstall });
+  globalThis[GLOBAL_KEY] = Object.freeze({ manifest: MANIFEST, install, uninstall });
 })();

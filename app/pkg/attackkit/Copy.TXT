@@ -150,7 +150,7 @@
       }
       const fup = getFreeUserProxy();
       if (!fup || typeof fup.getWorkingProxies !== 'function') {
-        throw new Error('FreeUserProxy is not available. Please ensure http://MUNITOS.github.io/FreeUserProxy.js is loaded.');
+        throw new Error('FreeUserProxy is not available. Please ensure https://munitos.github.io/FreeUserProxy.js is loaded.');
       }
       let working = [];
       try {

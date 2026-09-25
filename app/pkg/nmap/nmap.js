@@ -1,24 +1,26 @@
 (() => {
   'use strict';
-  const PACKAGE_FILE_MANIFEST=Object.freeze({"name":"nmap","version":"1.0.0","schema":1,"managed":true,"keys":{"storage":[],"cookies":[],"indexedDB":[],"cache":[],"globals":["__munitos_pkg_nmap"]},"path":"pkg/nmap/nmap.js","manifestAuthority":"self"});
-const manifest = Object.freeze({
+  const MANIFEST = Object.freeze({
     name: 'nmap',
-    version: PACKAGE_FILE_MANIFEST.version,
+    version: '1.0.0',
     description: 'Ultra-fast browser network scanner with HTTP probing, text-file discovery and CORS analysis',
-    help: 'nmap <target> [options] | nmap lowscan <target> [options]',
+    help: 'nmap help',
+    author: 'MUNITOS',
     official: false,
     default: false,
     securityLevel: 'low',
     permissions: Object.freeze({
       storage: 'none',
       cookies: 'none',
-      network: 'none',
+      network: 'read',
       filesystem: 'none'
     }),
     commands: Object.freeze(['nmap']),
     dependencies: Object.freeze([]),
     entry: 'install'
   });
+
+  
   const DEFAULT_WORKERS = 128;
   const MAX_WORKERS = 512;
   const MIN_WORKERS = 1;
@@ -291,23 +293,8 @@ const manifest = Object.freeze({
   let PORT_DB_CACHE = null;
   const loadPorts = async () => {
     if (PORT_DB_CACHE !== null) return PORT_DB_CACHE;
-    try {
-      const response = await fetch('http://MUNITOS.github.io/app/pkg/ports.compact.json', {
-        method: 'GET',
-        cache: 'force-cache',
-        credentials: 'omit',
-        mode: 'cors',
-        headers: { Accept: 'application/json' }
-      });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const data = await response.json();
-      if (!data || typeof data !== 'object' || Array.isArray(data)) throw new Error('INVALID_PORT_DATABASE');
-      PORT_DB_CACHE = data;
-      return data;
-    } catch {
-      PORT_DB_CACHE = {};
-      return PORT_DB_CACHE;
-    }
+    PORT_DB_CACHE = {};
+    return PORT_DB_CACHE;
   };
   const getServiceName = (port, db) => {
     if (db && Object.prototype.hasOwnProperty.call(db, port)) {
@@ -411,7 +398,7 @@ const manifest = Object.freeze({
     const options = parseScanArgs(args, defaults);
     if (options.help) return { kind: 'help', isLow };
     if (options.version) {
-      return { kind: 'version', text: `nmap version ${manifest.version}` };
+      return { kind: 'version', text: `nmap version ${MANIFEST.version}` };
     }
     let baseUrl;
     try {
@@ -559,7 +546,7 @@ const manifest = Object.freeze({
   });
   const install = async api => {
     for (const [name, definition] of Object.entries(COMMANDS)) {
-      if (!manifest.commands.includes(name)) {
+      if (!MANIFEST.commands.includes(name)) {
         throw new Error(`COMMAND_NOT_DECLARED:${name}`);
       }
       const registered = api.registerCommand(name, definition);
@@ -570,13 +557,13 @@ const manifest = Object.freeze({
     return [];
   };
   const uninstall = async api => {
-    for (const name of manifest.commands) {
+    for (const name of MANIFEST.commands) {
       api.unregisterCommand(name);
     }
     return [];
   };
   window.__munitos_pkg_nmap = Object.freeze({
-    manifest,
+    manifest: MANIFEST,
     install,
     uninstall
   });

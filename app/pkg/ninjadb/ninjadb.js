@@ -1,7 +1,26 @@
 (() => {
   'use strict';
-  const PACKAGE_FILE_MANIFEST=Object.freeze({"name":"ninjadb","version":"1.0.0","schema":1,"managed":true,"keys":{"storage":[],"cookies":[],"indexedDB":[],"cache":[],"globals":["__munitos_pkg_ninjadb"]},"path":"pkg/ninjadb/ninjadb.js","manifestAuthority":"self"});
-const PROFILES = Object.freeze({
+  const MANIFEST = Object.freeze({
+    name: 'ninjadb',
+    version: '1.0.0',
+    description: 'NinjaDB — MUNITOS sensitive-path scanner powered by 23 DB modules.',
+    help: 'ninjadb help',
+    author: 'MUNITOS',
+    official: false,
+    default: false,
+    securityLevel: 'medium',
+    permissions: Object.freeze({
+      storage: 'none',
+      cookies: 'none',
+      network: 'read',
+      filesystem: 'none'
+    }),
+    commands: Object.freeze(['ninjadb']),
+    dependencies: Object.freeze([]),
+    entry: 'install'
+  });
+
+  const PROFILES = Object.freeze({
     high: Object.freeze({
       concurrent: 512,
       minConcurrent: 256,
@@ -20,7 +39,7 @@ const PROFILES = Object.freeze({
     })
   });
 
-  const DB_BASE = 'http://MUNITOS.github.io/assets/DB/';
+  const DB_BASE = (() => { try { return new URL('../../assets/DB/', document.baseURI).href; } catch { return '/assets/DB/'; } })();
   const DB_FILES = Object.freeze([
     'admin-panels.txt', 'api-endpoints.txt', 'attack-patterns.txt',
     'backup-paths.txt', 'cloud-devops.txt', 'config-secrets.txt',
@@ -580,27 +599,8 @@ const PROFILES = Object.freeze({
     }
   });
 
-  const manifest = Object.freeze({
-    name: 'ninjadb',
-    version: PACKAGE_FILE_MANIFEST.version,
-    description: 'NinjaDB — MUNITOS sensitive-path scanner powered by 23 DB modules.',
-    help: 'ninjadb <scan|lowscan|setproxy|profile|help>',
-    official: false,
-    default: false,
-    securityLevel: 'medium',
-    permissions: Object.freeze({
-      storage: 'none',
-      cookies: 'none',
-      network: 'none',
-      filesystem: 'none'
-    }),
-    commands: Object.freeze(['ninjadb']),
-    dependencies: Object.freeze([]),
-    entry: 'install'
-  });
-
   const install = async (api) => {
-    for (const name of manifest.commands) {
+    for (const name of MANIFEST.commands) {
       const def = COMMANDS[name];
       if (!def) throw new Error(`COMMAND_NOT_DECLARED:${name}`);
       const ok = api.registerCommand(name, def);
@@ -611,14 +611,14 @@ const PROFILES = Object.freeze({
 
   const uninstall = async (api) => {
     aborted = true;
-    for (const name of manifest.commands) api.unregisterCommand(name);
+    for (const name of MANIFEST.commands) api.unregisterCommand(name);
     customProxyTemplate = null;
     DB_CACHE = null;
     return [];
   };
 
   window.__munitos_pkg_ninjadb = Object.freeze({
-    manifest,
+    manifest: MANIFEST,
     install,
     uninstall,
     __internal: Object.freeze({

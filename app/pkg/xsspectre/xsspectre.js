@@ -1,9 +1,28 @@
 (() => {
   'use strict';
-  const PACKAGE_FILE_MANIFEST=Object.freeze({"name":"xsspectre","version":"1.0.0","schema":1,"managed":true,"keys":{"storage":[],"cookies":[],"indexedDB":[],"cache":[],"globals":["__munitos_pkg_xsspectre"]},"path":"pkg/xsspectre/xsspectre.js","manifestAuthority":"self"});
-const PKG = 'xsspectre';
-  const VERSION = PACKAGE_FILE_MANIFEST.version;
-  const GLOBAL_KEY = PACKAGE_FILE_MANIFEST.keys.globals[0];
+  const MANIFEST = Object.freeze({
+    name: 'xsspectre',
+    version: '1.0.0',
+    description: 'xsspectre — unified XSS scanner with baseline false-positive filter, dual mode (scan / lowscan mobile), adaptive pool.',
+    help: 'xsspectre help',
+    author: 'MUNITOS',
+    official: false,
+    default: false,
+    securityLevel: 'high',
+    permissions: Object.freeze({
+      storage: 'none',
+      cookies: 'none',
+      network: 'full',
+      filesystem: 'none'
+    }),
+    commands: Object.freeze(['xsspectre']),
+    dependencies: Object.freeze([]),
+    entry: 'install'
+  });
+
+  const PKG = 'xsspectre';
+  const VERSION = MANIFEST.version;
+  const GLOBAL_KEY = '__munitos_pkg_xsspectre';
 
   const PROFILES = Object.freeze({
     high: Object.freeze({ concurrent: 384, minConcurrent: 192, maxConcurrent: 768, maxFormsToTest: 200, mainTaskLimit: 384, label: 'HIGH-POWER' }),
@@ -27,19 +46,7 @@ const PKG = 'xsspectre';
     baselineEnabled: true
   });
 
-  const manifest = Object.freeze({
-    name: PKG,
-    version: VERSION,
-    description: 'xsspectre — unified XSS scanner with baseline false-positive filter, dual mode (scan / lowscan mobile), adaptive pool.',
-    help: `${PKG} help`,
-    official: false,
-    default: false,
-    securityLevel: 'high',
-    permissions: Object.freeze({ storage: 'none', cookies: 'none', network: 'full', filesystem: 'none' }),
-    commands: Object.freeze([PKG]),
-    dependencies: Object.freeze([]),
-    entry: 'install'
-  });
+  
 
   const COMMAND = Object.freeze({
     name: PKG,
@@ -2092,9 +2099,9 @@ const PKG = 'xsspectre';
   };
 
   const help = () => [
-    line(`Package: ${manifest.name}`, 'accent'),
-    line(`Version: ${manifest.version}`),
-    line(`Author : ${manifest.author}`),
+    line(`Package: ${MANIFEST.name}`, 'accent'),
+    line(`Version: ${MANIFEST.version}`),
+    line(`Author : ${MANIFEST.author}`),
     spacer(),
     line(`Usage: ${COMMAND.usage}`),
     spacer(),
@@ -2115,12 +2122,12 @@ const PKG = 'xsspectre';
     return [
       line('Package Information', 'accent'),
       spacer(),
-      line(`Name          : ${manifest.name}`),
-      line(`Version       : ${manifest.version}`),
-      line(`Author        : ${manifest.author}`),
-      line(`Description   : ${manifest.description}`, 'muted'),
-      line(`Entry         : ${manifest.entry}`),
-      line(`Security      : ${manifest.securityLevel.toUpperCase()}`),
+      line(`Name          : ${MANIFEST.name}`),
+      line(`Version       : ${MANIFEST.version}`),
+      line(`Author        : ${MANIFEST.author}`),
+      line(`Description   : ${MANIFEST.description}`, 'muted'),
+      line(`Entry         : ${MANIFEST.entry}`),
+      line(`Security      : ${MANIFEST.securityLevel.toUpperCase()}`),
       line(`Installed     : ${state.installed ? 'yes' : 'no'}`, state.installed ? 'accent' : 'danger'),
       line(`Active profile: ${profile.label}`, 'accent'),
       line(`  concurrent  : ${profile.concurrent}`),
@@ -2149,29 +2156,29 @@ const PKG = 'xsspectre';
   const manifestInfo = () => [
     line('Package Manifest', 'accent'),
     spacer(),
-    line(`name         : ${manifest.name}`),
-    line(`version      : ${manifest.version}`),
-    line(`description  : ${manifest.description}`, 'muted'),
-    line(`author       : ${manifest.author}`),
-    line(`official     : ${manifest.official}`),
-    line(`default      : ${manifest.default}`),
-    line(`securityLevel: ${manifest.securityLevel}`),
-    line(`entry        : ${manifest.entry}`)
+    line(`name         : ${MANIFEST.name}`),
+    line(`version      : ${MANIFEST.version}`),
+    line(`description  : ${MANIFEST.description}`, 'muted'),
+    line(`author       : ${MANIFEST.author}`),
+    line(`official     : ${MANIFEST.official}`),
+    line(`default      : ${MANIFEST.default}`),
+    line(`securityLevel: ${MANIFEST.securityLevel}`),
+    line(`entry        : ${MANIFEST.entry}`)
   ];
 
   const policy = () => [
     line('Permission Policy', 'accent'),
     spacer(),
-    line(`storage    : ${manifest.permissions.storage}`),
-    line(`cookies    : ${manifest.permissions.cookies}`),
-    line(`network    : ${manifest.permissions.network}`),
-    line(`filesystem : ${manifest.permissions.filesystem}`),
+    line(`storage    : ${MANIFEST.permissions.storage}`),
+    line(`cookies    : ${MANIFEST.permissions.cookies}`),
+    line(`network    : ${MANIFEST.permissions.network}`),
+    line(`filesystem : ${MANIFEST.permissions.filesystem}`),
     spacer(),
     line('Full network access required for scanning.', 'muted'),
     line('Sandbox iframes use allow-scripts only.', 'muted')
   ];
 
-  const version = () => [line(`${manifest.name} ${manifest.version}`, 'accent')];
+  const version = () => [line(`${MANIFEST.name} ${MANIFEST.version}`, 'accent')];
 
   const selfTest = () => {
     const api = state.api;
@@ -2186,7 +2193,7 @@ const PKG = 'xsspectre';
     check('unregisterCommand', typeof api?.unregisterCommand === 'function');
     check('line', typeof api?.line === 'function');
     check('spacer', typeof api?.spacer === 'function');
-    check('Manifest identity', manifest.name === PKG && manifest.version === VERSION, `${manifest.name} ${manifest.version}`);
+    check('Manifest identity', MANIFEST.name === PKG && MANIFEST.version === VERSION, `${MANIFEST.name} ${MANIFEST.version}`);
     const fup = getFreeUserProxy();
     check('FreeUserProxy', !!(fup && typeof fup.getWorkingProxies === 'function'));
     check('Worker API', WorkerPool.available, WorkerPool.available ? 'supported' : 'fallback');
@@ -2239,7 +2246,7 @@ const PKG = 'xsspectre';
         return cveaiTarget(t);
       }
       default:
-        return [line(`${PKG}: unknown command "${cmd}"`, 'danger'), line(`Use "${manifest.help}" for available commands.`, 'muted')];
+        return [line(`${PKG}: unknown command "${cmd}"`, 'danger'), line(`Use "${MANIFEST.help}" for available commands.`, 'muted')];
     }
   };
 
@@ -2282,13 +2289,13 @@ const PKG = 'xsspectre';
   };
 
   const exported = Object.freeze({
-    manifest,
+    manifest: MANIFEST,
     name: PKG,
     version: VERSION,
-    description: manifest.description,
+    description: MANIFEST.description,
         install,
     uninstall,
-    getManifest: () => manifest,
+    getManifest: () => MANIFEST,
     getState: () => ({
       ...state,
       settings: { ...state.settings },

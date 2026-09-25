@@ -1,9 +1,28 @@
 (() => {
   'use strict';
-  const PACKAGE_FILE_MANIFEST=Object.freeze({"name":"ipscan","version":"1.0.0","schema":1,"managed":true,"keys":{"storage":[],"cookies":[],"indexedDB":[],"cache":[],"globals":["__munitos_pkg_ipscan"]},"path":"pkg/ipscan/ipscan.js","manifestAuthority":"self"});
-const PKG = 'ipscan';
-  const VERSION = PACKAGE_FILE_MANIFEST.version;
-  const GLOBAL_KEY = PACKAGE_FILE_MANIFEST.keys.globals[0];
+  const MANIFEST = Object.freeze({
+    name: 'ipscan',
+    version: '1.0.0',
+    description: 'Adaptive defensive IP OSINT package with High/Low profiles, normalized target URLs, passive exposure intelligence, multi-source consensus, worker-assisted processing, breach analytics, password exposure checks, company intelligence, HTTP header analysis, and historical data lookups.',
+    help: 'ipscan help',
+    author: 'MUNITOS',
+    official: false,
+    default: false,
+    securityLevel: 'medium',
+    permissions: Object.freeze({
+      storage: 'none',
+      cookies: 'none',
+      network: 'read',
+      filesystem: 'none'
+    }),
+    commands: Object.freeze(['ipscan', 'lowscan', 'ipscanhelp']),
+    dependencies: Object.freeze([]),
+    entry: 'install'
+  });
+
+  const PKG = 'ipscan';
+  const VERSION = MANIFEST.version;
+  const GLOBAL_KEY = '__munitos_pkg_ipscan';
   
   const PROFILES = Object.freeze({
     high: Object.freeze({
@@ -177,24 +196,7 @@ const PKG = 'ipscan';
     }
   });
 
-  const manifest = Object.freeze({
-    name: PKG,
-    version: VERSION,
-    description: 'Adaptive defensive IP OSINT package with High/Low profiles, normalized target URLs, passive exposure intelligence, multi-source consensus, worker-assisted processing, breach analytics, password exposure checks, company intelligence, HTTP header analysis, and historical data lookups.',
-    help: 'ipscan help',
-    official: false,
-    default: false,
-    securityLevel: 'medium',
-    permissions: Object.freeze({
-      storage: 'none',
-      cookies: 'none',
-      network: 'read',
-      filesystem: 'none'
-    }),
-    commands: Object.freeze(Object.keys(COMMANDS)),
-    dependencies: Object.freeze([]),
-    entry: 'install'
-  });
+  
 
   const state = {
     api: null,
@@ -5361,11 +5363,11 @@ const PKG = 'ipscan';
 
   const help = () => [
     line(
-      `Package: ${manifest.name}`,
+      `Package: ${MANIFEST.name}`,
       'accent'
     ),
     line(
-      `Version: ${manifest.version}`
+      `Version: ${MANIFEST.version}`
     ),
     line(
       'Default profile: HIGH-POWER',
@@ -5480,10 +5482,10 @@ const PKG = 'ipscan';
       'accent'
     ),
     line(
-      `Name: ${manifest.name}`
+      `Name: ${MANIFEST.name}`
     ),
     line(
-      `Version: ${manifest.version}`
+      `Version: ${MANIFEST.version}`
     ),
     line(
       `Mode: ${getMode()}`
@@ -5526,7 +5528,7 @@ const PKG = 'ipscan';
 
     check(
       'Manifest',
-      manifest.name === PKG
+      MANIFEST.name === PKG
     );
 
     check(
@@ -5564,9 +5566,14 @@ const PKG = 'ipscan';
       typeof Worker !== 'undefined'
     );
 
+    const freeUserProxy = getFreeUserProxy();
     check(
       'Proxy integration',
-      state.workingProxies.length > 0
+      Boolean(
+        freeUserProxy &&
+        typeof freeUserProxy.getWorkingProxies === 'function' &&
+        typeof freeUserProxy.rescan === 'function'
+      )
     );
 
     check(
@@ -6009,7 +6016,7 @@ const PKG = 'ipscan';
         )
       ) {
         if (
-          !manifest.commands.includes(name)
+          !MANIFEST.commands.includes(name)
         ) {
           throw new Error(
             `COMMAND_NOT_DECLARED:${name}`
@@ -6036,7 +6043,7 @@ const PKG = 'ipscan';
     } catch (error) {
       for (
         const name
-        of manifest.commands
+        of MANIFEST.commands
       ) {
         try {
           api.unregisterCommand(name);
@@ -6063,7 +6070,7 @@ const PKG = 'ipscan';
     ) {
       for (
         const name
-        of manifest.commands
+        of MANIFEST.commands
       ) {
         try {
           bridge.unregisterCommand(name);
@@ -6081,7 +6088,7 @@ const PKG = 'ipscan';
   };
 
   globalThis[GLOBAL_KEY] = Object.freeze({
-    manifest,
+    manifest: MANIFEST,
     install,
     uninstall
   });
