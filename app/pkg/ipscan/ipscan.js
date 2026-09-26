@@ -25,8 +25,8 @@
   const GLOBAL_KEY = '__munitos_pkg_ipscan';
   
 const PROFILES = Object.freeze({
-    high: Object.freeze({ concurrent: 384, minConcurrent: 192, maxConcurrent: 768, maxFormsToTest: 200, mainTaskLimit: 384, label: 'HIGH-POWER' }),
-    low: Object.freeze({ concurrent: 48, minConcurrent: 24, maxConcurrent: 192, maxFormsToTest: 80, mainTaskLimit: 48, label: 'LOW-POWER (mobile)' })
+    high: Object.freeze({ workerCount: 8, minWorkers: 2, maxWorkers: 12, concurrent: 384, minConcurrent: 192, maxConcurrent: 768, maxFormsToTest: 200, mainTaskLimit: 384, label: 'HIGH-POWER' }),
+    low: Object.freeze({ workerCount: 2, minWorkers: 1, maxWorkers: 6, concurrent: 48, minConcurrent: 24, maxConcurrent: 192, maxFormsToTest: 80, mainTaskLimit: 48, label: 'LOW-POWER (mobile)' })
   });
   const PROFILE_TIMINGS = Object.freeze({ high: Object.freeze({ timeout: 10000, probeTimeout: 6000 }), low: Object.freeze({ timeout: 10000, probeTimeout: 8000 }) });
 
@@ -5424,7 +5424,7 @@ const PROFILES = Object.freeze({
       CONFIG.CACHE_MAX_ENTRIES
     );
 
-    const workerPool = new WorkerPool(profile.concurrent);
+    const workerPool = new WorkerPool(profile.workerCount);
 
     workerPool.start();
 

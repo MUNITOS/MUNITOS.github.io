@@ -23,10 +23,6 @@
   const PKG = 'monitor';
   const VERSION = MANIFEST.version;
   const GLOBAL_KEY = '__munitos_pkg_monitor';
-  const PROFILES = Object.freeze({
-    high: Object.freeze({ concurrent: 384, minConcurrent: 192, maxConcurrent: 768, maxFormsToTest: 200, mainTaskLimit: 384, label: 'HIGH-POWER' }),
-    low: Object.freeze({ concurrent: 48, minConcurrent: 24, maxConcurrent: 192, maxFormsToTest: 80, mainTaskLimit: 48, label: 'LOW-POWER (mobile)' })
-  });
 
   const COOKIE_KEY = 'munitos-monitor:v1';
   const HISTORY_MAX = 48;
@@ -344,12 +340,12 @@
       state.frameStats.fps = state.frameStats.fps === 0 ? fps : state.frameStats.fps * 0.85 + fps * 0.15;
       if (delta > 20) state.frameStats.dropped += Math.max(1, Math.round(delta / 16.67) - 1);
     }
-    requestAnimationFrame(updateFrameStats);
+    state.raf = requestAnimationFrame(updateFrameStats);
   };
   const startFrameMonitor = () => {
     if (state.frameStats.lastTime) return;
     state.frameStats.lastTime = performance.now();
-    requestAnimationFrame(updateFrameStats);
+    state.raf = requestAnimationFrame(updateFrameStats);
   };
   const sampleEventLoopLag = () => new Promise(resolve => {
     const started = performance.now();

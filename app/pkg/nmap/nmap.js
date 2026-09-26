@@ -22,13 +22,13 @@
 
   
   const PROFILES = Object.freeze({
-    high: Object.freeze({ concurrent: 384, minConcurrent: 192, maxConcurrent: 768, maxFormsToTest: 200, mainTaskLimit: 384, label: 'HIGH-POWER' }),
-    low: Object.freeze({ concurrent: 48, minConcurrent: 24, maxConcurrent: 192, maxFormsToTest: 80, mainTaskLimit: 48, label: 'LOW-POWER (mobile)' })
+    high: Object.freeze({ workerCount: 8, minWorkers: 2, maxWorkers: 12, networkConcurrency: 32, maxNetworkConcurrency: 64, concurrent: 384, minConcurrent: 192, maxConcurrent: 768, maxFormsToTest: 200, mainTaskLimit: 384, label: 'HIGH-POWER' }),
+    low: Object.freeze({ workerCount: 2, minWorkers: 1, maxWorkers: 6, networkConcurrency: 8, maxNetworkConcurrency: 24, concurrent: 48, minConcurrent: 24, maxConcurrent: 192, maxFormsToTest: 80, mainTaskLimit: 48, label: 'LOW-POWER (mobile)' })
   });
-  const DEFAULT_WORKERS = PROFILES.high.concurrent;
-  const MAX_WORKERS = PROFILES.high.maxConcurrent;
+  const DEFAULT_WORKERS = PROFILES.high.networkConcurrency;
+  const MAX_WORKERS = PROFILES.high.maxNetworkConcurrency;
   const MIN_WORKERS = 1;
-  const LOW_WORKERS = PROFILES.low.concurrent;
+  const LOW_WORKERS = PROFILES.low.networkConcurrency;
   const DEFAULT_TIMEOUT = 1000;
   const LOW_TIMEOUT = 2500;
   const YIELD_EVERY = 24;
@@ -49,10 +49,12 @@
     'CREDITS','CREDITS.txt','humans.txt','ads.txt','.well-known/security.txt'
   ]);
   const yieldToBrowser = () => new Promise(resolve => setTimeout(resolve, 0));
-  const clampWorkers = value => {
+  const getProfile = profileName => profileName === 'low' ? PROFILES.low : PROFILES.high;
+  const clampWorkers = (value, profileName = 'high') => {
+    const profile = getProfile(profileName);
     const num = Number(value);
-    if (!Number.isFinite(num) || num <= 0) return DEFAULT_WORKERS;
-    return Math.max(MIN_WORKERS, Math.min(Math.floor(num), MAX_WORKERS));
+    if (!Number.isFinite(num) || num <= 0) return profile.networkConcurrency;
+    return Math.max(MIN_WORKERS, Math.min(Math.floor(num), profile.maxNetworkConcurrency));
   };
   const getNetworkApi = () => {
     try { return globalThis.__FreeUserProxy?.api?.proxy || null; } catch { return null; }
@@ -60,7 +62,7 @@
   const networkFetch = async (url, options = {}) => {
     const network = getNetworkApi();
     if (!network?.fetch) throw new Error('FreeUserProxy network API is not available.');
-    return network.fetch(url, options);
+    return network.fetch(url, options || {});
   };
   const generateRandomPath = () => {
     const rand = Math.random().toString(36).slice(2, 12);
@@ -203,8 +205,12 @@
     let nextIndex = 0;
     let completed = 0;
     let lastProgress = 0;
+    const profile = getProfile(options.profile);
     const timeout = Math.max(1, Number(options.timeout) || DEFAULT_TIMEOUT);
-    const concurrency = clampWorkers(options.concurrency);
+    const concurrency = clampWorkers(options.concurrency, options.profile);
+    const laneCount = Math.min(ports.length, profile.workerCount, concurrency);
+    const baseLaneSize = Math.floor(concurrency / laneCount);
+    const remainder = concurrency % laneCount;
     const emitProgress = force => {
       const progress = Math.floor((completed / ports.length) * 100);
       if (force || progress >= lastProgress + 5 || progress === 100) {
@@ -212,33 +218,31 @@
         live(`  Progress: ${progress}% (${completed}/${ports.length})`, 'muted');
       }
     };
-    const worker = async () => {
-      let iter = 0;
+    const worker = async laneSize => {
       while (true) {
-        const index = nextIndex++;
-        if (index >= ports.length) return;
-        const port = ports[index];
-        try {
-          const result = await probePort(baseUrl, port, timeout);
-          if (result.reachable) {
-            openMap.set(port, result);
-          } else {
-            closedCount++;
-          }
-        } catch {
-          errorCount++;
-        } finally {
-          completed++;
-          iter++;
-          emitProgress(false);
-          if (iter % YIELD_EVERY === 0) await yieldToBrowser();
+        const batch = [];
+        while (batch.length < laneSize && nextIndex < ports.length) {
+          const index = nextIndex++;
+          const port = ports[index];
+          batch.push((async () => {
+            try {
+              const result = await probePort(baseUrl, port, timeout);
+              if (result.reachable) openMap.set(port, result);
+              else closedCount++;
+            } catch {
+              errorCount++;
+            } finally {
+              completed++;
+              emitProgress(false);
+            }
+          })());
         }
+        if (!batch.length) return;
+        await Promise.all(batch);
+        if (completed % YIELD_EVERY === 0) await yieldToBrowser();
       }
     };
-    const workerCount = Math.min(concurrency, ports.length);
-    const workers = [];
-    for (let i = 0; i < workerCount; i++) workers.push(worker());
-    await Promise.all(workers);
+    await Promise.all(Array.from({length: laneCount}, (_, index) => worker(baseLaneSize + (index < remainder ? 1 : 0))));
     emitProgress(true);
     return {
       openPorts: [...openMap.values()],
@@ -250,58 +254,43 @@
     const timeout = Math.max(1, Number(options.timeout) || DEFAULT_TIMEOUT);
     const u = new URL(baseUrl);
     const results = [];
-    const concurrency = Math.max(1, Math.min(ports.length, clampWorkers(options.concurrency), PROFILES[options.profile === 'low' ? 'low' : 'high'].mainTaskLimit));
+    const profile = getProfile(options.profile);
+    const concurrency = Math.max(1, Math.min(ports.length, clampWorkers(options.concurrency, options.profile), profile.mainTaskLimit));
+    const laneCount = Math.min(ports.length, profile.workerCount, concurrency);
+    const baseLaneSize = Math.floor(concurrency / laneCount);
+    const remainder = concurrency % laneCount;
     let nextIndex = 0;
-    const worker = async () => {
-      let iter = 0;
+    const worker = async laneSize => {
       while (true) {
-        const index = nextIndex++;
-        if (index >= ports.length) return;
-        const item = ports[index];
-        const port = item.port;
-        const url = `${u.protocol}//${u.hostname}:${port}/`;
-        try {
-          const result = await fetchCorsText(url, timeout);
-          if (result) {
-            const corsText = result.headers.allowOrigin
-              ? `CORS: ${result.headers.allowOrigin}${result.headers.allowCredentials === 'true' ? ' (credentials)' : ''}`
-              : 'CORS: not set';
-            results.push({
-              port,
-              status: `HTTP ${result.status}`,
-              cors: corsText,
-              server: result.headers.server,
-              poweredBy: result.headers.poweredBy
-            });
-          } else {
-            const reachable = await probeNoCors(url, timeout);
-            results.push({
-              port,
-              status: reachable ? 'HTTP (opaque)' : 'unreachable',
-              cors: 'CORS: blocked',
-              server: '',
-              poweredBy: ''
-            });
-          }
-        } catch {
-          results.push({
-            port,
-            status: 'error',
-            cors: 'CORS: blocked',
-            server: '',
-            poweredBy: ''
-          });
-        } finally {
-          iter++;
-          if (iter % YIELD_EVERY === 0) await yieldToBrowser();
+        const batch = [];
+        while (batch.length < laneSize && nextIndex < ports.length) {
+          const index = nextIndex++;
+          const item = ports[index];
+          const port = item.port;
+          const url = `${u.protocol}//${u.hostname}:${port}/`;
+          batch.push((async () => {
+            try {
+              const result = await fetchCorsText(url, timeout);
+              if (result) {
+                const corsText = result.headers.allowOrigin
+                  ? `CORS: ${result.headers.allowOrigin}${result.headers.allowCredentials === 'true' ? ' (credentials)' : ''}`
+                  : 'CORS: not set';
+                results.push({ port, status: `HTTP ${result.status}`, cors: corsText, server: result.headers.server, poweredBy: result.headers.poweredBy });
+              } else {
+                const reachable = await probeNoCors(url, timeout);
+                results.push({ port, status: reachable ? 'OPEN' : 'CLOSED', cors: null, server: null, poweredBy: null });
+              }
+            } catch {}
+          })());
         }
+        if (!batch.length) return;
+        await Promise.all(batch);
       }
     };
-    const workers = [];
-    for (let i = 0; i < concurrency; i++) workers.push(worker());
-    await Promise.all(workers);
+    await Promise.all(Array.from({length: laneCount}, (_, index) => worker(baseLaneSize + (index < remainder ? 1 : 0))));
     return results.sort((a, b) => a.port - b.port);
   };
+
   let PORT_DB_CACHE = null;
   const loadPorts = async () => {
     if (PORT_DB_CACHE !== null) return PORT_DB_CACHE;
@@ -329,13 +318,14 @@
     };
     return fallback[port] || 'unknown';
   };
-  const parseScanArgs = (args, defaults) => {
+  const parseScanArgs = (args, defaults, profileName = 'high') => {
     const options = {
       target: '',
       ports: null,
       topPorts: null,
       excludePorts: [],
       openOnly: false,
+      profile: profileName,
       concurrency: defaults.concurrency,
       timeout: defaults.timeout,
       version: false,
@@ -380,7 +370,7 @@
         options.openOnly = true;
       } else if ((arg === '-w' || arg === '--workers' || arg === '--concurrency') && i + 1 < args.length) {
         const value = parseInt(args[++i], 10);
-        if (Number.isInteger(value) && value > 0) options.concurrency = clampWorkers(value);
+        if (Number.isInteger(value) && value > 0) options.concurrency = clampWorkers(value, profileName);
       } else if (arg === '--timeout' && i + 1 < args.length) {
         const value = parseInt(args[++i], 10);
         if (Number.isInteger(value) && value > 0) options.timeout = value;
@@ -407,7 +397,7 @@
     const defaults = isLow
       ? { concurrency: LOW_WORKERS, timeout: LOW_TIMEOUT }
       : { concurrency: DEFAULT_WORKERS, timeout: DEFAULT_TIMEOUT };
-    const options = parseScanArgs(args, defaults);
+    const options = parseScanArgs(args, defaults, isLow ? 'low' : 'high');
     if (options.help) return { kind: 'help', isLow };
     if (options.version) {
       return { kind: 'version', text: `nmap version ${MANIFEST.version}` };
@@ -441,7 +431,8 @@
     const origin = `${baseUrlObj.protocol}//${baseUrlObj.host}`;
     const modeLabel = isLow ? 'LOWSCAN' : 'NMAP';
     live(`[${modeLabel}] Target: ${origin}`, 'accent');
-    live(`  Ports: ${totalPorts} | Workers: ${options.concurrency} | Timeout: ${options.timeout}ms`, 'muted');
+    const activeProfile = getProfile(options.profile);
+    live(`  Ports: ${totalPorts} | Workers: ${activeProfile.workerCount} | Concurrency: ${options.concurrency} | Timeout: ${options.timeout}ms`, 'muted');
     spacer();
     const serviceDbPromise = loadPorts();
     await yieldToBrowser();
@@ -457,7 +448,7 @@
     }
     spacer();
     await yieldToBrowser();
-    live(`[Phase 2/3] Port scan (${totalPorts} ports, ${options.concurrency} workers)`, 'accent');
+    live(`[Phase 2/3] Port scan (${totalPorts} ports, ${activeProfile.workerCount} workers, ${options.concurrency} concurrent probes)`, 'accent');
     const phase2Start = Date.now();
     const scanResults = await scanPorts(baseUrl, selectedPorts, options, live);
     const serviceDb = await serviceDbPromise;
@@ -511,7 +502,7 @@
     api.line('  --top-ports <number>      Scan top common ports', 'muted'),
     api.line('  --exclude-ports <ports>   Exclude specific ports', 'muted'),
     api.line('  --open                    Show only open ports', 'muted'),
-    api.line('  -w, --workers <number>    Worker pool size (1-' + MAX_WORKERS + ', default ' + (isLow ? LOW_WORKERS : DEFAULT_WORKERS) + ')', 'muted'),
+    api.line('  -w, --workers <number>    Concurrent probes (1-' + (isLow ? PROFILES.low.maxNetworkConcurrency : PROFILES.high.maxNetworkConcurrency) + ', default ' + (isLow ? LOW_WORKERS : DEFAULT_WORKERS) + ')', 'muted'),
     api.line('  --timeout <ms>            Request timeout (default ' + (isLow ? LOW_TIMEOUT : DEFAULT_TIMEOUT) + 'ms)', 'muted'),
     api.line('  --version                 Show version information', 'muted'),
     api.line('  --help                    Show this help message', 'muted'),
@@ -519,7 +510,7 @@
     api.line('Notes:', 'accent'),
     api.line('  - Default mode scans all 65535 TCP ports unless -p or --top-ports is used.', 'muted'),
     api.line('  - lowscan uses a small worker pool + longer timeout, tuned for mobile/low-end devices.', 'muted'),
-    api.line('  - The scan yields to the browser between batches; the page stays responsive.', 'muted'),
+    api.line('  - Worker count and network concurrency are kept separate; the scan yields between batches.', 'muted'),
     api.spacer(),
     api.line('Examples:', 'accent'),
     api.line('  nmap example.com', 'muted'),
@@ -540,13 +531,6 @@
         if (extracted.args.length === 0) {
           return renderHelp(api, extracted.isLow);
         }
-        const probe = parseScanArgs(
-          extracted.args,
-          extracted.isLow
-            ? { concurrency: LOW_WORKERS, timeout: LOW_TIMEOUT }
-            : { concurrency: DEFAULT_WORKERS, timeout: DEFAULT_TIMEOUT }
-        );
-        if (probe.help) return renderHelp(api, extracted.isLow);
         const result = await runScanner(extracted.args, extracted.isLow, api);
         if (result.kind === 'help') return renderHelp(api, result.isLow);
         if (result.kind === 'version') return [api.line(result.text, 'accent')];

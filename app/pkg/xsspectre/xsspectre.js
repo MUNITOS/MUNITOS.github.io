@@ -25,8 +25,8 @@
   const GLOBAL_KEY = '__munitos_pkg_xsspectre';
 
 const PROFILES = Object.freeze({
-    high: Object.freeze({ concurrent: 384, minConcurrent: 192, maxConcurrent: 768, maxFormsToTest: 200, mainTaskLimit: 384, label: 'HIGH-POWER' }),
-    low: Object.freeze({ concurrent: 48, minConcurrent: 24, maxConcurrent: 192, maxFormsToTest: 80, mainTaskLimit: 48, label: 'LOW-POWER (mobile)' })
+    high: Object.freeze({ workerCount: 8, minWorkers: 2, maxWorkers: 12, concurrent: 384, minConcurrent: 192, maxConcurrent: 768, maxFormsToTest: 200, mainTaskLimit: 384, label: 'HIGH-POWER' }),
+    low: Object.freeze({ workerCount: 2, minWorkers: 1, maxWorkers: 6, concurrent: 48, minConcurrent: 24, maxConcurrent: 192, maxFormsToTest: 80, mainTaskLimit: 48, label: 'LOW-POWER (mobile)' })
   });
 
   const DEFAULTS = Object.freeze({
@@ -68,7 +68,7 @@ const PROFILES = Object.freeze({
         domSinks: 0, fpFiltered: 0, mirrorFiltered: 0, alertsFired: 0, paramsFound: 0,
         altDetections: 0, firewallAbsent: 0, encodingsTried: 0, encodingWins: 0,
         superHits: 0, badHits: 0, cveHits: 0,
-        dynamicWorkers: DEFAULTS.concurrent, workerAdjustments: 0,
+        dynamicWorkers: 1, dynamicConcurrency: DEFAULTS.concurrent, workerAdjustments: 0,
         payloadsSkipped: 0, tasksSkipped: 0
       },
       startedAt: 0,
@@ -133,31 +133,6 @@ const PROFILES = Object.freeze({
     return { add, flushAll, finish, hasAppend };
   };
 
-  const getFreeUserProxy = () => { try { return globalThis.__FreeUserProxy || null; } catch { return null; } };
-  const prepareProxyList = async (force = false) => {
-    const network = getFreeUserProxy()?.api?.proxy;
-    if (!network) throw new Error('FreeUserProxy is not available.');
-    if (force && typeof network.refresh === 'function') await network.refresh();
-    if (typeof network.ready === 'function') await network.ready();
-    const list = getFreeUserProxy()?.getWorkingProxies?.() || network.getWorkingProxies?.() || [];
-    if (!Array.isArray(list) || !list.length) throw new Error('No working proxies available.');
-    return list.slice();
-  };
-  const getNextProxy = (() => { let cursor = 0; return async () => { const list = await prepareProxyList(); const item = list[cursor % list.length]; cursor = (cursor + 1) % list.length; return item; }; })();
-  const pickUA = () => { try { return getFreeUserProxy()?.getRandomUserAgent?.() || getFreeUserProxy()?.api?.userAgent?.random?.() || ''; } catch { return ''; } };
-  const cmdSetProxy = async ({ args = [] } = {}) => {
-    const value = args.join(' ').trim();
-    const management = getFreeUserProxy()?.api?.management;
-    if (!management) throw new Error('FreeUserProxy management API is not available.');
-    if (!value || value === 'clear' || value === 'none') {
-      const entries = await management.list();
-      for (const entry of entries) await management.remove(entry.template);
-      return true;
-    }
-    if (!value.includes('{url}')) throw new Error('template must contain {url}');
-    await management.add('command', value);
-    return true;
-  };
 
   const applyProfile = (profileName) => {
     const p = PROFILES[profileName] || PROFILES.low;
@@ -635,11 +610,9 @@ const PROFILES = Object.freeze({
       if (!this.sourceUrl) this.sourceUrl = this._makeSource();
       const hw = (typeof navigator !== 'undefined' && navigator.hardwareConcurrency) || 4;
       const profile = PROFILES[state.runtime.activeProfile] || PROFILES.low;
-      const desired = size || profile.concurrent;
-      const safeSize = Math.max(
-        profile.minConcurrent,
-        Math.min(desired, Math.max(profile.minConcurrent, hw * 6), profile.maxConcurrent)
-      );
+      const desired = Number(size) > 0 ? Number(size) : profile.workerCount;
+      const hwCap = Math.max(profile.minWorkers, Math.min(profile.maxWorkers, hw * 2));
+      const safeSize = Math.max(profile.minWorkers, Math.min(desired, hwCap, profile.maxWorkers));
       this.resize(safeSize);
     },
 
@@ -655,7 +628,7 @@ const PROFILES = Object.freeze({
     resize(newSize) {
       if (!this.available) return;
       const profile = PROFILES[state.runtime.activeProfile] || PROFILES.low;
-      newSize = Math.max(profile.minConcurrent, Math.min(profile.maxConcurrent, newSize | 0));
+      newSize = Math.max(profile.minWorkers, Math.min(profile.maxWorkers, newSize | 0));
       while (this.workers.length < newSize) this._spawn();
       while (this.workers.length > newSize) {
         const w = this.workers.pop();
@@ -734,7 +707,7 @@ const PROFILES = Object.freeze({
   const prepareNetworkRequest = async (url, options = {}) => {
     const network = getNetworkApi();
     if (!network?.resolve) throw new Error('FreeUserProxy network API is not available.');
-    return network.resolve(url, options);
+    return network.resolve(url, options || {});
   };
 
   const normalizeHeaders = headers => {
@@ -806,20 +779,22 @@ const PROFILES = Object.freeze({
       this._lastAdjust = now;
       const { avgLatency, errorRate, successRate, pending } = metrics;
       let target = this.current;
-      if (errorRate > 0.45) target = Math.max(state.settings.minConcurrent, Math.floor(this.current * 0.6));
-      else if (avgLatency > 6500) target = Math.max(state.settings.minConcurrent, Math.floor(this.current * 0.75));
-      else if (successRate > 0.92 && avgLatency < 700 && pending > 80) target = Math.min(state.settings.maxConcurrent, Math.floor(this.current * 1.4));
-      else if (successRate > 0.88 && avgLatency < 1500) target = Math.min(state.settings.maxConcurrent, Math.floor(this.current * 1.12));
-      target = Math.max(state.settings.minConcurrent, Math.min(state.settings.maxConcurrent, target));
+      const profile = PROFILES[state.runtime.activeProfile] || PROFILES.low;
+      if (errorRate > 0.45) target = Math.max(profile.minConcurrent, Math.floor(this.current * 0.6));
+      else if (avgLatency > 6500) target = Math.max(profile.minConcurrent, Math.floor(this.current * 0.75));
+      else if (successRate > 0.92 && avgLatency < 700 && pending > 80) target = Math.min(profile.maxConcurrent, Math.floor(this.current * 1.4));
+      else if (successRate > 0.88 && avgLatency < 1500) target = Math.min(profile.maxConcurrent, Math.floor(this.current * 1.12));
+      target = Math.max(profile.minConcurrent, Math.min(profile.maxConcurrent, target));
       if (Math.abs(target - this.current) >= 4) {
         const from = this.current;
         this.current = target;
-        WorkerPool.resize(target);
         state.runtime.stats.workerAdjustments++;
+        state.runtime.stats.dynamicConcurrency = this.current;
         this.history.push({ from, to: target, ts: now });
         if (this.history.length > 30) this.history.shift();
       }
-      state.runtime.stats.dynamicWorkers = this.current;
+      state.runtime.stats.dynamicConcurrency = this.current;
+      state.runtime.stats.dynamicWorkers = WorkerPool.size;
       return this.current;
     },
     reset() {
@@ -827,7 +802,9 @@ const PROFILES = Object.freeze({
       this.current = profile.concurrent;
       this.history = [];
       this._lastAdjust = 0;
-      if (WorkerPool.available) WorkerPool.resize(this.current);
+      if (WorkerPool.available) WorkerPool.resize(profile.workerCount);
+      state.runtime.stats.dynamicConcurrency = this.current;
+      state.runtime.stats.dynamicWorkers = WorkerPool.size;
     }
   };
 
@@ -1680,7 +1657,8 @@ const PROFILES = Object.freeze({
     add(`  Profile       : ${profile.label}`, 'accent');
     add(`  Severity      : ${sev}`, 'danger');
     add(`  Elapsed       : ${elapsed}s`, 'muted');
-    add(`  Workers (fin) : ${DynamicWorkerAI.current}`, 'muted');
+    add(`  Workers (fin) : ${WorkerPool.size}`, 'muted');
+    add(`  Concurrency    : ${DynamicWorkerAI.current}`, 'muted');
     add(`  Requests      : ${stats.requests}`, 'muted');
     add(`  Mirrors cut   : ${stats.mirrorFiltered} (false positives eliminated)`, stats.mirrorFiltered > 0 ? 'success' : 'muted');
     add(`  Confirmed alerts: ${stats.alertsFired}`, stats.alertsFired > 0 ? 'danger' : 'muted');
@@ -1748,7 +1726,7 @@ const PROFILES = Object.freeze({
     state.runtime.stats.alertsFired = 0;
     state.runtime.stats.reflected = 0;
     state.runtime.stats.verified = 0;
-    WorkerPool.init(profile.concurrent);
+    WorkerPool.init(profile.workerCount);
     DynamicWorkerAI.reset();
 
     add('==============================================================', 'pink');
@@ -1925,7 +1903,7 @@ const PROFILES = Object.freeze({
 
     state.runtime.startedAt = Date.now();
     state.runtime.stats.mirrorFiltered = 0;
-    WorkerPool.init(profile.concurrent);
+    WorkerPool.init(profile.workerCount);
     DynamicWorkerAI.reset();
 
     add('==============================================================', 'danger');
@@ -1984,7 +1962,7 @@ const PROFILES = Object.freeze({
 
     state.runtime.startedAt = Date.now();
     state.runtime.stats.mirrorFiltered = 0;
-    WorkerPool.init(profile.concurrent);
+    WorkerPool.init(profile.workerCount);
     DynamicWorkerAI.reset();
 
     add('==============================================================', 'orange');
@@ -2037,7 +2015,7 @@ const PROFILES = Object.freeze({
 
     state.runtime.startedAt = Date.now();
     state.runtime.stats.mirrorFiltered = 0;
-    WorkerPool.init(profile.concurrent);
+    WorkerPool.init(profile.workerCount);
     DynamicWorkerAI.reset();
 
     add('==============================================================', 'yellow');
@@ -2109,8 +2087,9 @@ const PROFILES = Object.freeze({
       line(`Security      : ${MANIFEST.securityLevel.toUpperCase()}`),
       line(`Installed     : ${state.installed ? 'yes' : 'no'}`, state.installed ? 'accent' : 'danger'),
       line(`Active profile: ${profile.label}`, 'accent'),
-      line(`  concurrent  : ${profile.concurrent}`),
+      line(`  concurrency : ${profile.concurrent}`),
       line(`  range       : ${profile.minConcurrent} — ${profile.maxConcurrent}`),
+      line(`  workers     : ${profile.workerCount} (${profile.minWorkers} — ${profile.maxWorkers})`),
       line(`Worker mode   : ${WorkerPool.available ? 'enabled' : 'fallback'}`),
       line(`Timeout       : ${state.settings.timeout}ms`),
       line(`AlertWait     : ${state.settings.alertWaitMs}ms`),
@@ -2180,8 +2159,8 @@ const PROFILES = Object.freeze({
     check('BadAI payloads', BAD_AI_PAYLOADS.length >= 20, `${BAD_AI_PAYLOADS.length} offensive vectors`);
     check('Alt methods', altMethods.length >= 9, `${altMethods.length}`);
     check('Baseline filter', typeof buildBaseline === 'function' && typeof isMirrorResponse === 'function');
-    check('HIGH profile', PROFILES.high.concurrent === 384 && PROFILES.high.maxConcurrent === 768);
-    check('LOW profile', PROFILES.low.concurrent === 48 && PROFILES.low.maxConcurrent === 192);
+    check('HIGH profile', PROFILES.high.workerCount === 8 && PROFILES.high.minWorkers === 2 && PROFILES.high.maxWorkers === 12 && PROFILES.high.concurrent === 384 && PROFILES.high.maxConcurrent === 768);
+    check('LOW profile', PROFILES.low.workerCount === 2 && PROFILES.low.minWorkers === 1 && PROFILES.low.maxWorkers === 6 && PROFILES.low.concurrent === 48 && PROFILES.low.maxConcurrent === 192);
     checks.push(spacer());
     checks.push(line(pass ? 'Self-test: PASS' : 'Self-test: FAIL', pass ? 'accent' : 'danger'));
     return checks;
@@ -2244,7 +2223,7 @@ const PROFILES = Object.freeze({
       );
       if (ok === false) throw new Error('PACKAGE_COMMAND_REGISTRATION_FAILED');
       state.installed = true;
-      try { applyProfile('low'); WorkerPool.init(PROFILES.low.concurrent); } catch {}
+      try { applyProfile('low'); WorkerPool.init(PROFILES.low.workerCount); } catch {}
       return [];
     } catch {
       try { api.unregisterCommand(COMMAND.name); } catch {}

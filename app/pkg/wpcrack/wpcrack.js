@@ -93,7 +93,9 @@ const PROFILES = Object.freeze({
       activeProfile: 'high',
       baseline: null,
       lockoutDetected: false,
-      attempts: 0
+      attempts: 0,
+      requestErrors: 0,
+      requestErrorSamples: []
     }
   };
 
@@ -102,22 +104,6 @@ const PROFILES = Object.freeze({
     return state.api;
   };
 
-  const getFreeUserProxy = () => { try { return globalThis.__FreeUserProxy || null; } catch { return null; } };
-  const proxied = (tpl, url) => {
-    if (!tpl || typeof tpl !== 'string' || !tpl.includes('{url}')) throw new Error('Invalid proxy template');
-    return tpl.replace(/\{url\}/g, encodeURIComponent(String(url)));
-  };
-  const prepareProxyList = async (force = false) => {
-    const network = getFreeUserProxy()?.api?.proxy;
-    if (!network) throw new Error('FreeUserProxy is not available.');
-    if (force && typeof network.refresh === 'function') await network.refresh();
-    if (typeof network.ready === 'function') await network.ready();
-    const list = getFreeUserProxy()?.getWorkingProxies?.() || network.getWorkingProxies?.() || [];
-    if (!Array.isArray(list) || !list.length) throw new Error('No working proxies available.');
-    return list.slice();
-  };
-  const nextProxy = (() => { let cursor = 0; return async () => { const list = await prepareProxyList(); const item = list[cursor % list.length]; cursor = (cursor + 1) % list.length; return item; }; })();
-  const randomUA = () => { try { return getFreeUserProxy()?.getRandomUserAgent?.() || getFreeUserProxy()?.api?.userAgent?.random?.() || ''; } catch { return ''; } };
   const L = (t, c = 'output') => ensureApi().line(String(t ?? ''), c);
   const SP = () => ensureApi().spacer();
   const sleep = ms => new Promise(r => setTimeout(r, Math.max(0, Number(ms) || 0)));
@@ -162,14 +148,27 @@ const PROFILES = Object.freeze({
   async function fetchWithProxy(url, opts = {}) {
     const network = getNetworkApi();
     if (!network?.fetch) throw new Error('FreeUserProxy network API is not available.');
-    const { timeout: _timeout, ...requestOptions } = opts || {};
-    return network.fetch(url, requestOptions);
+    return network.fetch(url, opts || {});
   }
 
-  const fetchText = async (url, opts = {}) => {
-    const res = await fetchWithProxy(url, opts);
-    return { status: res.status, text: await res.text(), headers: res.headers, res };
-  };
+  function recordRequestError(error) {
+    state.runtime.requestErrors++;
+    if (state.runtime.requestErrorSamples.length < 8) {
+      const code = error?.code ? String(error.code) : 'NETWORK_ERROR';
+      const message = error?.message ? String(error.message) : String(error || 'Request failed');
+      state.runtime.requestErrorSamples.push(`${code}: ${message}`);
+    }
+  }
+
+  async function fetchText(url, opts = {}) {
+    try {
+      const res = await fetchWithProxy(url, opts);
+      return { status: res.status, text: await res.text(), headers: res.headers, res };
+    } catch (error) {
+      recordRequestError(error);
+      throw error;
+    }
+  }
 
   // ============ Baseline ============
   async function buildBaseline(origin) {
@@ -559,13 +558,20 @@ const PROFILES = Object.freeze({
     out.push(L('├── 📊 SUMMARY', 'accent'));
     const criticalCount = paths.filter(p => p.risk === 'critical').length;
     const highCount = paths.filter(p => p.risk === 'high').length;
-    const verdict = criticalCount > 0 ? 'CRITICAL' : highCount > 0 ? 'HIGH' : paths.length > 0 ? 'MEDIUM' : 'CLEAN';
-    const verdictCls = criticalCount > 0 ? 'danger' : highCount > 0 ? 'warning' : paths.length > 0 ? 'accent' : 'success';
+    const requestErrors = Math.max(0, Number(options?.errors) || 0);
+    const verdict = criticalCount > 0 ? 'CRITICAL' : highCount > 0 ? 'HIGH' : paths.length > 0 ? 'MEDIUM' : requestErrors > 0 ? 'INCOMPLETE' : 'CLEAN';
+    const verdictCls = criticalCount > 0 ? 'danger' : highCount > 0 ? 'warning' : paths.length > 0 ? 'accent' : requestErrors > 0 ? 'warning' : 'success';
     out.push(L(`│   ├── Verdict: ${verdict}`, verdictCls));
     out.push(L(`│   ├── Critical paths: ${criticalCount}`, criticalCount > 0 ? 'danger' : 'muted'));
     out.push(L(`│   ├── High-risk paths: ${highCount}`, highCount > 0 ? 'warning' : 'muted'));
     out.push(L(`│   ├── Total paths found: ${paths.length}`, 'muted'));
-    out.push(L(`│   └── Total users found: ${users.length}`, users.length > 0 ? 'warning' : 'muted'));
+    out.push(L(`│   ├── Total users found: ${users.length}`, users.length > 0 ? 'warning' : 'muted'));
+    out.push(L(`│   └── Network errors: ${requestErrors}`, requestErrors > 0 ? 'warning' : 'muted'));
+    if (requestErrors > 0) {
+      out.push(L('│      Scan results are incomplete; network failures were not treated as CLEAN.', 'warning'));
+      const samples = Array.isArray(options?.samples) ? options.samples : [];
+      for (const sample of samples.slice(0, 4)) out.push(L(`│      • ${sample}`, 'dim'));
+    }
 
     out.push(L('═══════════════════════════════════════════════', 'accent'));
     out.push(L('⚠️  AUTHORIZED TESTING ONLY', 'danger'));
@@ -608,6 +614,8 @@ const PROFILES = Object.freeze({
   // ============ Main Commands ============
   async function cmdScan(target, profileName, api) {
     applyProfile(profileName);
+    state.runtime.requestErrors = 0;
+    state.runtime.requestErrorSamples = [];
     const target_ = normalizeTarget(target);
 
     api.append([L(`◈ WPCrack scan — ${PROFILES[profileName].label}`, 'accent')]);
@@ -630,7 +638,6 @@ const PROFILES = Object.freeze({
     api.append([L(`◈ Enumerating users...`, 'muted')]);
     const usersREST = await enumerateUsersREST(target_);
     const usersAuthor = await enumerateUsersAuthor(target_);
-    // Dedupe
     const seen = new Set();
     const users = [];
     for (const u of [...usersREST, ...usersAuthor]) {
@@ -638,7 +645,12 @@ const PROFILES = Object.freeze({
       if (key && !seen.has(key)) { seen.add(key); users.push(u); }
     }
 
-    const report = renderScanReport(target_, detect, paths, users, {});
+    const requestDiagnostics = {
+      errors: state.runtime.requestErrors,
+      samples: state.runtime.requestErrorSamples.slice(),
+      testedPaths: WP_PATHS.length
+    };
+    const report = renderScanReport(target_, detect, paths, users, requestDiagnostics);
     api.append(report);
     return [];
   }

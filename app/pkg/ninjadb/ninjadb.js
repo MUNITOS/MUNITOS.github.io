@@ -21,8 +21,8 @@
   });
 
 const PROFILES = Object.freeze({
-    high: Object.freeze({ concurrent: 384, minConcurrent: 192, maxConcurrent: 768, maxFormsToTest: 200, mainTaskLimit: 384, label: 'HIGH-POWER' }),
-    low: Object.freeze({ concurrent: 48, minConcurrent: 24, maxConcurrent: 192, maxFormsToTest: 80, mainTaskLimit: 48, label: 'LOW-POWER (mobile)' })
+    high: Object.freeze({ workerCount: 8, minWorkers: 2, maxWorkers: 12, concurrent: 384, minConcurrent: 192, maxConcurrent: 768, maxFormsToTest: 200, mainTaskLimit: 384, label: 'HIGH-POWER' }),
+    low: Object.freeze({ workerCount: 2, minWorkers: 1, maxWorkers: 6, concurrent: 48, minConcurrent: 24, maxConcurrent: 192, maxFormsToTest: 80, mainTaskLimit: 48, label: 'LOW-POWER (mobile)' })
   });
 
   const DB_BASE = (() => { try { return new URL('../../assets/DB/', document.baseURI).href; } catch { return '/assets/DB/'; } })();
@@ -53,8 +53,7 @@ const PROFILES = Object.freeze({
   const fetchNetwork = async (url, options = {}) => {
     const network = getNetworkApi();
     if (!network?.fetch) throw new Error('FreeUserProxy network API is not available.');
-    const { timeout: _timeout, ...requestOptions } = options || {};
-    return network.fetch(url, requestOptions);
+    return network.fetch(url, options || {});
   };
 
   function getFreeUserProxy() { try { return globalThis.__FreeUserProxy || null; } catch { return null; } }
@@ -87,16 +86,44 @@ const PROFILES = Object.freeze({
     tuneConcurrency(base,s,score){const span=base.maxConcurrent-base.minConcurrent,t=Math.max(0,Math.min(1,(score-30)/70));let concurrent=Math.round(base.minConcurrent+span*t);const hwCap=Math.max(16,s.cores*32);concurrent=Math.min(concurrent,hwCap);concurrent=Math.max(base.minConcurrent,Math.min(base.maxConcurrent,concurrent));return{profile:base,concurrent,reasoning:`score=${score} cores=${s.cores} mem=${s.mem}GB net=${s.effectiveType||'n/a'}`};}
   });
   class AdaptiveWorkerPool {
-    constructor({concurrent,mainTaskLimit}){this.concurrent=Math.max(1,concurrent|0);this.mainTaskLimit=Math.max(1,mainTaskLimit|0);this.active=0;this.cursor=0;this.queue=[];this.stats={dispatched:0,succeeded:0,failed:0,skipped:0};}
+    constructor({workerCount,concurrent,mainTaskLimit}){this.workerCount=Math.max(1,workerCount|0);this.concurrent=Math.max(1,concurrent|0);this.mainTaskLimit=Math.max(1,mainTaskLimit|0);this.active=0;this.cursor=0;this.queue=[];this.stats={dispatched:0,succeeded:0,failed:0,skipped:0};}
     setConcurrency(n){this.concurrent=Math.max(1,n|0);}
-    async run(items,handler){this.queue=Array.isArray(items)?items.slice():[];this.cursor=0;this.stats={dispatched:0,succeeded:0,failed:0,skipped:0};const workerCount=Math.min(this.queue.length,this.concurrent,this.mainTaskLimit);await Promise.all(Array.from({length:workerCount},()=>this._worker(handler)));return this.stats;}
-    async _worker(handler){while(!aborted&&this.cursor<this.queue.length){const idx=this.cursor++,item=this.queue[idx];this.active++;this.stats.dispatched++;try{const result=await handler(item,idx);if(result==='skip')this.stats.skipped++;else this.stats.succeeded++;}catch{this.stats.failed++;}finally{this.active--;}}}
+    async run(items,handler){
+      this.queue=Array.isArray(items)?items.slice():[];
+      this.cursor=0;
+      this.stats={dispatched:0,succeeded:0,failed:0,skipped:0};
+      const total=Math.min(this.queue.length,this.concurrent,this.mainTaskLimit);
+      const lanes=Math.min(this.queue.length,this.workerCount,total||1);
+      if(!lanes)return this.stats;
+      const base=Math.floor(total/lanes);
+      const remainder=total%lanes;
+      await Promise.all(Array.from({length:lanes},(_,index)=>this._worker(handler,base+(index<remainder?1:0))));
+      return this.stats;
+    }
+    async _worker(handler,limit){
+      while(!aborted){
+        const batch=[];
+        while(batch.length<limit&&this.cursor<this.queue.length){
+          const idx=this.cursor++;
+          const item=this.queue[idx];
+          batch.push((async()=>{
+            this.active++;
+            this.stats.dispatched++;
+            try{const result=await handler(item,idx);if(result==='skip')this.stats.skipped++;else this.stats.succeeded++;}
+            catch{this.stats.failed++;}
+            finally{this.active--;}
+          })());
+        }
+        if(!batch.length)break;
+        await Promise.all(batch);
+      }
+    }
   }
   async function tryDirectFetch(url,timeoutMs){
     try{const res=await fetchWithTimeout(url,{method:'GET',redirect:'follow',credentials:'omit',headers:{Accept:'*/*'}},timeoutMs);return{ok:true,res,via:'direct'};}catch(error){const msg=String(error?.message||error);if(/abort/i.test(msg))return{ok:false,reason:'timeout'};return{ok:false,reason:/cors|networkerror|failed to fetch|load failed/i.test(msg)?'cors':'network'};}
   }
   async function tryProxyFetch(url,timeoutMs){
-    try{const network=getNetworkApi();if(!network?.resolve)throw new Error('NO_PROXY_API');const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),timeoutMs);const prepared=await network.resolve(url,{method:'GET',redirect:'follow',credentials:'omit',headers:{Accept:'*/*'}});const res=await globalThis.fetch(prepared.url,{...prepared.options,signal:controller.signal});clearTimeout(timer);return{ok:true,res,via:prepared.direct?'direct':'free-user-proxy',proxy:prepared.proxy||null};}catch(error){return{ok:false,reason:/abort/i.test(String(error?.message||error))?'timeout':'proxy-failed'};}
+    try{const network=getNetworkApi();if(!network?.fetch)throw new Error('NO_PROXY_API');const res=await network.fetch(url,{method:'GET',timeout:timeoutMs,redirect:'follow',credentials:'omit',headers:{Accept:'*/*'}});return{ok:true,res,via:'free-user-proxy',proxy:null};}catch(error){return{ok:false,reason:/timeout|abort/i.test(String(error?.code||error?.message||error))?'timeout':'proxy-failed'};}
   }
 
   function fetchWithTimeout(url, options = {}, timeoutMs = PROBE_TIMEOUT_MS) {
@@ -227,6 +254,7 @@ const PROFILES = Object.freeze({
     const hits = [];
     const viaCount = { direct: 0, proxy: 0 };
     const pool = new AdaptiveWorkerPool({
+      workerCount: profile.workerCount,
       concurrent: aiInfo.effectiveConcurrent,
       mainTaskLimit: profile.mainTaskLimit
     });
@@ -321,7 +349,8 @@ const PROFILES = Object.freeze({
       api.line('═════════════════════════════════════════════', 'accent'),
       api.line(`  target   : ${origin}`, 'muted'),
       api.line(`  profile  : ${profile.label}`, 'purple'),
-      api.line(`  workers  : ${aiInfo.effectiveConcurrent}`, 'purple'),
+      api.line(`  workers  : ${profile.workerCount}`, 'purple'),
+      api.line(`  concurrency : ${aiInfo.effectiveConcurrent}`, 'purple'),
       api.line(`  duration : ${duration.toFixed(1)}s`, 'muted'),
       api.line(`  modules  : ${Object.keys(db).length}`, 'muted'),
       api.spacer()
@@ -428,10 +457,11 @@ const PROFILES = Object.freeze({
     return [];
   };
 
-  window.__munitos_pkg_ninjadb = Object.freeze({
+  const PACKAGE = Object.freeze({
     manifest: MANIFEST,
     install,
     uninstall,
+    NLPAI,
     __internal: Object.freeze({
       PROFILES,
       NLPAI,
@@ -445,4 +475,7 @@ const PROFILES = Object.freeze({
       AdaptiveWorkerPool
     })
   });
+  globalThis.__munitos_pkg_ninjadb = PACKAGE;
+  globalThis.__MUNITOS_NLPAI = NLPAI;
+  globalThis.NLPAI = NLPAI;
 })();

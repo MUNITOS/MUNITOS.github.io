@@ -84,32 +84,10 @@ const PROFILES = Object.freeze({
     try { return globalThis.__FreeUserProxy?.api?.proxy || null; } catch { return null; }
   };
 
-  const getFreeUserProxy = () => { try { return globalThis.__FreeUserProxy || null; } catch { return null; } };
-  const isValidProxyTemplate = template => typeof template === 'string' && template.trim().length > 0 && template.includes('{url}');
-  const proxied = (template, url) => {
-    if (!isValidProxyTemplate(template)) throw new Error('Invalid proxy template');
-    return template.replace(/\{url\}/g, encodeURIComponent(String(url)));
-  };
-  const testCustomProxy = async template => {
-    try { return Boolean((await globalThis.fetch(proxied(template, 'https://httpbin.org/get'), { method: 'GET', cache: 'no-store', credentials: 'omit' }))?.ok); } catch { return false; }
-  };
-  const prepareProxyList = async (force = false) => {
-    const network = getNetworkApi();
-    if (!network) throw new Error('FreeUserProxy is not available.');
-    if (force && typeof network.refresh === 'function') await network.refresh();
-    if (typeof network.ready === 'function') await network.ready();
-    const list = typeof getFreeUserProxy()?.getWorkingProxies === 'function' ? getFreeUserProxy().getWorkingProxies() : (network.getWorkingProxies?.() || []);
-    if (!Array.isArray(list) || !list.length) throw new Error('No working proxies available.');
-    return list.slice();
-  };
-  const getNextProxy = (() => { let cursor = 0; return async () => { const list = await prepareProxyList(); const item = list[cursor % list.length]; cursor = (cursor + 1) % list.length; return item; }; })();
-  const getRandomUserAgent = () => { try { return getFreeUserProxy()?.getRandomUserAgent?.() || getFreeUserProxy()?.api?.userAgent?.random?.() || ''; } catch { return ''; } };
-
   async function fetchWithProxy(url, options = {}) {
     const network = getNetworkApi();
     if (!network?.fetch) throw new Error('FreeUserProxy network API is not available.');
-    const { timeout: _timeout, ...requestOptions } = options || {};
-    return network.fetch(url, requestOptions);
+    return network.fetch(url, options || {});
   }
 
   async function fetchText(url, options = {}) {

@@ -122,35 +122,10 @@
     try { return globalThis.__FreeUserProxy?.api?.proxy || null; } catch { return null; }
   };
 
-  const getFreeUserProxy = () => { try { return globalThis.__FreeUserProxy || null; } catch { return null; } };
-  const proxied = (template, url) => {
-    if (!template || typeof template !== 'string' || !template.includes('{url}')) throw new Error('Invalid proxy template');
-    return template.replace(/\{url\}/g, encodeURIComponent(String(url)));
-  };
-  const testCustomProxy = async (template, testUrl = 'https://httpbin.org/get') => {
-    try {
-      const response = await globalThis.fetch(proxied(template, testUrl), { method: 'GET', cache: 'no-store', credentials: 'omit' });
-      return Boolean(response?.ok);
-    } catch { return false; }
-  };
-  const prepareProxyList = async (forceRefresh = false) => {
-    const network = getNetworkApi();
-    if (!network) throw new Error('FreeUserProxy is not available.');
-    if (forceRefresh && typeof network.refresh === 'function') await network.refresh();
-    if (typeof network.ready === 'function') await network.ready();
-    const fup = getFreeUserProxy();
-    const list = typeof fup?.getWorkingProxies === 'function' ? fup.getWorkingProxies() : (typeof network.getWorkingProxies === 'function' ? network.getWorkingProxies() : []);
-    if (!Array.isArray(list) || list.length === 0) throw new Error('No working proxies available.');
-    return list.slice();
-  };
-  const getNextProxy = (() => { let cursor = 0; return async () => { const list = await prepareProxyList(); const proxy = list[cursor % list.length]; cursor = (cursor + 1) % list.length; return proxy; }; })();
-  const getRandomUserAgent = () => { try { return getFreeUserProxy()?.getRandomUserAgent?.() || getFreeUserProxy()?.api?.userAgent?.random?.() || ''; } catch { return ''; } };
-
   const runWithTimeout = async (url, options = {}) => {
     const network = getNetworkApi();
     if (!network?.fetch) throw new Error('FreeUserProxy network API is not available.');
-    const { timeout: _timeout, ...requestOptions } = options || {};
-    return network.fetch(url, requestOptions);
+    return network.fetch(url, options || {});
   };
 
   const isPublicHost = hostname => {
