@@ -24,24 +24,12 @@
   const VERSION = MANIFEST.version;
   const GLOBAL_KEY = '__munitos_pkg_ipscan';
   
-  const PROFILES = Object.freeze({
-    high: Object.freeze({
-      concurrent: 384,
-      minConcurrent: 192,
-      maxConcurrent: 768,
-      timeout: 10000,
-      probeTimeout: 6000,
-      label: 'HIGH-POWER'
-    }),
-    low: Object.freeze({
-      concurrent: 48,
-      minConcurrent: 24,
-      maxConcurrent: 192,
-      timeout: 10000,
-      probeTimeout: 8000,
-      label: 'LOW-POWER'
-    })
+const PROFILES = Object.freeze({
+    high: Object.freeze({ concurrent: 384, minConcurrent: 192, maxConcurrent: 768, maxFormsToTest: 200, mainTaskLimit: 384, label: 'HIGH-POWER' }),
+    low: Object.freeze({ concurrent: 48, minConcurrent: 24, maxConcurrent: 192, maxFormsToTest: 80, mainTaskLimit: 48, label: 'LOW-POWER (mobile)' })
   });
+  const PROFILE_TIMINGS = Object.freeze({ high: Object.freeze({ timeout: 10000, probeTimeout: 6000 }), low: Object.freeze({ timeout: 10000, probeTimeout: 8000 }) });
+
 
   const CONFIG = Object.freeze({
     DEFAULT_PROFILE: 'high',
@@ -60,11 +48,9 @@
     MAX_BREACHES: 100,
     MAX_HEADERS: 100,
     REQUEST_JITTER_MS: 35,
-    PROXY_REQUIRED: true,
-    ALLOW_DIRECT_FALLBACK: false,
     MAX_REDIRECTS: 5,
-    WORKER_COUNT_HIGH: 4,
-    WORKER_COUNT_LOW: 2,
+    WORKER_COUNT_HIGH: PROFILES.high.concurrent,
+    WORKER_COUNT_LOW: PROFILES.low.concurrent,
     ENABLE_PUBLIC_APIS: true,
     ENABLE_RIPESTAT: true,
     ENABLE_RDAP: true,
@@ -201,10 +187,6 @@
   const state = {
     api: null,
     installed: false,
-    workingProxies: [],
-    customProxy: null,
-    proxyReady: false,
-    proxyIndex: 0
   };
 
   const getApi = () => {
@@ -258,39 +240,36 @@
       .normalize('NFKC')
       .replace(/[^\p{L}\p{N}]+/gu, '');
 
-  const selectUserAgent = () => {
-    try {
-      const fup = globalThis.__FreeUserProxy || null;
-      if (fup && typeof fup.getRandomUserAgent === 'function') {
-        const ua = fup.getRandomUserAgent();
-        if (ua) return ua;
-      }
-    } catch {}
-    return 'Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Mobile Safari/537.36';
+  const getNetworkApi = () => {
+    try { return globalThis.__FreeUserProxy?.api?.proxy || null; } catch { return null; }
   };
 
-  const getFreeUserProxy = () => {
-    try {
-      return window.__FreeUserProxy || globalThis.__FreeUserProxy || null;
-    } catch {
-      return null;
-    }
+  const getFreeUserProxy = () => { try { return globalThis.__FreeUserProxy || null; } catch { return null; } };
+  const selectUserAgent = () => { try { return getFreeUserProxy()?.getRandomUserAgent?.() || getFreeUserProxy()?.api?.userAgent?.random?.() || ''; } catch { return ''; } };
+  const getWorkingProxies = () => { try { return getFreeUserProxy()?.getWorkingProxies?.() || getNetworkApi()?.getWorkingProxies?.() || []; } catch { return []; } };
+  const nextProxy = (() => { let cursor = 0; return () => { const list = getWorkingProxies(); if (!list.length) return null; const item = list[cursor % list.length]; cursor = (cursor + 1) % list.length; return item; }; })();
+  const prepareProxyList = async forceRefresh => {
+    const network = getNetworkApi();
+    if (!network) throw new Error('FreeUserProxy is not available.');
+    if (forceRefresh && typeof network.refresh === 'function') await network.refresh();
+    if (typeof network.ready === 'function') await network.ready();
+    const list = getWorkingProxies();
+    if (!list.length) throw new Error('No working proxies available.');
+    return list.slice();
   };
+  const buildProxyURL = (endpoint, proxy) => proxy?.template ? proxy.template.replace(/\{url\}/g, encodeURIComponent(String(endpoint))) : String(endpoint);
+  const proxyInfo = () => { const fup = getFreeUserProxy(); const state = getNetworkApi()?.state?.() || {}; return [
+    line('FreeUserProxy', 'accent'),
+    line(`  available : ${Boolean(fup)}`, 'muted'),
+    line(`  initialized: ${Boolean(state.initialized)}`, 'muted'),
+    line(`  working   : ${Number(state.workingProxies || getWorkingProxies().length)}`, 'muted'),
+    line(`  custom    : ${Number(state.customProxies || 0)}`, 'muted')
+  ]; };
 
-  const getWorkingProxies = () => {
-    const fup = getFreeUserProxy();
-    if (!fup || typeof fup.getWorkingProxies !== 'function') return [];
-    try {
-      const list = fup.getWorkingProxies();
-      return Array.isArray(list) ? list.filter(x =>
-        x &&
-        typeof x === 'object' &&
-        typeof x.template === 'string' &&
-        x.template.includes('{url}')
-      ) : [];
-    } catch {
-      return [];
-    }
+  const fetchNetwork = async (url, options = {}) => {
+    const network = getNetworkApi();
+    if (!network?.fetch) throw new Error('FreeUserProxy network API is not available.');
+    return network.fetch(url, options);
   };
 
   const isValidIPv4 = ip => {
@@ -979,258 +958,76 @@
     metadata: {}
   });
 
-  const prepareProxyList = async forceRefresh => {
-    if (!forceRefresh && state.proxyReady && state.workingProxies.length) {
-      return state.workingProxies;
-    }
-
-    const proxies = getWorkingProxies();
-
-    let merged = Array.isArray(proxies) ? proxies.slice() : [];
-
-    if (state.customProxy && state.customProxy.includes('{url}')) {
-      const duplicate = merged.some(p => p.template === state.customProxy);
-      if (!duplicate) {
-        merged.push({
-          name: 'custom',
-          template: state.customProxy
-        });
-      }
-    }
-
-    if (!merged.length) {
-      throw new Error('NO_WORKING_PROXY');
-    }
-
-    state.workingProxies = merged;
-    state.proxyReady = true;
-    return merged;
-  };
-
-  const nextProxy = () => {
-    if (!state.workingProxies.length) {
-      throw new Error('NO_WORKING_PROXY');
-    }
-
-    const proxy = state.workingProxies[state.proxyIndex % state.workingProxies.length];
-    state.proxyIndex = (state.proxyIndex + 1) % state.workingProxies.length;
-
-    return proxy;
-  };
-
-  const buildProxyURL = (endpoint, proxy) => {
-    const url = String(endpoint || '').trim();
-    if (!url) throw new Error('INVALID_ENDPOINT');
-
-    if (!proxy) {
-      if (CONFIG.PROXY_REQUIRED && !CONFIG.ALLOW_DIRECT_FALLBACK) {
-        const error = new Error('PROXY_REQUIRED');
-        error.code = 'PROXY_REQUIRED';
-        throw error;
-      }
-      return url;
-    }
-
-    if (!proxy.template || !proxy.template.includes('{url}')) {
-      const error = new Error('INVALID_PROXY_TEMPLATE');
-      error.code = 'INVALID_PROXY_TEMPLATE';
-      throw error;
-    }
-
-    const output = proxy.template.replace('{url}', encodeURIComponent(url));
-
-    try {
-      const parsed = new URL(output);
-      if (!/^https?:$/i.test(parsed.protocol)) throw new Error('BAD_PROTOCOL');
-      return output;
-    } catch {
-      const error = new Error('INVALID_PROXY_URL');
-      error.code = 'INVALID_PROXY_URL';
-      throw error;
-    }
-  };
-
   const fetchRequest = async (endpoint, options = {}) => {
     const profile = options.profile === 'low' ? PROFILES.low : PROFILES.high;
-    const retries = Math.max(
-      0,
-      Number(options.retries ?? (options.profile === 'low' ? CONFIG.MAX_RETRIES_LOW : CONFIG.MAX_RETRIES_HIGH))
-    );
-    const timeout = Math.max(
-      1500,
-      Number(options.timeout ?? profile.timeout)
-    );
+    const timing = PROFILE_TIMINGS[options.profile === 'low' ? 'low' : 'high'];
+    const retries = Math.max(0, Number(options.retries ?? (options.profile === 'low' ? CONFIG.MAX_RETRIES_LOW : CONFIG.MAX_RETRIES_HIGH)));
+    const timeout = Math.max(1500, Number(options.timeout ?? timing.timeout));
     const provider = String(options.provider || 'unknown');
     const responseType = options.responseType || 'auto';
     const method = String(options.method || 'GET').toUpperCase();
-    const cache = options.cache;
+    const cacheStore = options.cache && typeof options.cache.get === 'function' ? options.cache : null;
     const cacheKey = `${method}:${endpoint}`;
-
-    if (cache) {
-      const cached = cache.get(cacheKey);
+    if (cacheStore) {
+      const cached = cacheStore.get(cacheKey);
       if (cached) return { ...cached, cached: true };
     }
-
     const requestId = id('req');
     const attempts = [];
     const started = Date.now();
     let final = null;
-
-    const proxies = state.workingProxies.length
-      ? state.workingProxies
-      : await prepareProxyList();
-
-    const attemptsLimit = Math.min(proxies.length, retries + 1);
-
-    for (let attempt = 1; attempt <= attemptsLimit; attempt++) {
-      const proxy = proxies[(state.proxyIndex + attempt - 1) % proxies.length];
-      let actualURL = endpoint;
-
-      try {
-        actualURL = buildProxyURL(endpoint, proxy);
-      } catch (error) {
-        final = {
-          requestId,
-          ok: false,
-          status: 0,
-          errorType: error.code || 'PROXY_ERROR',
-          errorMessage: error.message,
-          provider,
-          endpoint,
-          proxy: proxy?.name || 'none',
-          attemptedAt: new Date().toISOString(),
-          completedAt: new Date().toISOString(),
-          durationMs: 0,
-          headers: {},
-          finalURL: null,
-          redirected: false,
-          data: null
-        };
-
-        attempts.push(final);
-        continue;
-      }
-
+    for (let attempt = 1; attempt <= retries + 1; attempt++) {
       const controller = new AbortController();
       const timer = setTimeout(() => controller.abort(), timeout);
-
       try {
-        const headers = {
-          Accept: 'application/json,text/plain,text/html;q=0.9,*/*;q=0.8',
-          'User-Agent': selectUserAgent(),
-          ...(options.headers || {})
-        };
-
-        const response = await fetch(actualURL, {
+        const requestOptions = {
           method,
-          headers,
+          headers: { Accept: 'application/json,text/plain,text/html;q=0.9,*/*;q=0.8', ...(options.headers || {}) },
+          body: options.body,
           signal: controller.signal,
-          redirect: CONFIG.MAX_REDIRECTS > 0 ? 'follow' : 'manual'
-        });
-
+          redirect: CONFIG.MAX_REDIRECTS > 0 ? 'follow' : 'manual',
+          credentials: 'omit',
+          cache: 'no-store'
+        };
+        const response = await fetchNetwork(endpoint, requestOptions);
         clearTimeout(timer);
-
         const responseHeaders = normalizeHeaders(response.headers);
         let data = null;
-
         if (response.status !== 204 && response.status !== 205) {
           const text = await response.text();
           const contentType = response.headers.get('content-type') || '';
-
-          if (responseType === 'text') {
-            data = text;
-          } else if (responseType === 'json') {
-            data = parseJSON(text);
-          } else {
-            data = /json/i.test(contentType) ? parseJSON(text) : text;
-          }
+          if (responseType === 'text') data = text;
+          else if (responseType === 'json') data = parseJSON(text);
+          else data = /json/i.test(contentType) ? parseJSON(text) : text;
         }
-
         final = {
-          requestId,
-          ok: response.ok,
-          status: response.status,
+          requestId, ok: response.ok, status: response.status,
           errorType: response.ok ? null : mapHTTPError(response.status),
-          errorMessage: response.ok ? null : `HTTP ${response.status}`,
-          provider,
-          endpoint,
-          requestedUrl: actualURL,
-          proxy: proxy?.name || 'none',
-          attemptedAt: new Date().toISOString(),
-          completedAt: new Date().toISOString(),
-          durationMs: Date.now() - started,
-          headers: responseHeaders,
-          finalURL: response.url || actualURL,
-          redirected: Boolean(response.redirected),
-          data,
-          cached: false
+          errorMessage: response.ok ? null : `HTTP ${response.status}`, provider, endpoint, requestedUrl: endpoint,
+          proxy: 'FreeUserProxy', attemptedAt: new Date().toISOString(), completedAt: new Date().toISOString(),
+          durationMs: Date.now() - started, headers: responseHeaders, finalURL: response.url || endpoint,
+          redirected: Boolean(response.redirected), data, cached: false
         };
-
         attempts.push(final);
-
         if (response.ok) break;
-
-        if (response.status === 429 || response.status >= 500) {
-          await sleep(computeBackoff(attempt, responseHeaders));
-        }
+        if (attempt <= retries && (response.status === 429 || response.status >= 500)) await sleep(computeBackoff(attempt, responseHeaders));
       } catch (error) {
         clearTimeout(timer);
-
         final = {
-          requestId,
-          ok: false,
-          status: 0,
+          requestId, ok: false, status: 0,
           errorType: error?.name === 'AbortError' ? 'TIMEOUT' : 'NETWORK_ERROR',
-          errorMessage: error?.message || 'REQUEST_FAILED',
-          provider,
-          endpoint,
-          requestedUrl: actualURL,
-          proxy: proxy?.name || 'none',
-          attemptedAt: new Date().toISOString(),
-          completedAt: new Date().toISOString(),
-          durationMs: Date.now() - started,
-          headers: {},
-          finalURL: null,
-          redirected: false,
-          data: null,
-          cached: false
+          errorMessage: error?.message || 'REQUEST_FAILED', provider, endpoint, requestedUrl: endpoint,
+          proxy: 'FreeUserProxy', attemptedAt: new Date().toISOString(), completedAt: new Date().toISOString(),
+          durationMs: Date.now() - started, headers: {}, finalURL: null, redirected: false, data: null, cached: false
         };
-
         attempts.push(final);
-
-        if (attempt < attemptsLimit) {
-          await sleep(computeBackoff(attempt, {}));
-        }
+        if (attempt <= retries) await sleep(computeBackoff(attempt, {}));
       }
     }
-
-    state.proxyIndex = state.workingProxies.length
-      ? (state.proxyIndex + 1) % state.workingProxies.length
-      : 0;
-
-    const result = {
-      ...(final || {
-        requestId,
-        ok: false,
-        status: 0,
-        errorType: 'REQUEST_FAILED',
-        errorMessage: 'REQUEST_FAILED',
-        provider,
-        endpoint,
-        data: null
-      }),
-      requestId,
-      attempts,
-      totalDurationMs: Date.now() - started,
-      cached: false
-    };
-
-    if (result.ok && cache) {
-      cache.set(cacheKey, result);
-    }
-
+    const result = { ...(final || { requestId, ok: false, status: 0, errorType: 'REQUEST_FAILED', errorMessage: 'REQUEST_FAILED', provider, endpoint, data: null }), requestId, attempts, totalDurationMs: Date.now() - started, cached: false };
+    if (result.ok && cacheStore) cacheStore.set(cacheKey, result);
     return result;
-  };
+  };;
 
   const executeProvider = async (provider, ctx, store, cache) => {
     if (provider.enabled === false) {
@@ -1412,7 +1209,7 @@
         provider: name,
         responseType: 'json',
         profile: ctx.profile,
-        timeout: ctx.profileConfig.timeout,
+        timeout: PROFILE_TIMINGS[ctx.profile].timeout,
         cache
       });
 
@@ -1452,7 +1249,7 @@
         provider: `RIPEstat:${endpoint}`,
         responseType: 'json',
         profile: ctx.profile,
-        timeout: ctx.profileConfig.timeout,
+        timeout: PROFILE_TIMINGS[ctx.profile].timeout,
         cache
       }
     );
@@ -1535,7 +1332,7 @@
               provider: `RDAP:${rir}`,
               responseType: 'json',
               profile: ctx.profile,
-              timeout: ctx.profileConfig.timeout,
+              timeout: PROFILE_TIMINGS[ctx.profile].timeout,
               cache
             })
           }))
@@ -1894,7 +1691,7 @@
             provider: 'BGPView',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -1953,7 +1750,7 @@
             provider: 'Google Public DNS PTR',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -2013,7 +1810,7 @@
               Accept: 'application/dns-json'
             },
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -2064,7 +1861,7 @@
             provider: 'crt.sh',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -2125,7 +1922,7 @@
             provider: 'HackerTarget Reverse IP',
             responseType: 'text',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -2175,7 +1972,7 @@
             provider: 'HackerTarget GeoIP',
             responseType: 'text',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -2233,7 +2030,7 @@
             provider: 'HackerTarget AS',
             responseType: 'auto',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -2284,7 +2081,7 @@
             provider: 'HackerTarget WHOIS',
             responseType: 'text',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -2336,7 +2133,7 @@
             provider: 'AlienVault OTX',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -2392,7 +2189,7 @@
             provider: 'GreyNoise Community',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -2449,7 +2246,7 @@
             provider: 'ProxyCheck.io',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -2520,7 +2317,7 @@
                 provider: `DNSBL:${name}`,
                 responseType: 'json',
                 profile: ctx.profile,
-                timeout: ctx.profileConfig.probeTimeout,
+                timeout: PROFILE_TIMINGS[ctx.profile].probeTimeout,
                 cache
               }
             )
@@ -2584,7 +2381,7 @@
             provider: 'URLScan',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -2661,7 +2458,7 @@
               provider: `HTTP:${scheme}`,
               responseType: 'text',
               profile: ctx.profile,
-              timeout: ctx.profileConfig.probeTimeout,
+              timeout: PROFILE_TIMINGS[ctx.profile].probeTimeout,
               cache
             })
           }))
@@ -2726,7 +2523,7 @@
           provider: 'TLS Endpoint',
           responseType: 'text',
           profile: ctx.profile,
-          timeout: ctx.profileConfig.probeTimeout,
+          timeout: PROFILE_TIMINGS[ctx.profile].probeTimeout,
           cache
         });
 
@@ -2775,7 +2572,7 @@
             provider: 'XposedOrNot',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -2832,7 +2629,7 @@
             provider: 'HaveIBeenPwned Email',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache,
             headers: {
               'User-Agent': 'MUNITOS-IPScan'
@@ -2904,7 +2701,7 @@
             provider: 'HackMyIP Breach',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -2965,7 +2762,7 @@
             provider: 'HIBP Pwned Passwords',
             responseType: 'text',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache,
             headers: {
               'Add-Padding': 'true'
@@ -3034,7 +2831,7 @@
             provider: 'SEC EDGAR',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache,
             headers: {
               'User-Agent': 'MUNITOS-IPScan contact@munitos.local'
@@ -3098,7 +2895,7 @@
             provider: 'GLEIF LEI Lookup',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -3164,7 +2961,7 @@
             provider: 'OpenCorporates',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -3229,7 +3026,7 @@
             provider: 'Apixies Security Headers',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -3295,7 +3092,7 @@
             provider: 'Klymax HTTP Headers Analyzer',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache,
             method: 'POST',
             headers: {
@@ -3354,7 +3151,7 @@
             provider: 'WhoisFreaks Historical DNS',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -3416,7 +3213,7 @@
             provider: 'Robtex Historical DNS',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -3470,7 +3267,7 @@
             provider: 'CertSpotter',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -3532,7 +3329,7 @@
             provider: 'Issued.live',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -3594,7 +3391,7 @@
             provider: 'Shodan InternetDB',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -3647,7 +3444,7 @@
             provider: 'ThreatFox',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache,
             method: 'POST',
             headers: {
@@ -3717,7 +3514,7 @@
             provider: 'URLhaus',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache,
             method: 'POST',
             headers: {
@@ -3783,7 +3580,7 @@
             provider: 'Feodo Tracker',
             responseType: 'json',
             profile: ctx.profile,
-            timeout: ctx.profileConfig.timeout,
+            timeout: PROFILE_TIMINGS[ctx.profile].timeout,
             cache
           }
         );
@@ -3902,9 +3699,8 @@
 
     const workerCount = Math.min(
       providers.length,
-      ctx.profile === 'low'
-        ? 8
-        : 24
+      profile.concurrent,
+      profile.mainTaskLimit
     );
 
     const worker = async () => {
@@ -4587,14 +4383,10 @@
         name: ctx.profile,
         label: ctx.profileConfig.label,
         concurrent: ctx.profileConfig.concurrent,
-        timeout: ctx.profileConfig.timeout,
+        timeout: PROFILE_TIMINGS[ctx.profile].timeout,
         probeTimeout: ctx.profileConfig.probeTimeout
       },
-      proxy: {
-        required: CONFIG.PROXY_REQUIRED,
-        pool: proxyCount,
-        status: proxyCount > 0 ? 'READY' : 'DEGRADED'
-      },
+      proxy: { required: true, pool: Number(proxyCount) || 0, status: Number(proxyCount) > 0 ? 'READY' : 'DEGRADED', source: 'FreeUserProxy' },
       registration,
       network,
       routing,
@@ -4759,11 +4551,11 @@
           ),
           treeNode(
             'Timeout',
-            `${canonical.profile.timeout}ms`
+            `${PROFILE_TIMINGS[canonical.profile.name]?.timeout ?? 0}ms`
           ),
           treeNode(
             'Probe Timeout',
-            `${canonical.profile.probeTimeout}ms`
+            `${PROFILE_TIMINGS[canonical.profile.name]?.probeTimeout ?? 0}ms`
           )
         ]
       ),
@@ -5395,10 +5187,6 @@
       'user'
     ),
     line(
-      'ipscan proxy',
-      'user'
-    ),
-    line(
       'ipscan selftest',
       'user'
     ),
@@ -5460,21 +5248,10 @@
     )
   ];
 
-  const proxyInfo = () => [
-    line(
-      'Proxy',
-      'accent'
-    ),
-    line(
-      `Required: ${CONFIG.PROXY_REQUIRED ? 'YES' : 'NO'}`
-    ),
-    line(
-      `Pool: ${state.workingProxies.length}`
-    ),
-    line(
-      `Status: ${state.workingProxies.length ? 'READY' : 'DEGRADED'}`
-    )
-  ];
+  const networkInfo = () => {
+    const info = getNetworkApi()?.state?.() || {};
+    return [line('Network Service', 'accent'), line('Provider: FreeUserProxy'), line(`Working routes: ${Number(info.workingProxies) || 0}`), line(`Status: ${info.initialized ? 'READY' : 'STARTING'}`)];
+  };
 
   const info = () => [
     line(
@@ -5494,7 +5271,7 @@
       `Providers: ${PROVIDERS.filter(provider => provider.enabled !== false).length}`
     ),
     line(
-      `Proxy Pool: ${state.workingProxies.length}`
+      `Network Pool: ${Number(state.networkPool || 0)}`
     ),
     line(
       `Categories: ${unique(PROVIDERS.map(p => p.category)).join(', ')}`
@@ -5566,15 +5343,8 @@
       typeof Worker !== 'undefined'
     );
 
-    const freeUserProxy = getFreeUserProxy();
-    check(
-      'Proxy integration',
-      Boolean(
-        freeUserProxy &&
-        typeof freeUserProxy.getWorkingProxies === 'function' &&
-        typeof freeUserProxy.rescan === 'function'
-      )
-    );
+    const network = getNetworkApi();
+    check('FreeUserProxy API', Boolean(network && typeof network.fetch === 'function' && typeof network.state === 'function'));
 
     check(
       'Breach providers',
@@ -5647,8 +5417,6 @@
 
     const normalized = normalizeTargetIP(target);
 
-    await prepareProxyList(false);
-
     const cache = new CacheStore(
       profileName === 'low'
         ? CONFIG.CACHE_TTL_MS_LOW
@@ -5656,11 +5424,7 @@
       CONFIG.CACHE_MAX_ENTRIES
     );
 
-    const workerPool = new WorkerPool(
-      profileName === 'low'
-        ? CONFIG.WORKER_COUNT_LOW
-        : CONFIG.WORKER_COUNT_HIGH
-    );
+    const workerPool = new WorkerPool(profile.concurrent);
 
     workerPool.start();
 
@@ -5690,7 +5454,7 @@
         store,
         providerResults,
         workerPool,
-        state.workingProxies.length
+        Number(getNetworkApi()?.state?.().workingProxies) || 0
       );
 
       return {
@@ -5744,8 +5508,8 @@
       return providersInfo();
     }
 
-    if (first === 'proxy') {
-      return proxyInfo();
+    if (first === 'network') {
+      return networkInfo();
     }
 
     if (first === 'info') {
@@ -6080,9 +5844,6 @@
 
     state.installed = false;
     state.api = null;
-    state.workingProxies = [];
-    state.proxyReady = false;
-    state.proxyIndex = 0;
 
     return [];
   };

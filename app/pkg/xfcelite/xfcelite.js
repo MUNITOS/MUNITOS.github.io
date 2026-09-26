@@ -22,6 +22,10 @@
 
   const PKG = 'xfcelite';
   const KEY = '__munitos_pkg_xfcelite';
+  const PROFILES = Object.freeze({
+    high: Object.freeze({ concurrent: 384, minConcurrent: 192, maxConcurrent: 768, maxFormsToTest: 200, mainTaskLimit: 384, label: 'HIGH-POWER' }),
+    low: Object.freeze({ concurrent: 48, minConcurrent: 24, maxConcurrent: 192, maxFormsToTest: 80, mainTaskLimit: 48, label: 'LOW-POWER (mobile)' })
+  });
   const STORAGE_KEY = 'munitos-pkg-xfcelite-settings:v1';
   const VALID_BACKGROUNDS = Object.freeze([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]);
   const MAX_HISTORY = 24;

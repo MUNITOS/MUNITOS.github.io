@@ -20,23 +20,9 @@
     entry: 'install'
   });
 
-  const PROFILES = Object.freeze({
-    high: Object.freeze({
-      concurrent: 512,
-      minConcurrent: 256,
-      maxConcurrent: 1000,
-      maxFormsToTest: 200,
-      mainTaskLimit: 512,
-      label: 'HIGH-POWER'
-    }),
-    low: Object.freeze({
-      concurrent: 64,
-      minConcurrent: 32,
-      maxConcurrent: 256,
-      maxFormsToTest: 80,
-      mainTaskLimit: 64,
-      label: 'LOW-POWER'
-    })
+const PROFILES = Object.freeze({
+    high: Object.freeze({ concurrent: 384, minConcurrent: 192, maxConcurrent: 768, maxFormsToTest: 200, mainTaskLimit: 384, label: 'HIGH-POWER' }),
+    low: Object.freeze({ concurrent: 48, minConcurrent: 24, maxConcurrent: 192, maxFormsToTest: 80, mainTaskLimit: 48, label: 'LOW-POWER (mobile)' })
   });
 
   const DB_BASE = (() => { try { return new URL('../../assets/DB/', document.baseURI).href; } catch { return '/assets/DB/'; } })();
@@ -57,215 +43,74 @@
   const PROBE_TIMEOUT_MS = 8000;
   const SCAN_TIMEOUT_MS = 12000;
 
-  let customProxyTemplate = null;
   let aborted = false;
   let DB_CACHE = null;
 
-  function getFreeUserProxy() {
-    return window.__FreeUserProxy ?? globalThis.__FreeUserProxy ?? null;
-  }
+  const getNetworkApi = () => {
+    try { return globalThis.__FreeUserProxy?.api?.proxy || null; } catch { return null; }
+  };
 
-  function isFreeUserProxyAvailable() {
-    const fup = getFreeUserProxy();
-    return Boolean(fup && typeof fup.getWorkingProxies === 'function');
-  }
+  const fetchNetwork = async (url, options = {}) => {
+    const network = getNetworkApi();
+    if (!network?.fetch) throw new Error('FreeUserProxy network API is not available.');
+    const { timeout: _timeout, ...requestOptions } = options || {};
+    return network.fetch(url, requestOptions);
+  };
 
+  function getFreeUserProxy() { try { return globalThis.__FreeUserProxy || null; } catch { return null; } }
+  function isFreeUserProxyAvailable() { return Boolean(getFreeUserProxy()?.api?.proxy?.fetch || getFreeUserProxy()?.getWorkingProxies); }
   function pickFreeProxyUrl() {
-    const fup = getFreeUserProxy();
-    if (!fup || typeof fup.getWorkingProxies !== 'function') return null;
     try {
-      const direct = fup.getRandomWorkingProxy?.();
-      if (direct) {
-        if (typeof direct === 'string') return direct;
-        return direct.template || direct.url || direct.proxy || null;
-      }
-      const list = fup.getWorkingProxies();
-      if (Array.isArray(list) && list.length) {
-        const pick = list[Math.floor(Math.random() * list.length)];
-        if (typeof pick === 'string') return pick;
-        return pick.template || pick.url || pick.proxy || null;
-      }
-    } catch (_) {}
-    return null;
+      const fup = getFreeUserProxy();
+      const pick = fup?.getRandomWorkingProxy?.();
+      if (typeof pick === 'string') return pick;
+      return pick?.template || pick?.url || pick?.proxy || null;
+    } catch { return null; }
   }
-
-  function normalizeTargetUrl(input) {
-    let u = String(input ?? '').trim().replace(/^['"]+|['"]+$/g, '');
-    if (!u) return null;
-    if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
-    u = u.replace(/\/+$/, '');
-    try {
-      const parsed = new URL(u);
-      if (!parsed.hostname) return null;
-      return parsed.origin;
-    } catch (_) { return null; }
-  }
-
-  function joinUrl(origin, path) {
-    return origin + (path.startsWith('/') ? path : '/' + path);
-  }
-
   function applyProxyTemplate(template, url) {
-    if (!template) return url;
-    if (template.includes('{url}')) return template.replace(/\{url\}/g, encodeURIComponent(url));
-    const sep = template.includes('?') ? '&' : '?';
-    return template + sep + 'url=' + encodeURIComponent(url);
+    if (!template) return String(url);
+    if (!String(template).includes('{url}')) return String(template);
+    return String(template).replace(/\{url\}/g, encodeURIComponent(String(url)));
   }
-
-  const NLPAI = Object.freeze({
-    analyze() {
-      const s = this.collectSignals();
-      const score = this.score(s);
-      const base = this.selectBaseProfile(s, score);
-      const tuned = this.tuneConcurrency(base, s, score);
-      return {
-        signals: s,
-        score,
-        profile: tuned.profile,
-        effectiveConcurrent: tuned.concurrent,
-        reasoning: tuned.reasoning
-      };
-    },
-
-    collectSignals() {
-      const nav = navigator || {};
-      const conn = nav.connection || nav.mozConnection || nav.webkitConnection || null;
-      const cores = Number(nav.hardwareConcurrency || 0) || 4;
-      const mem = Number(nav.deviceMemory || 0) || 4;
-      let effectiveType = null, downlink = null, rtt = null;
-      if (conn) {
-        effectiveType = conn.effectiveType || null;
-        downlink = typeof conn.downlink === 'number' ? conn.downlink : null;
-        rtt = typeof conn.rtt === 'number' ? conn.rtt : null;
-      }
-      return { cores, mem, effectiveType, downlink, rtt };
-    },
-
-    score(s) {
-      let score = 50;
-      if (s.cores >= 16) score += 30;
-      else if (s.cores >= 8) score += 20;
-      else if (s.cores >= 4) score += 10;
-      else score -= 10;
-      if (s.mem >= 16) score += 25;
-      else if (s.mem >= 8) score += 15;
-      else if (s.mem >= 4) score += 5;
-      else score -= 10;
-      switch (s.effectiveType) {
-        case '4g': score += 20; break;
-        case '3g': score += 5; break;
-        case '2g': score -= 10; break;
-        case 'slow-2g': score -= 20; break;
-      }
-      if (typeof s.downlink === 'number') {
-        if (s.downlink >= 20) score += 15;
-        else if (s.downlink >= 10) score += 10;
-        else if (s.downlink >= 5) score += 5;
-        else if (s.downlink < 1) score -= 10;
-      }
-      if (typeof s.rtt === 'number') {
-        if (s.rtt <= 50) score += 10;
-        else if (s.rtt <= 150) score += 5;
-        else if (s.rtt > 400) score -= 15;
-        else if (s.rtt > 150) score -= 5;
-      }
-      return Math.max(0, Math.min(100, score));
-    },
-
-    selectBaseProfile(s, score) {
-      return score >= 30 ? PROFILES.high : PROFILES.low;
-    },
-
-    tuneConcurrency(base, s, score) {
-      const span = base.maxConcurrent - base.minConcurrent;
-      const t = Math.max(0, Math.min(1, (score - 30) / 70));
-      let concurrent = Math.round(base.minConcurrent + span * t);
-      const hwCap = Math.max(16, s.cores * 32);
-      concurrent = Math.min(concurrent, hwCap);
-      concurrent = Math.max(base.minConcurrent, Math.min(base.maxConcurrent, concurrent));
-      const reason = `score=${score} cores=${s.cores} mem=${s.mem}GB net=${s.effectiveType || 'n/a'}`;
-      return { profile: base, concurrent, reasoning: reason };
-    }
+  function normalizeTargetUrl(input) {
+    let value=String(input??'').trim().replace(/^['"]+|['"]+$/g,'');
+    if(!value)return null;
+    if(!/^https?:\/\//i.test(value))value='https://'+value;
+    try{const u=new URL(value);return u.hostname?u.origin:null;}catch{return null;}
+  }
+  function joinUrl(origin,path){return origin+(String(path).startsWith('/')?String(path):'/'+String(path));}
+  const NLPAI=Object.freeze({
+    analyze(){const signals=this.collectSignals(),score=this.score(signals),base=this.selectBaseProfile(signals,score),tuned=this.tuneConcurrency(base,signals,score);return{signals,score,profile:tuned.profile,effectiveConcurrent:tuned.concurrent,reasoning:tuned.reasoning};},
+    collectSignals(){const nav=typeof navigator==='object'&&navigator?navigator:{},conn=nav.connection||nav.mozConnection||nav.webkitConnection||null,cores=Number(nav.hardwareConcurrency||0)||4,mem=Number(nav.deviceMemory||0)||4;return{cores,mem,effectiveType:conn?.effectiveType||null,downlink:typeof conn?.downlink==='number'?conn.downlink:null,rtt:typeof conn?.rtt==='number'?conn.rtt:null};},
+    score(s){let score=50;if(s.cores>=16)score+=30;else if(s.cores>=8)score+=20;else if(s.cores>=4)score+=10;else score-=10;if(s.mem>=16)score+=25;else if(s.mem>=8)score+=15;else if(s.mem>=4)score+=5;else score-=10;switch(s.effectiveType){case'4g':score+=20;break;case'3g':score+=5;break;case'2g':score-=10;break;case'slow-2g':score-=20;break;}if(typeof s.downlink==='number'){if(s.downlink>=20)score+=15;else if(s.downlink>=10)score+=10;else if(s.downlink>=5)score+=5;else if(s.downlink<1)score-=10;}if(typeof s.rtt==='number'){if(s.rtt<=50)score+=10;else if(s.rtt<=150)score+=5;else if(s.rtt>400)score-=15;else if(s.rtt>150)score-=5;}return Math.max(0,Math.min(100,score));},
+    selectBaseProfile(_s,score){return score>=30?PROFILES.high:PROFILES.low;},
+    tuneConcurrency(base,s,score){const span=base.maxConcurrent-base.minConcurrent,t=Math.max(0,Math.min(1,(score-30)/70));let concurrent=Math.round(base.minConcurrent+span*t);const hwCap=Math.max(16,s.cores*32);concurrent=Math.min(concurrent,hwCap);concurrent=Math.max(base.minConcurrent,Math.min(base.maxConcurrent,concurrent));return{profile:base,concurrent,reasoning:`score=${score} cores=${s.cores} mem=${s.mem}GB net=${s.effectiveType||'n/a'}`};}
   });
-
   class AdaptiveWorkerPool {
-    constructor({ concurrent, mainTaskLimit }) {
-      this.concurrent = Math.max(1, concurrent | 0);
-      this.mainTaskLimit = Math.max(1, mainTaskLimit | 0);
-      this.active = 0;
-      this.cursor = 0;
-      this.queue = [];
-      this.stats = { dispatched: 0, succeeded: 0, failed: 0, skipped: 0 };
-    }
-
-    setConcurrency(n) {
-      this.concurrent = Math.max(1, n | 0);
-    }
-
-    async run(items, handler) {
-      this.queue = items.slice();
-      this.cursor = 0;
-      const workers = [];
-      for (let i = 0; i < this.concurrent; i++) workers.push(this._worker(handler));
-      await Promise.all(workers);
-      return this.stats;
-    }
-
-    async _worker(handler) {
-      while (!aborted && this.cursor < this.queue.length) {
-        const idx = this.cursor++;
-        const item = this.queue[idx];
-        this.active++;
-        this.stats.dispatched++;
-        try {
-          const r = await handler(item, idx);
-          if (r === 'skip') this.stats.skipped++;
-          else this.stats.succeeded++;
-        } catch (_) {
-          this.stats.failed++;
-        } finally {
-          this.active--;
-        }
-      }
-    }
+    constructor({concurrent,mainTaskLimit}){this.concurrent=Math.max(1,concurrent|0);this.mainTaskLimit=Math.max(1,mainTaskLimit|0);this.active=0;this.cursor=0;this.queue=[];this.stats={dispatched:0,succeeded:0,failed:0,skipped:0};}
+    setConcurrency(n){this.concurrent=Math.max(1,n|0);}
+    async run(items,handler){this.queue=Array.isArray(items)?items.slice():[];this.cursor=0;this.stats={dispatched:0,succeeded:0,failed:0,skipped:0};const workerCount=Math.min(this.queue.length,this.concurrent,this.mainTaskLimit);await Promise.all(Array.from({length:workerCount},()=>this._worker(handler)));return this.stats;}
+    async _worker(handler){while(!aborted&&this.cursor<this.queue.length){const idx=this.cursor++,item=this.queue[idx];this.active++;this.stats.dispatched++;try{const result=await handler(item,idx);if(result==='skip')this.stats.skipped++;else this.stats.succeeded++;}catch{this.stats.failed++;}finally{this.active--;}}}
+  }
+  async function tryDirectFetch(url,timeoutMs){
+    try{const res=await fetchWithTimeout(url,{method:'GET',redirect:'follow',credentials:'omit',headers:{Accept:'*/*'}},timeoutMs);return{ok:true,res,via:'direct'};}catch(error){const msg=String(error?.message||error);if(/abort/i.test(msg))return{ok:false,reason:'timeout'};return{ok:false,reason:/cors|networkerror|failed to fetch|load failed/i.test(msg)?'cors':'network'};}
+  }
+  async function tryProxyFetch(url,timeoutMs){
+    try{const network=getNetworkApi();if(!network?.resolve)throw new Error('NO_PROXY_API');const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),timeoutMs);const prepared=await network.resolve(url,{method:'GET',redirect:'follow',credentials:'omit',headers:{Accept:'*/*'}});const res=await globalThis.fetch(prepared.url,{...prepared.options,signal:controller.signal});clearTimeout(timer);return{ok:true,res,via:prepared.direct?'direct':'free-user-proxy',proxy:prepared.proxy||null};}catch(error){return{ok:false,reason:/abort/i.test(String(error?.message||error))?'timeout':'proxy-failed'};}
   }
 
-  function fetchWithTimeout(url, opts = {}, timeoutMs = PROBE_TIMEOUT_MS) {
+  function fetchWithTimeout(url, options = {}, timeoutMs = PROBE_TIMEOUT_MS) {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeoutMs);
-    return fetch(url, { ...opts, signal: controller.signal })
+    return fetchNetwork(url, { ...options, signal: controller.signal })
       .finally(() => clearTimeout(timer));
   }
 
-  async function tryDirectFetch(url, timeoutMs) {
-    try {
-      const res = await fetchWithTimeout(url, {
-        method: 'GET',
-        redirect: 'follow',
-        credentials: 'omit',
-        headers: { 'Accept': '*/*' }
-      }, timeoutMs);
-      return { ok: true, res, via: 'direct' };
-    } catch (e) {
-      const msg = String(e && e.message || e);
-      if (/failed to fetch|networkerror|cors|load failed/i.test(msg)) return { ok: false, reason: 'cors' };
-      if (/abort/i.test(msg)) return { ok: false, reason: 'timeout' };
-      return { ok: false, reason: 'network' };
-    }
-  }
-
-  async function tryProxyFetch(url, timeoutMs) {
-    const usedTemplate = customProxyTemplate || pickFreeProxyUrl();
-    if (!usedTemplate) return { ok: false, reason: 'no-proxy' };
-    try {
-      const proxied = applyProxyTemplate(usedTemplate, url);
-      const res = await fetchWithTimeout(proxied, {
-        method: 'GET', redirect: 'follow', credentials: 'omit'
-      }, timeoutMs);
-      return { ok: true, res, via: customProxyTemplate ? 'custom-proxy' : 'free-user-proxy' };
-    } catch (_) {
-      return { ok: false, reason: 'proxy-failed' };
-    }
+  async function fetchChecked(url, timeoutMs) {
+    const direct = await tryDirectFetch(url, timeoutMs);
+    if (direct.ok) return direct;
+    if (direct.reason === 'timeout') return direct;
+    return tryProxyFetch(url, timeoutMs);
   }
 
   async function signatureOfResponse(res) {
@@ -300,11 +145,9 @@
     const notFoundUrl = origin + randomPath + CACHE_BUSTER;
     const rootUrl = origin + '/' + CACHE_BUSTER;
     const baseline = { notFound: null, root: null };
-    let nf = await tryDirectFetch(notFoundUrl, PROBE_TIMEOUT_MS);
-    if (!nf.ok) nf = await tryProxyFetch(notFoundUrl, PROBE_TIMEOUT_MS);
+    const nf = await fetchChecked(notFoundUrl, PROBE_TIMEOUT_MS);
     if (nf.ok) baseline.notFound = await signatureOfResponse(nf.res);
-    let rt = await tryDirectFetch(rootUrl, PROBE_TIMEOUT_MS);
-    if (!rt.ok) rt = await tryProxyFetch(rootUrl, PROBE_TIMEOUT_MS);
+    const rt = await fetchChecked(rootUrl, PROBE_TIMEOUT_MS);
     if (rt.ok) baseline.root = await signatureOfResponse(rt.res);
     return baseline;
   }
@@ -407,10 +250,10 @@
       await pool.run(paths, async (path) => {
         if (aborted) return 'skip';
         const full = joinUrl(origin, path);
-        let attempt = await tryDirectFetch(full, SCAN_TIMEOUT_MS);
+        let attempt = await fetchChecked(full, SCAN_TIMEOUT_MS);
         if (!attempt.ok) {
           if (attempt.reason === 'cors' || attempt.reason === 'network') {
-            attempt = await tryProxyFetch(full, SCAN_TIMEOUT_MS);
+            attempt = await fetchChecked(full, SCAN_TIMEOUT_MS);
           } else if (attempt.reason === 'timeout') {
             return 'skip';
           }
@@ -516,7 +359,7 @@
   const COMMANDS = Object.freeze({
     ninjadb: {
       description: 'NinjaDB — MUNITOS sensitive-path scanner.',
-      usage: 'ninjadb <scan|lowscan|setproxy|profile|help> [args]',
+      usage: 'ninjadb <scan|lowscan|profile|help> [args]',
       aliases: ['ndb'],
       kind: 'plain',
       run: async ({ args = [], api } = {}) => {
@@ -531,8 +374,6 @@
             api.line('Usage:', 'accent'),
             api.line('  ninjadb scan    <url>     high-power scan (NLP-AI profile)', 'muted'),
             api.line('  ninjadb lowscan <url>     low-power scan (mobile-safe)', 'muted'),
-            api.line('  ninjadb setproxy <tpl>    set custom proxy template with {url}', 'muted'),
-            api.line('  ninjadb setproxy clear    clear custom proxy', 'muted'),
             api.line('  ninjadb profile           show NLP-AI analysis', 'muted'),
             api.line('  ninjadb help              show this help', 'muted')
           ];
@@ -549,34 +390,7 @@
           if (!url) return [api.line('usage: ninjadb lowscan <url>', 'danger')];
           return runScan(url, 'low', api);
         }
-
-        if (sub === 'setproxy') {
-          const raw = rest.join(' ').trim();
-          if (!raw) {
-            return [
-              api.line('current proxy: ' + (customProxyTemplate || '(none)'), 'muted'),
-              api.line('usage: ninjadb setproxy http://proxy.local/?url={url}', 'dim'),
-              api.line('       ninjadb setproxy clear', 'dim')
-            ];
-          }
-          if (raw === 'clear' || raw === 'none' || raw === 'off') {
-            customProxyTemplate = null;
-            return [api.line('custom proxy cleared (FreeUserProxy fallback active)', 'success')];
-          }
-          if (!raw.includes('{url}')) {
-            return [
-              api.line('template must contain {url}', 'danger'),
-              api.line('example: ninjadb setproxy https://proxy.local/fetch?target={url}', 'muted')
-            ];
-          }
-          customProxyTemplate = raw;
-          return [
-            api.line('custom proxy template set:', 'success'),
-            api.line('  ' + raw, 'muted')
-          ];
-        }
-
-        if (sub === 'profile' || sub === 'ai') {
+          if (sub === 'profile' || sub === 'ai') {
           const info = NLPAI.analyze();
           return [
             api.line('NLP-AI Runtime Analysis', 'accent'),
@@ -585,8 +399,6 @@
             api.line('  profile    : ' + info.profile.label, 'purple'),
             api.line('  workers    : ' + info.effectiveConcurrent, 'purple'),
             api.line('  reasoning  : ' + info.reasoning, 'dim'),
-            api.line('  FreeUserProxy available : ' + (isFreeUserProxyAvailable() ? 'yes' : 'no'), 'dim'),
-            api.line('  custom proxy           : ' + (customProxyTemplate || '(none)'), 'dim'),
             api.spacer(),
             api.line('PROFILES:', 'accent'),
             api.line('  high → concurrent ' + PROFILES.high.concurrent + '  min ' + PROFILES.high.minConcurrent + '  max ' + PROFILES.high.maxConcurrent, 'muted'),
@@ -612,7 +424,6 @@
   const uninstall = async (api) => {
     aborted = true;
     for (const name of MANIFEST.commands) api.unregisterCommand(name);
-    customProxyTemplate = null;
     DB_CACHE = null;
     return [];
   };
@@ -625,9 +436,13 @@
       PROFILES,
       NLPAI,
       normalizeTargetUrl,
-      applyProxyTemplate,
+      getNetworkApi,
       getFreeUserProxy,
-      isFreeUserProxyAvailable
+      isFreeUserProxyAvailable,
+      pickFreeProxyUrl,
+      applyProxyTemplate,
+      joinUrl,
+      AdaptiveWorkerPool
     })
   });
 })();

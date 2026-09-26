@@ -25,8 +25,8 @@
   const GLOBAL_KEY = '__munitos_pkg_attackkit';
 
   const PROFILES = Object.freeze({
-    high: Object.freeze({ concurrent: 1024, minConcurrent: 512, maxConcurrent: 2048, label: 'HIGH-POWER' }),
-    low: Object.freeze({ concurrent: 96, minConcurrent: 48, maxConcurrent: 384, label: 'LOW-POWER' })
+    high: Object.freeze({ concurrent: 384, minConcurrent: 192, maxConcurrent: 768, maxFormsToTest: 200, mainTaskLimit: 384, label: 'HIGH-POWER' }),
+    low: Object.freeze({ concurrent: 48, minConcurrent: 24, maxConcurrent: 192, maxFormsToTest: 80, mainTaskLimit: 48, label: 'LOW-POWER (mobile)' })
   });
 
   const DEFAULTS = Object.freeze({
@@ -49,9 +49,6 @@
       baseline: null,
       stats: { phaseTimings: {}, totalTime: 0, fpFiltered: 0 },
       cache: new Map(),
-      proxyList: [],
-      customProxy: null,
-      proxyReady: false,
       activeProfile: 'high'
     }
   };
@@ -121,22 +118,39 @@
     runNext();
   });
 
-  const runWithTimeout = async (url, options = {}) => {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(),
-      Math.max(1000, Number(options.timeout) || state.settings.timeout));
-    try {
-      return await fetch(url, { ...options, signal: controller.signal, mode: 'cors' });
-    } finally {
-      clearTimeout(timer);
-    }
+  const getNetworkApi = () => {
+    try { return globalThis.__FreeUserProxy?.api?.proxy || null; } catch { return null; }
   };
 
+  const getFreeUserProxy = () => { try { return globalThis.__FreeUserProxy || null; } catch { return null; } };
   const proxied = (template, url) => {
-    if (!template || typeof template !== 'string' || !template.includes('{url}')) {
-      throw new Error('Invalid proxy template');
-    }
-    return template.replace('{url}', encodeURIComponent(String(url)));
+    if (!template || typeof template !== 'string' || !template.includes('{url}')) throw new Error('Invalid proxy template');
+    return template.replace(/\{url\}/g, encodeURIComponent(String(url)));
+  };
+  const testCustomProxy = async (template, testUrl = 'https://httpbin.org/get') => {
+    try {
+      const response = await globalThis.fetch(proxied(template, testUrl), { method: 'GET', cache: 'no-store', credentials: 'omit' });
+      return Boolean(response?.ok);
+    } catch { return false; }
+  };
+  const prepareProxyList = async (forceRefresh = false) => {
+    const network = getNetworkApi();
+    if (!network) throw new Error('FreeUserProxy is not available.');
+    if (forceRefresh && typeof network.refresh === 'function') await network.refresh();
+    if (typeof network.ready === 'function') await network.ready();
+    const fup = getFreeUserProxy();
+    const list = typeof fup?.getWorkingProxies === 'function' ? fup.getWorkingProxies() : (typeof network.getWorkingProxies === 'function' ? network.getWorkingProxies() : []);
+    if (!Array.isArray(list) || list.length === 0) throw new Error('No working proxies available.');
+    return list.slice();
+  };
+  const getNextProxy = (() => { let cursor = 0; return async () => { const list = await prepareProxyList(); const proxy = list[cursor % list.length]; cursor = (cursor + 1) % list.length; return proxy; }; })();
+  const getRandomUserAgent = () => { try { return getFreeUserProxy()?.getRandomUserAgent?.() || getFreeUserProxy()?.api?.userAgent?.random?.() || ''; } catch { return ''; } };
+
+  const runWithTimeout = async (url, options = {}) => {
+    const network = getNetworkApi();
+    if (!network?.fetch) throw new Error('FreeUserProxy network API is not available.');
+    const { timeout: _timeout, ...requestOptions } = options || {};
+    return network.fetch(url, requestOptions);
   };
 
   const isPublicHost = hostname => {
@@ -147,91 +161,28 @@
     return true;
   };
 
-  function getFreeUserProxy() {
-    try { return window.__FreeUserProxy || globalThis.__FreeUserProxy || null; } catch { return null; }
-  }
-
-  async function testCustomProxy(template, testUrl = 'https://httpbin.org/get') {
-    try {
-      const controller = new AbortController();
-      const t = setTimeout(() => controller.abort(), 5000);
-      const url = proxied(template, testUrl);
-      const res = await fetch(url, { method: 'HEAD', signal: controller.signal, mode: 'cors' });
-      clearTimeout(t);
-      return res.ok;
-    } catch { return false; }
-  }
-
-  async function prepareProxyList(forceRefresh = false) {
-    if (!forceRefresh && state.runtime.proxyReady && state.runtime.proxyList.length > 0) {
-      return state.runtime.proxyList;
-    }
-    const fup = getFreeUserProxy();
-    if (!fup || typeof fup.getWorkingProxies !== 'function') {
-      throw new Error('FreeUserProxy is not available. Ensure https://munitos.github.io/FreeUserProxy.js is loaded.');
-    }
-    let working = [];
-    try { working = fup.getWorkingProxies() || []; } catch { working = []; }
-    if (!Array.isArray(working)) working = [];
-    if (state.runtime.customProxy && state.runtime.customProxy.includes('{url}')) {
-      const okCustom = await testCustomProxy(state.runtime.customProxy);
-      if (okCustom && !working.some(p => p.template === state.runtime.customProxy)) {
-        working.push({ name: 'custom', template: state.runtime.customProxy });
-      }
-    }
-    if (working.length === 0) throw new Error('No working proxies available.');
-    state.runtime.proxyList = working;
-    state.runtime.proxyReady = true;
-    return working;
-  }
-
-  let proxyIndex = 0;
-  const getNextProxy = () => {
-    if (state.runtime.proxyList.length === 0) throw new Error('No proxy available.');
-    const p = state.runtime.proxyList[proxyIndex % state.runtime.proxyList.length];
-    proxyIndex = (proxyIndex + 1) % state.runtime.proxyList.length;
-    return p;
-  };
-
-  function getRandomUserAgent() {
-    const fup = getFreeUserProxy();
-    if (fup && typeof fup.getRandomUserAgent === 'function') {
-      try { const ua = fup.getRandomUserAgent(); if (ua) return ua; } catch { }
-    }
-    return 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36';
-  }
-
   async function fetchWithRetry(url, options = {}) {
     if (!url || typeof url !== 'string') throw new Error('Invalid URL');
-    let proxies = state.runtime.proxyList;
-    if (proxies.length === 0) proxies = await prepareProxyList();
-    const finalOptions = {
-      ...options,
-      headers: { 'User-Agent': getRandomUserAgent(), ...(options.headers || {}) }
-    };
     const cacheKey = url + (options.method || 'GET') + (options.body || '');
     if ((options.method || 'GET') === 'GET' && state.runtime.cache.has(cacheKey)) {
-      const c = state.runtime.cache.get(cacheKey);
-      if (Date.now() - c.timestamp < CACHE_TTL_MS) return c.response.clone();
+      const cached = state.runtime.cache.get(cacheKey);
+      if (Date.now() - cached.timestamp < CACHE_TTL_MS) return cached.response.clone();
       state.runtime.cache.delete(cacheKey);
     }
-    const maxAttempts = Math.min(proxies.length, 3);
     let lastError = null;
-    for (let attempt = 0; attempt < maxAttempts; attempt++) {
-      const proxy = proxies[attempt % proxies.length];
+    const attempts = Math.max(1, Math.min(3, state.settings.retryBackoff.length + 1));
+    for (let attempt = 0; attempt < attempts; attempt++) {
       try {
-        const proxyUrl = proxied(proxy.template, url);
-        const res = await runWithTimeout(proxyUrl, finalOptions);
-        if (res.ok || res.status < 400) {
-          if ((options.method || 'GET') === 'GET') {
-            state.runtime.cache.set(cacheKey, { response: res.clone(), timestamp: Date.now() });
-          }
-          return res;
+        const response = await runWithTimeout(url, options);
+        if (response?.ok || (response && response.status < 400)) {
+          if ((options.method || 'GET') === 'GET') state.runtime.cache.set(cacheKey, { response: response.clone(), timestamp: Date.now() });
+          return response;
         }
-        if (res.status === 429) {
-          await sleep(state.settings.retryBackoff[attempt % state.settings.retryBackoff.length] || 1000);
-        }
-      } catch (err) { lastError = err; }
+        lastError = new Error(`HTTP ${response?.status || 0}`);
+      } catch (error) {
+        lastError = error;
+      }
+      if (attempt < attempts - 1) await sleep(state.settings.retryBackoff[attempt] || 250);
     }
     throw new Error(`Fetch failed for ${url}${lastError ? `: ${lastError.message}` : ''}`);
   }
@@ -1113,8 +1064,6 @@
   async function runScan(target, mode, api) {
     const profileInfo = applyProfile(mode === 'lowscan' ? 'low' : 'high');
     api.append([L(`◈ AttackKit scan started — ${profileInfo.label} (concurrent=${state.settings.maxConcurrentRequests})`, 'accent')]);
-    try { await prepareProxyList(); }
-    catch (e) { return fail(`Proxy init failed: ${e.message}`); }
 
     const t0 = Date.now();
     let profile;
@@ -1200,28 +1149,12 @@
         L('  attackkit analyze <url>   JS secret analysis'),
         L('  attackkit brute   <url>   login brute force'),
         L('  attackkit cve     <url>   CVE checks'),
-        L('  attackkit setproxy <template-with-{url}>'),
         L('  attackkit help | version')
       ];
     }
 
     if (cmd === 'version') return [L(`attackkit v${VERSION}`, 'accent')];
 
-    if (cmd === 'setproxy') {
-      const t = rest.join(' ').trim();
-      if (!t) return fail('usage: attackkit setproxy <template-with-{url}>');
-      if (t === 'clear' || t === 'none') {
-        state.runtime.customProxy = null;
-        state.runtime.proxyList = [];
-        state.runtime.proxyReady = false;
-        return ok('custom proxy cleared');
-      }
-      if (!t.includes('{url}')) return fail('template must contain {url}');
-      state.runtime.customProxy = t;
-      state.runtime.proxyList = [];
-      state.runtime.proxyReady = false;
-      return ok('custom proxy set: ' + t);
-    }
 
     const url = rest.join(' ').trim();
     const needsUrl = ['scan', 'lowscan', 'profile', 'crawl', 'cloud', 'exploit', 'analyze', 'brute', 'cve'];
@@ -1233,18 +1166,15 @@
       if (cmd === 'lowscan') return await runScan(url, 'lowscan', api);
 
       if (cmd === 'profile') {
-        await prepareProxyList();
         const profile = await buildProfile(url);
         return reportProfile(profile);
       }
       if (cmd === 'crawl') {
-        await prepareProxyList();
         const links = await crawlInternalLinks(normalizeTarget(url), normalizeTarget(url), 2);
         if (!links.length) return [L('no internal links', 'muted')];
         return [L(`Internal links: ${links.length}`, 'success'), ...links.slice(0, 40).map(l => L(`  • ${l}`, 'muted'))];
       }
       if (cmd === 'dns') {
-        await prepareProxyList();
         const d = await dnsEnumeration(url);
         const out = [L('── DNS ──', 'accent')];
         ['A', 'AAAA', 'MX', 'NS', 'CNAME', 'TXT', 'SOA', 'CAA'].forEach(k => {
@@ -1256,19 +1186,16 @@
         return out;
       }
       if (cmd === 'subdomain') {
-        await prepareProxyList();
         const subs = await subdomainEnumeration(url);
         if (!subs.length) return [L('no subdomains found', 'muted')];
         return [L(`Subdomains: ${subs.length}`, 'success'), ...subs.slice(0, 60).map(s => L(`  • ${s}`, 'muted'))];
       }
       if (cmd === 'cloud') {
-        await prepareProxyList();
         const r = await cloudMetadataDetection();
         if (!r.length) return [L('no cloud metadata exposed', 'muted')];
         return [L(`Cloud metadata: ${r.length}`, 'danger'), ...r.map(x => L(`  ✓ ${x.cloud} — ${x.url}`, 'danger'))];
       }
       if (cmd === 'exploit') {
-        await prepareProxyList();
         const profile = await buildProfile(url);
         const forms = profile.forms || [];
         const tasks = forms.map(form => async () => {
@@ -1286,13 +1213,11 @@
         return reportExploit({ forms: results.filter(Boolean), idor, uploads: [] });
       }
       if (cmd === 'analyze') {
-        await prepareProxyList();
         const profile = await buildProfile(url);
         const a = await jsSourceAnalyzer(profile.jsFiles || []);
         return reportAnalysis(a);
       }
       if (cmd === 'brute') {
-        await prepareProxyList();
         const profile = await buildProfile(url);
         const forms = (profile.forms || []).filter(f => classifyFormType(f) === 'login');
         const tasks = forms.map(form => async () => ({ form: form.id, action: form.action, attempts: await webLoginBrute(form) }));
@@ -1300,7 +1225,6 @@
         return reportBrute({ webLogin: results.filter(b => b && b.attempts && b.attempts.length) });
       }
       if (cmd === 'cve') {
-        await prepareProxyList();
         const profile = await buildProfile(url);
         const r = await autoAttack(url, profile);
         return reportAuto(r);
@@ -1323,7 +1247,7 @@
     }
     const registered = api.registerCommand(PKG, {
       description: MANIFEST.description,
-      usage: 'attackkit <scan|lowscan|profile|crawl|dns|subdomain|cloud|exploit|analyze|brute|cve|setproxy|help|version> [args]',
+      usage: 'attackkit <scan|lowscan|profile|crawl|dns|subdomain|cloud|exploit|analyze|brute|cve|help|version> [args]',
       aliases: [],
       kind: 'plain',
       run: async ({ args = [], api: scopedApi } = {}) => {
@@ -1342,8 +1266,6 @@
     const bridge = api || state.api;
     try { if (bridge?.unregisterCommand) bridge.unregisterCommand(PKG); } catch { }
     state.runtime.cache.clear();
-    state.runtime.proxyList = [];
-    state.runtime.proxyReady = false;
     state.api = null;
     return [];
   };
@@ -1357,7 +1279,6 @@
       normalizeTarget,
       buildBaseline,
       isMirror,
-      getFreeUserProxy
     })
   });
 })();

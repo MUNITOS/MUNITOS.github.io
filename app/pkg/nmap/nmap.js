@@ -21,10 +21,14 @@
   });
 
   
-  const DEFAULT_WORKERS = 128;
-  const MAX_WORKERS = 512;
+  const PROFILES = Object.freeze({
+    high: Object.freeze({ concurrent: 384, minConcurrent: 192, maxConcurrent: 768, maxFormsToTest: 200, mainTaskLimit: 384, label: 'HIGH-POWER' }),
+    low: Object.freeze({ concurrent: 48, minConcurrent: 24, maxConcurrent: 192, maxFormsToTest: 80, mainTaskLimit: 48, label: 'LOW-POWER (mobile)' })
+  });
+  const DEFAULT_WORKERS = PROFILES.high.concurrent;
+  const MAX_WORKERS = PROFILES.high.maxConcurrent;
   const MIN_WORKERS = 1;
-  const LOW_WORKERS = 16;
+  const LOW_WORKERS = PROFILES.low.concurrent;
   const DEFAULT_TIMEOUT = 1000;
   const LOW_TIMEOUT = 2500;
   const YIELD_EVERY = 24;
@@ -50,6 +54,14 @@
     if (!Number.isFinite(num) || num <= 0) return DEFAULT_WORKERS;
     return Math.max(MIN_WORKERS, Math.min(Math.floor(num), MAX_WORKERS));
   };
+  const getNetworkApi = () => {
+    try { return globalThis.__FreeUserProxy?.api?.proxy || null; } catch { return null; }
+  };
+  const networkFetch = async (url, options = {}) => {
+    const network = getNetworkApi();
+    if (!network?.fetch) throw new Error('FreeUserProxy network API is not available.');
+    return network.fetch(url, options);
+  };
   const generateRandomPath = () => {
     const rand = Math.random().toString(36).slice(2, 12);
     return `nmap-probe-${rand}-${Date.now().toString(36)}`;
@@ -69,7 +81,7 @@
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeout);
     try {
-      const response = await fetch(url, {
+      const response = await networkFetch(url, {
         method: 'GET',
         signal: controller.signal,
         credentials: 'omit',
@@ -99,7 +111,7 @@
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeout);
     try {
-      await fetch(url, {
+      await networkFetch(url, {
         method: 'GET',
         signal: controller.signal,
         credentials: 'omit',
@@ -238,7 +250,7 @@
     const timeout = Math.max(1, Number(options.timeout) || DEFAULT_TIMEOUT);
     const u = new URL(baseUrl);
     const results = [];
-    const concurrency = Math.max(1, Math.min(ports.length, 32));
+    const concurrency = Math.max(1, Math.min(ports.length, clampWorkers(options.concurrency), PROFILES[options.profile === 'low' ? 'low' : 'high'].mainTaskLimit));
     let nextIndex = 0;
     const worker = async () => {
       let iter = 0;

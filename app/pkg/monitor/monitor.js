@@ -23,6 +23,11 @@
   const PKG = 'monitor';
   const VERSION = MANIFEST.version;
   const GLOBAL_KEY = '__munitos_pkg_monitor';
+  const PROFILES = Object.freeze({
+    high: Object.freeze({ concurrent: 384, minConcurrent: 192, maxConcurrent: 768, maxFormsToTest: 200, mainTaskLimit: 384, label: 'HIGH-POWER' }),
+    low: Object.freeze({ concurrent: 48, minConcurrent: 24, maxConcurrent: 192, maxFormsToTest: 80, mainTaskLimit: 48, label: 'LOW-POWER (mobile)' })
+  });
+
   const COOKIE_KEY = 'munitos-monitor:v1';
   const HISTORY_MAX = 48;
   const RESIZE_DEBOUNCE = 150;
@@ -113,6 +118,14 @@
     boundConsoleWarn: null
   };
 
+  const getNetworkApi = () => {
+    try { return globalThis.__FreeUserProxy?.api?.proxy || null; } catch { return null; }
+  };
+  const networkFetch = async (url, options = {}) => {
+    const network = getNetworkApi();
+    if (!network?.fetch) throw new Error('FreeUserProxy network API is not available.');
+    return network.fetch(url, options);
+  };
   const clamp = (v, min, max) => {
     const n = Number(v);
     if (!Number.isFinite(n)) return min;
@@ -521,8 +534,8 @@
     if (!target) return null;
     const url = target + (target.includes('?') ? '&' : '?') + `_monitor=${Date.now()}_${Math.random().toString(36).slice(2)}`;
     const started = performance.now();
-    try { await fetch(url, { method: 'HEAD', cache: 'no-store', credentials: 'same-origin', redirect: 'follow' }); return Math.max(0, performance.now() - started); } catch {}
-    try { await fetch(url, { method: 'GET', cache: 'no-store', credentials: 'same-origin', redirect: 'follow' }); return Math.max(0, performance.now() - started); } catch { return null; }
+    try { await networkFetch(url, { method: 'HEAD', cache: 'no-store', credentials: 'same-origin', redirect: 'follow' }); return Math.max(0, performance.now() - started); } catch {}
+    try { await networkFetch(url, { method: 'GET', cache: 'no-store', credentials: 'same-origin', redirect: 'follow' }); return Math.max(0, performance.now() - started); } catch { return null; }
   };
   const calculatePingStats = () => {
     const values = state.networkProbeSamples.filter(v => Number.isFinite(v)).slice(-8);
