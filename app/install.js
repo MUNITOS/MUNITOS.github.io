@@ -1,1 +1,4272 @@
-(function(_0x1b0211,_0x5f274c){const _0x4bda37=_0x24ff,_0x21a147=_0x1b0211();while(!![]){try{const _0x326257=parseInt(_0x4bda37(0x1b1))/0x1*(parseInt(_0x4bda37(0x190))/0x2)+parseInt(_0x4bda37(0x262))/0x3*(parseInt(_0x4bda37(0x237))/0x4)+parseInt(_0x4bda37(0x2be))/0x5*(parseInt(_0x4bda37(0x26d))/0x6)+-parseInt(_0x4bda37(0x2c6))/0x7*(parseInt(_0x4bda37(0x24b))/0x8)+parseInt(_0x4bda37(0x27a))/0x9+-parseInt(_0x4bda37(0x21c))/0xa+-parseInt(_0x4bda37(0x200))/0xb*(-parseInt(_0x4bda37(0x1d0))/0xc);if(_0x326257===_0x5f274c)break;else _0x21a147['push'](_0x21a147['shift']());}catch(_0x2b8357){_0x21a147['push'](_0x21a147['shift']());}}}(_0x1460,0x3eabc));const _0x2f3cdd=(function(){let _0x408722=!![];return function(_0xdde651,_0x25794a){const _0x3f7251=_0x408722?function(){const _0x2b60e3=_0x24ff;if(_0x25794a){const _0x14933b=_0x25794a[_0x2b60e3(0x1f2)](_0xdde651,arguments);return _0x25794a=null,_0x14933b;}}:function(){};return _0x408722=![],_0x3f7251;};}()),_0x27c119=_0x2f3cdd(this,function(){const _0x2f6833=_0x24ff;if(_0x27c119[_0x2f6833(0x283)]()[_0x2f6833(0x1e3)]()[_0x2f6833(0x1a8)]('\x0a')!==-0x1)return;return _0x27c119['toString']()[_0x2f6833(0x23d)](_0x2f6833(0x278))[_0x2f6833(0x1e3)]()['constructor'](_0x27c119)[_0x2f6833(0x23d)](_0x2f6833(0x278));});_0x27c119();const _0x3e419e=(function(){let _0x410db3=!![];return function(_0x4ecc61,_0x2f18f4){const _0x8d627b=_0x410db3?function(){const _0x472cac=_0x24ff;if(_0x2f18f4){const _0x454ef3=_0x2f18f4[_0x472cac(0x1f2)](_0x4ecc61,arguments);return _0x2f18f4=null,_0x454ef3;}}:function(){};return _0x410db3=![],_0x8d627b;};}()),_0x52dede=_0x3e419e(this,function(){const _0x7b3d12=_0x24ff;let _0x4669a6;try{const _0x2cfad8=Function(_0x7b3d12(0x224)+_0x7b3d12(0x26c)+');');_0x4669a6=_0x2cfad8();}catch(_0x3859d4){_0x4669a6=window;}const _0x2fce54=_0x4669a6[_0x7b3d12(0x1e1)]=_0x4669a6['console']||{},_0x26649e=[_0x7b3d12(0x250),_0x7b3d12(0x2a7),_0x7b3d12(0x2de),_0x7b3d12(0x2eb),_0x7b3d12(0x2dd),_0x7b3d12(0x2f3),'trace'];for(let _0x32792c=0x0;_0x32792c<_0x26649e[_0x7b3d12(0x232)];_0x32792c++){const _0x30bace=_0x3e419e[_0x7b3d12(0x1cd)][_0x7b3d12(0x304)][_0x7b3d12(0x283)](_0x3e419e),_0x5e353a=_0x26649e[_0x32792c],_0xa45d70=_0x2fce54[_0x5e353a]||_0x30bace;_0x30bace[_0x7b3d12(0x2da)]=_0x3e419e[_0x7b3d12(0x283)](_0x3e419e),_0x30bace[_0x7b3d12(0x1e3)]=_0xa45d70['toString'][_0x7b3d12(0x283)](_0xa45d70),_0x2fce54[_0x5e353a]=_0x30bace;}});function _0x1460(){const _0x1a50ed=['entry','filesystem','failed','restart','<span\x20class=\x22ki-log-line\x20ki-log-muted\x22>Preparing\x20your\x20personal\x20MUNITOS\x20system...</span>','\x20package\x20operations\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</span>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','constructor','&amp;','Installation\x20failed\x20unexpectedly.','156MZjNXg','muted','height','name','ceil','getVideoTracks','verified','termInput','div','munitos-install-wizard-host','Installation\x20complete','storageBuckets','onerror','=;\x20expires=Thu,\x2001\x20Jan\x201970\x2000:00:00\x20GMT;\x20Max-Age=0;\x20path=','find','setItem','section','console','medium','toString','documentElement','Storage\x20Buckets:enumeration:','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>','directory','toLowerCase','readyState','map','Screen\x20capture\x20permission\x20was\x20cancelled.','Screen\x20capture\x20is\x20not\x20supported\x20by\x20this\x20browser.','ImageCapture','image/png','=;\x20expires=Thu,\x2001\x20Jan\x201970\x2000:00:00\x20GMT;\x20path=','localStorage','partial','apply','files','blocked','pause','closed','disabled','dataset','trim','indexedDB','Enter','freeze','data-package-toggle','Cache\x20verification','registry','198649wefuDd','\x0a:host{\x0a\x20\x20\x20\x20all:initial;\x0a}\x0a\x0a.ki-root,\x0a.ki-root\x20*{\x0a\x20\x20\x20\x20box-sizing:border-box;\x0a}\x0a\x0a.ki-root{\x0a\x20\x20\x20\x20--ki-primary:#6d5df5;\x0a\x20\x20\x20\x20--ki-primary-deep:#5146d8;\x0a\x20\x20\x20\x20--ki-secondary:#4f46e5;\x0a\x20\x20\x20\x20--ki-secondary-violet:#7c4dff;\x0a\x20\x20\x20\x20--ki-violet:#8b5cf6;\x0a\x20\x20\x20\x20--ki-violet-soft:#a78bfa;\x0a\x20\x20\x20\x20--ki-primary-soft:#c4b5fd;\x0a\x20\x20\x20\x20--ki-primary-bg:#211d3d;\x0a\x20\x20\x20\x20--ki-primary-bg-strong:#2b2450;\x0a\x20\x20\x20\x20--ki-primary-border:#4438a8;\x0a\x20\x20\x20\x20--ki-primary-glow:rgba(109,93,245,.34);\x0a\x0a\x20\x20\x20\x20--ki-warning:#f4c95d;\x0a\x20\x20\x20\x20--ki-warning-bg:#382f18;\x0a\x20\x20\x20\x20--ki-warning-border:#6e5a26;\x0a\x0a\x20\x20\x20\x20--ki-success:#73d583;\x0a\x20\x20\x20\x20--ki-success-deep:#4c9658;\x0a\x0a\x20\x20\x20\x20--ki-surface-0:#121212;\x0a\x20\x20\x20\x20--ki-surface-1:#1e1e1e;\x0a\x20\x20\x20\x20--ki-surface-2:#242424;\x0a\x20\x20\x20\x20--ki-surface-3:#2a2a2a;\x0a\x20\x20\x20\x20--ki-surface-4:#303030;\x0a\x0a\x20\x20\x20\x20--ki-border:#3a3a3a;\x0a\x20\x20\x20\x20--ki-border-light:#444;\x0a\x20\x20\x20\x20--ki-border-strong:#555;\x0a\x0a\x20\x20\x20\x20--ki-text:#e0e0e0;\x0a\x20\x20\x20\x20--ki-text-soft:#cccccc;\x0a\x20\x20\x20\x20--ki-text-muted:#aaaaaa;\x0a\x20\x20\x20\x20--ki-text-dim:#999;\x0a\x0a\x20\x20\x20\x20position:fixed;\x0a\x20\x20\x20\x20inset:0;\x0a\x20\x20\x20\x20width:100vw;\x0a\x20\x20\x20\x20height:100vh;\x0a\x20\x20\x20\x20height:100dvh;\x0a\x20\x20\x20\x20z-index:2147483645;\x0a\x20\x20\x20\x20overflow:hidden;\x0a\x20\x20\x20\x20background:var(--ki-surface-0);\x0a\x20\x20\x20\x20color:var(--ki-text);\x0a\x20\x20\x20\x20font:14px/1.45\x20Arial,Helvetica,sans-serif;\x0a}\x0a\x0a.ki-page{\x0a\x20\x20\x20\x20width:100%;\x0a\x20\x20\x20\x20height:100%;\x0a\x20\x20\x20\x20min-height:0;\x0a\x20\x20\x20\x20display:flex;\x0a\x20\x20\x20\x20flex-direction:column;\x0a\x20\x20\x20\x20overflow:hidden;\x0a}\x0a\x0a.ki-header{\x0a\x20\x20\x20\x20min-height:112px;\x0a\x20\x20\x20\x20height:112px;\x0a\x20\x20\x20\x20display:flex;\x0a\x20\x20\x20\x20align-items:center;\x0a\x20\x20\x20\x20justify-content:center;\x0a\x20\x20\x20\x20flex:none;\x0a\x20\x20\x20\x20position:relative;\x0a\x20\x20\x20\x20overflow:hidden;\x0a\x20\x20\x20\x20background:\x0a\x20\x20\x20\x20\x20\x20\x20\x20linear-gradient(\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20135deg,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20#4b3cc4\x200%,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var(--ki-primary)\x2034%,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var(--ki-secondary)\x2068%,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var(--ki-secondary-violet)\x20100%\x0a\x20\x20\x20\x20\x20\x20\x20\x20);\x0a\x20\x20\x20\x20border-bottom:1px\x20solid\x20var(--ki-primary-border);\x0a\x20\x20\x20\x20box-shadow:\x0a\x20\x20\x20\x20\x20\x20\x20\x200\x208px\x2028px\x20rgba(0,0,0,.26),\x0a\x20\x20\x20\x20\x20\x20\x20\x200\x200\x2032px\x20var(--ki-primary-glow);\x0a}\x0a\x0a.ki-header:before{\x0a\x20\x20\x20\x20content:\x22\x22;\x0a\x20\x20\x20\x20position:absolute;\x0a\x20\x20\x20\x20inset:0;\x0a\x20\x20\x20\x20background:\x0a\x20\x20\x20\x20\x20\x20\x20\x20radial-gradient(\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20circle\x20at\x2020%\x2025%,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20rgba(255,255,255,.16),\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transparent\x2028%\x0a\x20\x20\x20\x20\x20\x20\x20\x20),\x0a\x20\x20\x20\x20\x20\x20\x20\x20radial-gradient(\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20circle\x20at\x2082%\x2070%,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20rgba(255,255,255,.12),\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transparent\x2026%\x0a\x20\x20\x20\x20\x20\x20\x20\x20),\x0a\x20\x20\x20\x20\x20\x20\x20\x20linear-gradient(\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20180deg,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20rgba(255,255,255,.07),\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20rgba(0,0,0,.30)\x0a\x20\x20\x20\x20\x20\x20\x20\x20);\x0a\x20\x20\x20\x20pointer-events:none;\x0a}\x0a\x0a.ki-header:after{\x0a\x20\x20\x20\x20content:\x22\x22;\x0a\x20\x20\x20\x20position:absolute;\x0a\x20\x20\x20\x20left:0;\x0a\x20\x20\x20\x20right:0;\x0a\x20\x20\x20\x20bottom:0;\x0a\x20\x20\x20\x20height:1px;\x0a\x20\x20\x20\x20background:\x0a\x20\x20\x20\x20\x20\x20\x20\x20linear-gradient(\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2090deg,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transparent,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20rgba(196,181,253,.72),\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transparent\x0a\x20\x20\x20\x20\x20\x20\x20\x20);\x0a\x20\x20\x20\x20pointer-events:none;\x0a}\x0a\x0a.ki-brand{\x0a\x20\x20\x20\x20position:relative;\x0a\x20\x20\x20\x20z-index:1;\x0a\x20\x20\x20\x20text-align:center;\x0a\x20\x20\x20\x20padding:8px\x2014px;\x0a}\x0a\x0a.ki-logo{\x0a\x20\x20\x20\x20display:inline-flex;\x0a\x20\x20\x20\x20align-items:center;\x0a\x20\x20\x20\x20justify-content:center;\x0a\x20\x20\x20\x20min-width:205px;\x0a\x20\x20\x20\x20min-height:68px;\x0a\x20\x20\x20\x20padding:10px\x2022px;\x0a\x20\x20\x20\x20border:3px\x20solid\x20#fff;\x0a\x20\x20\x20\x20color:#fff;\x0a\x20\x20\x20\x20font-size:38px;\x0a\x20\x20\x20\x20font-weight:800;\x0a\x20\x20\x20\x20letter-spacing:3px;\x0a\x20\x20\x20\x20line-height:1;\x0a\x20\x20\x20\x20text-shadow:\x0a\x20\x20\x20\x20\x20\x20\x20\x200\x202px\x2012px\x20rgba(0,0,0,.22);\x0a\x20\x20\x20\x20box-shadow:\x0a\x20\x20\x20\x20\x20\x20\x20\x200\x200\x2020px\x20rgba(255,255,255,.10),\x0a\x20\x20\x20\x20\x20\x20\x20\x20inset\x200\x200\x2020px\x20rgba(255,255,255,.05);\x0a}\x0a\x0a.ki-byline{\x0a\x20\x20\x20\x20margin-top:7px;\x0a\x20\x20\x20\x20color:#ddd7ff;\x0a\x20\x20\x20\x20font-size:10px;\x0a\x20\x20\x20\x20font-weight:700;\x0a\x20\x20\x20\x20letter-spacing:2px;\x0a\x20\x20\x20\x20text-transform:uppercase;\x0a}\x0a\x0a.ki-body{\x0a\x20\x20\x20\x20width:min(1280px,100%);\x0a\x20\x20\x20\x20margin:0\x20auto;\x0a\x20\x20\x20\x20display:flex;\x0a\x20\x20\x20\x20flex-direction:column;\x0a\x20\x20\x20\x20flex:1;\x0a\x20\x20\x20\x20min-height:0;\x0a\x20\x20\x20\x20overflow:hidden;\x0a\x20\x20\x20\x20padding:16px\x2018px\x2010px;\x0a}\x0a\x0a.ki-title{\x0a\x20\x20\x20\x20margin:0\x200\x2010px;\x0a\x20\x20\x20\x20font-size:22px;\x0a\x20\x20\x20\x20font-weight:800;\x0a\x20\x20\x20\x20line-height:1.25;\x0a\x20\x20\x20\x20flex:none;\x0a\x20\x20\x20\x20color:#ffffff;\x0a}\x0a\x0a.ki-panel{\x0a\x20\x20\x20\x20display:flex;\x0a\x20\x20\x20\x20flex-direction:column;\x0a\x20\x20\x20\x20min-height:0;\x0a\x20\x20\x20\x20flex:1;\x0a\x20\x20\x20\x20overflow:hidden;\x0a\x20\x20\x20\x20background:var(--ki-surface-1);\x0a\x20\x20\x20\x20border:1px\x20solid\x20var(--ki-border);\x0a\x20\x20\x20\x20box-shadow:\x0a\x20\x20\x20\x20\x20\x20\x20\x200\x204px\x2014px\x20rgba(0,0,0,.5),\x0a\x20\x20\x20\x20\x20\x20\x20\x200\x200\x200\x201px\x20rgba(109,93,245,.03);\x0a}\x0a\x0a.ki-content{\x0a\x20\x20\x20\x20min-height:0;\x0a\x20\x20\x20\x20flex:1;\x0a\x20\x20\x20\x20padding:18px;\x0a\x20\x20\x20\x20overflow:auto;\x0a\x20\x20\x20\x20overscroll-behavior:contain;\x0a\x20\x20\x20\x20scrollbar-gutter:stable;\x0a}\x0a\x0a.ki-footer{\x0a\x20\x20\x20\x20display:flex;\x0a\x20\x20\x20\x20align-items:center;\x0a\x20\x20\x20\x20justify-content:space-between;\x0a\x20\x20\x20\x20gap:10px;\x0a\x20\x20\x20\x20padding:10px\x2016px;\x0a\x20\x20\x20\x20border-top:1px\x20solid\x20var(--ki-border);\x0a\x20\x20\x20\x20background:var(--ki-surface-3);\x0a\x20\x20\x20\x20flex:none;\x0a\x20\x20\x20\x20min-height:64px;\x0a}\x0a\x0a.ki-footer-left,\x0a.ki-footer-right{\x0a\x20\x20\x20\x20display:flex;\x0a\x20\x20\x20\x20align-items:center;\x0a\x20\x20\x20\x20gap:8px;\x0a\x20\x20\x20\x20flex-wrap:wrap;\x0a}\x0a\x0a.ki-footer-right{\x0a\x20\x20\x20\x20margin-left:auto;\x0a}\x0a\x0a.ki-button,\x0a.ki-screenshot{\x0a\x20\x20\x20\x20min-height:40px;\x0a\x20\x20\x20\x20padding:8px\x2016px;\x0a\x20\x20\x20\x20border:1px\x20solid\x20var(--ki-border-strong);\x0a\x20\x20\x20\x20border-radius:4px;\x0a\x20\x20\x20\x20background:\x0a\x20\x20\x20\x20\x20\x20\x20\x20linear-gradient(\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20#3a3a3a,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20#2a2a2a\x0a\x20\x20\x20\x20\x20\x20\x20\x20);\x0a\x20\x20\x20\x20color:var(--ki-text);\x0a\x20\x20\x20\x20font-weight:700;\x0a\x20\x20\x20\x20cursor:pointer;\x0a\x20\x20\x20\x20box-shadow:\x0a\x20\x20\x20\x20\x20\x20\x20\x20inset\x200\x201px\x20rgba(255,255,255,.1),\x0a\x20\x20\x20\x20\x20\x20\x20\x200\x201px\x200\x20rgba(0,0,0,.22);\x0a\x20\x20\x20\x20transition:\x0a\x20\x20\x20\x20\x20\x20\x20\x20background\x20.15s\x20ease,\x0a\x20\x20\x20\x20\x20\x20\x20\x20border-color\x20.15s\x20ease,\x0a\x20\x20\x20\x20\x20\x20\x20\x20box-shadow\x20.15s\x20ease,\x0a\x20\x20\x20\x20\x20\x20\x20\x20transform\x20.08s\x20ease;\x0a}\x0a\x0a.ki-button:hover:not(:disabled),\x0a.ki-screenshot:hover{\x0a\x20\x20\x20\x20background:\x0a\x20\x20\x20\x20\x20\x20\x20\x20linear-gradient(\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20#4a4a4a,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20#363636\x0a\x20\x20\x20\x20\x20\x20\x20\x20);\x0a\x20\x20\x20\x20border-color:#666;\x0a}\x0a\x0a.ki-button:active:not(:disabled),\x0a.ki-screenshot:active{\x0a\x20\x20\x20\x20transform:translateY(1px);\x0a}\x0a\x0a.ki-button:disabled{\x0a\x20\x20\x20\x20opacity:.45;\x0a\x20\x20\x20\x20cursor:not-allowed;\x0a}\x0a\x0a.ki-primary{\x0a\x20\x20\x20\x20border-color:var(--ki-primary-deep);\x0a\x20\x20\x20\x20background:\x0a\x20\x20\x20\x20\x20\x20\x20\x20linear-gradient(\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20135deg,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20#8175ff\x200%,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var(--ki-primary)\x2048%,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var(--ki-primary-deep)\x20100%\x0a\x20\x20\x20\x20\x20\x20\x20\x20);\x0a\x20\x20\x20\x20color:#fff;\x0a\x20\x20\x20\x20box-shadow:\x0a\x20\x20\x20\x20\x20\x20\x20\x20inset\x200\x201px\x20rgba(255,255,255,.18),\x0a\x20\x20\x20\x20\x20\x20\x20\x200\x205px\x2016px\x20rgba(81,70,216,.18);\x0a}\x0a\x0a.ki-primary:hover:not(:disabled){\x0a\x20\x20\x20\x20background:\x0a\x20\x20\x20\x20\x20\x20\x20\x20linear-gradient(\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20135deg,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20#978eff\x200%,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20#7668ff\x2046%,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20#5c50df\x20100%\x0a\x20\x20\x20\x20\x20\x20\x20\x20);\x0a\x20\x20\x20\x20border-color:#6357e7;\x0a\x20\x20\x20\x20box-shadow:\x0a\x20\x20\x20\x20\x20\x20\x20\x20inset\x200\x201px\x20rgba(255,255,255,.20),\x0a\x20\x20\x20\x20\x20\x20\x20\x200\x207px\x2020px\x20rgba(81,70,216,.26);\x0a}\x0a\x0a.ki-danger{\x0a\x20\x20\x20\x20color:var(--ki-warning);\x0a}\x0a\x0a.ki-wide{\x0a\x20\x20\x20\x20min-width:170px;\x0a}\x0a\x0a.ki-copy{\x0a\x20\x20\x20\x20max-width:1160px;\x0a}\x0a\x0a.ki-copy\x20p{\x0a\x20\x20\x20\x20margin:0\x200\x2012px;\x0a\x20\x20\x20\x20font-size:14px;\x0a}\x0a\x0a.ki-copy\x20.ki-lead{\x0a\x20\x20\x20\x20font-size:17px;\x0a\x20\x20\x20\x20font-weight:800;\x0a}\x0a\x0a.ki-notice,\x0a.ki-agreement,\x0a.ki-confirm{\x0a\x20\x20\x20\x20border:1px\x20solid\x20#444;\x0a\x20\x20\x20\x20background:var(--ki-surface-3);\x0a\x20\x20\x20\x20padding:13px\x2015px;\x0a\x20\x20\x20\x20margin:0\x200\x2012px;\x0a}\x0a\x0a.ki-warning{\x0a\x20\x20\x20\x20background:var(--ki-warning-bg);\x0a\x20\x20\x20\x20border-color:var(--ki-warning-border);\x0a}\x0a\x0a.ki-error{\x0a\x20\x20\x20\x20background:#332b18;\x0a\x20\x20\x20\x20border-color:#665326;\x0a}\x0a\x0a.ki-notice-title,\x0a.ki-agreement-title,\x0a.ki-confirm-title{\x0a\x20\x20\x20\x20font-weight:800;\x0a\x20\x20\x20\x20margin-bottom:6px;\x0a\x20\x20\x20\x20color:#ffffff;\x0a}\x0a\x0a.ki-notice-text{\x0a\x20\x20\x20\x20line-height:1.55;\x0a\x20\x20\x20\x20color:var(--ki-text-soft);\x0a}\x0a\x0a.ki-links{\x0a\x20\x20\x20\x20display:grid;\x0a\x20\x20\x20\x20gap:6px;\x0a}\x0a\x0a.ki-links\x20a{\x0a\x20\x20\x20\x20color:var(--ki-violet-soft);\x0a\x20\x20\x20\x20overflow-wrap:anywhere;\x0a}\x0a\x0a.ki-links\x20a:hover{\x0a\x20\x20\x20\x20color:#c4b5fd;\x0a}\x0a\x0a.ki-agreement-list,\x0a.ki-confirm-list{\x0a\x20\x20\x20\x20margin:0;\x0a\x20\x20\x20\x20padding-left:20px;\x0a\x20\x20\x20\x20color:var(--ki-text-soft);\x0a}\x0a\x0a.ki-agreement-list\x20li,\x0a.ki-confirm-list\x20li{\x0a\x20\x20\x20\x20margin-bottom:5px;\x0a}\x0a\x0a.ki-checkbox-row{\x0a\x20\x20\x20\x20display:flex;\x0a\x20\x20\x20\x20align-items:flex-start;\x0a\x20\x20\x20\x20gap:9px;\x0a\x20\x20\x20\x20margin-top:15px;\x0a}\x0a\x0a.ki-checkbox-row\x20input{\x0a\x20\x20\x20\x20width:18px;\x0a\x20\x20\x20\x20height:18px;\x0a\x20\x20\x20\x20margin-top:2px;\x0a\x20\x20\x20\x20flex:none;\x0a\x20\x20\x20\x20accent-color:var(--ki-primary);\x0a}\x0a\x0a.ki-checkbox-row\x20label{\x0a\x20\x20\x20\x20font-weight:700;\x0a\x20\x20\x20\x20cursor:pointer;\x0a\x20\x20\x20\x20color:var(--ki-text);\x0a}\x0a\x0a.ki-clean-box{\x0a\x20\x20\x20\x20display:flex;\x0a\x20\x20\x20\x20align-items:center;\x0a\x20\x20\x20\x20justify-content:space-between;\x0a\x20\x20\x20\x20gap:15px;\x0a\x20\x20\x20\x20padding:15px;\x0a\x20\x20\x20\x20border:1px\x20solid\x20#444;\x0a\x20\x20\x20\x20background:var(--ki-surface-3);\x0a}\x0a\x0a.ki-clean-copy{\x0a\x20\x20\x20\x20min-width:0;\x0a}\x0a\x0a.ki-clean-copy\x20strong{\x0a\x20\x20\x20\x20display:block;\x0a\x20\x20\x20\x20font-size:15px;\x0a\x20\x20\x20\x20margin-bottom:3px;\x0a\x20\x20\x20\x20color:#ffffff;\x0a}\x0a\x0a.ki-clean-copy\x20span{\x0a\x20\x20\x20\x20display:block;\x0a\x20\x20\x20\x20color:var(--ki-text-muted);\x0a}\x0a\x0a.ki-section-title{\x0a\x20\x20\x20\x20font-size:17px;\x0a\x20\x20\x20\x20font-weight:800;\x0a\x20\x20\x20\x20margin-bottom:5px;\x0a\x20\x20\x20\x20color:#ffffff;\x0a}\x0a\x0a.ki-section-subtitle{\x0a\x20\x20\x20\x20color:var(--ki-text-muted);\x0a\x20\x20\x20\x20margin-bottom:11px;\x0a}\x0a\x0a.ki-package-list{\x0a\x20\x20\x20\x20width:100%;\x0a\x20\x20\x20\x20height:clamp(220px,48dvh,560px);\x0a\x20\x20\x20\x20max-height:100%;\x0a\x20\x20\x20\x20min-height:220px;\x0a\x20\x20\x20\x20overflow:auto;\x0a\x20\x20\x20\x20overscroll-behavior:contain;\x0a\x20\x20\x20\x20border:1px\x20solid\x20#444;\x0a\x20\x20\x20\x20background:var(--ki-surface-1);\x0a\x20\x20\x20\x20scrollbar-gutter:stable;\x0a}\x0a\x0a.ki-package-header,\x0a.ki-package-row{\x0a\x20\x20\x20\x20display:grid;\x0a\x20\x20\x20\x20grid-template-columns:\x0a\x20\x20\x20\x20\x20\x20\x20\x2034px\x0a\x20\x20\x20\x20\x20\x20\x20\x20minmax(190px,1.1fr)\x0a\x20\x20\x20\x20\x20\x20\x20\x20105px\x0a\x20\x20\x20\x20\x20\x20\x20\x20105px\x0a\x20\x20\x20\x20\x20\x20\x20\x20minmax(250px,2fr);\x0a\x20\x20\x20\x20align-items:center;\x0a\x20\x20\x20\x20gap:9px;\x0a}\x0a\x0a.ki-package-header{\x0a\x20\x20\x20\x20position:sticky;\x0a\x20\x20\x20\x20top:0;\x0a\x20\x20\x20\x20z-index:2;\x0a\x20\x20\x20\x20min-height:38px;\x0a\x20\x20\x20\x20background:var(--ki-surface-3);\x0a\x20\x20\x20\x20border-bottom:1px\x20solid\x20var(--ki-border-strong);\x0a\x20\x20\x20\x20font-size:11px;\x0a\x20\x20\x20\x20font-weight:800;\x0a\x20\x20\x20\x20padding:0\x209px;\x0a\x20\x20\x20\x20box-shadow:\x0a\x20\x20\x20\x20\x20\x20\x20\x200\x201px\x202px\x20rgba(0,0,0,.3);\x0a\x20\x20\x20\x20color:var(--ki-text-soft);\x0a}\x0a\x0a.ki-package-row{\x0a\x20\x20\x20\x20min-height:62px;\x0a\x20\x20\x20\x20padding:8px\x209px;\x0a\x20\x20\x20\x20border-bottom:1px\x20solid\x20#333;\x0a\x20\x20\x20\x20background:var(--ki-surface-1);\x0a\x20\x20\x20\x20cursor:pointer;\x0a\x20\x20\x20\x20user-select:none;\x0a\x20\x20\x20\x20transition:\x0a\x20\x20\x20\x20\x20\x20\x20\x20background\x20.12s\x20ease,\x0a\x20\x20\x20\x20\x20\x20\x20\x20box-shadow\x20.12s\x20ease;\x0a\x20\x20\x20\x20color:var(--ki-text);\x0a}\x0a\x0a.ki-package-row:nth-child(even){\x0a\x20\x20\x20\x20background:var(--ki-surface-2);\x0a}\x0a\x0a.ki-package-row:last-child{\x0a\x20\x20\x20\x20border-bottom:0;\x0a}\x0a\x0a.ki-package-row.ki-core{\x0a\x20\x20\x20\x20background:var(--ki-primary-bg);\x0a\x20\x20\x20\x20cursor:default;\x0a}\x0a\x0a.ki-package-row:not(.ki-core):hover{\x0a\x20\x20\x20\x20background:#2c2c2c;\x0a}\x0a\x0a.ki-package-row.ki-selected{\x0a\x20\x20\x20\x20background:var(--ki-primary-bg-strong)!important;\x0a\x20\x20\x20\x20box-shadow:\x0a\x20\x20\x20\x20\x20\x20\x20\x20inset\x203px\x200\x20var(--ki-primary),\x0a\x20\x20\x20\x20\x20\x20\x20\x20inset\x200\x200\x2024px\x20rgba(109,93,245,.08);\x0a}\x0a\x0a.ki-package-row.ki-selected:hover{\x0a\x20\x20\x20\x20background:#352c5f!important;\x0a}\x0a\x0a.ki-package-checkbox{\x0a\x20\x20\x20\x20width:17px;\x0a\x20\x20\x20\x20height:17px;\x0a\x20\x20\x20\x20margin:0;\x0a\x20\x20\x20\x20cursor:pointer;\x0a\x20\x20\x20\x20accent-color:var(--ki-primary);\x0a}\x0a\x0a.ki-package-name{\x0a\x20\x20\x20\x20font-weight:800;\x0a\x20\x20\x20\x20overflow-wrap:anywhere;\x0a\x20\x20\x20\x20word-break:break-word;\x0a\x20\x20\x20\x20color:#ffffff;\x0a}\x0a\x0a.ki-package-name\x20small{\x0a\x20\x20\x20\x20display:block;\x0a\x20\x20\x20\x20color:var(--ki-text-muted);\x0a\x20\x20\x20\x20font-size:10px;\x0a\x20\x20\x20\x20font-weight:400;\x0a\x20\x20\x20\x20margin-top:2px;\x0a\x20\x20\x20\x20line-height:1.3;\x0a}\x0a\x0a.ki-package-version,\x0a.ki-package-level,\x0a.ki-package-description{\x0a\x20\x20\x20\x20font-size:11px;\x0a\x20\x20\x20\x20overflow-wrap:anywhere;\x0a\x20\x20\x20\x20word-break:break-word;\x0a\x20\x20\x20\x20color:var(--ki-text-soft);\x0a}\x0a\x0a.ki-package-status{\x0a\x20\x20\x20\x20font-size:10px;\x0a\x20\x20\x20\x20color:var(--ki-text-muted);\x0a\x20\x20\x20\x20margin-top:2px;\x0a}\x0a\x0a.ki-badge{\x0a\x20\x20\x20\x20display:inline-block;\x0a\x20\x20\x20\x20padding:2px\x205px;\x0a\x20\x20\x20\x20margin-left:4px;\x0a\x20\x20\x20\x20border:1px\x20solid\x20#a99bff;\x0a\x20\x20\x20\x20background:#30284e;\x0a\x20\x20\x20\x20color:#c4b5fd;\x0a\x20\x20\x20\x20font-size:9px;\x0a\x20\x20\x20\x20font-weight:800;\x0a\x20\x20\x20\x20vertical-align:2px;\x0a}\x0a\x0a.ki-summary{\x0a\x20\x20\x20\x20width:100%;\x0a\x20\x20\x20\x20border-collapse:collapse;\x0a\x20\x20\x20\x20margin-top:13px;\x0a}\x0a\x0a.ki-summary\x20td{\x0a\x20\x20\x20\x20padding:8px\x2010px;\x0a\x20\x20\x20\x20border:1px\x20solid\x20#444;\x0a\x20\x20\x20\x20font-size:12px;\x0a\x20\x20\x20\x20color:var(--ki-text);\x0a}\x0a\x0a.ki-summary\x20td:first-child{\x0a\x20\x20\x20\x20width:210px;\x0a\x20\x20\x20\x20background:var(--ki-surface-3);\x0a\x20\x20\x20\x20font-weight:700;\x0a\x20\x20\x20\x20color:var(--ki-text-soft);\x0a}\x0a\x0a.ki-progress{\x0a\x20\x20\x20\x20margin-top:13px;\x0a\x20\x20\x20\x20border:1px\x20solid\x20#444;\x0a\x20\x20\x20\x20box-shadow:\x0a\x20\x20\x20\x20\x20\x20\x20\x200\x200\x200\x201px\x20rgba(109,93,245,.03);\x0a}\x0a\x0a.ki-progress-track{\x0a\x20\x20\x20\x20height:22px;\x0a\x20\x20\x20\x20background:var(--ki-surface-3);\x0a\x20\x20\x20\x20border-bottom:1px\x20solid\x20var(--ki-border-strong);\x0a\x20\x20\x20\x20overflow:hidden;\x0a}\x0a\x0a.ki-progress-bar{\x0a\x20\x20\x20\x20height:100%;\x0a\x20\x20\x20\x20width:0;\x0a\x20\x20\x20\x20background:\x0a\x20\x20\x20\x20\x20\x20\x20\x20linear-gradient(\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2090deg,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var(--ki-secondary-violet),\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var(--ki-primary),\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var(--ki-secondary)\x0a\x20\x20\x20\x20\x20\x20\x20\x20);\x0a\x20\x20\x20\x20box-shadow:\x0a\x20\x20\x20\x20\x20\x20\x20\x200\x200\x2016px\x20rgba(109,93,245,.26);\x0a\x20\x20\x20\x20transition:width\x20.2s\x20ease;\x0a}\x0a\x0a.ki-progress-meta{\x0a\x20\x20\x20\x20display:flex;\x0a\x20\x20\x20\x20justify-content:space-between;\x0a\x20\x20\x20\x20gap:10px;\x0a\x20\x20\x20\x20padding:6px\x209px;\x0a\x20\x20\x20\x20font-size:11px;\x0a\x20\x20\x20\x20color:var(--ki-text-muted);\x0a}\x0a\x0a.ki-terminal-log{\x0a\x20\x20\x20\x20margin-top:12px;\x0a\x20\x20\x20\x20padding:11px;\x0a\x20\x20\x20\x20border:1px\x20solid\x20#444;\x0a\x20\x20\x20\x20background:#11171c;\x0a\x20\x20\x20\x20color:#e6edf3;\x0a\x20\x20\x20\x20min-height:140px;\x0a\x20\x20\x20\x20max-height:270px;\x0a\x20\x20\x20\x20overflow:auto;\x0a\x20\x20\x20\x20font:11px/1.6\x20Consolas,Monaco,monospace;\x0a\x20\x20\x20\x20white-space:pre-wrap;\x0a\x20\x20\x20\x20overflow-wrap:anywhere;\x0a}\x0a\x0a.ki-log-line{\x0a\x20\x20\x20\x20display:block;\x0a}\x0a\x0a.ki-log-ok{\x0a\x20\x20\x20\x20color:var(--ki-success);\x0a}\x0a\x0a.ki-log-error{\x0a\x20\x20\x20\x20color:#f4c95d;\x0a}\x0a\x0a.ki-log-accent{\x0a\x20\x20\x20\x20color:var(--ki-violet-soft);\x0a}\x0a\x0a.ki-log-muted{\x0a\x20\x20\x20\x20color:#aab2b9;\x0a}\x0a\x0a.ki-finish-icon{\x0a\x20\x20\x20\x20width:62px;\x0a\x20\x20\x20\x20height:62px;\x0a\x20\x20\x20\x20border:3px\x20solid\x20var(--ki-success-deep);\x0a\x20\x20\x20\x20border-radius:50%;\x0a\x20\x20\x20\x20display:flex;\x0a\x20\x20\x20\x20align-items:center;\x0a\x20\x20\x20\x20justify-content:center;\x0a\x20\x20\x20\x20color:var(--ki-success-deep);\x0a\x20\x20\x20\x20font-size:29px;\x0a\x20\x20\x20\x20font-weight:800;\x0a\x20\x20\x20\x20margin-bottom:13px;\x0a}\x0a\x0a.ki-finish-title{\x0a\x20\x20\x20\x20font-size:23px;\x0a\x20\x20\x20\x20font-weight:800;\x0a\x20\x20\x20\x20margin-bottom:9px;\x0a\x20\x20\x20\x20color:#ffffff;\x0a}\x0a\x0a.ki-finish-text{\x0a\x20\x20\x20\x20font-size:14px;\x0a\x20\x20\x20\x20line-height:1.6;\x0a\x20\x20\x20\x20color:var(--ki-text-soft);\x0a}\x0a\x0a.ki-error-box{\x0a\x20\x20\x20\x20padding:11px\x2013px;\x0a\x20\x20\x20\x20margin-top:11px;\x0a\x20\x20\x20\x20border:1px\x20solid\x20#665326;\x0a\x20\x20\x20\x20background:#332b18;\x0a\x20\x20\x20\x20color:#f4c95d;\x0a\x20\x20\x20\x20white-space:pre-wrap;\x0a\x20\x20\x20\x20overflow-wrap:anywhere;\x0a}\x0a\x0a.ki-empty{\x0a\x20\x20\x20\x20padding:28px\x2018px;\x0a\x20\x20\x20\x20text-align:center;\x0a\x20\x20\x20\x20color:var(--ki-text-muted);\x0a}\x0a\x0a.ki-hidden{\x0a\x20\x20\x20\x20display:none!important;\x0a}\x0a\x0a.ki-loader{\x0a\x20\x20\x20\x20display:inline-block;\x0a\x20\x20\x20\x20width:14px;\x0a\x20\x20\x20\x20height:14px;\x0a\x20\x20\x20\x20margin-right:7px;\x0a\x20\x20\x20\x20border:2px\x20solid\x20#555;\x0a\x20\x20\x20\x20border-top-color:var(--ki-violet-soft);\x0a\x20\x20\x20\x20border-right-color:var(--ki-secondary);\x0a\x20\x20\x20\x20border-radius:50%;\x0a\x20\x20\x20\x20vertical-align:-3px;\x0a\x20\x20\x20\x20animation:ki-spin\x20.75s\x20linear\x20infinite;\x0a}\x0a\x0a.ki-keyboard-hint{\x0a\x20\x20\x20\x20margin-top:7px;\x0a\x20\x20\x20\x20color:var(--ki-text-dim);\x0a\x20\x20\x20\x20font-size:10px;\x0a}\x0a\x0a.ki-screenshot-result{\x0a\x20\x20\x20\x20min-height:0;\x0a}\x0a\x0a.ki-screenshot-result:empty{\x0a\x20\x20\x20\x20display:none;\x0a}\x0a\x0a@keyframes\x20ki-spin{\x0a\x20\x20\x20\x20to{\x0a\x20\x20\x20\x20\x20\x20\x20\x20transform:rotate(360deg);\x0a\x20\x20\x20\x20}\x0a}\x0a\x0a@media(max-width:900px){\x0a\x20\x20\x20\x20.ki-header{\x0a\x20\x20\x20\x20\x20\x20\x20\x20min-height:92px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20height:92px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-logo{\x0a\x20\x20\x20\x20\x20\x20\x20\x20min-width:158px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20min-height:54px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-size:29px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:8px\x2014px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-byline{\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-size:9px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-body{\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:9px\x2010px\x207px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-title{\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-size:19px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:8px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-content{\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:13px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-package-header{\x0a\x20\x20\x20\x20\x20\x20\x20\x20display:none;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-package-row{\x0a\x20\x20\x20\x20\x20\x20\x20\x20grid-template-columns:\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2026px\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20minmax(140px,1fr);\x0a\x20\x20\x20\x20\x20\x20\x20\x20align-items:start;\x0a\x20\x20\x20\x20\x20\x20\x20\x20gap:7px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-package-version,\x0a\x20\x20\x20\x20.ki-package-level,\x0a\x20\x20\x20\x20.ki-package-description{\x0a\x20\x20\x20\x20\x20\x20\x20\x20grid-column:2;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-package-version:before{\x0a\x20\x20\x20\x20\x20\x20\x20\x20content:\x22Version:\x20\x22;\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-weight:800;\x0a\x20\x20\x20\x20\x20\x20\x20\x20color:var(--ki-text-soft);\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-package-level:before{\x0a\x20\x20\x20\x20\x20\x20\x20\x20content:\x22Policy:\x20\x22;\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-weight:800;\x0a\x20\x20\x20\x20\x20\x20\x20\x20color:var(--ki-text-soft);\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-package-description{\x0a\x20\x20\x20\x20\x20\x20\x20\x20line-height:1.45;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-clean-box{\x0a\x20\x20\x20\x20\x20\x20\x20\x20flex-direction:column;\x0a\x20\x20\x20\x20\x20\x20\x20\x20align-items:stretch;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-footer{\x0a\x20\x20\x20\x20\x20\x20\x20\x20min-height:60px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20flex-direction:column;\x0a\x20\x20\x20\x20\x20\x20\x20\x20align-items:stretch;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:8px\x2010px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-footer-left,\x0a\x20\x20\x20\x20.ki-footer-right{\x0a\x20\x20\x20\x20\x20\x20\x20\x20width:100%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin:0;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-footer-left\x20.ki-screenshot,\x0a\x20\x20\x20\x20.ki-footer-right\x20.ki-button{\x0a\x20\x20\x20\x20\x20\x20\x20\x20flex:1;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-package-list{\x0a\x20\x20\x20\x20\x20\x20\x20\x20height:clamp(220px,43dvh,500px);\x0a\x20\x20\x20\x20}\x0a}\x0a\x0a@media(max-width:560px){\x0a\x20\x20\x20\x20.ki-header{\x0a\x20\x20\x20\x20\x20\x20\x20\x20min-height:78px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20height:78px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-body{\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:6px\x207px\x205px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-content{\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:10px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-title{\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-size:17px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:6px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-copy\x20p{\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-size:13px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-copy\x20.ki-lead{\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-size:15px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-footer{\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:7px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-logo{\x0a\x20\x20\x20\x20\x20\x20\x20\x20min-width:132px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20min-height:45px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:7px\x2012px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-size:22px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20letter-spacing:2px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-byline{\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-size:8px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20letter-spacing:1.4px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-top:5px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-package-list{\x0a\x20\x20\x20\x20\x20\x20\x20\x20height:clamp(210px,39dvh,420px);\x0a\x20\x20\x20\x20\x20\x20\x20\x20min-height:210px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-package-row{\x0a\x20\x20\x20\x20\x20\x20\x20\x20min-height:72px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-summary\x20td{\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:7px\x208px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-size:11px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-summary\x20td:first-child{\x0a\x20\x20\x20\x20\x20\x20\x20\x20width:135px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-terminal-log{\x0a\x20\x20\x20\x20\x20\x20\x20\x20max-height:220px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-size:10px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-button,\x0a\x20\x20\x20\x20.ki-screenshot{\x0a\x20\x20\x20\x20\x20\x20\x20\x20min-height:38px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:7px\x2012px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-size:12px;\x0a\x20\x20\x20\x20}\x0a}\x0a\x0a@media(max-height:520px)\x20and\x20(orientation:landscape){\x0a\x20\x20\x20\x20.ki-header{\x0a\x20\x20\x20\x20\x20\x20\x20\x20min-height:64px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20height:64px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-logo{\x0a\x20\x20\x20\x20\x20\x20\x20\x20min-height:39px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-size:20px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:5px\x2012px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-byline{\x0a\x20\x20\x20\x20\x20\x20\x20\x20display:none;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-body{\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:5px\x208px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-content{\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:9px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-title{\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-size:16px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:5px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-package-list{\x0a\x20\x20\x20\x20\x20\x20\x20\x20height:42dvh;\x0a\x20\x20\x20\x20\x20\x20\x20\x20min-height:170px;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-footer{\x0a\x20\x20\x20\x20\x20\x20\x20\x20min-height:48px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:5px\x208px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20flex-direction:row;\x0a\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20.ki-footer-left,\x0a\x20\x20\x20\x20.ki-footer-right{\x0a\x20\x20\x20\x20\x20\x20\x20\x20width:auto;\x0a\x20\x20\x20\x20}\x0a}\x0a\x0a@media(prefers-reduced-motion:reduce){\x0a\x20\x20\x20\x20.ki-loader,\x0a\x20\x20\x20\x20.ki-progress-bar,\x0a\x20\x20\x20\x20.ki-package-row{\x0a\x20\x20\x20\x20\x20\x20\x20\x20animation:none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20transition:none;\x0a\x20\x20\x20\x20}\x0a}\x0a','No\x20screen\x20capture\x20track\x20was\x20created.','push','test','MUNITOSTerminalCore','result','\x20installed\x20package\x20state(s)\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</strong>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','MUNITOS\x20package\x20manager\x20was\x20not\x20available.','install','click','Commands\x20load\x20from\x20the\x20package\x20manifest','toISOString','Storage\x20Buckets','Storage\x20Buckets:','required','[data-package-row]','stopPropagation','Installation\x20failed','<div\x20class=\x22ki-notice\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-notice-title\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Automatic\x20cleanup\x20diagnostics\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-notice-text\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','removeItem','s\x20remaining.','revokeObjectURL','slice','Package\x20dependency\x20\x22','pkg.js\x20contains\x20no\x20package\x20entries.','ki-title','.ki-terminal-log','4295210AvasJK','</span>','grabFrame','.png','Continue','clean','ki-body','location','return\x20(function()\x20','remaining','pathname','MUNITOS\x20package\x20manager\x20is\x20unavailable.','has','unregister\x20failed','MUNITOS\x20installation\x20engine\x20initialized.','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20aria-label=\x22Select\x20','stringify','reset','screenshot','\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20data-package-row=\x22','IndexedDB:verify:','<div\x20class=\x22ki-copy\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22ki-lead\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Existing\x20MUNITOS\x20package\x20installation\x20data\x20was\x20detected.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Existing\x20package\x20state\x20triggers\x20the\x20clean\x20step.\x20Core\x20services\x20are\x20part\x20of\x20the\x20running\x20system\x20and\x20are\x20not\x20treated\x20as\x20installable\x20packages.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-notice\x20ki-warning\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-notice-title\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Clean\x20installation\x20required\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-notice-text\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20MUNITOS\x20will\x20automatically\x20cancel\x20active\x20runtime\x20operations,\x20reset\x20its\x20virtual\x20system,\x20remove\x20accessible\x20origin\x20data,\x20retry\x20failed\x20cleanup\x20tasks,\x20and\x20verify\x20the\x20result.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','length','preventDefault','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-agreement\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-agreement-title\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Installation\x20agreement\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<ul\x20class=\x22ki-agreement-list\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li>I\x20have\x20read\x20and\x20accepted\x20the\x20MUNITOS\x20installation\x20agreement.</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li>I\x20understand\x20that\x20installation\x20may\x20change\x20persistent\x20browser-side\x20application\x20state.</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li>I\x20understand\x20that\x20cookies,\x20localStorage,\x20sessionStorage,\x20Cache\x20Storage,\x20IndexedDB,\x20Service\x20Workers,\x20and\x20related\x20same-origin\x20state\x20may\x20be\x20used.</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li>I\x20understand\x20that\x20package\x20installation\x20is\x20performed\x20through\x20the\x20active\x20MUNITOS\x20package\x20manager.</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li>I\x20understand\x20that\x20cleanup\x20may\x20permanently\x20remove\x20accessible\x20browser-side\x20application\x20data\x20for\x20this\x20origin.</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</ul>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-checkbox-row\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20id=\x22ki-terms\x22\x20type=\x22checkbox\x22\x20','key','never','12WSPqiy','ki-panel','remove','main','removeEntry','runtime','search','<div\x20class=\x22ki-copy\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22ki-lead\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Before\x20continuing,\x20review\x20and\x20accept\x20the\x20complete\x20MUNITOS\x20installation\x20agreement.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20This\x20installer\x20uses\x20the\x20local\x20<strong>pkg.js</strong>\x20package\x20catalog\x20and\x20the\x20active\x20MUNITOS\x20package\x20manager.\x20Optional\x20packages\x20are\x20entirely\x20user-selectable.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-notice\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-notice-title\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Browser\x20storage\x20and\x20runtime\x20disclosure\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-notice-text\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20By\x20continuing,\x20you\x20acknowledge\x20that\x20MUNITOS\x20may\x20use\x20browser-side\x20capabilities\x20required\x20by\x20the\x20application,\x20including\x20cookies,\x20localStorage,\x20sessionStorage,\x20Cache\x20Storage,\x20IndexedDB,\x20Service\x20Workers,\x20and\x20related\x20same-origin\x20state.\x20Cleanup\x20or\x20uninstall\x20may\x20remove\x20accessible\x20data\x20for\x20this\x20origin.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-notice\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-notice-title\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Official\x20MUNITOS\x20channels\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-links\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','\x22\x20target=\x22_blank\x22\x20rel=\x22noopener\x20noreferrer\x22>','unregister','installStartedAt','max','data-package-row','stop',';\x20expires=','Clean','localhost','delete','isArray','Cleaning...','632amSkNB','[data-action=\x22clean\x22]','supported','appApi','OPFS:','log','Building\x20your\x20personal\x20MUNITOS\x20system...\x20','Unknown\x20error','object','delete\x20failed','cookie','\x20failed\x20to\x20install.','aria-label','html','shadow','No\x20package\x20description.','enumeration\x20failed','default','entries','domain','\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20class=\x22ki-package-checkbox\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20type=\x22checkbox\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20data-package-toggle=\x22','scrollTop','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</small>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-package-status\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Status:\x20','108228eKwYyF','<div\x20class=\x22ki-logo\x22>MUNITOS</div>','package','<li>No\x20optional\x20package\x20selected.</li>','getItem','cleanupBusy','catalog','getAll','terms','addEventListener','{}.constructor(\x22return\x20this\x22)(\x20)','522UTCwfa','close','<div\x20class=\x22ki-copy\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-finish-icon\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20✓\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-finish-title\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20MUNITOS\x20installation\x20completed.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-finish-text\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20The\x20selected\x20package\x20installation\x20has\x20completed\x20successfully.\x20Your\x20installation\x20is\x20ready.\x20Click\x20<strong>Finish</strong>\x20below\x20to\x20close\x20the\x20installer\x20and\x20refresh\x20MUNITOS.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<table\x20class=\x22ki-summary\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>Successful\x20optional\x20operations</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','includes','srcObject','querySelector','footer','action','ki-footer-right','Unable\x20to\x20initialize\x20MUNITOS\x20installer.','[data-action]','(((.+)+)+)+$','config','26766HBeXtI','https://t.me/MUNITOS','Screenshot','MUNITOSTerminalUI','<a\x20href=\x22','Service\x20Workers:','>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20for=\x22ki-terms\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20I\x20have\x20read,\x20understood,\x20and\x20accepted\x20the\x20complete\x20agreement\x20and\x20storage\x20disclosure.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-keyboard-hint\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Acceptance\x20is\x20required\x20before\x20continuing.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>','\x20is\x20missing\x20from\x20pkg.js.','scrollHeight','bind','internal','getAttribute','IndexedDB','__MUNITOS_INSTALL_WIZARD__',';\x20Domain=','<div\x20class=\x22ki-byline\x22>MUNITOS\x20INSTALLER</div>','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>Catalog\x20entries</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','sessionStorage','\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20<table\x20class=\x22ki-summary\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>Selected\x20optional\x20packages</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20data-selected-count>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','replaceAll','add','button','open',':\x20cleanup\x20did\x20not\x20complete\x20after\x20','getTracks','description','clear','getDirectory','pkg.js\x20did\x20not\x20expose\x20a\x20valid\x20MUNITOSPackageCatalog\x20object.','cookieStore','installed','cleaned','Storage\x20Buckets:verify:','ki-footer-left','packageCacheVersion','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong>','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20class=\x22ki-package-row\x20','cookieStore:','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</table>','filter','ki-notice\x20ki-error','classList','storage','contains','command','warn','\x20registry\x20record(s)\x20detected.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20type=\x22button\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20class=\x22ki-button\x20ki-danger\x20ki-wide\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20data-action=\x22clean\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','Dependency\x20cycle\x20detected\x20at\x20','getDisplayMedia','\x20was\x20not\x20registered\x20as\x20enabled.\x20Final\x20status:\x20','hostname',':remove:','true','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>Installation\x20state</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>COMPLETED</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>System</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>MUNITOS</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</table>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>','closest','target','ki-button\x20ki-primary','securityLevel','getElementById','ki-button\x20ki-danger','keys','round','Software\x20selection','success','currentScript','status','setAttribute','reload','30tBIWtW','join','done','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','<div\x20class=\x22ki-copy\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22ki-lead\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Building\x20your\x20personal\x20MUNITOS\x20system...\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20The\x20installer\x20is\x20executing\x20the\x20selected\x20package\x20operations\x20and\x20preparing\x20the\x20runtime.\x20Minimum\x20installation\x20time:\x20','installer-cleanup','\x20•\x20','\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-notice\x20ki-error\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-notice-title\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Retry\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-notice-text\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Use\x20Restart\x20to\x20return\x20to\x20the\x20first\x20step,\x20or\x20Back\x20to\x20return\x20to\x20the\x20previous\x20available\x20screen.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>','14252OEwZML','MUNITOS\x20virtual\x20runtime\x20and\x20package\x20state\x20reset.','videoWidth','Cache\x20Storage:','Virtual\x20runtime\x20reset\x20API\x20unavailable.','unknown','checked','<div\x20class=\x22ki-brand\x22>','.ki-package-list','Installing\x20MUNITOS','Back',']\x20Installing\x20','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','reloadPending','No\x20optional\x20packages\x20selected.\x20Continuing\x20with\x20the\x20MUNITOS\x20system\x20core.','ki-button','installing','acceptedTerms','replace','width','__proto__','back','packages','exception','info','attachShadow',';\x20SameSite=Lax','body','data-selected','remove\x20failed','.ki-content','[data-package-toggle]','Cache\x20Storage','caches','kind','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>','installResults','error','MUNITOSCore','Cleanup\x20could\x20not\x20be\x20verified.','NotAllowedError','MUNITOS-Screenshot-','appendChild','continue-terms','split','table','\x20routing\x20command(s)',';\x20path=/;\x20SameSite=Lax','content','data-action','dependencies','type','Installation\x20agreement','splice','Service\x20Workers:verify:','string','%\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-terminal-log\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','confirm','corrupted','\x22\x20is\x20missing\x20from\x20pkg.js.','[data-selected-count]','available','prototype','cancelAllOperations','items','toBlob','MUNITOSPackageCatalog','accent','Cookies','\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<small>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','startsWith','Restart','innerHTML','<div\x20class=\x22ki-error-box\x22>','packageTimeoutMs','playsInline','step','none','min','from','href','author','className','DOMContentLoaded','header','Clean\x20operation\x20failed.','./pkg.js','Core\x20factory\x20reset:','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20',':verify:','cancel\x20failed','=;\x20Max-Age=0;\x20path=','commands','finish','cleanupDiagnostics','packageList','MUNITOS','root','forEach','version','permissions',':enumeration:','Install','querySelectorAll','play','style','toggle','mediaDevices','onload','loading','errors','Installation\x20confirmation','async','createElement','</div>','selected','Canvas\x20context\x20is\x20unavailable.','deleteDatabase','focus','4gksxrD','ki-screenshot','ki-selected','ki-content','canvas','Optional\x20package\x20queue:\x20','partitioned','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>','false','serviceWorker','change','size','message','finished','all','IndexedDB:enumeration:','MUNITOSManifest','</strong>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','append','detail','factoryResetVirtualSystem','install.js','Core\x20operations:','textContent','indexOf','Dependency\x20resolution\x20failed.','enabled','Package\x20','#ki-terms','\x20seconds.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-progress\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-progress-track\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20class=\x22ki-progress-bar\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20style=\x22width:','force','aria-selected','snapshot','250287RBflAa','script','toUTCString','cleanup\x20failed','continue-packages','<span\x20class=\x22ki-loader\x22></span>Installing','databases','cookies','&lt;','head','network','[data-screenshot-result]','\x20installed\x20successfully.','video','src','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-package-version\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Self-managed\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-package-level\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Package\x20manifest\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-package-description\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','now','ki-footer','Cache\x20Storage:verify:','reset\x20failed','function','Service\x20Workers'];_0x1460=function(){return _0x1a50ed;};return _0x1460();}function _0x24ff(_0x136b7a,_0x3f8e6c){_0x136b7a=_0x136b7a-0x177;const _0x21695c=_0x1460();let _0x52dede=_0x21695c[_0x136b7a];return _0x52dede;}_0x52dede(),((()=>{'use strict';const _0x3b533a=_0x24ff;const _0x474541=globalThis[_0x3b533a(0x1a0)][_0x3b533a(0x1f3)][_0x3b533a(0x1a5)],_0x5d3b22=_0x3b533a(0x287),_0x343c70=_0x474541[_0x3b533a(0x2b6)][_0x3b533a(0x2a4)][0x0],_0x3c5d3d=_0x474541['keys'][_0x3b533a(0x2a4)][0x1],_0xfe4203=_0x474541[_0x3b533a(0x2b6)][_0x3b533a(0x1b8)][0x0],_0xafd3f4=_0x474541[_0x3b533a(0x2b6)][_0x3b533a(0x1b8)][0x1],_0x512cc2=0x1388,_0x1f24e1=0x3,_0x38e9f0=0xb4,_0x1b50e5=0x3,_0x59c9d3=Object[_0x3b533a(0x1fc)](['https://munitos.github.io',_0x3b533a(0x27b)]),_0x383fdb=_0x3b533a(0x179),_0x5f4510={'step':_0x3b533a(0x26a),'acceptedTerms':![],'cleaned':![],'catalog':[],'selected':new Set(),'required':new Set(),'installing':![],'finished':![],'failed':![],'error':'','installResults':[],'log':[],'cleanupDiagnostics':[],'cleanupBusy':![],'appApi':null,'root':null,'shadow':null,'ui':{},'reloadPending':![],'installStartedAt':0x0};if(window[_0x5d3b22])return;window[_0x5d3b22]=Object[_0x3b533a(0x1fc)]({'version':_0x474541[_0x3b533a(0x17c)],'kernelAware':!![]});const _0x461aa2=_0x1a7ccc=>new Promise(_0x1ac70b=>setTimeout(_0x1ac70b,_0x1a7ccc)),_0x419604=_0x5657b5=>String(_0x5657b5??'')[_0x3b533a(0x1f9)](),_0x50897a=_0x16cde6=>_0x419604(_0x16cde6)[_0x3b533a(0x28d)]('&',_0x3b533a(0x1ce))[_0x3b533a(0x28d)]('<',_0x3b533a(0x1b9))[_0x3b533a(0x28d)]('>','&gt;')['replaceAll']('\x22','&quot;')[_0x3b533a(0x28d)]('\x27','&#39;'),_0x41535e=()=>{const _0x4fa0eb=_0x3b533a;try{const _0x2d89f7=document[_0x4fa0eb(0x2ba)]||Array[_0x4fa0eb(0x315)](document['scripts'])['find'](_0x9ba28a=>/(?:^|\/)install\.js(?:[?#]|$)/i[_0x4fa0eb(0x204)](_0x9ba28a[_0x4fa0eb(0x1bf)]));if(_0x2d89f7?.[_0x4fa0eb(0x1bf)])return new URL('./',_0x2d89f7[_0x4fa0eb(0x1bf)]);}catch{}try{return new URL('./',window[_0x4fa0eb(0x223)][_0x4fa0eb(0x316)]);}catch{return window['location'];}},_0x8a9829=_0x41535e(),_0x2acdc2=()=>{try{return window['localStorage'];}catch{return null;}},_0xc8bcc8=()=>{const _0x437255=_0x3b533a;try{return window[_0x437255(0x28b)];}catch{return null;}},_0x263182=_0x54ac8c=>{const _0x17d58b=_0x3b533a;try{const _0x52908b=encodeURIComponent(_0x54ac8c)+'=',_0x326148=document['cookie'][_0x17d58b(0x2f2)](';')[_0x17d58b(0x1ea)](_0x50e3d0=>_0x50e3d0['trim']())[_0x17d58b(0x1de)](_0x1a3d82=>_0x1a3d82[_0x17d58b(0x30c)](_0x52908b));return _0x326148?decodeURIComponent(_0x326148[_0x17d58b(0x217)](_0x52908b[_0x17d58b(0x232)])):'';}catch{return'';}},_0x35888e=(_0x3d6b62,_0xe1ab8a,_0x150db8=0xe42)=>{const _0x2ff5fa=_0x3b533a;try{const _0x46bb01=new Date(Date[_0x2ff5fa(0x1c1)]()+_0x150db8*0x5265c00)[_0x2ff5fa(0x1b3)]();document[_0x2ff5fa(0x255)]=encodeURIComponent(_0x3d6b62)+'='+encodeURIComponent(_0xe1ab8a)+_0x2ff5fa(0x245)+_0x46bb01+_0x2ff5fa(0x2f5);}catch{}},_0x53fe57=(_0x1dc440,_0x2b5975='/')=>{const _0x4f5880=_0x3b533a;try{document[_0x4f5880(0x255)]=encodeURIComponent(_0x1dc440)+_0x4f5880(0x1ef)+_0x2b5975+_0x4f5880(0x2e0);}catch{}},_0x448b94=()=>{const _0x45bc91=_0x3b533a,_0x14f707=_0x2acdc2();let _0xf53182=![];try{_0xf53182=_0x14f707?.[_0x45bc91(0x266)](_0x343c70)==='1';}catch{}return _0xf53182||_0x263182(_0xfe4203)==='1';},_0x10094f=()=>{const _0x55197c=_0x3b533a,_0x3e80ec=_0x2acdc2();try{_0x3e80ec?.[_0x55197c(0x1df)](_0x343c70,'1'),_0x3e80ec?.['removeItem'](_0x3c5d3d);}catch{}_0x35888e(_0xfe4203,'1'),_0x53fe57(_0xafd3f4);},_0x3502f6=()=>{const _0x196034=_0x3b533a,_0x1ed53e=_0x2acdc2();try{_0x1ed53e?.[_0x196034(0x214)](_0x343c70),_0x1ed53e?.['removeItem'](_0x3c5d3d);}catch{}_0x53fe57(_0xfe4203),_0x53fe57(_0xafd3f4);},_0x1ef6ca=()=>{const _0x43e876=_0x3b533a,_0x44bbf2={'step':_0x5f4510[_0x43e876(0x312)],'acceptedTerms':_0x5f4510[_0x43e876(0x2d7)],'cleaned':_0x5f4510[_0x43e876(0x299)],'selected':Array['from'](_0x5f4510[_0x43e876(0x18c)]),'timestamp':Date['now']()},_0x4fc6c9=_0x2acdc2();try{_0x4fc6c9?.[_0x43e876(0x1df)](_0x3c5d3d,JSON[_0x43e876(0x22c)](_0x44bbf2));}catch{}try{_0x35888e(_0xafd3f4,JSON[_0x43e876(0x22c)](_0x44bbf2),0x1);}catch{}},_0x5de154=()=>{const _0x4b7cb4=_0x3b533a,_0x280a69=_0x2acdc2();try{_0x280a69?.[_0x4b7cb4(0x214)](_0x3c5d3d);}catch{}_0x53fe57(_0xafd3f4);},_0x4ac523=(_0x43999a='')=>{const _0x32cda6=_0x3b533a;_0x5f4510[_0x32cda6(0x312)]=_0x32cda6(0x26a),_0x5f4510[_0x32cda6(0x2d7)]=![],_0x5f4510[_0x32cda6(0x299)]=![],_0x5f4510['selected'][_0x32cda6(0x294)](),_0x5f4510[_0x32cda6(0x20f)]['clear'](),_0x5f4510[_0x32cda6(0x2d6)]=![],_0x5f4510['finished']=![],_0x5f4510[_0x32cda6(0x1c9)]=Boolean(_0x43999a),_0x5f4510[_0x32cda6(0x2eb)]=_0x419604(_0x43999a),_0x5f4510[_0x32cda6(0x2ea)]=[],_0x5f4510['log']=[],_0x5f4510[_0x32cda6(0x177)]=[],_0x5f4510[_0x32cda6(0x267)]=![],_0x5f4510[_0x32cda6(0x241)]=0x0,_0x5f4510[_0x32cda6(0x2d3)]=![],_0x5de154(),_0x1ef6ca(),_0x42c80e();},_0x49b2e6=()=>{const _0x4589b7=_0x3b533a,_0x1dce00=[window[_0x4589b7(0x27d)],window[_0x4589b7(0x2ec)],window[_0x4589b7(0x205)]];for(const _0x5084a4 of _0x1dce00){if(_0x5084a4&&typeof _0x5084a4===_0x4589b7(0x253)&&_0x5084a4[_0x4589b7(0x264)]&&typeof _0x5084a4[_0x4589b7(0x264)][_0x4589b7(0x209)]===_0x4589b7(0x1c5)&&typeof _0x5084a4[_0x4589b7(0x264)][_0x4589b7(0x1ff)]===_0x4589b7(0x1c5))return _0x5084a4;}return null;},_0x3eaa45=async _0x46cce8=>{const _0x36bb6c=_0x3b533a,_0x22b4fe=Math[_0x36bb6c(0x242)](Number(_0x46cce8)||0x0,Number(window['MUNITOSKernel']?.['config']?.[_0x36bb6c(0x310)])||0x7530),_0x222739=Date['now']();while(Date['now']()-_0x222739<_0x22b4fe){const _0x5da5c4=_0x49b2e6();if(_0x5da5c4?.[_0x36bb6c(0x264)]&&typeof _0x5da5c4['package']['install']===_0x36bb6c(0x1c5)&&typeof _0x5da5c4[_0x36bb6c(0x264)]['registry']===_0x36bb6c(0x1c5))return _0x5f4510[_0x36bb6c(0x24e)]=_0x5da5c4,_0x5da5c4;await _0x461aa2(0x64);}throw new Error(_0x36bb6c(0x208));},_0x2b020b=()=>{const _0x237b02=_0x3b533a;try{const _0x9b8765=_0x5f4510[_0x237b02(0x24e)]?.[_0x237b02(0x264)]?.[_0x237b02(0x1ff)]?.();return Array[_0x237b02(0x249)](_0x9b8765)?_0x9b8765:[];}catch{return[];}},_0x4e415c=()=>{const _0x7f07b6=_0x3b533a;try{return _0x5f4510[_0x7f07b6(0x24e)]?.[_0x7f07b6(0x1b0)]?.()||null;}catch{return null;}},_0x18a10c=()=>{const _0x45a18f=_0x3b533a,_0x2dc09d=_0x4e415c();if(Array[_0x45a18f(0x249)](_0x2dc09d?.[_0x45a18f(0x298)]))return new Set(_0x2dc09d[_0x45a18f(0x298)][_0x45a18f(0x1ea)](_0x419604)[_0x45a18f(0x2a1)](Boolean));const _0x1e77b3=new Set();for(const _0x10ee6b of _0x2b020b()){const _0x14106b=_0x419604(_0x10ee6b?.[_0x45a18f(0x235)]||_0x10ee6b?.[_0x45a18f(0x1d3)]),_0xef60dc=_0x419604(_0x10ee6b?.['status'])['toLowerCase']();_0x14106b&&[_0x45a18f(0x298),_0x45a18f(0x1aa),_0x45a18f(0x1d6)][_0x45a18f(0x270)](_0xef60dc)&&_0x1e77b3[_0x45a18f(0x28e)](_0x14106b);}return _0x1e77b3;},_0x8a4478=_0x5c55c0=>{const _0x14de19=_0x3b533a,_0x596b2f=_0x5c55c0&&typeof _0x5c55c0==='object'?_0x5c55c0:{};return{'storage':_0x419604(_0x596b2f[_0x14de19(0x2a4)])||_0x14de19(0x313),'cookies':_0x419604(_0x596b2f[_0x14de19(0x1b8)])||_0x14de19(0x313),'network':_0x419604(_0x596b2f[_0x14de19(0x1bb)])||'none','filesystem':_0x419604(_0x596b2f[_0x14de19(0x1c8)])||_0x14de19(0x313)};},_0x3d537a=(_0x2fbdef,_0x3c5cca='')=>{const _0x510e10=_0x3b533a;if(!_0x2fbdef)return null;if(typeof _0x2fbdef===_0x510e10(0x2fd)){const _0xacd05e=_0x419604(_0x2fbdef);return _0xacd05e?{'name':_0xacd05e,'version':_0x510e10(0x2cb),'description':'','author':_0x510e10(0x2cb),'official':![],'default':![],'securityLevel':_0x510e10(0x1e2),'permissions':_0x8a4478({}),'commands':[],'dependencies':[],'entry':_0x510e10(0x209),'source':_0x510e10(0x284)}:null;}if(typeof _0x2fbdef!==_0x510e10(0x253))return null;const _0x515003=_0x419604(_0x2fbdef[_0x510e10(0x1d3)]||_0x2fbdef[_0x510e10(0x264)]||_0x2fbdef['id']||_0x2fbdef[_0x510e10(0x235)]||_0x3c5cca);if(!_0x515003)return null;const _0x2fb110=Array[_0x510e10(0x249)](_0x2fbdef[_0x510e10(0x2f8)])?_0x2fbdef[_0x510e10(0x2f8)][_0x510e10(0x1ea)](_0x3ed87=>typeof _0x3ed87===_0x510e10(0x2fd)?_0x419604(_0x3ed87):_0x419604(_0x3ed87?.[_0x510e10(0x1d3)]||_0x3ed87?.[_0x510e10(0x264)]||_0x3ed87?.['id']||_0x3ed87?.['key']))['filter'](Boolean):[],_0x4fb84e=Array[_0x510e10(0x249)](_0x2fbdef[_0x510e10(0x322)])?_0x2fbdef['commands'][_0x510e10(0x1ea)](_0x30680f=>typeof _0x30680f===_0x510e10(0x2fd)?_0x419604(_0x30680f):_0x419604(_0x30680f?.['name']||_0x30680f?.[_0x510e10(0x2a6)]||_0x30680f?.['id']))[_0x510e10(0x2a1)](Boolean):[];return{'name':_0x515003,'version':_0x419604(_0x2fbdef[_0x510e10(0x17c)])||'unknown','description':_0x419604(_0x2fbdef[_0x510e10(0x293)]),'author':_0x419604(_0x2fbdef[_0x510e10(0x317)])||_0x510e10(0x2cb),'official':_0x2fbdef['official']===!![],'default':_0x2fbdef[_0x510e10(0x25c)]===!![],'securityLevel':_0x419604(_0x2fbdef[_0x510e10(0x2b3)])||_0x510e10(0x1e2),'permissions':_0x8a4478(_0x2fbdef[_0x510e10(0x17d)]),'commands':_0x4fb84e,'dependencies':_0x2fb110,'entry':_0x419604(_0x2fbdef[_0x510e10(0x1c7)])||_0x510e10(0x209),'source':_0x419604(_0x2fbdef['source'])||_0x510e10(0x284)};},_0x4f6bc0=_0x20b472=>{const _0x3b9057=_0x3b533a;if(Array[_0x3b9057(0x249)](_0x20b472))return _0x20b472[_0x3b9057(0x1ea)](_0x55fac4=>_0x3d537a(_0x55fac4))[_0x3b9057(0x2a1)](Boolean);if(!_0x20b472||typeof _0x20b472!==_0x3b9057(0x253))return[];if(Array[_0x3b9057(0x249)](_0x20b472[_0x3b9057(0x2dc)]))return _0x20b472[_0x3b9057(0x2dc)][_0x3b9057(0x1ea)](_0x2d0907=>_0x3d537a(_0x2d0907))[_0x3b9057(0x2a1)](Boolean);if(Array[_0x3b9057(0x249)](_0x20b472[_0x3b9057(0x306)]))return _0x20b472['items'][_0x3b9057(0x1ea)](_0x2d3c95=>_0x3d537a(_0x2d3c95))[_0x3b9057(0x2a1)](Boolean);if(Array[_0x3b9057(0x249)](_0x20b472['entries']))return _0x20b472[_0x3b9057(0x25d)]['map'](_0x5435ac=>_0x3d537a(_0x5435ac))[_0x3b9057(0x2a1)](Boolean);if(_0x20b472[_0x3b9057(0x2dc)]&&typeof _0x20b472[_0x3b9057(0x2dc)]==='object'&&!Array['isArray'](_0x20b472['packages']))return Object[_0x3b9057(0x25d)](_0x20b472[_0x3b9057(0x2dc)])[_0x3b9057(0x1ea)](([_0x1ce735,_0x402b00])=>_0x3d537a(_0x402b00,_0x1ce735))[_0x3b9057(0x2a1)](Boolean);if(_0x20b472['registry']&&typeof _0x20b472[_0x3b9057(0x1ff)]===_0x3b9057(0x253)&&!Array[_0x3b9057(0x249)](_0x20b472[_0x3b9057(0x1ff)]))return Object[_0x3b9057(0x25d)](_0x20b472[_0x3b9057(0x1ff)])['map'](([_0x37371a,_0x55a019])=>_0x3d537a(_0x55a019,_0x37371a))[_0x3b9057(0x2a1)](Boolean);return Object[_0x3b9057(0x25d)](_0x20b472)['map'](([_0xefef12,_0x44f9fa])=>_0x3d537a(_0x44f9fa,_0xefef12))['filter'](Boolean);},_0x937821=async()=>{const _0x31300c=_0x3b533a;if(window[_0x31300c(0x308)]&&typeof window['MUNITOSPackageCatalog']==='object')return window[_0x31300c(0x308)];const _0x1e3a25=new URL(_0x31300c(0x31c),_0x8a9829);await new Promise((_0x1c900d,_0x3d1ee7)=>{const _0xb18d28=_0x31300c,_0x383390=document[_0xb18d28(0x18a)](_0xb18d28(0x1b2)),_0x5c7481=Number(window['MUNITOSKernel']?.[_0xb18d28(0x279)]?.[_0xb18d28(0x29c)])||0x1;_0x383390[_0xb18d28(0x1bf)]=''+_0x1e3a25[_0xb18d28(0x1e3)]()+(_0x1e3a25[_0xb18d28(0x23d)]?'&':'?')+'v='+_0x5c7481,_0x383390[_0xb18d28(0x189)]=![],_0x383390[_0xb18d28(0x185)]=_0x1c900d,_0x383390[_0xb18d28(0x1dc)]=()=>{_0x3d1ee7(new Error('Unable\x20to\x20load\x20pkg.js\x20from\x20'+_0x1e3a25['toString']()));},(document[_0xb18d28(0x1ba)]||document[_0xb18d28(0x1e4)])['appendChild'](_0x383390);});if(!window['MUNITOSPackageCatalog']||typeof window[_0x31300c(0x308)]!==_0x31300c(0x253))throw new Error(_0x31300c(0x296));return window[_0x31300c(0x308)];},_0x1ce365=_0x3633cd=>_0x5f4510[_0x3b533a(0x268)][_0x3b533a(0x1de)](_0x115ec4=>_0x419604(_0x115ec4[_0x3b533a(0x1d3)])===_0x419604(_0x3633cd))||null,_0x45db1f=_0x4000aa=>{const _0x52f935=_0x3b533a,_0x1a48d0=_0x419604(_0x4000aa)['toLowerCase']();try{const _0x30a81c=_0x5f4510[_0x52f935(0x24e)]?.[_0x52f935(0x264)]?.[_0x52f935(0x1ff)]?.(),_0x511179=Array['isArray'](_0x30a81c)?_0x30a81c[_0x52f935(0x1de)](_0x2309c5=>_0x419604(_0x2309c5?.[_0x52f935(0x235)]||_0x2309c5?.[_0x52f935(0x1d3)])[_0x52f935(0x1e8)]()===_0x1a48d0):null,_0x293719=_0x511179?.['manifest']?.[_0x52f935(0x17c)]||_0x511179?.['version'];if(_0x293719)return String(_0x293719);}catch{}return'self-manifest';},_0x469691=_0x99d1d9=>{const _0x546c9e=[],_0x45f1c2=new Set(),_0xfe9f61=new Set(),_0x785797=_0x16dee0=>{const _0x5ecfc9=_0x24ff,_0x4daa0a=_0x419604(_0x16dee0);if(!_0x4daa0a||_0xfe9f61[_0x5ecfc9(0x228)](_0x4daa0a))return;if(_0x45f1c2['has'](_0x4daa0a))throw new Error(_0x5ecfc9(0x2a9)+_0x4daa0a+'.');const _0x35948a=_0x1ce365(_0x4daa0a);if(!_0x35948a)throw new Error(_0x5ecfc9(0x218)+_0x4daa0a+_0x5ecfc9(0x301));_0x45f1c2['add'](_0x4daa0a);for(const _0x492207 of _0x35948a[_0x5ecfc9(0x2f8)]||[]){_0x785797(_0x492207);}_0x45f1c2[_0x5ecfc9(0x248)](_0x4daa0a),_0xfe9f61[_0x5ecfc9(0x28e)](_0x4daa0a),_0x546c9e['push'](_0x4daa0a);};for(const _0x5207d8 of _0x99d1d9){_0x785797(_0x5207d8);}return _0x546c9e;},_0x46bc9c=()=>{const _0xc7f428=_0x3b533a;if(_0x448b94())return![];for(const _0x11b88e of _0x18a10c()){if(_0x11b88e)return!![];}for(const _0x588e91 of _0x2b020b()){const _0xded863=_0x419604(_0x588e91?.['key']||_0x588e91?.[_0xc7f428(0x1d3)]),_0x208d08=_0x419604(_0x588e91?.[_0xc7f428(0x2bb)])[_0xc7f428(0x1e8)]();if(_0xded863&&[_0xc7f428(0x298),_0xc7f428(0x1aa),_0xc7f428(0x1d6),_0xc7f428(0x300),'tampered',_0xc7f428(0x1f4)][_0xc7f428(0x270)](_0x208d08))return!![];}return![];},_0x10876a=()=>{const _0x4bfad1=_0x3b533a;try{return document[_0x4bfad1(0x255)]['split'](';')[_0x4bfad1(0x1ea)](_0x4b8c81=>_0x4b8c81[_0x4bfad1(0x1f9)]())[_0x4bfad1(0x2a1)](Boolean)[_0x4bfad1(0x1ea)](_0x3cdd07=>{const _0x4b462c=_0x4bfad1,_0x229822=_0x3cdd07[_0x4b462c(0x1a8)]('=');return _0x229822>0x0?_0x3cdd07[_0x4b462c(0x217)](0x0,_0x229822):_0x3cdd07;})[_0x4bfad1(0x2a1)](Boolean);}catch{return[];}},_0x113de0=()=>{const _0x1f3629=_0x3b533a,_0x5e2c14=_0x419604(location[_0x1f3629(0x2ac)])[_0x1f3629(0x1e8)]();if(!_0x5e2c14||_0x5e2c14===_0x1f3629(0x247)||/^\d{1,3}(?:\.\d{1,3}){3}$/[_0x1f3629(0x204)](_0x5e2c14)||_0x5e2c14['includes'](':'))return[];const _0x44125b=_0x5e2c14['split']('.')[_0x1f3629(0x2a1)](Boolean),_0xba7a8e=[];for(let _0x2fe90c=0x0;_0x2fe90c<Math[_0x1f3629(0x242)](0x0,_0x44125b['length']-0x1);_0x2fe90c++){const _0x1f6782=_0x44125b[_0x1f3629(0x217)](_0x2fe90c)[_0x1f3629(0x2bf)]('.');_0x1f6782&&_0x1f6782!==_0x5e2c14&&_0xba7a8e[_0x1f3629(0x203)](_0x1f6782);}return Array[_0x1f3629(0x315)](new Set(_0xba7a8e));},_0x58bf04=()=>{const _0x413142=_0x3b533a,_0x2ddcfd=new Set(['/']);let _0x4a5001=_0x419604(location[_0x413142(0x226)])||'/';!_0x4a5001[_0x413142(0x30c)]('/')&&(_0x4a5001='/'+_0x4a5001);while(_0x4a5001&&_0x4a5001!=='/'){_0x2ddcfd[_0x413142(0x28e)](_0x4a5001);const _0x4c2ee3=_0x4a5001[_0x413142(0x2d8)](/\/[^/]*$/,'')||'/';_0x4a5001=_0x4c2ee3;}return Array[_0x413142(0x315)](_0x2ddcfd);},_0x77eff7=async(_0x579417,_0x2a2fb5,_0x389a74='')=>{const _0x28788e=_0x3b533a;let _0x4a33f1=0x0;try{document[_0x28788e(0x255)]=encodeURIComponent(_0x579417)+_0x28788e(0x1dd)+_0x2a2fb5+_0x28788e(0x2e0)+(_0x389a74?_0x28788e(0x288)+_0x389a74:''),_0x4a33f1++;}catch{}try{document['cookie']=encodeURIComponent(_0x579417)+_0x28788e(0x321)+_0x2a2fb5+(_0x389a74?_0x28788e(0x288)+_0x389a74:''),_0x4a33f1++;}catch{}return _0x4a33f1>0x0;},_0x5069c2=async()=>{const _0x2ea198=_0x3b533a,_0x21c453=[];let _0x1aa3fd=0x0;const _0xb9113f=new Set(_0x10876a());try{if(_0x2ea198(0x297)in window&&typeof window[_0x2ea198(0x297)]?.[_0x2ea198(0x269)]==='function'){const _0x24cd33=await window[_0x2ea198(0x297)][_0x2ea198(0x269)]();for(const _0x110d5a of _0x24cd33){const _0xe5aa4e=_0x419604(_0x110d5a?.['name']);if(!_0xe5aa4e)continue;try{await window[_0x2ea198(0x297)][_0x2ea198(0x248)]({'name':_0xe5aa4e,'domain':_0x110d5a[_0x2ea198(0x25e)],'path':_0x110d5a['path']||'/','partitioned':_0x110d5a[_0x2ea198(0x196)]===!![]}),_0x1aa3fd++,_0xb9113f[_0x2ea198(0x28e)](_0xe5aa4e);}catch{try{await window[_0x2ea198(0x297)]['delete'](_0xe5aa4e),_0x1aa3fd++,_0xb9113f[_0x2ea198(0x28e)](_0xe5aa4e);}catch(_0x7f862){_0x21c453[_0x2ea198(0x203)](_0x2ea198(0x29f)+(_0x7f862?.[_0x2ea198(0x19c)]||_0x2ea198(0x254)));}}}}}catch(_0x2db900){_0x21c453[_0x2ea198(0x203)](_0x2ea198(0x29f)+(_0x2db900?.[_0x2ea198(0x19c)]||_0x2ea198(0x25b)));}const _0x293c8e=Array['from'](new Set([..._0xb9113f,..._0x10876a()])),_0x2b5d1e=_0x58bf04(),_0x5b1116=['',..._0x113de0()['map'](_0x46c7ba=>_0x46c7ba[_0x2ea198(0x30c)]('.')?_0x46c7ba:'.'+_0x46c7ba),..._0x113de0()];for(const _0x238e53 of _0x293c8e){for(const _0x275f75 of _0x2b5d1e){for(const _0x41ac94 of _0x5b1116){await _0x77eff7(_0x238e53,_0x275f75,_0x41ac94)&&_0x1aa3fd++;}}}return{'deleted':_0x1aa3fd,'errors':_0x21c453,'remaining':_0x10876a()};},_0x447827=(_0x539e1d,_0x1a67fa)=>{const _0x4adfd2=_0x3b533a;if(!_0x539e1d)return{'supported':![],'cleared':0x0,'remaining':null,'errors':[]};const _0x783378=[];let _0x2f1999=0x0,_0x57abac=[];try{_0x2f1999=_0x539e1d[_0x4adfd2(0x232)]||0x0;for(let _0x1c1404=0x0;_0x1c1404<_0x2f1999;_0x1c1404++){const _0x2ee3f4=_0x539e1d[_0x4adfd2(0x235)](_0x1c1404);_0x2ee3f4!=null&&_0x57abac[_0x4adfd2(0x203)](_0x2ee3f4);}}catch(_0x4e2faa){_0x783378[_0x4adfd2(0x203)](_0x1a67fa+_0x4adfd2(0x17e)+(_0x4e2faa?.[_0x4adfd2(0x19c)]||_0x4adfd2(0x1c9)));}try{_0x539e1d[_0x4adfd2(0x294)]();}catch(_0x3e1dd4){_0x783378['push'](_0x1a67fa+':clear:'+(_0x3e1dd4?.[_0x4adfd2(0x19c)]||_0x4adfd2(0x1c9)));}for(const _0x19c847 of _0x57abac){try{_0x539e1d['removeItem'](_0x19c847);}catch(_0x3cce4f){_0x783378[_0x4adfd2(0x203)](_0x1a67fa+_0x4adfd2(0x2ad)+String(_0x19c847)+':'+(_0x3cce4f?.[_0x4adfd2(0x19c)]||_0x4adfd2(0x1c9)));}}let _0x2d29b5=null;try{_0x2d29b5=_0x539e1d[_0x4adfd2(0x232)]||0x0;}catch(_0x3dac8b){_0x783378[_0x4adfd2(0x203)](_0x1a67fa+_0x4adfd2(0x31f)+(_0x3dac8b?.['message']||_0x4adfd2(0x1c9)));}return{'supported':!![],'cleared':_0x2f1999,'remaining':_0x2d29b5,'errors':_0x783378};},_0x4fe857=async()=>{const _0x1d570b=_0x3b533a;if(typeof window[_0x1d570b(0x1fa)]?.['databases']!=='function')return{'supported':![],'deleted':0x0,'remaining':null,'errors':[]};const _0x1d675a=[];let _0x429563=[];try{_0x429563=await window['indexedDB'][_0x1d570b(0x1b7)]();}catch(_0x59622a){return{'supported':!![],'deleted':0x0,'remaining':null,'errors':[_0x1d570b(0x19f)+(_0x59622a?.[_0x1d570b(0x19c)]||_0x1d570b(0x1c9))]};}let _0x323f35=0x0;for(const _0x581c5e of _0x429563){const _0x22484f=_0x419604(_0x581c5e?.[_0x1d570b(0x1d3)]);if(!_0x22484f)continue;const _0x441534=await new Promise(_0x18efb2=>{const _0x24934f=_0x1d570b;let _0x4ecf32=![];const _0x30e051=_0x55a710=>{if(_0x4ecf32)return;_0x4ecf32=!![],_0x18efb2(Boolean(_0x55a710));};try{const _0x5f57cc=window[_0x24934f(0x1fa)][_0x24934f(0x18e)](_0x22484f);_0x5f57cc['onsuccess']=()=>_0x30e051(!![]),_0x5f57cc['onerror']=()=>_0x30e051(![]),_0x5f57cc['onblocked']=()=>{setTimeout(()=>_0x30e051(![]),0x4b0);},setTimeout(()=>_0x30e051(![]),0x898);}catch{_0x30e051(![]);}});_0x441534?_0x323f35++:_0x1d675a[_0x1d570b(0x203)]('IndexedDB:'+_0x22484f+':delete\x20failed');}let _0xadb9b8=null;try{_0xadb9b8=(await window['indexedDB'][_0x1d570b(0x1b7)]())[_0x1d570b(0x2a1)](_0x543b73=>_0x419604(_0x543b73?.[_0x1d570b(0x1d3)]))[_0x1d570b(0x232)];}catch(_0x287491){_0x1d675a[_0x1d570b(0x203)](_0x1d570b(0x230)+(_0x287491?.['message']||_0x1d570b(0x1c9)));}return{'supported':!![],'deleted':_0x323f35,'remaining':_0xadb9b8,'errors':_0x1d675a};},_0x654a2=async()=>{const _0x2fa818=_0x3b533a;if(!(_0x2fa818(0x2e7)in window)||typeof window[_0x2fa818(0x2e7)]['keys']!==_0x2fa818(0x1c5))return{'supported':![],'deleted':0x0,'remaining':null,'errors':[]};const _0x3858f9=[];let _0x1f0f31=[];try{_0x1f0f31=await window['caches'][_0x2fa818(0x2b6)]();}catch(_0x4844de){return{'supported':!![],'deleted':0x0,'remaining':null,'errors':['Cache\x20Storage:enumeration:'+(_0x4844de?.['message']||_0x2fa818(0x1c9))]};}let _0x32b40a=0x0;await Promise[_0x2fa818(0x19e)](_0x1f0f31[_0x2fa818(0x1ea)](async _0x31c007=>{const _0x262797=_0x2fa818;try{await window[_0x262797(0x2e7)][_0x262797(0x248)](_0x31c007)&&_0x32b40a++;}catch(_0x45686f){_0x3858f9['push'](_0x262797(0x2c9)+_0x31c007+':'+(_0x45686f?.[_0x262797(0x19c)]||_0x262797(0x254)));}}));let _0x47ad1a=null;try{_0x47ad1a=(await window[_0x2fa818(0x2e7)][_0x2fa818(0x2b6)]())[_0x2fa818(0x232)];}catch(_0x107668){_0x3858f9[_0x2fa818(0x203)](_0x2fa818(0x1c3)+(_0x107668?.[_0x2fa818(0x19c)]||_0x2fa818(0x1c9)));}return{'supported':!![],'deleted':_0x32b40a,'remaining':_0x47ad1a,'errors':_0x3858f9};},_0x235cee=async()=>{const _0x1c9da9=_0x3b533a;if(!navigator[_0x1c9da9(0x199)]?.['getRegistrations'])return{'supported':![],'unregistered':0x0,'remaining':null,'errors':[]};const _0x2a36f2=[];let _0x1a2a97=[];try{_0x1a2a97=await navigator[_0x1c9da9(0x199)]['getRegistrations']();}catch(_0x2b9546){return{'supported':!![],'unregistered':0x0,'remaining':null,'errors':['Service\x20Workers:enumeration:'+(_0x2b9546?.['message']||_0x1c9da9(0x1c9))]};}let _0x370896=0x0;for(const _0x1b634e of _0x1a2a97){try{await _0x1b634e[_0x1c9da9(0x240)]()&&_0x370896++;}catch(_0x3b17bf){_0x2a36f2[_0x1c9da9(0x203)](_0x1c9da9(0x27f)+(_0x3b17bf?.[_0x1c9da9(0x19c)]||_0x1c9da9(0x229)));}}let _0x5a721b=null;try{_0x5a721b=(await navigator[_0x1c9da9(0x199)]['getRegistrations']())[_0x1c9da9(0x232)];}catch(_0x539203){_0x2a36f2[_0x1c9da9(0x203)](_0x1c9da9(0x2fc)+(_0x539203?.['message']||_0x1c9da9(0x1c9)));}return{'supported':!![],'unregistered':_0x370896,'remaining':_0x5a721b,'errors':_0x2a36f2};},_0x4d3c61=async()=>{const _0x8c96b9=_0x3b533a;if(!navigator[_0x8c96b9(0x2a4)]?.[_0x8c96b9(0x295)])return{'supported':![],'removed':0x0,'remaining':null,'errors':[]};const _0x373552=[];let _0x2d53f5=0x0;const _0xd5901c=async _0x450b7f=>{const _0x1c945c=_0x8c96b9;for await(const [_0xbaed4a,_0x24763b]of _0x450b7f[_0x1c945c(0x25d)]()){try{_0x24763b['kind']===_0x1c945c(0x1e7)&&await _0xd5901c(_0x24763b),await _0x450b7f[_0x1c945c(0x23b)](_0xbaed4a,{'recursive':_0x24763b[_0x1c945c(0x2e8)]===_0x1c945c(0x1e7)}),_0x2d53f5++;}catch(_0x1d8b3a){_0x373552[_0x1c945c(0x203)](_0x1c945c(0x24f)+_0xbaed4a+':'+(_0x1d8b3a?.[_0x1c945c(0x19c)]||_0x1c945c(0x2e3)));}}};try{const _0x2edc81=await navigator[_0x8c96b9(0x2a4)][_0x8c96b9(0x295)]();await _0xd5901c(_0x2edc81);let _0x2c0d65=0x0;for await(const _0x33edd2 of _0x2edc81['entries']()){_0x2c0d65++;}return{'supported':!![],'removed':_0x2d53f5,'remaining':_0x2c0d65,'errors':_0x373552};}catch(_0x5a05e2){return{'supported':!![],'removed':_0x2d53f5,'remaining':null,'errors':['OPFS:'+(_0x5a05e2?.[_0x8c96b9(0x19c)]||_0x8c96b9(0x1b4)),..._0x373552]};}},_0x3764fa=async()=>{const _0x422818=_0x3b533a;if(!navigator[_0x422818(0x1db)]?.[_0x422818(0x2b6)]||!navigator['storageBuckets']?.[_0x422818(0x248)])return{'supported':![],'deleted':0x0,'remaining':null,'errors':[]};const _0x175494=[];let _0x7194db=[];try{_0x7194db=await navigator[_0x422818(0x1db)]['keys']();}catch(_0x19deab){return{'supported':!![],'deleted':0x0,'remaining':null,'errors':[_0x422818(0x1e5)+(_0x19deab?.[_0x422818(0x19c)]||_0x422818(0x1c9))]};}let _0x74a89d=0x0;for(const _0x56519b of _0x7194db){try{await navigator[_0x422818(0x1db)][_0x422818(0x248)](_0x56519b)&&_0x74a89d++;}catch(_0x5821b9){_0x175494[_0x422818(0x203)](_0x422818(0x20e)+_0x56519b+':'+(_0x5821b9?.['message']||'delete\x20failed'));}}let _0x2be86a=null;try{_0x2be86a=(await navigator[_0x422818(0x1db)]['keys']())[_0x422818(0x232)];}catch(_0xa3ccfc){_0x175494[_0x422818(0x203)](_0x422818(0x29a)+(_0xa3ccfc?.[_0x422818(0x19c)]||_0x422818(0x1c9)));}return{'supported':!![],'deleted':_0x74a89d,'remaining':_0x2be86a,'errors':_0x175494};},_0x54188f=async()=>{const _0x3fa62e=_0x3b533a,_0x2f64f3=_0x49b2e6();if(!_0x2f64f3)return{'available':![],'reset':![],'detail':'MUNITOS\x20Core\x20was\x20not\x20ready;\x20browser-origin\x20cleanup\x20will\x20continue.'};let _0x48f3f7=![];const _0x27aeaa=[];try{typeof _0x2f64f3[_0x3fa62e(0x305)]==='function'&&_0x2f64f3[_0x3fa62e(0x305)](_0x3fa62e(0x2c3));}catch(_0x2f9d05){_0x27aeaa[_0x3fa62e(0x203)](_0x3fa62e(0x1a6)+(_0x2f9d05?.['message']||_0x3fa62e(0x320)));}try{typeof _0x2f64f3[_0x3fa62e(0x1a4)]===_0x3fa62e(0x1c5)&&(_0x48f3f7=_0x2f64f3[_0x3fa62e(0x1a4)]()===!![]);}catch(_0x31655d){_0x27aeaa[_0x3fa62e(0x203)](_0x3fa62e(0x31d)+(_0x31655d?.[_0x3fa62e(0x19c)]||_0x3fa62e(0x1c4)));}try{const _0x466b5a=_0x2f64f3[_0x3fa62e(0x23c)]||{};_0x466b5a['cancelAllOperations']?.(_0x3fa62e(0x2c3));}catch{}return{'available':!![],'reset':_0x48f3f7,'detail':_0x48f3f7?_0x3fa62e(0x2c7):_0x3fa62e(0x2ca),'errors':_0x27aeaa};},_0x192cf1=async(_0x3c0cf4,_0x1fb99c,_0x1348a1)=>{const _0x21003e=_0x3b533a;let _0x142f3d=null;for(let _0x33d901=0x1;_0x33d901<=_0x1f24e1;_0x33d901++){try{const _0x292b=await _0x1fb99c();_0x142f3d=_0x292b;const _0x132041=await _0x1348a1(_0x292b),_0x2ec3c6=_0x132041===!![]||_0x132041===undefined;if(_0x2ec3c6)return{'status':'ok','attempt':_0x33d901,'result':_0x292b};}catch(_0x2fcde7){_0x142f3d={'errors':[_0x2fcde7?.[_0x21003e(0x19c)]||String(_0x2fcde7)]};}_0x33d901<_0x1f24e1&&await _0x461aa2(_0x38e9f0*_0x33d901);}return{'status':_0x21003e(0x2eb),'attempt':_0x1f24e1,'result':_0x142f3d};},_0x3f600b=_0xb849ae=>{try{return(_0xb849ae?.['length']||0x0)===0x0;}catch{return![];}},_0x365cf5=async()=>{const _0xd5dabd=_0x3b533a;_0x5f4510[_0xd5dabd(0x267)]=!![],_0x5f4510[_0xd5dabd(0x177)]=[];const _0x38f9d3=_0x5f4510[_0xd5dabd(0x177)];try{const _0x550e4e=await _0x54188f();_0x38f9d3[_0xd5dabd(0x203)]({'name':'MUNITOS\x20runtime','status':_0x550e4e[_0xd5dabd(0x22d)]?'ok':_0x550e4e['available']?_0xd5dabd(0x1f1):'skipped','detail':_0x550e4e[_0xd5dabd(0x1a3)],'errors':_0x550e4e[_0xd5dabd(0x187)]||[]});const _0xa113ba=[['localStorage',()=>_0x447827(_0x2acdc2(),_0xd5dabd(0x1f0)),_0x41e1d2=>_0x41e1d2[_0xd5dabd(0x24d)]?_0x3f600b(_0x2acdc2()):!![]],[_0xd5dabd(0x28b),()=>_0x447827(_0xc8bcc8(),'sessionStorage'),_0x8df99e=>_0x8df99e['supported']?_0x3f600b(_0xc8bcc8()):!![]],[_0xd5dabd(0x1c6),_0x235cee,_0x4a819c=>_0x4a819c[_0xd5dabd(0x24d)]?_0x4a819c[_0xd5dabd(0x225)]===0x0:!![]],[_0xd5dabd(0x2e6),_0x654a2,_0x508a25=>_0x508a25['supported']?_0x508a25[_0xd5dabd(0x225)]===0x0:!![]],[_0xd5dabd(0x286),_0x4fe857,_0x2ad7c8=>_0x2ad7c8[_0xd5dabd(0x24d)]?_0x2ad7c8[_0xd5dabd(0x225)]===0x0:!![]],['OPFS',_0x4d3c61,_0x5e261b=>_0x5e261b['supported']?_0x5e261b['remaining']===0x0:!![]],[_0xd5dabd(0x20d),_0x3764fa,_0x38c17b=>_0x38c17b[_0xd5dabd(0x24d)]?_0x38c17b[_0xd5dabd(0x225)]===0x0:!![]],[_0xd5dabd(0x30a),_0x5069c2,_0x6f4c32=>_0x6f4c32[_0xd5dabd(0x225)][_0xd5dabd(0x232)]===0x0]];let _0x4e2c5a=![];for(const [_0x2e1d3c,_0x695b88,_0xf5ca01]of _0xa113ba){const _0x291de3=await _0x192cf1(_0x2e1d3c,_0x695b88,_0xf5ca01),_0x2f1ccb=_0x291de3[_0xd5dabd(0x206)]||{};_0x38f9d3['push']({'name':_0x2e1d3c,'status':_0x291de3[_0xd5dabd(0x2bb)],'attempt':_0x291de3['attempt'],'detail':_0x2f1ccb,'errors':_0x2f1ccb[_0xd5dabd(0x187)]||[]}),_0x291de3[_0xd5dabd(0x2bb)]===_0xd5dabd(0x2eb)&&!(_0x2f1ccb?.[_0xd5dabd(0x24d)]===![])&&(_0x4e2c5a=!![]);}await _0x654a2(),await _0x235cee(),await _0x5069c2();const _0x571de1=_0x10876a(),_0x598f7b=typeof window['caches']?.[_0xd5dabd(0x2b6)]==='function'?await window[_0xd5dabd(0x2e7)][_0xd5dabd(0x2b6)]()['catch'](()=>[]):[];_0x571de1['length']&&_0x38f9d3['push']({'name':'Cookie\x20verification','status':_0xd5dabd(0x1f1),'detail':{'remaining':_0x571de1}});_0x598f7b['length']&&_0x38f9d3[_0xd5dabd(0x203)]({'name':_0xd5dabd(0x1fe),'status':_0xd5dabd(0x2eb),'detail':{'remaining':_0x598f7b}});_0x598f7b[_0xd5dabd(0x232)]&&(_0x4e2c5a=!![]);_0x5f4510[_0xd5dabd(0x18c)][_0xd5dabd(0x294)](),_0x5f4510[_0xd5dabd(0x20f)]['clear'](),_0x5f4510['acceptedTerms']=![],_0x5f4510[_0xd5dabd(0x299)]=!![],_0x5f4510[_0xd5dabd(0x2eb)]='',_0x5f4510['failed']=![],_0x5f4510[_0xd5dabd(0x2ea)]=[],_0x5f4510[_0xd5dabd(0x250)]=[],_0x5de154();if(_0x4e2c5a)throw new Error(_0x38f9d3['filter'](_0x5e6fc4=>_0x5e6fc4['status']===_0xd5dabd(0x2eb))[_0xd5dabd(0x1ea)](_0x3c0566=>_0x3c0566[_0xd5dabd(0x1d3)]+_0xd5dabd(0x291)+_0x1f24e1+'\x20attempts.')[_0xd5dabd(0x2bf)]('\x0a')||_0xd5dabd(0x2ed));}finally{_0x5f4510[_0xd5dabd(0x267)]=![];}},_0x18d9af=_0x3ed3fb=>{const _0x550b5e=_0x3b533a,_0x5f2034=_0x18a10c()[_0x550b5e(0x228)](_0x3ed3fb[_0x550b5e(0x1d3)]),_0xb8e1c9=_0x2b020b()[_0x550b5e(0x1de)](_0x22df2d=>_0x419604(_0x22df2d?.[_0x550b5e(0x235)]||_0x22df2d?.[_0x550b5e(0x1d3)])===_0x3ed3fb[_0x550b5e(0x1d3)]),_0x1cad3a=_0x419604(_0xb8e1c9?.[_0x550b5e(0x2bb)])[_0x550b5e(0x1e8)]();return{'installed':_0x5f2034,'record':_0xb8e1c9,'status':_0x1cad3a||(_0x5f2034?_0x550b5e(0x298):_0x550b5e(0x303)),'enabled':[_0x550b5e(0x298),_0x550b5e(0x1aa),_0x550b5e(0x1d6)][_0x550b5e(0x270)](_0x1cad3a)||_0x5f2034};},_0x69dbd2=_0x568f05=>{const _0x3d2a0b=_0x3b533a;if(typeof _0x568f05===_0x3d2a0b(0x2fd))return _0x568f05;try{const _0x2045b8=document['createElement'](_0x3d2a0b(0x1d8));return _0x2045b8['innerHTML']=_0x419604(_0x568f05?.[_0x3d2a0b(0x258)]),_0x2045b8[_0x3d2a0b(0x1a7)]||'';}catch{return'';}},_0x351eff=async _0x254c8c=>{const _0x1953fe=_0x3b533a;if(!_0x5f4510[_0x1953fe(0x24e)])throw new Error(_0x1953fe(0x227));const _0x13714b=_0x419604(_0x254c8c?.['name']);if(!_0x13714b)throw new Error('Package\x20name\x20is\x20empty.');let _0x46804f=null;for(let _0x47766c=0x1;_0x47766c<=_0x1b50e5;_0x47766c++){try{const _0x120509=await _0x5f4510[_0x1953fe(0x24e)][_0x1953fe(0x264)]['install'](_0x13714b,{'force':_0x47766c>0x1,'silent':!![],'toolKey':'pkg','installMode':_0x1953fe(0x284)},null),_0xea5abc=Array[_0x1953fe(0x249)](_0x120509)?_0x120509[_0x1953fe(0x1ea)](_0x69dbd2)[_0x1953fe(0x2a1)](Boolean)[_0x1953fe(0x2bf)]('\x0a'):_0x69dbd2(_0x120509);if(_0x120509?.['ok']===![]||/failed to install|install.*failed|corrupted|quarantined|hash.*changed/i[_0x1953fe(0x204)](_0xea5abc))throw new Error(_0xea5abc||_0x1953fe(0x1ab)+_0x13714b+_0x1953fe(0x256));for(let _0x243f8f=0x0;_0x243f8f<0x14;_0x243f8f++){await _0x461aa2(0x78);const _0x429665=_0x18d9af(_0x254c8c);if(_0x429665['enabled'])return _0x429665;}const _0x6acb09=_0x18d9af(_0x254c8c);throw new Error(_0x1953fe(0x1ab)+_0x13714b+_0x1953fe(0x2ab)+(_0x6acb09[_0x1953fe(0x2bb)]||_0x1953fe(0x2cb))+'.');}catch(_0x156fb9){_0x46804f=_0x156fb9,_0x47766c<_0x1b50e5&&await _0x461aa2(0x15e*_0x47766c);}}throw _0x46804f||new Error('Package\x20'+_0x13714b+_0x1953fe(0x256));},_0x4513ec=_0x8f6b33=>{const _0x4c5257=_0x3b533a,_0x59a49a=_0x5f4510[_0x4c5257(0x17a)]?.[_0x4c5257(0x272)](_0x4c5257(0x1bc));if(!_0x59a49a)return;_0x59a49a[_0x4c5257(0x318)]=_0x4c5257(0x2a2),_0x59a49a[_0x4c5257(0x1a7)]='';const _0x2afb17=document[_0x4c5257(0x18a)](_0x4c5257(0x1d8));_0x2afb17['className']='ki-notice-title',_0x2afb17[_0x4c5257(0x1a7)]='Screenshot';const _0x363055=document['createElement'](_0x4c5257(0x1d8));_0x363055[_0x4c5257(0x318)]='ki-notice-text',_0x363055[_0x4c5257(0x1a7)]=_0x8f6b33,_0x59a49a[_0x4c5257(0x1a2)](_0x2afb17,_0x363055),setTimeout(()=>{try{_0x42c80e();}catch{}},0x9c4);},_0x29fa28=async()=>{const _0x4396cf=_0x3b533a;try{if(!navigator[_0x4396cf(0x184)]?.[_0x4396cf(0x2aa)])throw new Error(_0x4396cf(0x1ec));const _0x371121=await navigator[_0x4396cf(0x184)][_0x4396cf(0x2aa)]({'video':{'frameRate':0x1,'cursor':_0x4396cf(0x236)},'audio':![]}),_0x5f1ca9=_0x371121[_0x4396cf(0x1d5)]()[0x0];if(!_0x5f1ca9)throw new Error(_0x4396cf(0x202));let _0x2ad4a5=null;const _0xae87f7=window[_0x4396cf(0x1ed)];if(typeof _0xae87f7===_0x4396cf(0x1c5)){const _0x33e448=await new _0xae87f7(_0x5f1ca9)[_0x4396cf(0x21e)]();_0x2ad4a5=document['createElement'](_0x4396cf(0x194)),_0x2ad4a5[_0x4396cf(0x2d9)]=_0x33e448[_0x4396cf(0x2d9)],_0x2ad4a5['height']=_0x33e448[_0x4396cf(0x1d2)];const _0x1e45a0=_0x2ad4a5['getContext']('2d');if(!_0x1e45a0)throw new Error(_0x4396cf(0x18d));_0x1e45a0['drawImage'](_0x33e448,0x0,0x0),_0x33e448[_0x4396cf(0x26e)]?.();}else{const _0x2cdaef=document[_0x4396cf(0x18a)](_0x4396cf(0x1be));_0x2cdaef['muted']=!![],_0x2cdaef[_0x4396cf(0x311)]=!![],_0x2cdaef[_0x4396cf(0x271)]=_0x371121,await _0x2cdaef[_0x4396cf(0x181)](),await new Promise(_0x2a4152=>requestAnimationFrame(()=>requestAnimationFrame(_0x2a4152))),_0x2ad4a5=document[_0x4396cf(0x18a)](_0x4396cf(0x194)),_0x2ad4a5[_0x4396cf(0x2d9)]=_0x2cdaef[_0x4396cf(0x2c8)]||0x780,_0x2ad4a5[_0x4396cf(0x1d2)]=_0x2cdaef['videoHeight']||0x438;const _0x3c70bc=_0x2ad4a5['getContext']('2d');if(!_0x3c70bc)throw new Error(_0x4396cf(0x18d));_0x3c70bc['drawImage'](_0x2cdaef,0x0,0x0,_0x2ad4a5[_0x4396cf(0x2d9)],_0x2ad4a5[_0x4396cf(0x1d2)]),_0x2cdaef[_0x4396cf(0x1f5)](),_0x2cdaef[_0x4396cf(0x271)]=null;}_0x371121[_0x4396cf(0x292)]()[_0x4396cf(0x17b)](_0x39699c=>_0x39699c[_0x4396cf(0x244)]());const _0x1e2eee=await new Promise(_0x58fcf7=>_0x2ad4a5[_0x4396cf(0x307)](_0x58fcf7,_0x4396cf(0x1ee)));if(!_0x1e2eee)throw new Error('Unable\x20to\x20create\x20PNG\x20image.');const _0x1e4b7e=URL['createObjectURL'](_0x1e2eee),_0x1e91c8=document['createElement']('a');_0x1e91c8['href']=_0x1e4b7e,_0x1e91c8['download']=_0x4396cf(0x2ef)+new Date()[_0x4396cf(0x20c)]()[_0x4396cf(0x2d8)](/[:.]/g,'-')+_0x4396cf(0x21f),document[_0x4396cf(0x2e1)][_0x4396cf(0x2f0)](_0x1e91c8),_0x1e91c8[_0x4396cf(0x20a)](),_0x1e91c8[_0x4396cf(0x239)](),setTimeout(()=>URL[_0x4396cf(0x216)](_0x1e4b7e),0xbb8);}catch(_0x5bd9ed){const _0x5ee3a5=_0x5bd9ed?.[_0x4396cf(0x1d3)]===_0x4396cf(0x2ee)?_0x4396cf(0x1eb):_0x5bd9ed?.['message']||'Screenshot\x20failed.';_0x4513ec(_0x5ee3a5);}},_0x49425b=()=>{const _0x587c81=_0x3b533a,_0x11a608=document[_0x587c81(0x2b4)](_0x587c81(0x1d9));_0x11a608?.[_0x587c81(0x239)]();const _0xf4771b=document[_0x587c81(0x18a)](_0x587c81(0x1d8));_0xf4771b['id']=_0x587c81(0x1d9),_0xf4771b[_0x587c81(0x2bc)](_0x587c81(0x257),'MUNITOS\x20Installer'),document['documentElement'][_0x587c81(0x2f0)](_0xf4771b);let _0x489ea5;try{_0x489ea5=_0xf4771b[_0x587c81(0x2df)]({'mode':_0x587c81(0x290)});}catch{_0x489ea5=_0xf4771b[_0x587c81(0x2df)]({'mode':_0x587c81(0x1f6)});}_0x5f4510[_0x587c81(0x259)]=_0x489ea5;const _0x5ad016=document[_0x587c81(0x18a)](_0x587c81(0x182));_0x5ad016[_0x587c81(0x1a7)]=_0x9d65b2(),_0x489ea5[_0x587c81(0x2f0)](_0x5ad016);const _0x3b3fd9=document[_0x587c81(0x18a)](_0x587c81(0x1d8));_0x3b3fd9[_0x587c81(0x318)]='ki-root',_0x489ea5[_0x587c81(0x2f0)](_0x3b3fd9),_0x5f4510[_0x587c81(0x17a)]=_0x3b3fd9;},_0x9d65b2=()=>_0x3b533a(0x201),_0x1b2c1b=()=>{const _0x9c1741=_0x3b533a,_0x42df0a={'content':0x0,'packageList':0x0,'terminal':0x0,'step':_0x5f4510[_0x9c1741(0x312)]};try{const _0x195e88=_0x5f4510[_0x9c1741(0x17a)]?.['querySelector'](_0x9c1741(0x2e4)),_0x4ae832=_0x5f4510[_0x9c1741(0x17a)]?.[_0x9c1741(0x272)](_0x9c1741(0x2ce)),_0x175b7d=_0x5f4510[_0x9c1741(0x17a)]?.[_0x9c1741(0x272)](_0x9c1741(0x21b));_0x42df0a[_0x9c1741(0x2f6)]=_0x195e88?.[_0x9c1741(0x260)]||0x0,_0x42df0a[_0x9c1741(0x178)]=_0x4ae832?.[_0x9c1741(0x260)]||0x0,_0x42df0a['terminal']=_0x175b7d?.['scrollTop']||0x0;}catch{}return _0x42df0a;},_0x4b7192=_0x159c0c=>{if(!_0x159c0c)return;requestAnimationFrame(()=>{const _0x4a51de=_0x24ff;try{const _0x2173d8=_0x5f4510[_0x4a51de(0x17a)]?.[_0x4a51de(0x272)](_0x4a51de(0x2e4)),_0x312096=_0x5f4510['root']?.['querySelector'](_0x4a51de(0x2ce)),_0x3364be=_0x5f4510[_0x4a51de(0x17a)]?.[_0x4a51de(0x272)](_0x4a51de(0x21b));_0x159c0c['step']===_0x5f4510[_0x4a51de(0x312)]&&(_0x2173d8&&(_0x2173d8['scrollTop']=_0x159c0c[_0x4a51de(0x2f6)]),_0x312096&&(_0x312096[_0x4a51de(0x260)]=_0x159c0c[_0x4a51de(0x178)]),_0x3364be&&(_0x3364be[_0x4a51de(0x260)]=_0x3364be[_0x4a51de(0x282)]));}catch{}});},_0x42c80e=()=>{const _0x21858b=_0x3b533a;if(!_0x5f4510[_0x21858b(0x17a)])return;const _0x31272e=_0x1b2c1b();_0x5f4510[_0x21858b(0x17a)][_0x21858b(0x30e)]='';const _0x193944=document[_0x21858b(0x18a)](_0x21858b(0x1d8));_0x193944[_0x21858b(0x318)]='ki-page';const _0x11e09d=document[_0x21858b(0x18a)](_0x21858b(0x31a));_0x11e09d['className']='ki-header',_0x11e09d['innerHTML']=_0x21858b(0x2cd)+_0x21858b(0x263)+_0x21858b(0x289)+_0x21858b(0x18b);const _0x48ff27=document['createElement'](_0x21858b(0x23a));_0x48ff27['className']=_0x21858b(0x222);const _0x20b974=document[_0x21858b(0x18a)]('h1');_0x20b974['className']=_0x21858b(0x21a),_0x20b974[_0x21858b(0x1a7)]=_0x5db46a();const _0x4a7505=document[_0x21858b(0x18a)](_0x21858b(0x1e0));_0x4a7505[_0x21858b(0x318)]=_0x21858b(0x238);const _0xc5fbec=document[_0x21858b(0x18a)](_0x21858b(0x1d8));_0xc5fbec[_0x21858b(0x318)]=_0x21858b(0x193),_0xd0bf9(_0xc5fbec);const _0x3646b6=document[_0x21858b(0x18a)](_0x21858b(0x273));_0x3646b6['className']=_0x21858b(0x1c2);const _0x22605b=document[_0x21858b(0x18a)](_0x21858b(0x1d8));_0x22605b[_0x21858b(0x318)]=_0x21858b(0x29b);const _0x59f429=document[_0x21858b(0x18a)](_0x21858b(0x1d8));_0x59f429[_0x21858b(0x318)]=_0x21858b(0x275),_0x25b70f(_0x22605b,_0x59f429),_0x3646b6[_0x21858b(0x1a2)](_0x22605b,_0x59f429),_0x4a7505[_0x21858b(0x1a2)](_0xc5fbec),_0x48ff27[_0x21858b(0x1a2)](_0x20b974,_0x4a7505,_0x3646b6),_0x193944['append'](_0x11e09d,_0x48ff27),_0x5f4510[_0x21858b(0x17a)][_0x21858b(0x1a2)](_0x193944),_0x14de84(),_0x4b7192(_0x31272e);},_0x5db46a=()=>({'terms':_0x3b533a(0x2fa),'clean':'Clean\x20installation','packages':_0x3b533a(0x2b8),'confirm':_0x3b533a(0x188),'installing':_0x3b533a(0x2cf),'done':_0x3b533a(0x1da),'error':_0x3b533a(0x212)}[_0x5f4510[_0x3b533a(0x312)]]||'MUNITOS\x20Installer'),_0xd0bf9=_0x400424=>{const _0x51a8b5=_0x3b533a;switch(_0x5f4510[_0x51a8b5(0x312)]){case _0x51a8b5(0x26a):_0x3c383d(_0x400424);break;case _0x51a8b5(0x221):_0x579100(_0x400424);break;case _0x51a8b5(0x2dc):_0x3763d3(_0x400424);break;case _0x51a8b5(0x2ff):_0x23a812(_0x400424);break;case _0x51a8b5(0x2d6):_0x4d82ba(_0x400424);break;case'done':_0x3819cd(_0x400424);break;case _0x51a8b5(0x2eb):_0x366d3f(_0x400424);break;default:_0x400424[_0x51a8b5(0x1a7)]='';}},_0x3c383d=_0x53dc92=>{const _0x5d816c=_0x3b533a;_0x53dc92[_0x5d816c(0x30e)]=_0x5d816c(0x23e)+_0x59c9d3[_0x5d816c(0x1ea)](_0x57ec97=>_0x5d816c(0x27e)+_0x50897a(_0x57ec97)+_0x5d816c(0x23f)+_0x50897a(_0x57ec97)+'</a>')['join']('')+_0x5d816c(0x234)+(_0x5f4510[_0x5d816c(0x2d7)]?'checked':'')+_0x5d816c(0x280);},_0x579100=_0x257d74=>{const _0x4ecbd6=_0x3b533a,_0x142953=Array[_0x4ecbd6(0x315)](_0x18a10c())[_0x4ecbd6(0x2a1)](_0x570ba5=>Boolean(_0x570ba5)),_0x3af6d2=_0x2b020b()['filter'](_0x139301=>{const _0x40564e=_0x4ecbd6,_0x14532b=_0x419604(_0x139301?.[_0x40564e(0x235)]||_0x139301?.[_0x40564e(0x1d3)]);return Boolean(_0x14532b);}),_0x1287d7=_0x5f4510[_0x4ecbd6(0x177)][_0x4ecbd6(0x232)]?_0x4ecbd6(0x213)+_0x5f4510[_0x4ecbd6(0x177)]['map'](_0x2b0fe2=>_0x50897a(_0x2b0fe2[_0x4ecbd6(0x1d3)])+':\x20'+_0x50897a(_0x2b0fe2[_0x4ecbd6(0x2bb)]))['join'](_0x4ecbd6(0x2c4))+_0x4ecbd6(0x2e9):'';_0x257d74['innerHTML']=_0x4ecbd6(0x231)+_0x1287d7+'\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-clean-box\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-clean-copy\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x142953[_0x4ecbd6(0x232)]+_0x4ecbd6(0x207)+_0x3af6d2[_0x4ecbd6(0x232)]+_0x4ecbd6(0x2a8)+(_0x5f4510[_0x4ecbd6(0x267)]?_0x4ecbd6(0x1f7):'')+_0x4ecbd6(0x2c1)+(_0x5f4510[_0x4ecbd6(0x267)]?'Cleaning...':_0x4ecbd6(0x246))+_0x4ecbd6(0x197);},_0x3763d3=_0x202123=>{const _0x30c200=_0x3b533a;if(!_0x5f4510[_0x30c200(0x268)]['length']){_0x202123[_0x30c200(0x30e)]='<div\x20class=\x22ki-empty\x22>No\x20packages\x20were\x20found\x20in\x20pkg.js.</div>';return;}const _0x303550=_0x5f4510['catalog']['map'](_0x555b26=>{const _0x25778c=_0x30c200,_0x1a9522=_0x5f4510[_0x25778c(0x18c)][_0x25778c(0x228)](_0x555b26[_0x25778c(0x1d3)]),_0x2d6719=_0x18d9af(_0x555b26),_0x242429=Array['isArray'](_0x555b26[_0x25778c(0x322)])?_0x555b26[_0x25778c(0x322)][_0x25778c(0x232)]:0x0;return _0x25778c(0x29e)+(_0x1a9522?_0x25778c(0x192):'')+_0x25778c(0x22f)+_0x50897a(_0x555b26[_0x25778c(0x1d3)])+'\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20data-selected=\x22'+(_0x1a9522?'true':'false')+'\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20role=\x22option\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20aria-selected=\x22'+(_0x1a9522?'true':_0x25778c(0x198))+_0x25778c(0x25f)+_0x50897a(_0x555b26[_0x25778c(0x1d3)])+'\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(_0x1a9522?'checked':'')+_0x25778c(0x22b)+_0x50897a(_0x555b26['name'])+'\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-package-name\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x50897a(_0x555b26['name'])+_0x25778c(0x30b)+(_0x242429?_0x242429+_0x25778c(0x2f4):_0x25778c(0x20b))+_0x25778c(0x261)+_0x50897a(_0x2d6719[_0x25778c(0x2bb)]||_0x25778c(0x303))+_0x25778c(0x1c0)+_0x50897a(_0x555b26[_0x25778c(0x293)]||_0x25778c(0x25a))+_0x25778c(0x2d2);})[_0x30c200(0x2bf)]('');_0x202123[_0x30c200(0x30e)]='<div\x20class=\x22ki-section-title\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Choose\x20optional\x20software\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-section-subtitle\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Click\x20anywhere\x20on\x20a\x20package\x20row\x20to\x20select\x20it.\x20You\x20may\x20continue\x20with\x20zero\x20optional\x20packages.\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20class=\x22ki-package-list\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20role=\x22listbox\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20aria-label=\x22MUNITOS\x20package\x20list\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20tabindex=\x220\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-package-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>Package</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>Version</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>Policy</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>Description</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x303550+_0x30c200(0x28c)+_0x5f4510[_0x30c200(0x18c)]['size']+_0x30c200(0x28a)+_0x5f4510[_0x30c200(0x268)][_0x30c200(0x232)]+_0x30c200(0x2a0);},_0x23a812=_0x1d7db1=>{const _0x378c82=_0x3b533a,_0x58e478=Array[_0x378c82(0x315)](_0x5f4510[_0x378c82(0x20f)]),_0x159fff=_0x58e478['filter'](Boolean),_0x25cb79=_0x159fff['length']?_0x159fff[_0x378c82(0x1ea)](_0x2cd483=>{const _0x433748=_0x378c82,_0x2f68cf=_0x1ce365(_0x2cd483);return _0x433748(0x29d)+_0x50897a(_0x2cd483)+_0x433748(0x1a1)+(_0x2f68cf?'\x20—\x20self-managed\x20manifest':'')+_0x433748(0x31e);})[_0x378c82(0x2bf)](''):_0x378c82(0x265);_0x1d7db1[_0x378c82(0x30e)]='<div\x20class=\x22ki-copy\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22ki-lead\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Ready\x20to\x20install\x20MUNITOS.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Review\x20the\x20selected\x20optional\x20packages.\x20Choosing\x20none\x20is\x20valid\x20and\x20will\x20not\x20block\x20installation.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-confirm\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-confirm-title\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Optional\x20packages\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<ul\x20class=\x22ki-confirm-list\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x25cb79+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</ul>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<table\x20class=\x22ki-summary\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>Total\x20optional\x20operations</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x159fff[_0x378c82(0x232)]+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>User\x20selected</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x5f4510[_0x378c82(0x18c)][_0x378c82(0x19b)]+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>Dependency\x20resolution</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>Enabled</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>Installation\x20manager</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>Active\x20MUNITOS\x20package\x20manager</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</table>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-notice\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-notice-title\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Final\x20confirmation\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-notice-text\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Click\x20Install\x20to\x20begin.\x20Optional\x20package\x20selection\x20is\x20not\x20mandatory.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>';},_0x4d82ba=_0x49b500=>{const _0xaf26f9=_0x3b533a,_0x1a055a=_0x5f4510[_0xaf26f9(0x20f)]['size'],_0x502452=_0x5f4510[_0xaf26f9(0x2ea)][_0xaf26f9(0x2a1)](_0x4d4211=>_0x4d4211['status']===_0xaf26f9(0x2b9))['length'],_0x328a57=_0x1a055a?Math[_0xaf26f9(0x2b7)](_0x502452/_0x1a055a*0x64):0x0,_0x28b451=Math[_0xaf26f9(0x242)](0x0,Date['now']()-(_0x5f4510[_0xaf26f9(0x241)]||Date[_0xaf26f9(0x1c1)]())),_0x24a3d2=Math[_0xaf26f9(0x314)](0x64,Math['round'](_0x28b451/_0x512cc2*0x64)),_0xb2fa3c=Math[_0xaf26f9(0x242)](_0x328a57,_0x24a3d2),_0xc5e509=_0x5f4510[_0xaf26f9(0x250)][_0xaf26f9(0x232)]?_0x5f4510[_0xaf26f9(0x250)][_0xaf26f9(0x1ea)](_0x2ff47d=>'<span\x20class=\x22ki-log-line\x20ki-log-'+_0x50897a(_0x2ff47d[_0xaf26f9(0x2f9)]||_0xaf26f9(0x1d1))+'\x22>'+_0x50897a(_0x2ff47d['text'])+_0xaf26f9(0x21d))[_0xaf26f9(0x2bf)](''):_0xaf26f9(0x1cb);_0x49b500[_0xaf26f9(0x30e)]=_0xaf26f9(0x2c2)+_0x512cc2/0x3e8+_0xaf26f9(0x1ad)+_0xb2fa3c+'%\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22ki-progress-meta\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x502452+'/'+_0x1a055a+_0xaf26f9(0x1cc)+_0xb2fa3c+_0xaf26f9(0x2fe)+_0xc5e509+_0xaf26f9(0x1e6);},_0x3819cd=_0x4e5794=>{const _0x11bc6c=_0x3b533a,_0x446d7e=_0x5f4510[_0x11bc6c(0x2ea)][_0x11bc6c(0x2a1)](_0x161806=>_0x161806['status']===_0x11bc6c(0x2b9))[_0x11bc6c(0x232)];_0x4e5794[_0x11bc6c(0x30e)]=_0x11bc6c(0x26f)+_0x446d7e+_0x11bc6c(0x2af);},_0x366d3f=_0x230f0b=>{const _0x9ef243=_0x3b533a;_0x230f0b['innerHTML']='<div\x20class=\x22ki-copy\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22ki-lead\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Installation\x20could\x20not\x20be\x20completed.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20The\x20installer\x20state\x20has\x20been\x20reset\x20so\x20the\x20next\x20attempt\x20starts\x20from\x20the\x20first\x20stage.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(_0x5f4510[_0x9ef243(0x2eb)]?_0x9ef243(0x30f)+_0x50897a(_0x5f4510[_0x9ef243(0x2eb)])+_0x9ef243(0x18b):'')+_0x9ef243(0x2c5);},_0x25b70f=(_0x23add1,_0x1228e5)=>{const _0x59d9e6=_0x3b533a,_0x26a7ca=document[_0x59d9e6(0x18a)](_0x59d9e6(0x28f));_0x26a7ca[_0x59d9e6(0x2f9)]=_0x59d9e6(0x28f),_0x26a7ca[_0x59d9e6(0x318)]=_0x59d9e6(0x191),_0x26a7ca[_0x59d9e6(0x1f8)][_0x59d9e6(0x274)]='screenshot',_0x26a7ca[_0x59d9e6(0x1a7)]=_0x59d9e6(0x27c),_0x23add1[_0x59d9e6(0x2f0)](_0x26a7ca);if(_0x5f4510[_0x59d9e6(0x312)]==='terms'){const _0x5b8d5=document['createElement'](_0x59d9e6(0x28f));_0x5b8d5[_0x59d9e6(0x318)]=_0x59d9e6(0x2b2),_0x5b8d5['dataset'][_0x59d9e6(0x274)]=_0x59d9e6(0x2f1),_0x5b8d5[_0x59d9e6(0x1f7)]=!_0x5f4510[_0x59d9e6(0x2d7)],_0x5b8d5[_0x59d9e6(0x1a7)]=_0x59d9e6(0x220),_0x1228e5['appendChild'](_0x5b8d5);return;}if(_0x5f4510[_0x59d9e6(0x312)]===_0x59d9e6(0x221)){const _0x4dc0c6=document[_0x59d9e6(0x18a)]('button');_0x4dc0c6['className']=_0x59d9e6(0x2d5),_0x4dc0c6[_0x59d9e6(0x1f8)][_0x59d9e6(0x274)]=_0x59d9e6(0x2db),_0x4dc0c6[_0x59d9e6(0x1a7)]='Back';const _0x5950e1=document['createElement']('button');_0x5950e1[_0x59d9e6(0x318)]=_0x59d9e6(0x2b5),_0x5950e1['dataset'][_0x59d9e6(0x274)]=_0x59d9e6(0x221),_0x5950e1[_0x59d9e6(0x1a7)]=_0x59d9e6(0x246),_0x1228e5[_0x59d9e6(0x1a2)](_0x4dc0c6,_0x5950e1);return;}if(_0x5f4510[_0x59d9e6(0x312)]==='packages'){const _0x3ee3b0=document[_0x59d9e6(0x18a)]('button');_0x3ee3b0['className']=_0x59d9e6(0x2d5),_0x3ee3b0[_0x59d9e6(0x1f8)][_0x59d9e6(0x274)]=_0x59d9e6(0x2db),_0x3ee3b0[_0x59d9e6(0x1a7)]=_0x59d9e6(0x2d0);const _0x25328f=document[_0x59d9e6(0x18a)](_0x59d9e6(0x28f));_0x25328f[_0x59d9e6(0x318)]='ki-button\x20ki-primary',_0x25328f[_0x59d9e6(0x1f8)][_0x59d9e6(0x274)]=_0x59d9e6(0x1b5),_0x25328f[_0x59d9e6(0x1a7)]=_0x59d9e6(0x220),_0x1228e5[_0x59d9e6(0x1a2)](_0x3ee3b0,_0x25328f);return;}if(_0x5f4510['step']==='confirm'){const _0x45bc8f=document[_0x59d9e6(0x18a)](_0x59d9e6(0x28f));_0x45bc8f[_0x59d9e6(0x318)]=_0x59d9e6(0x2d5),_0x45bc8f[_0x59d9e6(0x1f8)][_0x59d9e6(0x274)]='back',_0x45bc8f[_0x59d9e6(0x1a7)]='Back';const _0x4948ce=document['createElement'](_0x59d9e6(0x28f));_0x4948ce[_0x59d9e6(0x318)]=_0x59d9e6(0x2b2),_0x4948ce[_0x59d9e6(0x1f8)][_0x59d9e6(0x274)]=_0x59d9e6(0x209),_0x4948ce[_0x59d9e6(0x1a7)]=_0x59d9e6(0x17f),_0x1228e5[_0x59d9e6(0x1a2)](_0x45bc8f,_0x4948ce);return;}if(_0x5f4510[_0x59d9e6(0x312)]===_0x59d9e6(0x2d6)){const _0x5d889a=document[_0x59d9e6(0x18a)](_0x59d9e6(0x28f));_0x5d889a['className']='ki-button',_0x5d889a[_0x59d9e6(0x1f7)]=!![],_0x5d889a[_0x59d9e6(0x30e)]=_0x59d9e6(0x1b6),_0x1228e5[_0x59d9e6(0x2f0)](_0x5d889a);return;}if(_0x5f4510[_0x59d9e6(0x312)]==='done'){const _0x105aee=document[_0x59d9e6(0x18a)]('button');_0x105aee['className']='ki-button\x20ki-primary\x20ki-wide',_0x105aee[_0x59d9e6(0x1f8)]['action']=_0x59d9e6(0x323),_0x105aee[_0x59d9e6(0x1a7)]='Finish',_0x1228e5[_0x59d9e6(0x2f0)](_0x105aee);return;}if(_0x5f4510[_0x59d9e6(0x312)]===_0x59d9e6(0x2eb)){const _0x171609=document[_0x59d9e6(0x18a)](_0x59d9e6(0x28f));_0x171609[_0x59d9e6(0x318)]='ki-button',_0x171609[_0x59d9e6(0x1f8)][_0x59d9e6(0x274)]=_0x59d9e6(0x1ca),_0x171609[_0x59d9e6(0x1a7)]=_0x59d9e6(0x30d),_0x1228e5[_0x59d9e6(0x2f0)](_0x171609);}},_0x1b252d=()=>{const _0x267618=_0x3b533a;if(!_0x5f4510[_0x267618(0x17a)])return;const _0x342b0e=_0x5f4510['root'][_0x267618(0x272)](_0x267618(0x302));_0x342b0e&&(_0x342b0e['textContent']=String(_0x5f4510[_0x267618(0x18c)][_0x267618(0x19b)])),_0x5f4510['root'][_0x267618(0x180)](_0x267618(0x210))['forEach'](_0x31f264=>{const _0x354604=_0x267618,_0x5b16d7=_0x419604(_0x31f264[_0x354604(0x285)](_0x354604(0x243))),_0x34a45e=_0x5f4510[_0x354604(0x18c)][_0x354604(0x228)](_0x5b16d7);_0x31f264[_0x354604(0x2a3)][_0x354604(0x183)](_0x354604(0x192),_0x34a45e),_0x31f264[_0x354604(0x2bc)](_0x354604(0x2e2),_0x34a45e?_0x354604(0x2ae):_0x354604(0x198)),_0x31f264[_0x354604(0x2bc)](_0x354604(0x1af),_0x34a45e?_0x354604(0x2ae):_0x354604(0x198));const _0x508478=_0x31f264['querySelector'](_0x354604(0x2e5));_0x508478&&!_0x508478[_0x354604(0x1f7)]&&(_0x508478['checked']=_0x34a45e);});},_0x54516f=(_0x497e2d,_0x28a867)=>{const _0xf36e59=_0x3b533a,_0x105a39=_0x419604(_0x497e2d);if(!_0x105a39)return![];return _0x28a867?_0x5f4510['selected']['add'](_0x105a39):_0x5f4510[_0xf36e59(0x18c)]['delete'](_0x105a39),_0x1ef6ca(),_0x1b252d(),!![];},_0x5093af=_0x2b27eb=>{const _0x326381=_0x3b533a,_0x41965f=_0x419604(_0x2b27eb);if(!_0x41965f)return![];return _0x54516f(_0x41965f,!_0x5f4510[_0x326381(0x18c)][_0x326381(0x228)](_0x41965f));},_0x14de84=()=>{const _0x8ac8c5=_0x3b533a;if(!_0x5f4510[_0x8ac8c5(0x17a)])return;const _0x883290=_0x5f4510['root'][_0x8ac8c5(0x272)](_0x8ac8c5(0x1ac));_0x883290?.[_0x8ac8c5(0x26b)](_0x8ac8c5(0x19a),()=>{const _0x4dbd63=_0x8ac8c5;_0x5f4510['acceptedTerms']=_0x883290[_0x4dbd63(0x2cc)]===!![],_0x1ef6ca();const _0x27d4af=_0x5f4510['root'][_0x4dbd63(0x272)]('[data-action=\x22continue-terms\x22]');_0x27d4af&&(_0x27d4af[_0x4dbd63(0x1f7)]=!_0x5f4510[_0x4dbd63(0x2d7)]);});const _0x31122b=_0x5f4510['root'][_0x8ac8c5(0x272)](_0x8ac8c5(0x2ce));_0x31122b&&(_0x31122b['addEventListener'](_0x8ac8c5(0x20a),_0x1bb0e4=>{const _0x599c03=_0x8ac8c5,_0x531024=_0x1bb0e4[_0x599c03(0x2b1)],_0x5ef172=_0x531024 instanceof Element?_0x531024[_0x599c03(0x2b0)]('[data-package-toggle]'):null;if(_0x5ef172){const _0x1e19ea=_0x419604(_0x5ef172[_0x599c03(0x285)](_0x599c03(0x1fd)));if(_0x5ef172[_0x599c03(0x1f7)])return;_0x54516f(_0x1e19ea,_0x5ef172[_0x599c03(0x2cc)]),_0x1bb0e4[_0x599c03(0x211)]();return;}const _0xfe4bde=_0x531024 instanceof Element?_0x531024[_0x599c03(0x2b0)](_0x599c03(0x210)):null;if(!_0xfe4bde||!_0x31122b[_0x599c03(0x2a5)](_0xfe4bde))return;const _0x4eec86=_0x419604(_0xfe4bde[_0x599c03(0x285)](_0x599c03(0x243)));if(!_0x4eec86)return;_0x5093af(_0x4eec86);}),_0x31122b[_0x8ac8c5(0x26b)]('keydown',_0x5269ef=>{const _0x25f197=_0x8ac8c5;if(_0x5269ef['key']!==_0x25f197(0x1fb)&&_0x5269ef[_0x25f197(0x235)]!=='\x20')return;const _0x1710fb=_0x5269ef[_0x25f197(0x2b1)],_0x148f48=_0x1710fb instanceof Element?_0x1710fb['closest'](_0x25f197(0x210)):null;if(!_0x148f48||!_0x31122b[_0x25f197(0x2a5)](_0x148f48))return;const _0x3eaf97=_0x419604(_0x148f48[_0x25f197(0x285)](_0x25f197(0x243)));if(!_0x3eaf97)return;_0x5269ef[_0x25f197(0x233)](),_0x5093af(_0x3eaf97);})),_0x5f4510[_0x8ac8c5(0x17a)][_0x8ac8c5(0x180)](_0x8ac8c5(0x277))[_0x8ac8c5(0x17b)](_0x31d689=>{const _0x25ed72=_0x8ac8c5;_0x31d689['addEventListener'](_0x25ed72(0x20a),()=>{const _0x365fb6=_0x25ed72;void _0x3e103a(_0x31d689[_0x365fb6(0x285)](_0x365fb6(0x2f7)));});});},_0x31cfba=()=>{const _0x2a39f1=_0x3b533a;if(!_0x5f4510['acceptedTerms'])return;if(_0x46bc9c()&&!_0x5f4510['cleaned']){_0x5f4510['step']='clean',_0x1ef6ca(),_0x42c80e();return;}_0x5f4510[_0x2a39f1(0x312)]=_0x2a39f1(0x2dc),_0x1ef6ca(),_0x42c80e();},_0x3f3ff0=()=>{const _0x599a84=_0x3b533a;try{const _0x1312ba=Array[_0x599a84(0x315)](_0x5f4510[_0x599a84(0x18c)])[_0x599a84(0x2a1)](Boolean),_0x4d887e=_0x1312ba[_0x599a84(0x232)]?_0x469691(_0x1312ba):[];_0x5f4510[_0x599a84(0x20f)]=new Set(_0x4d887e['filter'](Boolean)),_0x5f4510[_0x599a84(0x2eb)]='',_0x5f4510[_0x599a84(0x312)]=_0x599a84(0x2ff),_0x1ef6ca(),_0x42c80e();}catch(_0x21cd66){_0x5f4510[_0x599a84(0x2eb)]=_0x21cd66?.[_0x599a84(0x19c)]||_0x599a84(0x1a9),_0x5f4510[_0x599a84(0x312)]=_0x599a84(0x2eb),_0x5f4510[_0x599a84(0x1c9)]=!![],_0x42c80e();}},_0x587e9f=()=>{const _0x5a778f=_0x3b533a;if(_0x5f4510[_0x5a778f(0x2d6)])return;switch(_0x5f4510[_0x5a778f(0x312)]){case _0x5a778f(0x221):_0x5f4510[_0x5a778f(0x312)]=_0x5a778f(0x26a);break;case _0x5a778f(0x2dc):_0x5f4510['step']='terms';break;case _0x5a778f(0x2ff):_0x5f4510[_0x5a778f(0x312)]=_0x5a778f(0x2dc);break;case'error':_0x4ac523();return;default:return;}_0x1ef6ca(),_0x42c80e();},_0x5508e1=async()=>{const _0x4acb87=_0x3b533a;if(_0x5f4510[_0x4acb87(0x267)])return;_0x5f4510['cleanupBusy']=!![];const _0x535e9f=_0x5f4510[_0x4acb87(0x17a)]?.[_0x4acb87(0x272)](_0x4acb87(0x24c));_0x535e9f&&(_0x535e9f[_0x4acb87(0x1f7)]=!![],_0x535e9f[_0x4acb87(0x1a7)]=_0x4acb87(0x24a));try{await _0x365cf5(),await _0x461aa2(0xfa),window['location'][_0x4acb87(0x2bd)]();}catch(_0x565d88){_0x5f4510['cleanupBusy']=![],_0x5f4510[_0x4acb87(0x2eb)]=_0x565d88?.[_0x4acb87(0x19c)]||_0x4acb87(0x31b),_0x5f4510[_0x4acb87(0x312)]='error',_0x5f4510[_0x4acb87(0x1c9)]=!![],_0x42c80e();}},_0x42f572=(_0x449a0b,_0x5454ff='muted')=>{const _0x4d2d98=_0x3b533a;_0x5f4510[_0x4d2d98(0x250)][_0x4d2d98(0x203)]({'text':_0x419604(_0x449a0b),'type':_0x5454ff}),_0x5f4510[_0x4d2d98(0x250)][_0x4d2d98(0x232)]>0x64&&_0x5f4510[_0x4d2d98(0x250)][_0x4d2d98(0x2fb)](0x0,_0x5f4510[_0x4d2d98(0x250)][_0x4d2d98(0x232)]-0x64),_0x42c80e();},_0xdd0e6e=async()=>{const _0xa02359=_0x3b533a;if(_0x5f4510[_0xa02359(0x2d6)])return;_0x5f4510[_0xa02359(0x2d6)]=!![],_0x5f4510['failed']=![],_0x5f4510['error']='',_0x5f4510[_0xa02359(0x2ea)]=[],_0x5f4510[_0xa02359(0x250)]=[],_0x5f4510[_0xa02359(0x241)]=Date['now'](),_0x5f4510['step']=_0xa02359(0x2d6),_0x42c80e();try{await _0x3eaa45(0x3a98);const _0x5c6ae5=_0x5f4510[_0xa02359(0x20f)][_0xa02359(0x19b)]?_0x469691(Array[_0xa02359(0x315)](_0x5f4510[_0xa02359(0x20f)]))[_0xa02359(0x2a1)](Boolean):[];_0x42f572(_0xa02359(0x22a),'accent'),_0x42f572(_0xa02359(0x195)+_0x5c6ae5['length']+'\x20package(s).',_0xa02359(0x1d1));!_0x5c6ae5['length']&&_0x42f572(_0xa02359(0x2d4),_0xa02359(0x309));for(let _0x4c6a04=0x0;_0x4c6a04<_0x5c6ae5[_0xa02359(0x232)];_0x4c6a04++){const _0x4599e4=_0x1ce365(_0x5c6ae5[_0x4c6a04]);if(!_0x4599e4)throw new Error('Package\x20'+_0x5c6ae5[_0x4c6a04]+_0xa02359(0x281));_0x42f572('['+(_0x4c6a04+0x1)+'/'+_0x5c6ae5[_0xa02359(0x232)]+_0xa02359(0x2d1)+_0x4599e4[_0xa02359(0x1d3)]+'\x20from\x20its\x20self-managed\x20package\x20manifest...',_0xa02359(0x309));try{await _0x351eff(_0x4599e4);const _0x491006=_0x45db1f(_0x4599e4[_0xa02359(0x1d3)]);_0x5f4510[_0xa02359(0x2ea)]['push']({'package':_0x4599e4[_0xa02359(0x1d3)],'version':_0x491006,'status':_0xa02359(0x2b9)}),_0x42f572('✓\x20'+_0x4599e4[_0xa02359(0x1d3)]+'\x20'+_0x491006+_0xa02359(0x1bd),'ok');}catch(_0x41b9d9){_0x5f4510['installResults'][_0xa02359(0x203)]({'package':_0x4599e4[_0xa02359(0x1d3)],'version':_0x45db1f(_0x4599e4[_0xa02359(0x1d3)]),'status':'failed','error':_0x41b9d9?.[_0xa02359(0x19c)]||_0xa02359(0x252)}),_0x42f572('✗\x20'+_0x4599e4[_0xa02359(0x1d3)]+'\x20installation\x20failed.',_0xa02359(0x2eb));throw _0x41b9d9;}_0x42c80e();}while(Date[_0xa02359(0x1c1)]()-_0x5f4510[_0xa02359(0x241)]<_0x512cc2){const _0x3f3960=Date[_0xa02359(0x1c1)]()-_0x5f4510[_0xa02359(0x241)],_0x476df0=Math[_0xa02359(0x242)](0x0,_0x512cc2-_0x3f3960),_0x513c27=Math[_0xa02359(0x1d4)](_0x476df0/0x3e8);_0x42f572(_0xa02359(0x251)+_0x513c27+_0xa02359(0x215),_0xa02359(0x1d1)),_0x42c80e(),await _0x461aa2(Math['min'](0x3e8,Math[_0xa02359(0x242)](0x64,_0x476df0)));}_0x42f572('Finalizing\x20MUNITOS\x20runtime\x20configuration.',_0xa02359(0x309)),await _0x461aa2(0xfa),_0x10094f(),_0x5f4510['installing']=![],_0x5f4510['finished']=!![],_0x5f4510[_0xa02359(0x1c9)]=![],_0x5f4510[_0xa02359(0x312)]=_0xa02359(0x2c0),_0x42c80e();}catch(_0x1cbd87){_0x5f4510[_0xa02359(0x2d6)]=![],_0x5f4510[_0xa02359(0x19d)]=![],_0x5f4510[_0xa02359(0x1c9)]=!![],_0x5f4510['error']=_0x1cbd87?.['message']||_0xa02359(0x1cf),_0x5f4510[_0xa02359(0x312)]='error',_0x5de154(),_0x42c80e();}},_0x1e5eee=()=>{const _0x221b22=_0x3b533a;if(_0x5f4510[_0x221b22(0x2d3)])return;_0x5f4510[_0x221b22(0x2d3)]=!![],_0x10094f(),_0x5f4510[_0x221b22(0x19d)]=!![],_0x5f4510['installing']=![];try{document['getElementById'](_0x221b22(0x1d7))?.[_0x221b22(0x18f)]({'preventScroll':!![]});}catch{}const _0xa75690=_0x5f4510[_0x221b22(0x17a)];_0x5f4510[_0x221b22(0x17a)]=null,_0xa75690?.['remove'](),setTimeout(()=>{const _0x8ddf3=_0x221b22;try{window[_0x8ddf3(0x223)][_0x8ddf3(0x2bd)]();}catch{try{location[_0x8ddf3(0x2bd)]();}catch{}}},0x32);},_0x3e103a=async _0xc44f88=>{const _0x1de935=_0x3b533a;switch(_0xc44f88){case'continue-terms':_0x31cfba();break;case'clean':await _0x5508e1();break;case _0x1de935(0x1b5):_0x3f3ff0();break;case _0x1de935(0x2db):_0x587e9f();break;case _0x1de935(0x209):await _0xdd0e6e();break;case _0x1de935(0x323):_0x1e5eee();break;case'restart':_0x4ac523();break;case _0x1de935(0x22e):await _0x29fa28();break;}},_0x26bfae=async()=>{const _0x3fd9d0=_0x3b533a;let _0x2af5ec=![];try{_0x2af5ec=new URLSearchParams(location[_0x3fd9d0(0x23d)])['get']('munitos-install')===_0x3fd9d0(0x1ae);}catch{}if(!_0x2af5ec&&_0x448b94())return;_0x5de154(),_0x5f4510[_0x3fd9d0(0x312)]='terms',_0x5f4510[_0x3fd9d0(0x2d7)]=![],_0x5f4510[_0x3fd9d0(0x299)]=![],_0x5f4510['selected']['clear'](),_0x5f4510[_0x3fd9d0(0x20f)][_0x3fd9d0(0x294)](),_0x5f4510[_0x3fd9d0(0x2d6)]=![],_0x5f4510[_0x3fd9d0(0x19d)]=![],_0x5f4510['failed']=![],_0x5f4510[_0x3fd9d0(0x2eb)]='',_0x5f4510[_0x3fd9d0(0x2ea)]=[],_0x5f4510[_0x3fd9d0(0x250)]=[],_0x5f4510['cleanupDiagnostics']=[],_0x5f4510[_0x3fd9d0(0x267)]=![],_0x5f4510[_0x3fd9d0(0x241)]=0x0,_0x5f4510[_0x3fd9d0(0x2d3)]=![],_0x49425b(),_0x42c80e();try{const _0x5e09ce=await _0x937821();_0x5f4510[_0x3fd9d0(0x268)]=_0x4f6bc0(_0x5e09ce);if(!_0x5f4510[_0x3fd9d0(0x268)]['length'])throw new Error(_0x3fd9d0(0x219));_0x5f4510[_0x3fd9d0(0x18c)]=new Set(Array[_0x3fd9d0(0x315)](_0x5f4510['selected'])['filter'](_0x235325=>_0x1ce365(_0x235325))),_0x42c80e();}catch(_0x4fbcd2){_0x5f4510[_0x3fd9d0(0x2eb)]=_0x4fbcd2?.[_0x3fd9d0(0x19c)]||_0x3fd9d0(0x276),_0x5f4510[_0x3fd9d0(0x312)]=_0x3fd9d0(0x2eb),_0x5f4510[_0x3fd9d0(0x1c9)]=!![],_0x42c80e();}};document[_0x3b533a(0x1e9)]===_0x3b533a(0x186)?document[_0x3b533a(0x26b)](_0x3b533a(0x319),()=>{void _0x26bfae();},{'once':!![]}):void _0x26bfae();})());
+(()=>{
+'use strict';
+
+const MUNITOS_INSTALL_FILE_MANIFEST=globalThis.MUNITOSManifest.files['install.js'];
+const GLOBAL_KEY='__MUNITOS_INSTALL_WIZARD__';
+const COMPLETED_STORAGE_KEY=MUNITOS_INSTALL_FILE_MANIFEST.keys.storage[0];
+const STATE_STORAGE_KEY=MUNITOS_INSTALL_FILE_MANIFEST.keys.storage[1];
+const COMPLETED_COOKIE=MUNITOS_INSTALL_FILE_MANIFEST.keys.cookies[0];
+const STATE_COOKIE=MUNITOS_INSTALL_FILE_MANIFEST.keys.cookies[1];
+const MIN_INSTALL_DURATION=5000;
+const CLEANUP_RETRIES=3;
+const CLEANUP_RETRY_DELAY=180;
+const PACKAGE_RETRIES=3;
+const OFFICIAL_LINKS=Object.freeze(['https://munitos.github.io','https://t.me/MUNITOS']);
+const APP_NAME='MUNITOS';
+
+const state={
+    step:'terms',
+    acceptedTerms:false,
+    cleaned:false,
+    catalog:[],
+    selected:new Set(),
+    required:new Set(),
+    installing:false,
+    finished:false,
+    failed:false,
+    error:'',
+    installResults:[],
+    log:[],
+    cleanupDiagnostics:[],
+    cleanupBusy:false,
+    appApi:null,
+    root:null,
+    shadow:null,
+    ui:{},
+    reloadPending:false,
+    installStartedAt:0
+};
+
+if(window[GLOBAL_KEY])return;
+
+window[GLOBAL_KEY]=Object.freeze({
+    version:MUNITOS_INSTALL_FILE_MANIFEST.version,
+    kernelAware:true
+});
+
+const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+
+const safeText=value=>String(value??'').trim();
+
+const escapeHtml=value=>safeText(value)
+    .replaceAll('&','&amp;')
+    .replaceAll('<','&lt;')
+    .replaceAll('>','&gt;')
+    .replaceAll('"','&quot;')
+    .replaceAll("'","&#39;");
+
+const getScriptBase=()=>{
+    try{
+        const script=document.currentScript||
+            Array.from(document.scripts).find(
+                item=>/(?:^|\/)install\.js(?:[?#]|$)/i.test(item.src)
+            );
+        if(script?.src)return new URL('./',script.src);
+    }catch{}
+    try{
+        return new URL('./',window.location.href);
+    }catch{
+        return window.location;
+    }
+};
+
+const SCRIPT_BASE=getScriptBase();
+
+const getStorage=()=>{
+    try{
+        return window.localStorage;
+    }catch{
+        return null;
+    }
+};
+
+const getSessionStorage=()=>{
+    try{
+        return window.sessionStorage;
+    }catch{
+        return null;
+    }
+};
+
+const getCookie=name=>{
+    try{
+        const prefix=`${encodeURIComponent(name)}=`;
+        const row=document.cookie
+            .split(';')
+            .map(v=>v.trim())
+            .find(v=>v.startsWith(prefix));
+        return row?decodeURIComponent(row.slice(prefix.length)):'';
+    }catch{
+        return'';
+    }
+};
+
+const setCookie=(name,value,days=3650)=>{
+    try{
+        const expires=new Date(Date.now()+days*86400000).toUTCString();
+        document.cookie=
+            `${encodeURIComponent(name)}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Lax`;
+    }catch{}
+};
+
+const deleteCookie=(name,path='/')=>{
+    try{
+        document.cookie=
+            `${encodeURIComponent(name)}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=${path}; SameSite=Lax`;
+    }catch{}
+};
+
+const hasCompletedFlag=()=>{
+    const s=getStorage();
+    let a=false;
+    try{
+        a=s?.getItem(COMPLETED_STORAGE_KEY)==='1';
+    }catch{}
+    return a||getCookie(COMPLETED_COOKIE)==='1';
+};
+
+const setCompletedFlag=()=>{
+    const s=getStorage();
+    try{
+        s?.setItem(COMPLETED_STORAGE_KEY,'1');
+        s?.removeItem(STATE_STORAGE_KEY);
+    }catch{}
+    setCookie(COMPLETED_COOKIE,'1');
+    deleteCookie(STATE_COOKIE);
+};
+
+const clearCompletedFlag=()=>{
+    const s=getStorage();
+    try{
+        s?.removeItem(COMPLETED_STORAGE_KEY);
+        s?.removeItem(STATE_STORAGE_KEY);
+    }catch{}
+    deleteCookie(COMPLETED_COOKIE);
+    deleteCookie(STATE_COOKIE);
+};
+
+const saveWizardState=()=>{
+    const payload={
+        step:state.step,
+        acceptedTerms:state.acceptedTerms,
+        cleaned:state.cleaned,
+        selected:Array.from(state.selected),
+        timestamp:Date.now()
+    };
+
+    const s=getStorage();
+
+    try{
+        s?.setItem(STATE_STORAGE_KEY,JSON.stringify(payload));
+    }catch{}
+
+    try{
+        setCookie(STATE_COOKIE,JSON.stringify(payload),1);
+    }catch{}
+};
+
+const clearWizardState=()=>{
+    const s=getStorage();
+    try{
+        s?.removeItem(STATE_STORAGE_KEY);
+    }catch{}
+    deleteCookie(STATE_COOKIE);
+};
+
+const resetWizardToStart=(errorMessage='')=>{
+    state.step='terms';
+    state.acceptedTerms=false;
+    state.cleaned=false;
+    state.selected.clear();
+    state.required.clear();
+    state.installing=false;
+    state.finished=false;
+    state.failed=Boolean(errorMessage);
+    state.error=safeText(errorMessage);
+    state.installResults=[];
+    state.log=[];
+    state.cleanupDiagnostics=[];
+    state.cleanupBusy=false;
+    state.installStartedAt=0;
+    state.reloadPending=false;
+
+    clearWizardState();
+    saveWizardState();
+    render();
+};
+
+const getApi=()=>{
+    const candidates=[
+        window.MUNITOSTerminalUI,
+        window.MUNITOSCore,
+        window.MUNITOSTerminalCore
+    ];
+
+    for(const api of candidates){
+        if(
+            api&&
+            typeof api==='object'&&
+            api.package&&
+            typeof api.package.install==='function'&&
+            typeof api.package.registry==='function'
+        ){
+            return api;
+        }
+    }
+
+    return null;
+};
+
+const waitForApi=async timeout=>{
+    const effectiveTimeout=Math.max(
+        Number(timeout)||0,
+        Number(window.MUNITOSKernel?.config?.packageTimeoutMs)||30000
+    );
+
+    const start=Date.now();
+
+    while(Date.now()-start<effectiveTimeout){
+        const api=getApi();
+
+        if(
+            api?.package&&
+            typeof api.package.install==='function'&&
+            typeof api.package.registry==='function'
+        ){
+            state.appApi=api;
+            return api;
+        }
+
+        await sleep(100);
+    }
+
+    throw new Error('MUNITOS package manager was not available.');
+};
+
+const getRegistry=()=>{
+    try{
+        const list=state.appApi?.package?.registry?.();
+        return Array.isArray(list)?list:[];
+    }catch{
+        return[];
+    }
+};
+
+const getSnapshot=()=>{
+    try{
+        return state.appApi?.snapshot?.()||null;
+    }catch{
+        return null;
+    }
+};
+
+const getInstalledPackages=()=>{
+    const snapshot=getSnapshot();
+
+    if(Array.isArray(snapshot?.installed)){
+        return new Set(
+            snapshot.installed
+                .map(safeText)
+                .filter(Boolean)
+        );
+    }
+
+    const result=new Set();
+
+    for(const record of getRegistry()){
+        const key=safeText(record?.key||record?.name);
+        const status=safeText(record?.status).toLowerCase();
+
+        if(
+            key&&
+            ['installed','enabled','verified'].includes(status)
+        ){
+            result.add(key);
+        }
+    }
+
+    return result;
+};
+
+const normalizePermissions=input=>{
+    const p=input&&typeof input==='object'?input:{};
+
+    return{
+        storage:safeText(p.storage)||'none',
+        cookies:safeText(p.cookies)||'none',
+        network:safeText(p.network)||'none',
+        filesystem:safeText(p.filesystem)||'none'
+    };
+};
+
+const normalizePackage=(item,fallback='')=>{
+    if(!item)return null;
+
+    if(typeof item==='string'){
+        const name=safeText(item);
+
+        return name?{
+            name,
+            version:'unknown',
+            description:'',
+            author:'unknown',
+            official:false,
+            default:false,
+            securityLevel:'medium',
+            permissions:normalizePermissions({}),
+            commands:[],
+            dependencies:[],
+            entry:'install',
+            source:'internal'
+        }:null;
+    }
+
+    if(typeof item!=='object')return null;
+
+    const name=safeText(
+        item.name||
+        item.package||
+        item.id||
+        item.key||
+        fallback
+    );
+
+    if(!name)return null;
+
+    const dependencies=Array.isArray(item.dependencies)
+        ?item.dependencies
+            .map(v=>
+                typeof v==='string'
+                    ?safeText(v)
+                    :safeText(v?.name||v?.package||v?.id||v?.key)
+            )
+            .filter(Boolean)
+        :[];
+
+    const commands=Array.isArray(item.commands)
+        ?item.commands
+            .map(v=>
+                typeof v==='string'
+                    ?safeText(v)
+                    :safeText(v?.name||v?.command||v?.id)
+            )
+            .filter(Boolean)
+        :[];
+
+    return{
+        name,
+        version:safeText(item.version)||'unknown',
+        description:safeText(item.description),
+        author:safeText(item.author)||'unknown',
+        official:item.official===true,
+        default:item.default===true,
+        securityLevel:safeText(item.securityLevel)||'medium',
+        permissions:normalizePermissions(item.permissions),
+        commands,
+        dependencies,
+        entry:safeText(item.entry)||'install',
+        source:safeText(item.source)||'internal'
+    };
+};
+
+const normalizeCatalog=raw=>{
+    if(Array.isArray(raw)){
+        return raw
+            .map(v=>normalizePackage(v))
+            .filter(Boolean);
+    }
+
+    if(!raw||typeof raw!=='object')return[];
+
+    if(Array.isArray(raw.packages)){
+        return raw.packages
+            .map(v=>normalizePackage(v))
+            .filter(Boolean);
+    }
+
+    if(Array.isArray(raw.items)){
+        return raw.items
+            .map(v=>normalizePackage(v))
+            .filter(Boolean);
+    }
+
+    if(Array.isArray(raw.entries)){
+        return raw.entries
+            .map(v=>normalizePackage(v))
+            .filter(Boolean);
+    }
+
+    if(
+        raw.packages&&
+        typeof raw.packages==='object'&&
+        !Array.isArray(raw.packages)
+    ){
+        return Object
+            .entries(raw.packages)
+            .map(([k,v])=>normalizePackage(v,k))
+            .filter(Boolean);
+    }
+
+    if(
+        raw.registry&&
+        typeof raw.registry==='object'&&
+        !Array.isArray(raw.registry)
+    ){
+        return Object
+            .entries(raw.registry)
+            .map(([k,v])=>normalizePackage(v,k))
+            .filter(Boolean);
+    }
+
+    return Object
+        .entries(raw)
+        .map(([k,v])=>normalizePackage(v,k))
+        .filter(Boolean);
+};
+
+let pkgJsLoadPromise=null;
+
+const loadPkgJs=()=>{
+    if(
+        window.MUNITOSPackageCatalog&&
+        typeof window.MUNITOSPackageCatalog==='object'
+    ){
+        return Promise.resolve(window.MUNITOSPackageCatalog);
+    }
+
+    if(pkgJsLoadPromise)return pkgJsLoadPromise;
+
+    pkgJsLoadPromise=(async()=>{
+        const url=new URL('./pkg.js',SCRIPT_BASE);
+
+        await new Promise((resolve,reject)=>{
+            const script=document.createElement('script');
+            const cacheVersion=
+                Number(window.MUNITOSKernel?.config?.packageCacheVersion)||1;
+
+            script.src=
+                `${url.toString()}${url.search?'&':'?'}v=${cacheVersion}`;
+
+            script.async=false;
+            script.onload=resolve;
+            script.onerror=()=>{
+                reject(
+                    new Error(
+                        `Unable to load pkg.js from ${url.toString()}`
+                    )
+                );
+            };
+
+            (document.head||document.documentElement).appendChild(script);
+        });
+
+        if(
+            !window.MUNITOSPackageCatalog||
+            typeof window.MUNITOSPackageCatalog!=='object'
+        ){
+            throw new Error(
+                'pkg.js did not expose a valid MUNITOSPackageCatalog object.'
+            );
+        }
+
+        return window.MUNITOSPackageCatalog;
+    })();
+
+    return pkgJsLoadPromise.catch(error=>{
+        pkgJsLoadPromise=null;
+        throw error;
+    });
+};
+
+const getPackageByName=name=>
+    state.catalog.find(
+        pkg=>safeText(pkg.name)===safeText(name)
+    )||null;
+
+const getPackageVersion=name=>{
+    const key=safeText(name).toLowerCase();
+
+    try{
+        const registry=state.appApi?.package?.registry?.();
+
+        const record=Array.isArray(registry)
+            ?registry.find(
+                item=>
+                    safeText(item?.key||item?.name)
+                        .toLowerCase()===key
+            )
+            :null;
+
+        const value=record?.manifest?.version||record?.version;
+
+        if(value)return String(value);
+    }catch{}
+
+    return 'self-manifest';
+};
+
+const dependencyClosure=names=>{
+    const result=[];
+    const visiting=new Set();
+    const visited=new Set();
+
+    const visit=name=>{
+        const key=safeText(name);
+
+        if(!key||visited.has(key))return;
+
+        if(visiting.has(key)){
+            throw new Error(
+                `Dependency cycle detected at ${key}.`
+            );
+        }
+
+        const pkg=getPackageByName(key);
+
+        if(!pkg){
+            throw new Error(
+                `Package dependency "${key}" is missing from pkg.js.`
+            );
+        }
+
+        visiting.add(key);
+
+        for(const dep of pkg.dependencies||[]){
+            visit(dep);
+        }
+
+        visiting.delete(key);
+        visited.add(key);
+        result.push(key);
+    };
+
+    for(const name of names){
+        visit(name);
+    }
+
+    return result;
+};
+
+const hasExistingInstallation=()=>{
+    if(hasCompletedFlag())return false;
+
+    for(const name of getInstalledPackages()){
+        if(name)return true;
+    }
+
+    for(const record of getRegistry()){
+        const key=safeText(record?.key||record?.name);
+        const status=safeText(record?.status).toLowerCase();
+
+        if(
+            key&&
+            
+            [
+                'installed',
+                'enabled',
+                'verified',
+                'corrupted',
+                'tampered',
+                'blocked'
+            ].includes(status)
+        ){
+            return true;
+        }
+    }
+
+    return false;
+};
+
+const getCookieNames=()=>{
+    try{
+        return document.cookie
+            .split(';')
+            .map(v=>v.trim())
+            .filter(Boolean)
+            .map(v=>{
+                const i=v.indexOf('=');
+                return i>0?v.slice(0,i):v;
+            })
+            .filter(Boolean);
+    }catch{
+        return[];
+    }
+};
+
+const getCookieDomainCandidates=()=>{
+    const host=safeText(location.hostname).toLowerCase();
+
+    if(
+        !host||
+        host==='localhost'||
+        /^\d{1,3}(?:\.\d{1,3}){3}$/.test(host)||
+        host.includes(':')
+    ){
+        return[];
+    }
+
+    const labels=host.split('.').filter(Boolean);
+    const domains=[];
+
+    for(
+        let i=0;
+        i<Math.max(0,labels.length-1);
+        i++
+    ){
+        const candidate=labels.slice(i).join('.');
+
+        if(candidate&&candidate!==host){
+            domains.push(candidate);
+        }
+    }
+
+    return Array.from(new Set(domains));
+};
+
+const getCookiePathCandidates=()=>{
+    const result=new Set(['/']);
+
+    let path=safeText(location.pathname)||'/';
+
+    if(!path.startsWith('/')){
+        path='/'+path;
+    }
+
+    while(path&&path!=='/'){
+        result.add(path);
+
+        const trimmed=
+            path.replace(/\/[^/]*$/,'')||'/';
+
+        path=trimmed;
+    }
+
+    return Array.from(result);
+};
+
+const deleteCookieVariant=async(name,path,domain='')=>{
+    let attempted=0;
+
+    try{
+        document.cookie=
+            `${encodeURIComponent(name)}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; path=${path}; SameSite=Lax${domain?`; Domain=${domain}`:''}`;
+        attempted++;
+    }catch{}
+
+    try{
+        document.cookie=
+            `${encodeURIComponent(name)}=; Max-Age=0; path=${path}${domain?`; Domain=${domain}`:''}`;
+        attempted++;
+    }catch{}
+
+    return attempted>0;
+};
+
+const deleteAllCookies=async()=>{
+    const errors=[];
+    let deleted=0;
+    const seen=new Set(getCookieNames());
+
+    try{
+        if(
+            'cookieStore'in window&&
+            typeof window.cookieStore?.getAll==='function'
+        ){
+            const cookies=await window.cookieStore.getAll();
+
+            for(const cookie of cookies){
+                const name=safeText(cookie?.name);
+
+                if(!name)continue;
+
+                try{
+                    await window.cookieStore.delete({
+                        name,
+                        domain:cookie.domain,
+                        path:cookie.path||'/',
+                        partitioned:cookie.partitioned===true
+                    });
+
+                    deleted++;
+                    seen.add(name);
+                }catch{
+                    try{
+                        await window.cookieStore.delete(name);
+                        deleted++;
+                        seen.add(name);
+                    }catch(error){
+                        errors.push(
+                            `cookieStore:${error?.message||'delete failed'}`
+                        );
+                    }
+                }
+            }
+        }
+    }catch(error){
+        errors.push(
+            `cookieStore:${error?.message||'enumeration failed'}`
+        );
+    }
+
+    const names=Array.from(
+        new Set([...seen,...getCookieNames()])
+    );
+
+    const paths=getCookiePathCandidates();
+
+    const domains=[
+        '',
+        ...getCookieDomainCandidates()
+            .map(v=>v.startsWith('.')?v:`.${v}`),
+        ...getCookieDomainCandidates()
+    ];
+
+    for(const name of names){
+        for(const path of paths){
+            for(const domain of domains){
+                if(
+                    await deleteCookieVariant(
+                        name,
+                        path,
+                        domain
+                    )
+                ){
+                    deleted++;
+                }
+            }
+        }
+    }
+
+    return{
+        deleted,
+        errors,
+        remaining:getCookieNames()
+    };
+};
+
+const clearStorageArea=(storage,label)=>{
+    if(!storage){
+        return{
+            supported:false,
+            cleared:0,
+            remaining:null,
+            errors:[]
+        };
+    }
+
+    const errors=[];
+    let before=0;
+    let keys=[];
+
+    try{
+        before=storage.length||0;
+
+        for(let i=0;i<before;i++){
+            const key=storage.key(i);
+
+            if(key!=null){
+                keys.push(key);
+            }
+        }
+    }catch(error){
+        errors.push(
+            `${label}:enumeration:${error?.message||'failed'}`
+        );
+    }
+
+    try{
+        storage.clear();
+    }catch(error){
+        errors.push(
+            `${label}:clear:${error?.message||'failed'}`
+        );
+    }
+
+    for(const key of keys){
+        try{
+            storage.removeItem(key);
+        }catch(error){
+            errors.push(
+                `${label}:remove:${String(key)}:${error?.message||'failed'}`
+            );
+        }
+    }
+
+    let remaining=null;
+
+    try{
+        remaining=storage.length||0;
+    }catch(error){
+        errors.push(
+            `${label}:verify:${error?.message||'failed'}`
+        );
+    }
+
+    return{
+        supported:true,
+        cleared:before,
+        remaining,
+        errors
+    };
+};
+
+const deleteIndexedDBDatabases=async()=>{
+    if(typeof window.indexedDB?.databases!=='function'){
+        return{
+            supported:false,
+            deleted:0,
+            remaining:null,
+            errors:[]
+        };
+    }
+
+    const errors=[];
+    let databases=[];
+
+    try{
+        databases=await window.indexedDB.databases();
+    }catch(error){
+        return{
+            supported:true,
+            deleted:0,
+            remaining:null,
+            errors:[
+                `IndexedDB:enumeration:${error?.message||'failed'}`
+            ]
+        };
+    }
+
+    let deleted=0;
+
+    for(const db of databases){
+        const name=safeText(db?.name);
+
+        if(!name)continue;
+
+        const ok=await new Promise(resolve=>{
+            let done=false;
+
+            const finish=value=>{
+                if(done)return;
+                done=true;
+                resolve(Boolean(value));
+            };
+
+            try{
+                const req=window.indexedDB.deleteDatabase(name);
+
+                req.onsuccess=()=>finish(true);
+
+                req.onerror=()=>finish(false);
+
+                req.onblocked=()=>{
+                    setTimeout(
+                        ()=>finish(false),
+                        1200
+                    );
+                };
+
+                setTimeout(
+                    ()=>finish(false),
+                    2200
+                );
+            }catch{
+                finish(false);
+            }
+        });
+
+        if(ok){
+            deleted++;
+        }else{
+            errors.push(
+                `IndexedDB:${name}:delete failed`
+            );
+        }
+    }
+
+    let remaining=null;
+
+    try{
+        remaining=(
+            await window.indexedDB.databases()
+        ).filter(
+            v=>safeText(v?.name)
+        ).length;
+    }catch(error){
+        errors.push(
+            `IndexedDB:verify:${error?.message||'failed'}`
+        );
+    }
+
+    return{
+        supported:true,
+        deleted,
+        remaining,
+        errors
+    };
+};
+
+const deleteCaches=async()=>{
+    if(
+        !('caches'in window)||
+        typeof window.caches.keys!=='function'
+    ){
+        return{
+            supported:false,
+            deleted:0,
+            remaining:null,
+            errors:[]
+        };
+    }
+
+    const errors=[];
+    let names=[];
+
+    try{
+        names=await window.caches.keys();
+    }catch(error){
+        return{
+            supported:true,
+            deleted:0,
+            remaining:null,
+            errors:[
+                `Cache Storage:enumeration:${error?.message||'failed'}`
+            ]
+        };
+    }
+
+    let deleted=0;
+
+    await Promise.all(
+        names.map(async name=>{
+            try{
+                if(await window.caches.delete(name)){
+                    deleted++;
+                }
+            }catch(error){
+                errors.push(
+                    `Cache Storage:${name}:${error?.message||'delete failed'}`
+                );
+            }
+        })
+    );
+
+    let remaining=null;
+
+    try{
+        remaining=(await window.caches.keys()).length;
+    }catch(error){
+        errors.push(
+            `Cache Storage:verify:${error?.message||'failed'}`
+        );
+    }
+
+    return{
+        supported:true,
+        deleted,
+        remaining,
+        errors
+    };
+};
+
+const unregisterServiceWorkers=async()=>{
+    if(!navigator.serviceWorker?.getRegistrations){
+        return{
+            supported:false,
+            unregistered:0,
+            remaining:null,
+            errors:[]
+        };
+    }
+
+    const errors=[];
+    let registrations=[];
+
+    try{
+        registrations=await navigator.serviceWorker.getRegistrations();
+    }catch(error){
+        return{
+            supported:true,
+            unregistered:0,
+            remaining:null,
+            errors:[
+                `Service Workers:enumeration:${error?.message||'failed'}`
+            ]
+        };
+    }
+
+    let unregistered=0;
+
+    for(const registration of registrations){
+        try{
+            if(await registration.unregister()){
+                unregistered++;
+            }
+        }catch(error){
+            errors.push(
+                `Service Workers:${error?.message||'unregister failed'}`
+            );
+        }
+    }
+
+    let remaining=null;
+
+    try{
+        remaining=(
+            await navigator.serviceWorker.getRegistrations()
+        ).length;
+    }catch(error){
+        errors.push(
+            `Service Workers:verify:${error?.message||'failed'}`
+        );
+    }
+
+    return{
+        supported:true,
+        unregistered,
+        remaining,
+        errors
+    };
+};
+
+const clearOriginPrivateFileSystem=async()=>{
+    if(!navigator.storage?.getDirectory){
+        return{
+            supported:false,
+            removed:0,
+            remaining:null,
+            errors:[]
+        };
+    }
+
+    const errors=[];
+    let removed=0;
+
+    const walk=async dir=>{
+        for await(const [name,handle] of dir.entries()){
+            try{
+                if(handle.kind==='directory'){
+                    await walk(handle);
+                }
+
+                await dir.removeEntry(
+                    name,
+                    {
+                        recursive:handle.kind==='directory'
+                    }
+                );
+
+                removed++;
+            }catch(error){
+                errors.push(
+                    `OPFS:${name}:${error?.message||'remove failed'}`
+                );
+            }
+        }
+    };
+
+    try{
+        const root=await navigator.storage.getDirectory();
+
+        await walk(root);
+
+        let remaining=0;
+
+        for await(const _ of root.entries()){
+            remaining++;
+        }
+
+        return{
+            supported:true,
+            removed,
+            remaining,
+            errors
+        };
+    }catch(error){
+        return{
+            supported:true,
+            removed,
+            remaining:null,
+            errors:[
+                `OPFS:${error?.message||'cleanup failed'}`,
+                ...errors
+            ]
+        };
+    }
+};
+
+const clearStorageBuckets=async()=>{
+    if(
+        !navigator.storageBuckets?.keys||
+        !navigator.storageBuckets?.delete
+    ){
+        return{
+            supported:false,
+            deleted:0,
+            remaining:null,
+            errors:[]
+        };
+    }
+
+    const errors=[];
+    let names=[];
+
+    try{
+        names=await navigator.storageBuckets.keys();
+    }catch(error){
+        return{
+            supported:true,
+            deleted:0,
+            remaining:null,
+            errors:[
+                `Storage Buckets:enumeration:${error?.message||'failed'}`
+            ]
+        };
+    }
+
+    let deleted=0;
+
+    for(const name of names){
+        try{
+            if(await navigator.storageBuckets.delete(name)){
+                deleted++;
+            }
+        }catch(error){
+            errors.push(
+                `Storage Buckets:${name}:${error?.message||'delete failed'}`
+            );
+        }
+    }
+
+    let remaining=null;
+
+    try{
+        remaining=(
+            await navigator.storageBuckets.keys()
+        ).length;
+    }catch(error){
+        errors.push(
+            `Storage Buckets:verify:${error?.message||'failed'}`
+        );
+    }
+
+    return{
+        supported:true,
+        deleted,
+        remaining,
+        errors
+    };
+};
+
+const resetMUNITOSRuntime=async()=>{
+    const api=getApi();
+
+    if(!api){
+        return{
+            available:false,
+            reset:false,
+            detail:
+                'MUNITOS Core was not ready; browser-origin cleanup will continue.'
+        };
+    }
+
+    let reset=false;
+    const errors=[];
+
+    try{
+        if(typeof api.cancelAllOperations==='function'){
+            api.cancelAllOperations('installer-cleanup');
+        }
+    }catch(error){
+        errors.push(
+            `Core operations:${error?.message||'cancel failed'}`
+        );
+    }
+
+    try{
+        if(typeof api.factoryResetVirtualSystem==='function'){
+            reset=
+                api.factoryResetVirtualSystem()===true;
+        }
+    }catch(error){
+        errors.push(
+            `Core factory reset:${error?.message||'reset failed'}`
+        );
+    }
+
+    try{
+        const runtime=api.runtime||{};
+        runtime.cancelAllOperations?.(
+            'installer-cleanup'
+        );
+    }catch{}
+
+    return{
+        available:true,
+        reset,
+        detail:
+            reset
+                ?'MUNITOS virtual runtime and package state reset.'
+                :'Virtual runtime reset API unavailable.',
+        errors
+    };
+};
+
+const runCleanupTask=async(name,task,verify)=>{
+    let last=null;
+
+    for(
+        let attempt=1;
+        attempt<=CLEANUP_RETRIES;
+        attempt++
+    ){
+        try{
+            const result=await task();
+            last=result;
+
+            const verification=await verify(result);
+            const passed=
+                verification===true||
+                verification===undefined;
+
+            if(passed){
+                return{
+                    status:'ok',
+                    attempt,
+                    result
+                };
+            }
+        }catch(error){
+            last={
+                errors:[
+                    error?.message||String(error)
+                ]
+            };
+        }
+
+        if(attempt<CLEANUP_RETRIES){
+            await sleep(
+                CLEANUP_RETRY_DELAY*attempt
+            );
+        }
+    }
+
+    return{
+        status:'error',
+        attempt:CLEANUP_RETRIES,
+        result:last
+    };
+};
+
+const verifyStorageArea=storage=>{
+    try{
+        return(storage?.length||0)===0;
+    }catch{
+        return false;
+    }
+};
+
+const cleanInstallationData=async()=>{
+    state.cleanupBusy=true;
+    state.cleanupDiagnostics=[];
+
+    const diagnostics=state.cleanupDiagnostics;
+
+    try{
+        const runtime=await resetMUNITOSRuntime();
+
+        diagnostics.push({
+            name:'MUNITOS runtime',
+            status:
+                runtime.reset
+                    ?'ok'
+                    :runtime.available
+                        ?'partial'
+                        :'skipped',
+            detail:runtime.detail,
+            errors:runtime.errors||[]
+        });
+
+        const tasks=[
+            [
+                'localStorage',
+                ()=>clearStorageArea(
+                    getStorage(),
+                    'localStorage'
+                ),
+                result=>
+                    result.supported
+                        ?verifyStorageArea(getStorage())
+                        :true
+            ],
+            [
+                'sessionStorage',
+                ()=>clearStorageArea(
+                    getSessionStorage(),
+                    'sessionStorage'
+                ),
+                result=>
+                    result.supported
+                        ?verifyStorageArea(getSessionStorage())
+                        :true
+            ],
+            [
+                'Service Workers',
+                unregisterServiceWorkers,
+                result=>
+                    result.supported
+                        ?result.remaining===0
+                        :true
+            ],
+            [
+                'Cache Storage',
+                deleteCaches,
+                result=>
+                    result.supported
+                        ?result.remaining===0
+                        :true
+            ],
+            [
+                'IndexedDB',
+                deleteIndexedDBDatabases,
+                result=>
+                    result.supported
+                        ?result.remaining===0
+                        :true
+            ],
+            [
+                'OPFS',
+                clearOriginPrivateFileSystem,
+                result=>
+                    result.supported
+                        ?result.remaining===0
+                        :true
+            ],
+            [
+                'Storage Buckets',
+                clearStorageBuckets,
+                result=>
+                    result.supported
+                        ?result.remaining===0
+                        :true
+            ],
+            [
+                'Cookies',
+                deleteAllCookies,
+                result=>result.remaining.length===0
+            ]
+        ];
+
+        let hardFailure=false;
+
+        for(const [name,task,verify] of tasks){
+            const outcome=
+                await runCleanupTask(
+                    name,
+                    task,
+                    verify
+                );
+
+            const result=outcome.result||{};
+
+            diagnostics.push({
+                name,
+                status:outcome.status,
+                attempt:outcome.attempt,
+                detail:result,
+                errors:result.errors||[]
+            });
+
+            if(
+                outcome.status==='error'&&
+                !(result?.supported===false)
+            ){
+                hardFailure=true;
+            }
+        }
+
+        await deleteCaches();
+        await unregisterServiceWorkers();
+        await deleteAllCookies();
+
+        const finalCookies=getCookieNames();
+
+        const finalCaches=
+            typeof window.caches?.keys==='function'
+                ?await window.caches.keys().catch(()=>[])
+                :[];
+
+        if(finalCookies.length){
+            diagnostics.push({
+                name:'Cookie verification',
+                status:'partial',
+                detail:{
+                    remaining:finalCookies
+                }
+            });
+        }
+
+        if(finalCaches.length){
+            diagnostics.push({
+                name:'Cache verification',
+                status:'error',
+                detail:{
+                    remaining:finalCaches
+                }
+            });
+        }
+
+        if(finalCaches.length){
+            hardFailure=true;
+        }
+
+        state.selected.clear();
+        state.required.clear();
+        state.acceptedTerms=false;
+        state.cleaned=true;
+        state.error='';
+        state.failed=false;
+        state.installResults=[];
+        state.log=[];
+
+        clearWizardState();
+
+        if(hardFailure){
+            throw new Error(
+                diagnostics
+                    .filter(item=>item.status==='error')
+                    .map(
+                        item=>
+                            `${item.name}: cleanup did not complete after ${CLEANUP_RETRIES} attempts.`
+                    )
+                    .join('\n')||
+                'Cleanup could not be verified.'
+            );
+        }
+    }finally{
+        state.cleanupBusy=false;
+    }
+};
+
+const getPackageStatus=pkg=>{
+    const installed=
+        getInstalledPackages().has(pkg.name);
+
+    const record=getRegistry().find(
+        item=>
+            safeText(item?.key||item?.name)===pkg.name
+    );
+
+    const status=
+        safeText(record?.status).toLowerCase();
+
+    return{
+        installed,
+        record,
+        status:
+            status||
+            (installed?'installed':'available'),
+        enabled:
+            [
+                'installed',
+                'enabled',
+                'verified'
+            ].includes(status)||installed
+    };
+};
+
+const htmlToText=value=>{
+    if(typeof value==='string')return value;
+
+    try{
+        const holder=document.createElement('div');
+        holder.innerHTML=safeText(value?.html);
+        return holder.textContent||'';
+    }catch{
+        return'';
+    }
+};
+
+const packageInstall=async pkg=>{
+    if(!state.appApi){
+        throw new Error(
+            'MUNITOS package manager is unavailable.'
+        );
+    }
+
+    const name=safeText(pkg?.name);
+
+    if(!name){
+        throw new Error(
+            'Package name is empty.'
+        );
+    }
+
+    let lastError=null;
+
+    for(
+        let attempt=1;
+        attempt<=PACKAGE_RETRIES;
+        attempt++
+    ){
+        try{
+            const result=
+                await state.appApi.package.install(
+                    name,
+                    {
+                        force:attempt>1,
+                        silent:true,
+                        toolKey:'pkg',
+                        installMode:'internal'
+                    },
+                    null
+                );
+
+            const output=
+                Array.isArray(result)
+                    ?result
+                        .map(htmlToText)
+                        .filter(Boolean)
+                        .join('\n')
+                    :htmlToText(result);
+
+            if(
+                result?.ok===false||
+                /failed to install|install.*failed|corrupted|quarantined|hash.*changed/i.test(output)
+            ){
+                throw new Error(
+                    output||
+                    `Package ${name} failed to install.`
+                );
+            }
+
+            for(let i=0;i<20;i++){
+                await sleep(120);
+
+                const verify=getPackageStatus(pkg);
+
+                if(verify.enabled){
+                    return verify;
+                }
+            }
+
+            const final=getPackageStatus(pkg);
+
+            throw new Error(
+                `Package ${name} was not registered as enabled. Final status: ${final.status||'unknown'}.`
+            );
+        }catch(error){
+            lastError=error;
+
+            if(attempt<PACKAGE_RETRIES){
+                await sleep(
+                    350*attempt
+                );
+            }
+        }
+    }
+
+    throw lastError||
+        new Error(
+            `Package ${name} failed to install.`
+        );
+};
+
+const screenshotNotice=message=>{
+    const el=state.root?.querySelector(
+        '[data-screenshot-result]'
+    );
+
+    if(!el)return;
+
+    el.className='ki-notice ki-error';
+    el.textContent='';
+
+    const title=document.createElement('div');
+    title.className='ki-notice-title';
+    title.textContent='Screenshot';
+
+    const body=document.createElement('div');
+    body.className='ki-notice-text';
+    body.textContent=message;
+
+    el.append(title,body);
+
+    setTimeout(()=>{
+        try{
+            render();
+        }catch{}
+    },2500);
+};
+
+const takeScreenshot=async()=>{
+    try{
+        if(!navigator.mediaDevices?.getDisplayMedia){
+            throw new Error(
+                'Screen capture is not supported by this browser.'
+            );
+        }
+
+        const stream=
+            await navigator.mediaDevices.getDisplayMedia({
+                video:{
+                    frameRate:1,
+                    cursor:'never'
+                },
+                audio:false
+            });
+
+        const track=
+            stream.getVideoTracks()[0];
+
+        if(!track){
+            throw new Error(
+                'No screen capture track was created.'
+            );
+        }
+
+        let canvas=null;
+
+        const ImageCaptureCtor = window["ImageCapture"];
+        if(typeof ImageCaptureCtor==='function'){
+            const bitmap=
+                await new ImageCaptureCtor(track).grabFrame();
+
+            canvas=document.createElement('canvas');
+
+            canvas.width=bitmap.width;
+            canvas.height=bitmap.height;
+
+            const ctx=
+                canvas.getContext('2d');
+
+            if(!ctx){
+                throw new Error(
+                    'Canvas context is unavailable.'
+                );
+            }
+
+            ctx.drawImage(
+                bitmap,
+                0,
+                0
+            );
+
+            bitmap.close?.();
+        }else{
+            const video=
+                document.createElement('video');
+
+            video.muted=true;
+            video.playsInline=true;
+            video.srcObject=stream;
+
+            await video.play();
+
+            await new Promise(
+                resolve=>
+                    requestAnimationFrame(
+                        ()=>requestAnimationFrame(resolve)
+                    )
+            );
+
+            canvas=
+                document.createElement('canvas');
+
+            canvas.width=
+                video.videoWidth||1920;
+
+            canvas.height=
+                video.videoHeight||1080;
+
+            const ctx=
+                canvas.getContext('2d');
+
+            if(!ctx){
+                throw new Error(
+                    'Canvas context is unavailable.'
+                );
+            }
+
+            ctx.drawImage(
+                video,
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+
+            video.pause();
+            video.srcObject=null;
+        }
+
+        stream
+            .getTracks()
+            .forEach(t=>t.stop());
+
+        const blob=
+            await new Promise(
+                resolve=>
+                    canvas.toBlob(
+                        resolve,
+                        'image/png'
+                    )
+            );
+
+        if(!blob){
+            throw new Error(
+                'Unable to create PNG image.'
+            );
+        }
+
+        const url=
+            URL.createObjectURL(blob);
+
+        const a=
+            document.createElement('a');
+
+        a.href=url;
+
+        a.download=
+            `MUNITOS-Screenshot-${new Date().toISOString().replace(/[:.]/g,'-')}.png`;
+
+        document.body.appendChild(a);
+
+        a.click();
+
+        a.remove();
+
+        setTimeout(
+            ()=>URL.revokeObjectURL(url),
+            3000
+        );
+    }catch(error){
+        const message=
+            error?.name==='NotAllowedError'
+                ?'Screen capture permission was cancelled.'
+                :error?.message||'Screenshot failed.';
+
+        screenshotNotice(message);
+    }
+};
+
+const createShell=()=>{
+    const old=
+        document.getElementById(
+            'munitos-install-wizard-host'
+        );
+
+    old?.remove();
+
+    const host=document.createElement('div');
+
+    host.id='munitos-install-wizard-host';
+    host.setAttribute(
+        'aria-label',
+        'MUNITOS Installer'
+    );
+
+    document.documentElement.appendChild(host);
+
+    let shadow;
+
+    try{
+        shadow=
+            host.attachShadow({
+                mode:'open'
+            });
+    }catch{
+        shadow=
+            host.attachShadow({
+                mode:'closed'
+            });
+    }
+
+    state.shadow=shadow;
+
+    const style=
+        document.createElement('style');
+
+    style.textContent=getStyles();
+
+    shadow.appendChild(style);
+
+    const root=
+        document.createElement('div');
+
+    root.className='ki-root';
+
+    shadow.appendChild(root);
+
+    state.root=root;
+};
+
+const getStyles=()=>`
+:host{
+    all:initial;
+}
+
+.ki-root,
+.ki-root *{
+    box-sizing:border-box;
+}
+
+.ki-root{
+    --ki-primary:#6d5df5;
+    --ki-primary-deep:#5146d8;
+    --ki-secondary:#4f46e5;
+    --ki-secondary-violet:#7c4dff;
+    --ki-violet:#8b5cf6;
+    --ki-violet-soft:#a78bfa;
+    --ki-primary-soft:#c4b5fd;
+    --ki-primary-bg:#211d3d;
+    --ki-primary-bg-strong:#2b2450;
+    --ki-primary-border:#4438a8;
+    --ki-primary-glow:rgba(109,93,245,.34);
+
+    --ki-warning:#f4c95d;
+    --ki-warning-bg:#382f18;
+    --ki-warning-border:#6e5a26;
+
+    --ki-success:#73d583;
+    --ki-success-deep:#4c9658;
+
+    --ki-surface-0:#121212;
+    --ki-surface-1:#1e1e1e;
+    --ki-surface-2:#242424;
+    --ki-surface-3:#2a2a2a;
+    --ki-surface-4:#303030;
+
+    --ki-border:#3a3a3a;
+    --ki-border-light:#444;
+    --ki-border-strong:#555;
+
+    --ki-text:#e0e0e0;
+    --ki-text-soft:#cccccc;
+    --ki-text-muted:#aaaaaa;
+    --ki-text-dim:#999;
+
+    position:fixed;
+    inset:0;
+    width:100vw;
+    height:100vh;
+    height:100dvh;
+    z-index:2147483645;
+    overflow:hidden;
+    background:var(--ki-surface-0);
+    color:var(--ki-text);
+    font:14px/1.45 Arial,Helvetica,sans-serif;
+}
+
+.ki-page{
+    width:100%;
+    height:100%;
+    min-height:0;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+}
+
+.ki-header{
+    min-height:112px;
+    height:112px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex:none;
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(
+            135deg,
+            #4b3cc4 0%,
+            var(--ki-primary) 34%,
+            var(--ki-secondary) 68%,
+            var(--ki-secondary-violet) 100%
+        );
+    border-bottom:1px solid var(--ki-primary-border);
+    box-shadow:
+        0 8px 28px rgba(0,0,0,.26),
+        0 0 32px var(--ki-primary-glow);
+}
+
+.ki-header:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(
+            circle at 20% 25%,
+            rgba(255,255,255,.16),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 82% 70%,
+            rgba(255,255,255,.12),
+            transparent 26%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.07),
+            rgba(0,0,0,.30)
+        );
+    pointer-events:none;
+}
+
+.ki-header:after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:1px;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(196,181,253,.72),
+            transparent
+        );
+    pointer-events:none;
+}
+
+.ki-brand{
+    position:relative;
+    z-index:1;
+    text-align:center;
+    padding:8px 14px;
+}
+
+.ki-logo{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:205px;
+    min-height:68px;
+    padding:10px 22px;
+    border:3px solid #fff;
+    color:#fff;
+    font-size:38px;
+    font-weight:800;
+    letter-spacing:3px;
+    line-height:1;
+    text-shadow:
+        0 2px 12px rgba(0,0,0,.22);
+    box-shadow:
+        0 0 20px rgba(255,255,255,.10),
+        inset 0 0 20px rgba(255,255,255,.05);
+}
+
+.ki-byline{
+    margin-top:7px;
+    color:#ddd7ff;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.ki-body{
+    width:min(1280px,100%);
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+    min-height:0;
+    overflow:hidden;
+    padding:16px 18px 10px;
+}
+
+.ki-title{
+    margin:0 0 10px;
+    font-size:22px;
+    font-weight:800;
+    line-height:1.25;
+    flex:none;
+    color:#ffffff;
+}
+
+.ki-panel{
+    display:flex;
+    flex-direction:column;
+    min-height:0;
+    flex:1;
+    overflow:hidden;
+    background:var(--ki-surface-1);
+    border:1px solid var(--ki-border);
+    box-shadow:
+        0 4px 14px rgba(0,0,0,.5),
+        0 0 0 1px rgba(109,93,245,.03);
+}
+
+.ki-content{
+    min-height:0;
+    flex:1;
+    padding:18px;
+    overflow:auto;
+    overscroll-behavior:contain;
+    scrollbar-gutter:stable;
+}
+
+.ki-footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    padding:10px 16px;
+    border-top:1px solid var(--ki-border);
+    background:var(--ki-surface-3);
+    flex:none;
+    min-height:64px;
+}
+
+.ki-footer-left,
+.ki-footer-right{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.ki-footer-right{
+    margin-left:auto;
+}
+
+.ki-button,
+.ki-screenshot{
+    min-height:40px;
+    padding:8px 16px;
+    border:1px solid var(--ki-border-strong);
+    border-radius:4px;
+    background:
+        linear-gradient(
+            #3a3a3a,
+            #2a2a2a
+        );
+    color:var(--ki-text);
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.1),
+        0 1px 0 rgba(0,0,0,.22);
+    transition:
+        background .15s ease,
+        border-color .15s ease,
+        box-shadow .15s ease,
+        transform .08s ease;
+}
+
+.ki-button:hover:not(:disabled),
+.ki-screenshot:hover{
+    background:
+        linear-gradient(
+            #4a4a4a,
+            #363636
+        );
+    border-color:#666;
+}
+
+.ki-button:active:not(:disabled),
+.ki-screenshot:active{
+    transform:translateY(1px);
+}
+
+.ki-button:disabled{
+    opacity:.45;
+    cursor:not-allowed;
+}
+
+.ki-primary{
+    border-color:var(--ki-primary-deep);
+    background:
+        linear-gradient(
+            135deg,
+            #8175ff 0%,
+            var(--ki-primary) 48%,
+            var(--ki-primary-deep) 100%
+        );
+    color:#fff;
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.18),
+        0 5px 16px rgba(81,70,216,.18);
+}
+
+.ki-primary:hover:not(:disabled){
+    background:
+        linear-gradient(
+            135deg,
+            #978eff 0%,
+            #7668ff 46%,
+            #5c50df 100%
+        );
+    border-color:#6357e7;
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.20),
+        0 7px 20px rgba(81,70,216,.26);
+}
+
+.ki-danger{
+    color:var(--ki-warning);
+}
+
+.ki-wide{
+    min-width:170px;
+}
+
+.ki-copy{
+    max-width:1160px;
+}
+
+.ki-copy p{
+    margin:0 0 12px;
+    font-size:14px;
+}
+
+.ki-copy .ki-lead{
+    font-size:17px;
+    font-weight:800;
+}
+
+.ki-notice,
+.ki-agreement,
+.ki-confirm{
+    border:1px solid #444;
+    background:var(--ki-surface-3);
+    padding:13px 15px;
+    margin:0 0 12px;
+}
+
+.ki-warning{
+    background:var(--ki-warning-bg);
+    border-color:var(--ki-warning-border);
+}
+
+.ki-error{
+    background:#332b18;
+    border-color:#665326;
+}
+
+.ki-notice-title,
+.ki-agreement-title,
+.ki-confirm-title{
+    font-weight:800;
+    margin-bottom:6px;
+    color:#ffffff;
+}
+
+.ki-notice-text{
+    line-height:1.55;
+    color:var(--ki-text-soft);
+}
+
+.ki-links{
+    display:grid;
+    gap:6px;
+}
+
+.ki-links a{
+    color:var(--ki-violet-soft);
+    overflow-wrap:anywhere;
+}
+
+.ki-links a:hover{
+    color:#c4b5fd;
+}
+
+.ki-agreement-list,
+.ki-confirm-list{
+    margin:0;
+    padding-left:20px;
+    color:var(--ki-text-soft);
+}
+
+.ki-agreement-list li,
+.ki-confirm-list li{
+    margin-bottom:5px;
+}
+
+.ki-checkbox-row{
+    display:flex;
+    align-items:flex-start;
+    gap:9px;
+    margin-top:15px;
+}
+
+.ki-checkbox-row input{
+    width:18px;
+    height:18px;
+    margin-top:2px;
+    flex:none;
+    accent-color:var(--ki-primary);
+}
+
+.ki-checkbox-row label{
+    font-weight:700;
+    cursor:pointer;
+    color:var(--ki-text);
+}
+
+.ki-clean-box{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    padding:15px;
+    border:1px solid #444;
+    background:var(--ki-surface-3);
+}
+
+.ki-clean-copy{
+    min-width:0;
+}
+
+.ki-clean-copy strong{
+    display:block;
+    font-size:15px;
+    margin-bottom:3px;
+    color:#ffffff;
+}
+
+.ki-clean-copy span{
+    display:block;
+    color:var(--ki-text-muted);
+}
+
+.ki-section-title{
+    font-size:17px;
+    font-weight:800;
+    margin-bottom:5px;
+    color:#ffffff;
+}
+
+.ki-section-subtitle{
+    color:var(--ki-text-muted);
+    margin-bottom:11px;
+}
+
+.ki-package-list{
+    width:100%;
+    height:clamp(220px,48dvh,560px);
+    max-height:100%;
+    min-height:220px;
+    overflow:auto;
+    overscroll-behavior:contain;
+    border:1px solid #444;
+    background:var(--ki-surface-1);
+    scrollbar-gutter:stable;
+}
+
+.ki-package-header,
+.ki-package-row{
+    display:grid;
+    grid-template-columns:
+        34px
+        minmax(190px,1.1fr)
+        105px
+        105px
+        minmax(250px,2fr);
+    align-items:center;
+    gap:9px;
+}
+
+.ki-package-header{
+    position:sticky;
+    top:0;
+    z-index:2;
+    min-height:38px;
+    background:var(--ki-surface-3);
+    border-bottom:1px solid var(--ki-border-strong);
+    font-size:11px;
+    font-weight:800;
+    padding:0 9px;
+    box-shadow:
+        0 1px 2px rgba(0,0,0,.3);
+    color:var(--ki-text-soft);
+}
+
+.ki-package-row{
+    min-height:62px;
+    padding:8px 9px;
+    border-bottom:1px solid #333;
+    background:var(--ki-surface-1);
+    cursor:pointer;
+    user-select:none;
+    transition:
+        background .12s ease,
+        box-shadow .12s ease;
+    color:var(--ki-text);
+}
+
+.ki-package-row:nth-child(even){
+    background:var(--ki-surface-2);
+}
+
+.ki-package-row:last-child{
+    border-bottom:0;
+}
+
+.ki-package-row.ki-core{
+    background:var(--ki-primary-bg);
+    cursor:default;
+}
+
+.ki-package-row:not(.ki-core):hover{
+    background:#2c2c2c;
+}
+
+.ki-package-row.ki-selected{
+    background:var(--ki-primary-bg-strong)!important;
+    box-shadow:
+        inset 3px 0 var(--ki-primary),
+        inset 0 0 24px rgba(109,93,245,.08);
+}
+
+.ki-package-row.ki-selected:hover{
+    background:#352c5f!important;
+}
+
+.ki-package-checkbox{
+    width:17px;
+    height:17px;
+    margin:0;
+    cursor:pointer;
+    accent-color:var(--ki-primary);
+}
+
+.ki-package-name{
+    font-weight:800;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+    color:#ffffff;
+}
+
+.ki-package-name small{
+    display:block;
+    color:var(--ki-text-muted);
+    font-size:10px;
+    font-weight:400;
+    margin-top:2px;
+    line-height:1.3;
+}
+
+.ki-package-version,
+.ki-package-level,
+.ki-package-description{
+    font-size:11px;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+    color:var(--ki-text-soft);
+}
+
+.ki-package-status{
+    font-size:10px;
+    color:var(--ki-text-muted);
+    margin-top:2px;
+}
+
+.ki-badge{
+    display:inline-block;
+    padding:2px 5px;
+    margin-left:4px;
+    border:1px solid #a99bff;
+    background:#30284e;
+    color:#c4b5fd;
+    font-size:9px;
+    font-weight:800;
+    vertical-align:2px;
+}
+
+.ki-summary{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:13px;
+}
+
+.ki-summary td{
+    padding:8px 10px;
+    border:1px solid #444;
+    font-size:12px;
+    color:var(--ki-text);
+}
+
+.ki-summary td:first-child{
+    width:210px;
+    background:var(--ki-surface-3);
+    font-weight:700;
+    color:var(--ki-text-soft);
+}
+
+.ki-progress{
+    margin-top:13px;
+    border:1px solid #444;
+    box-shadow:
+        0 0 0 1px rgba(109,93,245,.03);
+}
+
+.ki-progress-track{
+    height:22px;
+    background:var(--ki-surface-3);
+    border-bottom:1px solid var(--ki-border-strong);
+    overflow:hidden;
+}
+
+.ki-progress-bar{
+    height:100%;
+    width:0;
+    background:
+        linear-gradient(
+            90deg,
+            var(--ki-secondary-violet),
+            var(--ki-primary),
+            var(--ki-secondary)
+        );
+    box-shadow:
+        0 0 16px rgba(109,93,245,.26);
+    transition:width .2s ease;
+}
+
+.ki-progress-meta{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    padding:6px 9px;
+    font-size:11px;
+    color:var(--ki-text-muted);
+}
+
+.ki-terminal-log{
+    margin-top:12px;
+    padding:11px;
+    border:1px solid #444;
+    background:#11171c;
+    color:#e6edf3;
+    min-height:140px;
+    max-height:270px;
+    overflow:auto;
+    font:11px/1.6 Consolas,Monaco,monospace;
+    white-space:pre-wrap;
+    overflow-wrap:anywhere;
+}
+
+.ki-log-line{
+    display:block;
+}
+
+.ki-log-ok{
+    color:var(--ki-success);
+}
+
+.ki-log-error{
+    color:#f4c95d;
+}
+
+.ki-log-accent{
+    color:var(--ki-violet-soft);
+}
+
+.ki-log-muted{
+    color:#aab2b9;
+}
+
+.ki-finish-icon{
+    width:62px;
+    height:62px;
+    border:3px solid var(--ki-success-deep);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--ki-success-deep);
+    font-size:29px;
+    font-weight:800;
+    margin-bottom:13px;
+}
+
+.ki-finish-title{
+    font-size:23px;
+    font-weight:800;
+    margin-bottom:9px;
+    color:#ffffff;
+}
+
+.ki-finish-text{
+    font-size:14px;
+    line-height:1.6;
+    color:var(--ki-text-soft);
+}
+
+.ki-error-box{
+    padding:11px 13px;
+    margin-top:11px;
+    border:1px solid #665326;
+    background:#332b18;
+    color:#f4c95d;
+    white-space:pre-wrap;
+    overflow-wrap:anywhere;
+}
+
+.ki-empty{
+    padding:28px 18px;
+    text-align:center;
+    color:var(--ki-text-muted);
+}
+
+.ki-hidden{
+    display:none!important;
+}
+
+.ki-loader{
+    display:inline-block;
+    width:14px;
+    height:14px;
+    margin-right:7px;
+    border:2px solid #555;
+    border-top-color:var(--ki-violet-soft);
+    border-right-color:var(--ki-secondary);
+    border-radius:50%;
+    vertical-align:-3px;
+    animation:ki-spin .75s linear infinite;
+}
+
+.ki-keyboard-hint{
+    margin-top:7px;
+    color:var(--ki-text-dim);
+    font-size:10px;
+}
+
+.ki-screenshot-result{
+    min-height:0;
+}
+
+.ki-screenshot-result:empty{
+    display:none;
+}
+
+@keyframes ki-spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@media(max-width:900px){
+    .ki-header{
+        min-height:92px;
+        height:92px;
+    }
+
+    .ki-logo{
+        min-width:158px;
+        min-height:54px;
+        font-size:29px;
+        padding:8px 14px;
+    }
+
+    .ki-byline{
+        font-size:9px;
+    }
+
+    .ki-body{
+        padding:9px 10px 7px;
+    }
+
+    .ki-title{
+        font-size:19px;
+        margin-bottom:8px;
+    }
+
+    .ki-content{
+        padding:13px;
+    }
+
+    .ki-package-header{
+        display:none;
+    }
+
+    .ki-package-row{
+        grid-template-columns:
+            26px
+            minmax(140px,1fr);
+        align-items:start;
+        gap:7px;
+    }
+
+    .ki-package-version,
+    .ki-package-level,
+    .ki-package-description{
+        grid-column:2;
+    }
+
+    .ki-package-version:before{
+        content:"Version: ";
+        font-weight:800;
+        color:var(--ki-text-soft);
+    }
+
+    .ki-package-level:before{
+        content:"Policy: ";
+        font-weight:800;
+        color:var(--ki-text-soft);
+    }
+
+    .ki-package-description{
+        line-height:1.45;
+    }
+
+    .ki-clean-box{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .ki-footer{
+        min-height:60px;
+        flex-direction:column;
+        align-items:stretch;
+        padding:8px 10px;
+    }
+
+    .ki-footer-left,
+    .ki-footer-right{
+        width:100%;
+        margin:0;
+    }
+
+    .ki-footer-left .ki-screenshot,
+    .ki-footer-right .ki-button{
+        flex:1;
+    }
+
+    .ki-package-list{
+        height:clamp(220px,43dvh,500px);
+    }
+}
+
+@media(max-width:560px){
+    .ki-header{
+        min-height:78px;
+        height:78px;
+    }
+
+    .ki-body{
+        padding:6px 7px 5px;
+    }
+
+    .ki-content{
+        padding:10px;
+    }
+
+    .ki-title{
+        font-size:17px;
+        margin-bottom:6px;
+    }
+
+    .ki-copy p{
+        font-size:13px;
+    }
+
+    .ki-copy .ki-lead{
+        font-size:15px;
+    }
+
+    .ki-footer{
+        padding:7px;
+    }
+
+    .ki-logo{
+        min-width:132px;
+        min-height:45px;
+        padding:7px 12px;
+        font-size:22px;
+        letter-spacing:2px;
+    }
+
+    .ki-byline{
+        font-size:8px;
+        letter-spacing:1.4px;
+        margin-top:5px;
+    }
+
+    .ki-package-list{
+        height:clamp(210px,39dvh,420px);
+        min-height:210px;
+    }
+
+    .ki-package-row{
+        min-height:72px;
+    }
+
+    .ki-summary td{
+        padding:7px 8px;
+        font-size:11px;
+    }
+
+    .ki-summary td:first-child{
+        width:135px;
+    }
+
+    .ki-terminal-log{
+        max-height:220px;
+        font-size:10px;
+    }
+
+    .ki-button,
+    .ki-screenshot{
+        min-height:38px;
+        padding:7px 12px;
+        font-size:12px;
+    }
+}
+
+@media(max-height:520px) and (orientation:landscape){
+    .ki-header{
+        min-height:64px;
+        height:64px;
+    }
+
+    .ki-logo{
+        min-height:39px;
+        font-size:20px;
+        padding:5px 12px;
+    }
+
+    .ki-byline{
+        display:none;
+    }
+
+    .ki-body{
+        padding:5px 8px;
+    }
+
+    .ki-content{
+        padding:9px;
+    }
+
+    .ki-title{
+        font-size:16px;
+        margin-bottom:5px;
+    }
+
+    .ki-package-list{
+        height:42dvh;
+        min-height:170px;
+    }
+
+    .ki-footer{
+        min-height:48px;
+        padding:5px 8px;
+        flex-direction:row;
+    }
+
+    .ki-footer-left,
+    .ki-footer-right{
+        width:auto;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+    .ki-loader,
+    .ki-progress-bar,
+    .ki-package-row{
+        animation:none;
+        transition:none;
+    }
+}
+`;
+
+const captureScrollState=()=>{
+    const result={
+        content:0,
+        packageList:0,
+        terminal:0,
+        step:state.step
+    };
+
+    try{
+        const content=
+            state.root?.querySelector('.ki-content');
+
+        const packageList=
+            state.root?.querySelector('.ki-package-list');
+
+        const terminal=
+            state.root?.querySelector('.ki-terminal-log');
+
+        result.content=content?.scrollTop||0;
+        result.packageList=packageList?.scrollTop||0;
+        result.terminal=terminal?.scrollTop||0;
+    }catch{}
+
+    return result;
+};
+
+const restoreScrollState=data=>{
+    if(!data)return;
+
+    requestAnimationFrame(()=>{
+        try{
+            const content=
+                state.root?.querySelector('.ki-content');
+
+            const packageList=
+                state.root?.querySelector('.ki-package-list');
+
+            const terminal=
+                state.root?.querySelector('.ki-terminal-log');
+
+            if(data.step===state.step){
+                if(content){
+                    content.scrollTop=data.content;
+                }
+
+                if(packageList){
+                    packageList.scrollTop=data.packageList;
+                }
+
+                if(terminal){
+                    terminal.scrollTop=
+                        terminal.scrollHeight;
+                }
+            }
+        }catch{}
+    });
+};
+
+const render=()=>{
+    if(!state.root)return;
+
+    const scrollState=captureScrollState();
+
+    state.root.innerHTML='';
+
+    const page=
+        document.createElement('div');
+
+    page.className='ki-page';
+
+    const header=
+        document.createElement('header');
+
+    header.className='ki-header';
+
+    header.innerHTML=
+        '<div class="ki-brand">' +
+            '<div class="ki-logo">MUNITOS</div>' +
+            '<div class="ki-byline">MUNITOS INSTALLER</div>' +
+        '</div>';
+
+    const body=
+        document.createElement('main');
+
+    body.className='ki-body';
+
+    const title=
+        document.createElement('h1');
+
+    title.className='ki-title';
+    title.textContent=getStepTitle();
+
+    const panel=
+        document.createElement('section');
+
+    panel.className='ki-panel';
+
+    const content=
+        document.createElement('div');
+
+    content.className='ki-content';
+
+    renderContent(content);
+
+    const footer=
+        document.createElement('footer');
+
+    footer.className='ki-footer';
+
+    const left=
+        document.createElement('div');
+
+    left.className='ki-footer-left';
+
+    const right=
+        document.createElement('div');
+
+    right.className='ki-footer-right';
+
+    renderFooter(
+        left,
+        right
+    );
+
+    footer.append(
+        left,
+        right
+    );
+
+    panel.append(content);
+
+    body.append(
+        title,
+        panel,
+        footer
+    );
+
+    page.append(
+        header,
+        body
+    );
+
+    state.root.append(page);
+
+    attachEvents();
+    restoreScrollState(scrollState);
+};
+
+const getStepTitle=()=>({
+    terms:'Installation agreement',
+    clean:'Clean installation',
+    packages:'Software selection',
+    confirm:'Installation confirmation',
+    installing:'Installing MUNITOS',
+    done:'Installation complete',
+    error:'Installation failed'
+}[state.step]||'MUNITOS Installer');
+
+const renderContent=container=>{
+    switch(state.step){
+        case'terms':
+            renderTerms(container);
+            break;
+        case'clean':
+            renderClean(container);
+            break;
+        case'packages':
+            renderPackages(container);
+            break;
+        case'confirm':
+            renderConfirm(container);
+            break;
+        case'installing':
+            renderInstalling(container);
+            break;
+        case'done':
+            renderDone(container);
+            break;
+        case'error':
+            renderError(container);
+            break;
+        default:
+            container.textContent='';
+    }
+};
+
+const renderTerms=container=>{
+    container.innerHTML=
+        `<div class="ki-copy">
+            <p class="ki-lead">
+                Before continuing, review and accept the complete MUNITOS installation agreement.
+            </p>
+
+            <p>
+                This installer uses the local <strong>pkg.js</strong> package catalog and the active MUNITOS package manager. Optional packages are entirely user-selectable.
+            </p>
+
+            <div class="ki-notice">
+                <div class="ki-notice-title">
+                    Browser storage and runtime disclosure
+                </div>
+
+                <div class="ki-notice-text">
+                    By continuing, you acknowledge that MUNITOS may use browser-side capabilities required by the application, including cookies, localStorage, sessionStorage, Cache Storage, IndexedDB, Service Workers, and related same-origin state. Cleanup or uninstall may remove accessible data for this origin.
+                </div>
+            </div>
+
+            <div class="ki-notice">
+                <div class="ki-notice-title">
+                    Official MUNITOS channels
+                </div>
+
+                <div class="ki-links">
+                    ${OFFICIAL_LINKS.map(
+                        url=>
+                            `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(url)}</a>`
+                    ).join('')}
+                </div>
+            </div>
+
+            <div class="ki-agreement">
+                <div class="ki-agreement-title">
+                    Installation agreement
+                </div>
+
+                <ul class="ki-agreement-list">
+                    <li>I have read and accepted the MUNITOS installation agreement.</li>
+                    <li>I understand that installation may change persistent browser-side application state.</li>
+                    <li>I understand that cookies, localStorage, sessionStorage, Cache Storage, IndexedDB, Service Workers, and related same-origin state may be used.</li>
+                    <li>I understand that package installation is performed through the active MUNITOS package manager.</li>
+                    <li>I understand that cleanup may permanently remove accessible browser-side application data for this origin.</li>
+                </ul>
+            </div>
+
+            <div class="ki-checkbox-row">
+                <input id="ki-terms" type="checkbox" ${state.acceptedTerms?'checked':''}>
+
+                <label for="ki-terms">
+                    I have read, understood, and accepted the complete agreement and storage disclosure.
+                </label>
+            </div>
+
+            <div class="ki-keyboard-hint">
+                Acceptance is required before continuing.
+            </div>
+        </div>`;
+};
+
+const renderClean=container=>{
+    const installed=
+        Array.from(
+            getInstalledPackages()
+        ).filter(
+            name=>Boolean(name)
+        );
+
+    const registry=
+        getRegistry().filter(record=>{
+            const key=
+                safeText(
+                    record?.key||
+                    record?.name
+                );
+
+            return Boolean(key);
+        });
+
+    const diagnostics=
+        state.cleanupDiagnostics.length
+            ?`<div class="ki-notice">
+                <div class="ki-notice-title">
+                    Automatic cleanup diagnostics
+                </div>
+
+                <div class="ki-notice-text">
+                    ${state.cleanupDiagnostics.map(
+                        item=>
+                            `${escapeHtml(item.name)}: ${escapeHtml(item.status)}`
+                    ).join(' • ')}
+                </div>
+            </div>`
+            :'';
+
+    container.innerHTML=
+        `<div class="ki-copy">
+            <p class="ki-lead">
+                Existing MUNITOS package installation data was detected.
+            </p>
+
+            <p>
+                Existing package state triggers the clean step. Core services are part of the running system and are not treated as installable packages.
+            </p>
+
+            <div class="ki-notice ki-warning">
+                <div class="ki-notice-title">
+                    Clean installation required
+                </div>
+
+                <div class="ki-notice-text">
+                    MUNITOS will automatically cancel active runtime operations, reset its virtual system, remove accessible origin data, retry failed cleanup tasks, and verify the result.
+                </div>
+            </div>
+
+            ${diagnostics}
+
+            <div class="ki-clean-box">
+                <div class="ki-clean-copy">
+                    <strong>
+                        ${installed.length} installed package state(s)
+                    </strong>
+
+                    <span>
+                        ${registry.length} registry record(s) detected.
+                    </span>
+                </div>
+
+                <button
+                    type="button"
+                    class="ki-button ki-danger ki-wide"
+                    data-action="clean"
+                    ${state.cleanupBusy?'disabled':''}
+                >
+                    ${state.cleanupBusy?'Cleaning...':'Clean'}
+                </button>
+            </div>
+        </div>`;
+};
+
+const renderPackages=container=>{
+    if(!state.catalog.length){
+        container.innerHTML=
+            '<div class="ki-empty">No packages were found in pkg.js.</div>';
+        return;
+    }
+
+        const rows=
+        state.catalog.map(pkg=>{
+            const selected=
+                state.selected.has(pkg.name);
+            const info=
+                getPackageStatus(pkg);
+
+            const commandCount=
+                Array.isArray(pkg.commands)
+                    ?pkg.commands.length
+                    :0;
+
+            return`
+                <div
+                    class="ki-package-row ${selected?'ki-selected':''}"
+                    data-package-row="${escapeHtml(pkg.name)}"
+                    data-selected="${selected?'true':'false'}"
+                    role="option"
+                    aria-selected="${selected?'true':'false'}"
+                >
+                    <div>
+                        <input
+                            class="ki-package-checkbox"
+                            type="checkbox"
+                            data-package-toggle="${escapeHtml(pkg.name)}"
+                            ${selected?'checked':''}
+                            aria-label="Select ${escapeHtml(pkg.name)}"
+                        >
+                    </div>
+
+                    <div class="ki-package-name">
+                        ${escapeHtml(pkg.name)}
+
+                        <small>
+                            ${
+                                commandCount
+                                    ?`${commandCount} routing command(s)`
+                                    :'Commands load from the package manifest'
+                            }
+                        </small>
+
+                        <div class="ki-package-status">
+                            Status: ${escapeHtml(info.status||'available')}
+                        </div>
+                    </div>
+
+                    <div class="ki-package-version">
+                        Self-managed
+                    </div>
+
+                    <div class="ki-package-level">
+                        Package manifest
+                    </div>
+
+                    <div class="ki-package-description">
+                        ${escapeHtml(pkg.description||'No package description.')}
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+    container.innerHTML=
+        `<div class="ki-section-title">
+            Choose optional software
+        </div>
+
+        <div class="ki-section-subtitle">
+            Click anywhere on a package row to select it. You may continue with zero optional packages.
+        </div>
+
+        <div
+            class="ki-package-list"
+            role="listbox"
+            aria-label="MUNITOS package list"
+            tabindex="0"
+        >
+            <div class="ki-package-header">
+                <div></div>
+                <div>Package</div>
+                <div>Version</div>
+                <div>Policy</div>
+                <div>Description</div>
+            </div>
+
+            ${rows}
+        </div>
+
+        <table class="ki-summary">
+            <tr>
+                <td>Selected optional packages</td>
+                <td data-selected-count>
+                    ${state.selected.size}
+                </td>
+            </tr>
+
+            <tr>
+                <td>Catalog entries</td>
+                <td>
+                    ${state.catalog.length}
+                </td>
+            </tr>
+        </table>`;
+};
+
+const renderConfirm=container=>{
+    const names=
+        Array.from(
+            state.required
+        );
+
+    const visible=
+        names.filter(
+            Boolean
+        );
+
+    const list=
+        visible.length
+            ?visible.map(name=>{
+                const pkg=
+                    getPackageByName(name);
+
+                return`
+                    <li>
+                        <strong>${escapeHtml(name)}</strong>
+                        ${pkg?' — self-managed manifest':''}
+                    </li>
+                `;
+            }).join('')
+            :'<li>No optional package selected.</li>';
+
+    container.innerHTML=
+        `<div class="ki-copy">
+            <p class="ki-lead">
+                Ready to install MUNITOS.
+            </p>
+
+            <p>
+                Review the selected optional packages. Choosing none is valid and will not block installation.
+            </p>
+
+            <div class="ki-confirm">
+                <div class="ki-confirm-title">
+                    Optional packages
+                </div>
+
+                <ul class="ki-confirm-list">
+                    ${list}
+                </ul>
+            </div>
+
+            <table class="ki-summary">
+                <tr>
+                    <td>Total optional operations</td>
+                    <td>${visible.length}</td>
+                </tr>
+
+                <tr>
+                    <td>User selected</td>
+                    <td>${state.selected.size}</td>
+                </tr>
+
+                <tr>
+                    <td>Dependency resolution</td>
+                    <td>Enabled</td>
+                </tr>
+
+                <tr>
+                    <td>Installation manager</td>
+                    <td>Active MUNITOS package manager</td>
+                </tr>
+            </table>
+
+            <div class="ki-notice">
+                <div class="ki-notice-title">
+                    Final confirmation
+                </div>
+
+                <div class="ki-notice-text">
+                    Click Install to begin. Optional package selection is not mandatory.
+                </div>
+            </div>
+        </div>`;
+};
+
+const renderInstalling=container=>{
+    const total=state.required.size;
+
+    const completed=
+        state.installResults.filter(
+            item=>item.status==='success'
+        ).length;
+
+    const packageProgress=
+        total
+            ?Math.round(
+                completed/total*100
+            )
+            :0;
+
+    const elapsed=
+        Math.max(
+            0,
+            Date.now()-
+            (state.installStartedAt||Date.now())
+        );
+
+    const timeProgress=
+        Math.min(
+            100,
+            Math.round(
+                elapsed/MIN_INSTALL_DURATION*100
+            )
+        );
+
+    const progress=
+        Math.max(
+            packageProgress,
+            timeProgress
+        );
+
+    const log=
+        state.log.length
+            ?state.log.map(
+                item=>
+                    `<span class="ki-log-line ki-log-${escapeHtml(item.type||'muted')}">${escapeHtml(item.text)}</span>`
+            ).join('')
+            :'<span class="ki-log-line ki-log-muted">Preparing your personal MUNITOS system...</span>';
+
+    container.innerHTML=
+        `<div class="ki-copy">
+            <p class="ki-lead">
+                Building your personal MUNITOS system...
+            </p>
+
+            <p>
+                The installer is executing the selected package operations and preparing the runtime. Minimum installation time: ${MIN_INSTALL_DURATION/1000} seconds.
+            </p>
+
+            <div class="ki-progress">
+                <div class="ki-progress-track">
+                    <div
+                        class="ki-progress-bar"
+                        style="width:${progress}%"
+                    ></div>
+                </div>
+
+                <div class="ki-progress-meta">
+                    <span>
+                        ${completed}/${total} package operations
+                    </span>
+
+                    <span>
+                        ${progress}%
+                    </span>
+                </div>
+            </div>
+
+            <div class="ki-terminal-log">
+                ${log}
+            </div>
+        </div>`;
+};
+
+const renderDone=container=>{
+    const ok=
+        state.installResults.filter(
+            item=>item.status==='success'
+        ).length;
+
+    container.innerHTML=
+        `<div class="ki-copy">
+            <div class="ki-finish-icon">
+                ✓
+            </div>
+
+            <div class="ki-finish-title">
+                MUNITOS installation completed.
+            </div>
+
+            <div class="ki-finish-text">
+                The selected package installation has completed successfully. Your installation is ready. Click <strong>Finish</strong> below to close the installer and refresh MUNITOS.
+            </div>
+
+            <table class="ki-summary">
+                <tr>
+                    <td>Successful optional operations</td>
+                    <td>${ok}</td>
+                </tr>
+
+                <tr>
+                    <td>Installation state</td>
+                    <td>COMPLETED</td>
+                </tr>
+
+                <tr>
+                    <td>System</td>
+                    <td>MUNITOS</td>
+                </tr>
+            </table>
+        </div>`;
+};
+
+const renderError=container=>{
+    container.innerHTML=
+        `<div class="ki-copy">
+            <p class="ki-lead">
+                Installation could not be completed.
+            </p>
+
+            <p>
+                The installer state has been reset so the next attempt starts from the first stage.
+            </p>
+
+            ${
+                state.error
+                    ?`<div class="ki-error-box">${escapeHtml(state.error)}</div>`
+                    :''
+            }
+
+            <div class="ki-notice ki-error">
+                <div class="ki-notice-title">
+                    Retry
+                </div>
+
+                <div class="ki-notice-text">
+                    Use Restart to return to the first step, or Back to return to the previous available screen.
+                </div>
+            </div>
+        </div>`;
+};
+
+const renderFooter=(left,right)=>{
+    const screenshot=
+        document.createElement('button');
+
+    screenshot.type='button';
+    screenshot.className='ki-screenshot';
+    screenshot.dataset.action='screenshot';
+    screenshot.textContent='Screenshot';
+
+    left.appendChild(screenshot);
+
+    if(state.step==='terms'){
+        const btn=
+            document.createElement('button');
+
+        btn.className='ki-button ki-primary';
+        btn.dataset.action='continue-terms';
+        btn.disabled=!state.acceptedTerms;
+        btn.textContent='Continue';
+
+        right.appendChild(btn);
+        return;
+    }
+
+    if(state.step==='clean'){
+        const back=
+            document.createElement('button');
+
+        back.className='ki-button';
+        back.dataset.action='back';
+        back.textContent='Back';
+
+        const clean=
+            document.createElement('button');
+
+        clean.className='ki-button ki-danger';
+        clean.dataset.action='clean';
+        clean.textContent='Clean';
+
+        right.append(
+            back,
+            clean
+        );
+
+        return;
+    }
+
+    if(state.step==='packages'){
+        const back=
+            document.createElement('button');
+
+        back.className='ki-button';
+        back.dataset.action='back';
+        back.textContent='Back';
+
+        const next=
+            document.createElement('button');
+
+        next.className='ki-button ki-primary';
+        next.dataset.action='continue-packages';
+        next.textContent='Continue';
+
+        right.append(
+            back,
+            next
+        );
+
+        return;
+    }
+
+    if(state.step==='confirm'){
+        const back=
+            document.createElement('button');
+
+        back.className='ki-button';
+        back.dataset.action='back';
+        back.textContent='Back';
+
+        const install=
+            document.createElement('button');
+
+        install.className='ki-button ki-primary';
+        install.dataset.action='install';
+        install.textContent='Install';
+
+        right.append(
+            back,
+            install
+        );
+
+        return;
+    }
+
+    if(state.step==='installing'){
+        const btn=
+            document.createElement('button');
+
+        btn.className='ki-button';
+        btn.disabled=true;
+        btn.innerHTML=
+            '<span class="ki-loader"></span>Installing';
+
+        right.appendChild(btn);
+
+        return;
+    }
+
+    if(state.step==='done'){
+        const btn=
+            document.createElement('button');
+
+        btn.className='ki-button ki-primary ki-wide';
+        btn.dataset.action='finish';
+        btn.textContent='Finish';
+
+        right.appendChild(btn);
+
+        return;
+    }
+
+    if(state.step==='error'){
+        const restart=
+            document.createElement('button');
+
+        restart.className='ki-button';
+        restart.dataset.action='restart';
+        restart.textContent='Restart';
+
+        right.appendChild(restart);
+    }
+};
+
+const updatePackageSelectionUI=()=>{
+    if(!state.root)return;
+
+    const count=
+        state.root.querySelector(
+            '[data-selected-count]'
+        );
+
+    if(count){
+        count.textContent=
+            String(state.selected.size);
+    }
+
+    state.root
+        .querySelectorAll('[data-package-row]')
+        .forEach(row=>{
+            const name=
+                safeText(
+                    row.getAttribute(
+                        'data-package-row'
+                    )
+                );
+
+            const selected=
+                state.selected.has(name);
+
+            row.classList.toggle(
+                'ki-selected',
+                selected
+            );
+
+            row.setAttribute(
+                'data-selected',
+                selected?'true':'false'
+            );
+
+            row.setAttribute(
+                'aria-selected',
+                selected?'true':'false'
+            );
+
+            const input=
+                row.querySelector(
+                    '[data-package-toggle]'
+                );
+
+            if(
+                input&&
+                !input.disabled
+            ){
+                input.checked=selected;
+            }
+        });
+};
+
+const setPackageSelected=(name,selected)=>{
+    const key=safeText(name);
+
+    if(!key){
+        return false;
+    }
+
+    if(selected){
+        state.selected.add(key);
+    }else{
+        state.selected.delete(key);
+    }
+
+    saveWizardState();
+    updatePackageSelectionUI();
+
+    return true;
+};
+
+const togglePackageSelected=name=>{
+    const key=safeText(name);
+
+    if(!key){
+        return false;
+    }
+
+    return setPackageSelected(
+        key,
+        !state.selected.has(key)
+    );
+};
+
+const attachEvents=()=>{
+    if(!state.root)return;
+
+    const terms=
+        state.root.querySelector(
+            '#ki-terms'
+        );
+
+    terms?.addEventListener(
+        'change',
+        ()=>{
+            state.acceptedTerms=
+                terms.checked===true;
+
+            saveWizardState();
+
+            const continueButton=
+                state.root.querySelector(
+                    '[data-action="continue-terms"]'
+                );
+
+            if(continueButton){
+                continueButton.disabled=
+                    !state.acceptedTerms;
+            }
+        }
+    );
+
+    const packageList=
+        state.root.querySelector(
+            '.ki-package-list'
+        );
+
+    if(packageList){
+        packageList.addEventListener(
+            'click',
+            event=>{
+                const target=event.target;
+
+                const input=
+                    target instanceof Element
+                        ?target.closest(
+                            '[data-package-toggle]'
+                        )
+                        :null;
+
+                if(input){
+                    const name=
+                        safeText(
+                            input.getAttribute(
+                                'data-package-toggle'
+                            )
+                        );
+
+                    if(input.disabled)return;
+
+                    setPackageSelected(
+                        name,
+                        input.checked
+                    );
+
+                    event.stopPropagation();
+                    return;
+                }
+
+                const row=
+                    target instanceof Element
+                        ?target.closest(
+                            '[data-package-row]'
+                        )
+                        :null;
+
+                if(
+                    !row||
+                    !packageList.contains(row)
+                ){
+                    return;
+                }
+
+                const name=
+                    safeText(
+                        row.getAttribute(
+                            'data-package-row'
+                        )
+                    );
+
+                if(!name){
+                    return;
+                }
+
+                togglePackageSelected(name);
+            }
+        );
+
+        packageList.addEventListener(
+            'keydown',
+            event=>{
+                if(
+                    event.key!=='Enter'&&
+                    event.key!==' '
+                ){
+                    return;
+                }
+
+                const target=event.target;
+
+                const row=
+                    target instanceof Element
+                        ?target.closest(
+                            '[data-package-row]'
+                        )
+                        :null;
+
+                if(
+                    !row||
+                    !packageList.contains(row)
+                ){
+                    return;
+                }
+
+                const name=
+                    safeText(
+                        row.getAttribute(
+                            'data-package-row'
+                        )
+                    );
+
+                if(!name){
+                    return;
+                }
+
+                event.preventDefault();
+
+                togglePackageSelected(name);
+            }
+        );
+    }
+
+    state.root
+        .querySelectorAll('[data-action]')
+        .forEach(button=>{
+            button.addEventListener(
+                'click',
+                ()=>{
+                    void handleAction(
+                        button.getAttribute(
+                            'data-action'
+                        )
+                    );
+                }
+            );
+        });
+};
+
+const continueFromTerms=()=>{
+    if(!state.acceptedTerms)return;
+
+    if(
+        hasExistingInstallation()&&
+        !state.cleaned
+    ){
+        state.step='clean';
+        saveWizardState();
+        render();
+        return;
+    }
+
+    state.step='packages';
+    saveWizardState();
+    render();
+};
+
+const prepareConfirmation=()=>{
+    try{
+        const requested=
+            Array.from(
+                state.selected
+            ).filter(
+                Boolean
+            );
+
+        const resolved=
+            requested.length
+                ?dependencyClosure(requested)
+                :[];
+
+        state.required=
+            new Set(
+                resolved.filter(
+                    Boolean
+                )
+            );
+
+        state.error='';
+        state.step='confirm';
+
+        saveWizardState();
+        render();
+    }catch(error){
+        state.error=
+            error?.message||
+            'Dependency resolution failed.';
+
+        state.step='error';
+        state.failed=true;
+
+        render();
+    }
+};
+
+const goBack=()=>{
+    if(state.installing)return;
+
+    switch(state.step){
+        case'clean':
+            state.step='terms';
+            break;
+
+        case'packages':
+            state.step='terms';
+            break;
+
+        case'confirm':
+            state.step='packages';
+            break;
+
+        case'error':
+            resetWizardToStart();
+            return;
+
+        default:
+            return;
+    }
+
+    saveWizardState();
+    render();
+};
+
+const handleClean=async()=>{
+    if(state.cleanupBusy)return;
+
+    state.cleanupBusy=true;
+
+    const button=
+        state.root?.querySelector(
+            '[data-action="clean"]'
+        );
+
+    if(button){
+        button.disabled=true;
+        button.textContent='Cleaning...';
+    }
+
+    try{
+        await cleanInstallationData();
+        await sleep(250);
+        window.location.reload();
+    }catch(error){
+        state.cleanupBusy=false;
+        state.error=
+            error?.message||
+            'Clean operation failed.';
+        state.step='error';
+        state.failed=true;
+        render();
+    }
+};
+
+const addLog=(text,type='muted')=>{
+    state.log.push({
+        text:safeText(text),
+        type
+    });
+
+    if(state.log.length>100){
+        state.log.splice(
+            0,
+            state.log.length-100
+        );
+    }
+
+    render();
+};
+
+const startInstallation=async()=>{
+    if(state.installing)return;
+
+    state.installing=true;
+    state.failed=false;
+    state.error='';
+    state.installResults=[];
+    state.log=[];
+    state.installStartedAt=Date.now();
+    state.step='installing';
+
+    render();
+
+    try{
+        await waitForApi(15000);
+
+        const ordered=
+            state.required.size
+                ?dependencyClosure(
+                    Array.from(state.required)
+                ).filter(
+                    Boolean
+                )
+                :[];
+
+        addLog(
+            'MUNITOS installation engine initialized.',
+            'accent'
+        );
+
+        addLog(
+            `Optional package queue: ${ordered.length} package(s).`,
+            'muted'
+        );
+
+        if(!ordered.length){
+            addLog(
+                'No optional packages selected. Continuing with the MUNITOS system core.',
+                'accent'
+            );
+        }
+
+        for(
+            let i=0;
+            i<ordered.length;
+            i++
+        ){
+            const pkg=
+                getPackageByName(
+                    ordered[i]
+                );
+
+            if(!pkg){
+                throw new Error(
+                    `Package ${ordered[i]} is missing from pkg.js.`
+                );
+            }
+
+            addLog(
+                `[${i+1}/${ordered.length}] Installing ${pkg.name} from its self-managed package manifest...`,
+                'accent'
+            );
+
+            try{
+                await packageInstall(pkg);
+
+                const installedVersion=
+                    getPackageVersion(pkg.name);
+
+                state.installResults.push({
+                    package:pkg.name,
+                    version:installedVersion,
+                    status:'success'
+                });
+
+                addLog(
+                    `✓ ${pkg.name} ${installedVersion} installed successfully.`,
+                    'ok'
+                );
+            }catch(error){
+                state.installResults.push({
+                    package:pkg.name,
+                    version:getPackageVersion(
+                        pkg.name
+                    ),
+                    status:'failed',
+                    error:
+                        error?.message||
+                        'Unknown error'
+                });
+
+                addLog(
+                    `✗ ${pkg.name} installation failed.`,
+                    'error'
+                );
+
+                throw error;
+            }
+
+            render();
+        }
+
+        while(
+            Date.now()-state.installStartedAt<
+            MIN_INSTALL_DURATION
+        ){
+            const elapsed=
+                Date.now()-state.installStartedAt;
+
+            const remaining=
+                Math.max(
+                    0,
+                    MIN_INSTALL_DURATION-elapsed
+                );
+
+            const seconds=
+                Math.ceil(
+                    remaining/1000
+                );
+
+            addLog(
+                `Building your personal MUNITOS system... ${seconds}s remaining.`,
+                'muted'
+            );
+
+            render();
+
+            await sleep(
+                Math.min(
+                    1000,
+                    Math.max(
+                        100,
+                        remaining
+                    )
+                )
+            );
+        }
+
+        addLog(
+            'Finalizing MUNITOS runtime configuration.',
+            'accent'
+        );
+
+        await sleep(250);
+
+        setCompletedFlag();
+
+        state.installing=false;
+        state.finished=true;
+        state.failed=false;
+        state.step='done';
+
+        render();
+    }catch(error){
+        state.installing=false;
+        state.finished=false;
+        state.failed=true;
+        state.error=
+            error?.message||
+            'Installation failed unexpectedly.';
+        state.step='error';
+
+        clearWizardState();
+        render();
+    }
+};
+
+const finishAndClose=()=>{
+    if(state.reloadPending)return;
+
+    state.reloadPending=true;
+
+    setCompletedFlag();
+
+    state.finished=true;
+    state.installing=false;
+
+    try{
+        document
+            .getElementById('termInput')
+            ?.focus({
+                preventScroll:true
+            });
+    }catch{}
+
+    const root=state.root;
+
+    state.root=null;
+
+    root?.remove();
+
+    setTimeout(()=>{
+        try{
+            window.location.reload();
+        }catch{
+            try{
+                location.reload();
+            }catch{}
+        }
+    },50);
+};
+
+const handleAction=async action=>{
+    switch(action){
+        case'continue-terms':
+            continueFromTerms();
+            break;
+
+        case'clean':
+            await handleClean();
+            break;
+
+        case'continue-packages':
+            prepareConfirmation();
+            break;
+
+        case'back':
+            goBack();
+            break;
+
+        case'install':
+            await startInstallation();
+            break;
+
+        case'finish':
+            finishAndClose();
+            break;
+
+        case'restart':
+            resetWizardToStart();
+            break;
+
+        case'screenshot':
+            await takeScreenshot();
+            break;
+    }
+};
+
+const bootstrap=async()=>{
+    let force=false;
+
+    try{
+        force=
+            new URLSearchParams(
+                location.search
+            ).get('munitos-install')==='force';
+    }catch{}
+
+    if(
+        !force&&
+        hasCompletedFlag()
+    ){
+        return;
+    }
+
+    clearWizardState();
+
+    state.step='terms';
+    state.acceptedTerms=false;
+    state.cleaned=false;
+    state.selected.clear();
+    state.required.clear();
+    state.installing=false;
+    state.finished=false;
+    state.failed=false;
+    state.error='';
+    state.installResults=[];
+    state.log=[];
+    state.cleanupDiagnostics=[];
+    state.cleanupBusy=false;
+    state.installStartedAt=0;
+    state.reloadPending=false;
+
+    createShell();
+    render();
+
+    try{
+        const catalogRoot=
+            await loadPkgJs();
+
+        state.catalog=
+            normalizeCatalog(
+                catalogRoot
+            );
+
+        if(!state.catalog.length){
+            throw new Error(
+                'pkg.js contains no package entries.'
+            );
+        }
+
+        state.selected=
+            new Set(
+                Array.from(
+                    state.selected
+                ).filter(
+                    name=>
+                        getPackageByName(name)
+                )
+            );
+
+        render();
+    }catch(error){
+        state.error=
+            error?.message||
+            'Unable to initialize MUNITOS installer.';
+
+        state.step='error';
+        state.failed=true;
+
+        render();
+    }
+};
+
+if(document.readyState==='loading'){
+    document.addEventListener(
+        'DOMContentLoaded',
+        ()=>{
+            void bootstrap();
+        },
+        {
+            once:true
+        }
+    );
+}else{
+    void bootstrap();
+}
+
+})();
